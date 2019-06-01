@@ -16,19 +16,8 @@
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
-
     </script>
-    <script type="text/javascript">
-		message = "Pondok Schooling Daarul Ilmi ";
-		function step() {
-			message = message.substr(1) + message.substr(0,1);
-			document.title = message.substr(0,25);
-		}
-	</script>
     <!-- //Meta tag Keywords -->
-    <!-- Favicon -->
-    <link rel="icon" href="http://www.domain.com/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="http://www.domain.com/favicon.ico" type="image/x-icon" />
     <!-- Custom-Files -->
     <link rel="stylesheet" href="{{url('/assets/web/css/bootstrap.css')}}">
     <!-- Bootstrap-Core-CSS -->
@@ -43,7 +32,7 @@
     <!-- //Fonts -->
 </head>
 
-<body onload="setInterval(step,300)">
+<body>
     <!-- main-content -->
     <div class="main-content" id="home">
         <div class="layer">

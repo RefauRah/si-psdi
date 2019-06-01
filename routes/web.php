@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('/company/base');
 });
+
+Route::get('/login', function () {
+    return view('/admin/login');
+});

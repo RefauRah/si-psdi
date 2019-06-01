@@ -23,7 +23,7 @@
             <label for="drop" class="toggle">Menu</label>
             <input type="checkbox" id="drop" />
             <ul class="menu mt-2 ml-auto">
-                <li><a href="index.html">Login</a></li>
+                <li><a href="{{url('/login')}}">Login</a></li>
             </ul>
         </nav>
         <!-- //nav -->
