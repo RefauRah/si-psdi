@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="{{url('/assets/admin/bower_components/Ionicons/css/ionicons.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url('/assets/admin/dist/css/AdminLTE.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{url('/assets/admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{url('/assets/admin/dist/css/skins/_all-skins.min.css')}}">
@@ -41,34 +43,24 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <!-- Header -->
-    @include('admin.header')
+    @include('admin.template.header')
     <!-- end Header -->
 
     <!-- Sidebar -->
-    @include('admin.side')
+    @include('admin.template.side')
     <!-- end Sidebar -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
 
     <!-- Main content -->
-   
+        @yield('content')
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <!-- Footer -->
-  @include('admin.footer')
+  @include('admin.template.footer')
   <!-- end Footer -->
 </div>
 <!-- ./wrapper -->
@@ -110,5 +102,21 @@
 <script src="{{url('assets/admin/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('assets/admin/dist/js/demo.js')}}"></script>
+<!-- DataTables -->
+<script src="{{url('/assets/admin/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url('/assets/admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 </body>
 </html>
