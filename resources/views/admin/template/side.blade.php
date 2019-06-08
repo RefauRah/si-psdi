@@ -25,8 +25,8 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-    <li class="active treeview">
-        <a href="#">
+    <li class="bg-black">
+        <a href="{{url('/home')}}">
         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
     </li>
@@ -35,8 +35,8 @@
         <a href="{{url('/admin')}}">
             <i class="fa fa-user"></i>
             <span>Admin</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
+            <span class="">
+                <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
             </span>
         </a>
         
@@ -45,8 +45,8 @@
         <a href="{{url('/guru')}}">
         <i class="fa fa-users"></i>
         <span>Guru</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+        <span class="">
+            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
         </span>
         </a>
         
@@ -55,8 +55,8 @@
         <a href="{{url('/siswa')}}">
         <i class="fa fa-users"></i>
         <span>Siswa</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+        <span class="">
+            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
         </span>
         </a>
         
@@ -65,8 +65,8 @@
         <a href="{{url('/kelas')}}">
         <i class="fa fa-sitemap"></i>
         <span>Kelas</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+        <span class="">
+            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
         </span>
         </a>
         
@@ -75,8 +75,8 @@
         <a href="{{url('/walikelas')}}">
         <i class="fa fa-user"></i>
         <span>Wali Kelas</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+        <span class="">
+            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
         </span>
         </a>
         
@@ -85,8 +85,8 @@
         <a href="{{url('/mapel')}}">
         <i class="fa fa-book"></i>
         <span>Mata Pelajaran</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+        <span class="">
+            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
         </span>
         </a>
         
@@ -95,8 +95,8 @@
         <a href="#">
         <i class="fa fa-book"></i>
         <span>Jam Pelajaran</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
+        <span class="">
+            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
         </span>
         </a>
     </li>
