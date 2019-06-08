@@ -15,14 +15,16 @@ Route::get('/', function () {
     return view('/company/base');
 });
 
-Route::get('login', 'AuthController@getLogin');
-Route::post('login', 'AuthController@postLogin')->name('login');
-Route::get('register', 'AuthController@getRegister');
-Route::post('register', 'AuthController@postRegister')->name('register');
+Route::get('/login', 'AuthController@getLogin')->middleware('guest')->name('login');
+Route::post('/login', 'AuthController@postLogin')->middleware('guest');
+Route::get('/register', 'AuthController@getRegister')->middleware('guest')->name('register');
+Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 
 Route::get('/home', function () {
     return view('/admin/home');
-})->name('home');
+})->middleware('auth')->name('home');
+
+Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
 Route::get('/admin', function () {
     return view('/admin/admin/admin');
