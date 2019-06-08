@@ -6,7 +6,6 @@ git clone https://github.com/RefauRah/KerjaPraktek.git
 ~~~~
 Pull code
 ~~~~
-git pull origin backendG
 git pull origin development
 ~~~~
 Push code
@@ -19,3 +18,6 @@ git push -u development
 Change branch
 ~~~~
 git checkout -b development
+~~~~
+Kalo mau Login harus di migrate
+

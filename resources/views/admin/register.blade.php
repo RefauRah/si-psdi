@@ -34,28 +34,36 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Masuk Dengan Akun Yang Sudah Terdaftar</p>
+    <p class="login-box-msg">Daftarkan User Login</p>
 
-    <form action="{{ route('login')}}" method="POST">
+    <form action="{{ route('register')}}" method="POST">
       {{csrf_field()}}
       <div class="form-group has-feedback">
-        <input type="text" name="username" class="form-control" placeholder="Username">
+        <label for="inputNama">Nama</label>
+        <input type="text" name="name" class="form-control" placeholder="Nama">
       </div>
       <div class="form-group has-feedback">
+        <label for="inputUsername">Username</label>
+        <input type="text" name="username" class="form-control" placeholder="Username">
+      </div>
+       <div class="form-group has-feedback">
+        <label for="inputUsername">Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Email">
+      </div>
+      <div class="form-group has-feedback">
+        <label for="inputPassword">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-      <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
-        </div>
+      <div class="form-group has-feedback">
+        <label for="inputPassword">Password Confirmation</label>
+        <input type="password" name="password_confirmation" class="form-control" placeholder="Password Confirmation">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
         </div>
         <!-- /.col -->
       </div>
