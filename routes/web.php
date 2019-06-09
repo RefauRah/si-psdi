@@ -22,24 +22,19 @@ Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 
 Route::get('/home', function () {
     return view('/admin/home');
-});
-// ->middleware('auth')->name('home');
+})->middleware('auth')->name('home');
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
-Route::get('/admin', function () {
-    return view('/admin/admin/admin');
-});
-Route::get('/admin/create', function () {
-    return view('/admin/admin/create');
-});
+// Route::get('/admin', function () {
+//     return view('/admin/admin/admin');
+// });
 
-Route::get('/siswa', function () {
-    return view('/admin/siswa/siswa');
-});
-Route::get('/siswa/create', function () {
-    return view('/admin/siswa/create');
-});
+Route::get('/siswa','AbsensiController@index');
+
+// Route::get('/siswa', function () {
+//     return view('/admin/siswa/siswa');
+// });
 
 Route::get('/guru', function () {
     return view('/admin/guru/guru');

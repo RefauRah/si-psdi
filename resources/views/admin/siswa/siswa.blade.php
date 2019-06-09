@@ -27,7 +27,7 @@
                     <th>NO</th>
                     <th>NIS</th>
                     <th>Nama</th>
-                    <th>Kelas</th>
+                    <th>Pertemuan</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
@@ -35,7 +35,22 @@
                 </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                 
+=======
+
+                @foreach ($data as $row)
+                <tr>
+                    <td>{{ $row->id_absen}}</td>
+                    <td>{{ $row->nm}}</td>
+                    <td>{{ $row->mrd}}</td>
+                    <td>{{ $row->pertemuanke}}</td>
+
+
+                </tr>
+                @endforeach
+              
+>>>>>>> 98f893dfd3e6cad6864689b27c4311c6eac96f7b
                 </tbody>
                 <tfoot>
                 <tr>
