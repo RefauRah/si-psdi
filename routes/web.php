@@ -31,18 +31,25 @@ Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout'
 // });
 
 Route::get('/siswa','AbsensiController@index');
-
+Route::get('/siswa/create', function () {
+    return view('/admin/siswa/create');
+});
 // Route::get('/siswa', function () {
 //     return view('/admin/siswa/siswa');
 // });
 
-Route::get('/guru', function () {
+/*Route::get('/guru', function () {
     return view('/admin/guru/guru');
 });
 Route::get('/guru/create', function () {
     return view('/admin/guru/create');
-});
+});*/
 
+Route::get('/guru', 'GuruController@index');
+//Route::get('/guru/{id}', 'GuruController@show');
+Route::get('/guru/create', 'GuruController@create');
+Route::post('/guru', 'GuruController@store');
+ 
 Route::get('/kelas', function () {
     return view('/admin/kelas/kelas');
 });

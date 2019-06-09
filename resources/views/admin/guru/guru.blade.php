@@ -36,6 +36,16 @@
                 </thead>
                 <tbody>            
                
+                @foreach ($guru as $row)
+                <tr>
+                    <td>{{ $row->id_absen}}</td>
+                    <td>{{ $row->nm}}</td>
+                    <td>{{ $row->mrd}}</td>
+                    <td>{{ $row->pertemuanke}}</td>
+                </tr>
+
+                @endforeach
+
                 </tbody>
                 <tfoot>
                 <tr>
