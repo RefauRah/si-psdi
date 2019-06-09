@@ -22,30 +22,49 @@ Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 
 Route::get('/home', function () {
     return view('/admin/home');
-})->middleware('auth')->name('home');
+});
+// ->middleware('auth')->name('home');
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
 Route::get('/admin', function () {
     return view('/admin/admin/admin');
 });
+Route::get('/admin/create', function () {
+    return view('/admin/admin/create');
+});
 
 Route::get('/siswa', function () {
     return view('/admin/siswa/siswa');
+});
+Route::get('/siswa/create', function () {
+    return view('/admin/siswa/create');
 });
 
 Route::get('/guru', function () {
     return view('/admin/guru/guru');
 });
+Route::get('/guru/create', function () {
+    return view('/admin/guru/create');
+});
 
 Route::get('/kelas', function () {
     return view('/admin/kelas/kelas');
+});
+Route::get('/kelas/create', function () {
+    return view('/admin/kelas/create');
 });
 
 Route::get('/walikelas', function () {
     return view('/admin/wali_kelas/wali_kelas');
 });
+Route::get('/walikelas/create', function () {
+    return view('/admin/wali_kelas/create');
+});
 
 Route::get('/mapel', function () {
     return view('/admin/mapel/mapel');
+});
+Route::get('/mapel/create', function () {
+    return view('/admin/mapel/create');
 });

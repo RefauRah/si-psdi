@@ -15,6 +15,9 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Data Guru PSDI</h3>
+                <a href="{{url('/guru/create')}}" class="btn btn-sm btn-success pull-right">
+                    <i class="fa fa-plus"></i> Tambah
+                </a>
             </div>
 <!-- /.box-header -->
             <div class="box-body">
@@ -27,57 +30,22 @@
                     <th>Alamat</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
-                    <th>NO Tlp</th>
+                    <th>No Tlp</th>
                     <th>Option</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                    Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                    <td>Tanggal Lahir</td>
-                    <td>NO Tlp</td>
-                    <td>Option</td>
-                </tr>
-                <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                    Explorer 5.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5</td>
-                    <td>C</td>
-                    <td>Tanggal Lahir</td>
-                    <td>NO Tlp</td>
-                    <td>Option</td>
-                </tr>
-                <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                    Explorer 5.5
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5.5</td>
-                    <td>A</td><td>Tanggal Lahir</td>
-                    <td>NO Tlp</td>
-                    <td>Option</td>
-
-                </tr>
+                <tbody>            
+               
                 </tbody>
                 <tfoot>
                 <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                <th>NO</th>
+                    <th>NIK</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
-                    <th>NO Tlp</th>
+                    <th>No Tlp</th>
                     <th>Option</th>
                 </tr>
                 </tfoot>
