@@ -26,13 +26,15 @@ Route::get('/home', function () {
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
-Route::get('/admin', function () {
-    return view('/admin/admin/admin');
-});
+// Route::get('/admin', function () {
+//     return view('/admin/admin/admin');
+// });
 
-Route::get('/siswa', function () {
-    return view('/admin/siswa/siswa');
-});
+Route::get('/siswa','AbsensiController@index');
+
+// Route::get('/siswa', function () {
+//     return view('/admin/siswa/siswa');
+// });
 
 Route::get('/guru', function () {
     return view('/admin/guru/guru');

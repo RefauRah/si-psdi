@@ -24,7 +24,7 @@
                     <th>NO</th>
                     <th>NIS</th>
                     <th>Nama</th>
-                    <th>Kelas</th>
+                    <th>Pertemuan</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
@@ -32,42 +32,18 @@
                 </tr>
                 </thead>
                 <tbody>
+
+                @foreach ($data as $row)
                 <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                    Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                    <td>Tanggal Lahir</td>
-                    <td>Jenis Kelamin</td>
-                    <td>Alamat</td>
+                    <td>{{ $row->id_absen}}</td>
+                    <td>{{ $row->nm}}</td>
+                    <td>{{ $row->mrd}}</td>
+                    <td>{{ $row->pertemuanke}}</td>
+
+
                 </tr>
-                <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                    Explorer 5.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5</td>
-                    <td>C</td>
-                    <td>Tanggal Lahir</td>
-                    <td>Jenis Kelamin</td>
-                    <td>Alamat</td>
-                </tr>
-                <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                    Explorer 5.5
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5.5</td>
-                    <td>A</td>
-                    <td>Tanggal Lahir</td>
-                    <td>Jenis Kelamin</td>
-                    <td>Alamat</td>
-                </tr>
+                @endforeach
+              
                 </tbody>
                 <tfoot>
                 <tr>
