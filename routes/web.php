@@ -48,7 +48,7 @@ Route::get('/guru/create', function () {
 Route::get('/guru', 'GuruController@index');
 //Route::get('/guru/{id}', 'GuruController@show');
 Route::get('/guru/create', 'GuruController@create');
-Route::post('/guru', 'GuruController@store');
+Route::post('/guru/create', 'GuruController@store');
  
 Route::get('/kelas', function () {
     return view('/admin/kelas/kelas');

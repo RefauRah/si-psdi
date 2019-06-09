@@ -18,4 +18,6 @@ class Guru extends Model
     	'tgl_lahir',
     	'no_telp'
     ];
+
+    public $timestamps = false;
 }

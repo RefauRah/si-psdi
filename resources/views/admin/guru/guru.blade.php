@@ -19,7 +19,7 @@
                     <i class="fa fa-plus"></i> Tambah
                 </a>
             </div>
-<!-- /.box-header -->
+<!-- /.box-header ALTER TABLE `guru` AUTO_INCREMENT = 0;-->
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -34,14 +34,20 @@
                     <th>Option</th>
                 </tr>
                 </thead>
-                <tbody>            
-               
+                <tbody>
+
+                <?php $nomer = 1; ?>
+
                 @foreach ($guru as $row)
                 <tr>
-                    <td>{{ $row->id_absen}}</td>
-                    <td>{{ $row->nm}}</td>
-                    <td>{{ $row->mrd}}</td>
-                    <td>{{ $row->pertemuanke}}</td>
+                    <td>{{$nomer}}</td>
+                    <td>{{ $row->nik}}</td>
+                    <td>{{ $row->nama}}</td>
+                    <td>{{ $row->alamat}}</td>
+                    <td>{{ $row->tempat_lahir}}</td>
+                    <td>{{ $row->tgl_lahir}}</td>
+                    <td>{{ $row->no_telp}}</td>
+                    <?php $nomer++; ?>
                 </tr>
 
                 @endforeach

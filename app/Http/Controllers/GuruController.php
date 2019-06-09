@@ -29,8 +29,8 @@ class GuruController extends Controller
     {
         $guru = new Guru;
         
-        $guru->nik = request('title');
-        $guru->nama = request('publisher');
+        $guru->nik = request('nik');
+        $guru->nama = request('nama');
         $guru->email = request('email');
         $guru->alamat = request('alamat');
         $guru->tempat_lahir = request('tempat_lahir');
@@ -38,5 +38,7 @@ class GuruController extends Controller
         $guru->no_telp = request('no_telp');
         //$guru->image = request()->file('image')->store('public/images');
         $guru->save();
+
+        return redirect('/guru');
     }
 }
