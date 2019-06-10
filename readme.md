@@ -11,7 +11,6 @@ git pull origin development
 Push code
 ~~~~
 git push origin development
-git push origin backendG
 or
 git push -u development
 ~~~~
@@ -20,4 +19,8 @@ Change branch
 git checkout -b development
 ~~~~
 Kalo mau Login harus di migrate
+
+coba kalo mau pake fake database bisa
+php artisan db:seed --class=AbsensiSeeder
+php artisan db:seed --class=SiswaSeeder
 
