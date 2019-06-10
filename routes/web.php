@@ -70,3 +70,9 @@ Route::get('/mapel', function () {
 Route::get('/mapel/create', function () {
     return view('/admin/mapel/create');
 });
+
+Route::get('/absenguru', function () {
+    return view('/admin/absensi/absenGuru');
+});
+
+Route::get('/absensiswa','AbsensiController@index');

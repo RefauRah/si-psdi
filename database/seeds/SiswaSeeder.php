@@ -20,10 +20,12 @@ class SiswaSeeder extends Seeder
         	DB::table('siswa')->insert([
         		'nama'=>$faker->name,
         		'nik'=>$faker->numberBetween(1167050001,1167050100),
+                'email'=>$faker->email,
                 'alamat'=>$faker->address,
+                'no_telp'=>$faker->phoneNumber,
                 'tmpt_lahir'=>$faker->city,
                 'tgl_lahir'=>$faker->date("Y-m-d H:i:s"),
-                'jk'=>$faker->randomElement($array = array('Pria','Wanita')),
+                'jk'=>$faker->randomElement($array = array('Laki-laki','Perempuan')),
         		'created_at'=>$faker->date("Y-m-d H:i:s")
 
         	]);

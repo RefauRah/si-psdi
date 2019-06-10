@@ -18,6 +18,7 @@ class CreateAbsensiTable extends Migration
             $table->integer('id_siswa');
             $table->char('status_hadir',100);
             $table->integer('pertemuanke');
+            $table->string('jns_kegiatan',100);
             $table->timestamps();
         });
     }

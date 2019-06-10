@@ -13,20 +13,22 @@ class AbsensiController extends Controller
     {	
     	
 
-    	$data= DB::table('absensi')
+	   	$data= DB::table('absensi')
     	->join('siswa as murid','absensi.id_siswa','=','murid.id_siswa')
-    	->select('absensi.id_absen','murid.nama as mrd','murid.nim as nm','absensi.pertemuanke')->paginate(10);
+    	->select('absensi.id_absen','murid.nama as mrd','murid.nik as nm','absensi.pertemuanke','absensi.status_hadir','absensi.jns_kegiatan')->get();
 
     	$filterKeyword = $request->get('keyword');
 
     	if($filterKeyword){
     		$data= DB::table('absensi')
     		->join('siswa as murid','absensi.id_siswa','=','murid.id_siswa')
-    		->select('absensi.id_absen','murid.nama as mrd','absensi.pertemuanke')->where('absensi.pertemuanke', 'LIKE', "%filterKeyword%")->paginate(10);
+    		->select('absensi.id_absen','murid.nama as mrd','murid.nik as nm','absensi.pertemuanke','absensi.status_hadir','absensi.jns_kegiatan')->where('absensi.pertemuanke', 'LIKE', "%filterKeyword%")->get();
     	}
 
     	// return view('admin/siswa/siswa',['absensi'=>$absensi]);
-    	// return view('admin/siswa/siswa', compact('data'));
-    	return view ('admin.siswa.siswa', ['absensi=>$data']);
+    	return view('admin/absen/absenSiswa', compact('data'));
+    	return view ('admin.absen.absenSiswa', ['absensi=>$data']);
+
+    	
     }
 }

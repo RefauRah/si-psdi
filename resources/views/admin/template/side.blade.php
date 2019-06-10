@@ -110,9 +110,23 @@
         </span>
         </a>
         <ul class="treeview-menu">
-        <li><a href="#"><i class="fa fa-circle-o"></i> Guru</a></li>
+        <li><a href="{{url('/absenguru')}}"><i class="fa fa-circle-o"></i> Guru</a></li>
         <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li>
-        <li><a href="#"><i class="fa fa-circle-o"></i> Siswa</a></li>
+        <li class="treeview">
+            <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Siswa</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angel-left pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="{{url('/absensiswa')}}"><i class="fa fa-circle-o">Absen Total</i></a></li>
+                <li><a href="#"><i class="fa fa-circle-o">Absen Pengajian</i></a></li>
+                <li><a href="#"><i class="fa fa-circle-o">Absen Sekolah</i></a></li>
+
+            </ul>
+            </li>
         </ul>
     </li>
     <li class="treeview">

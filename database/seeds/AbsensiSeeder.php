@@ -22,6 +22,7 @@ class AbsensiSeeder extends Seeder
             	'id_siswa' =>$faker->numberBetween(1,20),
             	'status_hadir'=>$faker->numberBetween(0,1),
             	'pertemuanke' =>$faker->numberBetween(1,30),
+                'jns_kegiatan' =>$faker->randomElement($array = array('Pengajian','Sekolah')),
             	'created_at'=>$faker->date("Y-m-d H:i:s"),         
             ]);
         }
