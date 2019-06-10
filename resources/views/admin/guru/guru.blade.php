@@ -41,7 +41,7 @@
 
                 <?php $nomer = 1; ?>
 
-                @foreach ($data as $row)
+                @foreach ($guru as $row)
                 <tr>
                     <td>{{$nomer}}</td>
                     <td>{{ $row->nik}}</td>
