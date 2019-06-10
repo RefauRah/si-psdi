@@ -27,7 +27,6 @@
                     <th>NO</th>
                     <th>NIS</th>
                     <th>Nama</th>
-                    <th>Pertemuan</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
@@ -35,22 +34,22 @@
                 </tr>
                 </thead>
                 <tbody>
-<<<<<<< HEAD
+
+                <?php $nomer = 1; ?>
                 
-=======
-
-                @foreach ($data as $row)
+                @foreach ($siswa as $row)
                 <tr>
-                    <td>{{ $row->id_absen}}</td>
-                    <td>{{ $row->nm}}</td>
-                    <td>{{ $row->mrd}}</td>
-                    <td>{{ $row->pertemuanke}}</td>
-
-
+                    <td>{{$nomer}}</td>
+                    <td>{{ $row->nik}}</td>
+                    <td>{{ $row->nama}}</td>
+                    <td>{{ $row->tmpt_lahir}}</td>
+                    <td>{{ $row->tgl_lahir}}</td>
+                    <td>{{ $row->jk}}</td>
+                    <td>{{ $row->alamat}}</td>
+                    <?php $nomer++; ?>
                 </tr>
                 @endforeach
               
->>>>>>> 98f893dfd3e6cad6864689b27c4311c6eac96f7b
                 </tbody>
                 <tfoot>
                 <tr>

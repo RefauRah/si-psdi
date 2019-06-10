@@ -30,10 +30,10 @@ Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout'
 //     return view('/admin/admin/admin');
 // });
 
-Route::get('/siswa','AbsensiController@index');
-Route::get('/siswa/create', function () {
-    return view('/admin/siswa/create');
-});
+Route::get('/siswa','SiswaController@index');
+Route::get('/siswa/create', 'SiswaController@create');
+Route::post('/siswa/create', 'SiswaController@store');
+
 // Route::get('/siswa', function () {
 //     return view('/admin/siswa/siswa');
 // });

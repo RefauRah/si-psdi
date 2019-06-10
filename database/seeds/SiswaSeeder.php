@@ -15,11 +15,15 @@ class SiswaSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        for ($x = 1; $x <= 10; $x++){
+        for ($x = 1; $x <= 20; $x++){
 
         	DB::table('siswa')->insert([
         		'nama'=>$faker->name,
-        		'nim'=>$faker->numberBetween(1167050001,1167050100),
+        		'nik'=>$faker->numberBetween(1167050001,1167050100),
+                'alamat'=>$faker->address,
+                'tmpt_lahir'=>$faker->city,
+                'tgl_lahir'=>$faker->date("Y-m-d H:i:s"),
+                'jk'=>$faker->randomElement($array = array('Pria','Wanita')),
         		'created_at'=>$faker->date("Y-m-d H:i:s")
 
         	]);

@@ -8,14 +8,20 @@ class SiswaModel extends Model
 {
     public $table = 'siswa';
 
-    // protected $primaryKey = 'id_siswa';
-
     protected $fillable = [
-    	'nim',
+    	'nik',
     	'nama',
+    	'email',
+    	'no_telp',
+    	'tgl_lahir',
+    	'tmpt_lahir',
+    	'jk',
+    	'alamat',
     	'created_at',
     	'updated_at'
     ];
+
+    public $timestamps = false;
 
     // public function get_absensi(){
     // 	return $this->hasMany('App\AbsensiModel','id_siswa');

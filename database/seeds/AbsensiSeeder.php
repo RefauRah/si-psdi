@@ -16,12 +16,14 @@ class AbsensiSeeder extends Seeder
 
     	$faker = Faker::create('id_ID');
 
+         for ($x = 1; $x <= 30; $x++){
 
-        DB::table('absensi')->insert([
-        	'id_siswa' =>'2',
-        	'status_hadir'=>'1',
-        	'pertemuanke' =>'1',
-        	'created_at'=>$faker->date("Y-m-d H:i:s")
-        ]);
+            DB::table('absensi')->insert([
+            	'id_siswa' =>$faker->numberBetween(1,20),
+            	'status_hadir'=>$faker->numberBetween(0,1),
+            	'pertemuanke' =>$faker->numberBetween(1,30),
+            	'created_at'=>$faker->date("Y-m-d H:i:s"),         
+            ]);
+        }
     }
 }

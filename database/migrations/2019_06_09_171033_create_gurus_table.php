@@ -21,7 +21,7 @@ class CreateGurusTable extends Migration
             $table->string('alamat',200);
             $table->string('tempat_lahir',100);
             $table->date('tgl_lahir');
-            $table->integer('no_telp',false, true)->length(20);
+            $table->string('no_telp',20);
         });
     }
 
