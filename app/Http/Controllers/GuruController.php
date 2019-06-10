@@ -39,6 +39,8 @@ class GuruController extends Controller
         //$guru->image = request()->file('image')->store('public/images');
         $guru->save();
 
+        \Session::flash('flash_message','successfully saved.');
+
         return redirect('/guru');
     }
 }
