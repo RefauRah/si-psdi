@@ -51,12 +51,10 @@ Route::get('/guru', 'GuruController@index');
 Route::get('/guru/create', 'GuruController@create');
 Route::post('/guru/create', 'GuruController@store');
  
-Route::get('/kelas', function () {
-    return view('/admin/kelas/kelas');
-});
-Route::get('/kelas/create', function () {
-    return view('/admin/kelas/create');
-});
+Route::get('/kelas', 'KelasController@index');
+
+Route::get('/kelas/create', 'KelasController@create');
+Route::post('/kelas/create', 'KelasController@store');
 
 Route::get('/walikelas', function () {
     return view('/admin/wali_kelas/wali_kelas');
@@ -65,12 +63,10 @@ Route::get('/walikelas/create', function () {
     return view('/admin/wali_kelas/create');
 });
 
-Route::get('/mapel', function () {
-    return view('/admin/mapel/mapel');
-});
-Route::get('/mapel/create', function () {
-    return view('/admin/mapel/create');
-});
+Route::get('/mapel', 'MapelController@index');
+
+Route::get('/mapel/create', 'MapelController@create');
+Route::post('/mapel/create', 'MapelController@store');
 
 Route::get('/absenguru', function () {
     return view('/admin/absen/absenGuru');

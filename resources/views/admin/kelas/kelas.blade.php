@@ -27,20 +27,29 @@
                     <th>NO</th>
                     <th>Kode</th>
                     <th>Nama</th>
-                    <th>Wali Kelas</th>
-                    <th>NO Ruangan</th>
+                   <!--  <th>Wali Kelas</th>
+                    <th>NO Ruangan</th> -->
                 </tr>
                 </thead>
                 <tbody>
-                
+                <?php $nomer = 1; ?>
+
+                @foreach ($kelas as $row)
+                <tr>
+                    <td>{{$nomer}}</td>
+                    <td>{{ $row->kode_kelas}}</td>
+                    <td>{{ $row->nama}}</td>
+                    <?php $nomer++; ?>
+                </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                     <th>NO</th>
                     <th>Kode</th>
-                    <th>Nama</th>
+                   <!--  <th>Nama</th>
                     <th>Wali Kelas</th>
-                    <th>NO Ruangan</th>
+                    <th>NO Ruangan</th> -->
                 </tr>
                 </tfoot>
                 </table>

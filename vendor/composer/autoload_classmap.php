@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AbsenSiswaSeeder' => $baseDir . '/database/seeds/AbsenSiswaSeeder.php',
     'AbsensiSeeder' => $baseDir . '/database/seeds/AbsensiSeeder.php',
     'App\\AbsensiModel' => $baseDir . '/app/AbsensiModel.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -21,6 +20,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\GuruController' => $baseDir . '/app/Http/Controllers/GuruController.php',
+    'App\\Http\\Controllers\\MapelController' => $baseDir . '/app/Http/Controllers/MapelController.php',
     'App\\Http\\Controllers\\SiswaController' => $baseDir . '/app/Http/Controllers/SiswaController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -31,6 +31,7 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Login' => $baseDir . '/app/Login.php',
+    'App\\Mapel' => $baseDir . '/app/Mapel.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

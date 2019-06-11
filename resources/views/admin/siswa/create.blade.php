@@ -20,11 +20,11 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" class="form-horizontal" method="post" action="/siswa/create">
+            <form class="form-horizontal" method="post" action="/siswa/create">
                @csrf
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputNIK" class="col-sm-2">NIK</label>
+                  <label for="inputNIK" class="col-sm-2">NIS</label>
 
                   <div class="col-sm-10">
                     <input name='nik' type="text" class="form-control" id="inputNIK" placeholder="No Induk Kependudukan">

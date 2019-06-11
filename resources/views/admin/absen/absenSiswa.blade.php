@@ -33,24 +33,23 @@
                 </tr>
                 </thead>
                 <tbody>
+                    @foreach($data as $row)
                 <tr>
-<<<<<<< HEAD
                     <td>{{ $row->id_absen}}</td>
                     <td>{{ $row->nm}}</td>
                     <td>{{ $row->mrd}}</td>
-                    <td>{{ $row->jnm}}</td>
-                    <td>{{ $row->pertemuanke}}</td>
-                    <td>{{ $row->status_hadir}}</td>
-=======
+                    <!-- <td>{{ $row->jnm}}</td>
+                    <td>{{ $row->mpm}}</td>
+                    <td>{{ $row->grn}}</td> -->
+                    <!-- <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td></td> -->
                     <td><input type="radio" name="gender" value="male"></td>
                     <td><input type="radio" name="gender" value="male"></td>
                     <td><input type="radio" name="gender" value="male"></td>
                     <td><input type="radio" name="gender" value="male"></td>
                     <td><input type="text" class="form-control" name="gender"></td>
->>>>>>> fd9c7714cd44e098c168bc7472034c12ab15c91f
+                    @endforeach
                 </tr>
                 </tbody>
              

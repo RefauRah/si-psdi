@@ -23,6 +23,7 @@ class CreateSiswaTable extends Migration
             $table->string('jk',20);
             $table->string('alamat',100);
             $table->string('no_telp',20);
+            // $table->string('id_kelas',10);
             $table->timestamps();
         });
     }

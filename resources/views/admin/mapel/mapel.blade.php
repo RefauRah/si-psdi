@@ -27,20 +27,26 @@
                     <th>NO</th>
                     <th>Kode</th>
                     <th>Nama</th>
-                    <th>Jam Pelajaran</th>
-                    <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
-               
+                <?php $nomer = 1; ?>
+
+                @foreach ($mapel as $row)
+                <tr>
+                    <td>{{$nomer}}</td>
+                    <td>{{ $row->kode}}</td>
+                    <td>{{ $row->nama}}</td>
+                    <?php $nomer++; ?>
+                </tr>
+
+                @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                     <th>NO</th>
                     <th>Kode</th>
                     <th>Nama</th>
-                    <th>Jam Pelajaran</th>
-                    <th>Option</th>
                 </tr>
                 </tfoot>
                 </table>

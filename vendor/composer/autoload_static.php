@@ -360,7 +360,6 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
     );
 
     public static $classMap = array (
-        'AbsenSiswaSeeder' => __DIR__ . '/../..' . '/database/seeds/AbsenSiswaSeeder.php',
         'AbsensiSeeder' => __DIR__ . '/../..' . '/database/seeds/AbsensiSeeder.php',
         'App\\AbsensiModel' => __DIR__ . '/../..' . '/app/AbsensiModel.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -375,6 +374,7 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\GuruController' => __DIR__ . '/../..' . '/app/Http/Controllers/GuruController.php',
+        'App\\Http\\Controllers\\MapelController' => __DIR__ . '/../..' . '/app/Http/Controllers/MapelController.php',
         'App\\Http\\Controllers\\SiswaController' => __DIR__ . '/../..' . '/app/Http/Controllers/SiswaController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -385,6 +385,7 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Login' => __DIR__ . '/../..' . '/app/Login.php',
+        'App\\Mapel' => __DIR__ . '/../..' . '/app/Mapel.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

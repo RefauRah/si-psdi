@@ -17,8 +17,10 @@ class CreateAbsensiTable extends Migration
             $table->bigIncrements('id_absen');
             $table->integer('id_siswa');
             $table->char('status_hadir',100);
-            $table->integer('pertemuanke');
-            $table->string('id_kegiatan',100);
+            $table->date('tgl_absen');
+            $table->string('id_kegiatan',20);
+            $table->string('mapel',50);
+            $table->string('id_guru',50);
             $table->timestamps();
         });
     }
