@@ -3,7 +3,7 @@
 <section class="content-header">
       <h1>
         Tabel
-        <small>tabel kelas</small>
+        <small>Absensi Siswa</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -14,49 +14,48 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Data Absensi Siswa PSDI</h3>
-                <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
-                    <i class="fa fa-plus"></i> Tambah
-                </a>
+                <h3 class="box-title">Absensi Tanggal : <input type="date" class="form-control" name="gender"></h3>
+                <h3 class="box-title">Mata Pelajaran : <input type="text" class="form-control"></h3>
             </div>
 <!-- /.box-header -->
             <div class="box-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>NO</th>
                     <th>NIS</th>
                     <th>Nama</th>
-                    <th>Kegiatan</th>
-                    <th>Pertemuan Ke</th>
-                    <th>Kehadiran</th>
+                    <th>Hadir</th>
+                    <th>Sakit</th>
+                    <th>Alfa</th>
+                    <th>Izin</th>
+                    <th>Keterangan</th>
                 </tr>
                 </thead>
                 <tbody>
-
-                @foreach ($data as $row)
                 <tr>
+<<<<<<< HEAD
                     <td>{{ $row->id_absen}}</td>
                     <td>{{ $row->nm}}</td>
                     <td>{{ $row->mrd}}</td>
                     <td>{{ $row->jnm}}</td>
                     <td>{{ $row->pertemuanke}}</td>
                     <td>{{ $row->status_hadir}}</td>
+=======
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" name="gender" value="male"></td>
+                    <td><input type="radio" name="gender" value="male"></td>
+                    <td><input type="radio" name="gender" value="male"></td>
+                    <td><input type="radio" name="gender" value="male"></td>
+                    <td><input type="text" class="form-control" name="gender"></td>
+>>>>>>> fd9c7714cd44e098c168bc7472034c12ab15c91f
                 </tr>
-                @endforeach
                 </tbody>
-                <tfoot>
-                <tr>
-                    
-                    <th>NO</th>
-                    <th>NIS</th>
-                    <th>Nama</th>
-                    <th>Kegiatan</th>
-                    <th>Pertemuan Ke</th>
-                    <th>Kehadiran</th>
-                </tr>
-                </tfoot>
+             
                 </table>
+                <button class="btn btn-success btn-sm pull-right">Submit</button>
             </div>
 <!-- /.box-body -->
         </div>
