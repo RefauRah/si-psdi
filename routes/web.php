@@ -69,7 +69,7 @@ Route::get('/mapel/create', 'MapelController@create');
 Route::post('/mapel/create', 'MapelController@store');
 
 Route::get('/absenguru', function () {
-    return view('/admin/absen/absenGuru');
+    return view('/admin/absensi/guru');
 });
 
 Route::get('/absensiswa','AbsensiController@index');

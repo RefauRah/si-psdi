@@ -14,7 +14,14 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Data Absensi Tanggal : <input type="date" class="form-control" name="gender"></h3>
+                <label>Tanggal:</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="date" class="form-control" style="width:14%">
+                    </div>
+                <!-- /.input group -->
             </div>
 <!-- /.box-header -->
             <div class="box-body">
@@ -36,11 +43,11 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><input type="radio" name="gender" value="male"></td>
-                    <td><input type="radio" name="gender" value="male"></td>
-                    <td><input type="radio" name="gender" value="male"></td>
-                    <td><input type="radio" name="gender" value="male"></td>
-                    <td><input type="text" class="form-control" name="gender"></td>
+                    <td><input type="radio" name=""></td>
+                    <td><input type="radio" name=""></td>
+                    <td><input type="radio" name=""></td>
+                    <td><input type="radio" name=""></td>
+                    <td><input type="text" class="form-control" name=""></td>
                 </tr>
                 </tbody>
              

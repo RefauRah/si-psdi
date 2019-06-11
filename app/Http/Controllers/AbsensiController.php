@@ -32,8 +32,8 @@ class AbsensiController extends Controller
     	}
 
     	// return view('admin/siswa/siswa',['absensi'=>$absensi]);
-    	return view('admin/absen/absenSiswa', compact('data'));
-    	return view ('admin.absen.absenSiswa', ['absensi=>$data']);
+    	return view('admin/absen/siswa', compact('data'));
+    	return view ('admin.absen.siswa', ['absensi=>$data']);
 
     	
     }
