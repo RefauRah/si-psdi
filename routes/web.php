@@ -22,13 +22,14 @@ Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 
 Route::get('/home', function () {
     return view('/admin/home');
-})->middleware('auth')->name('home');
+});
+//->middleware('auth')->name('home')
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
-// Route::get('/admin', function () {
-//     return view('/admin/admin/admin');
-// });
+Route::get('/admin', function () {
+    return view('/admin/admin/admin');
+});
 
 Route::get('/siswa','SiswaController@index');
 Route::get('/siswa/create', 'SiswaController@create');
@@ -72,7 +73,7 @@ Route::get('/mapel/create', function () {
 });
 
 Route::get('/absenguru', function () {
-    return view('/admin/absensi/absenGuru');
+    return view('/admin/absen/absenGuru');
 });
 
 Route::get('/absensiswa','AbsensiController@index');

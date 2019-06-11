@@ -3,7 +3,7 @@
 <section class="content-header">
       <h1>
         Tabel
-        <small>tabel kelas</small>
+        <small>Absensi Guru</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -14,36 +14,38 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Data Kelas PSDI</h3>
-                <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
-                    <i class="fa fa-plus"></i> Tambah
-                </a>
+                <h3 class="box-title">Data Absensi Tanggal : <input type="date" class="form-control" name="gender"></h3>
             </div>
 <!-- /.box-header -->
             <div class="box-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>NO</th>
-                    <th>Kode</th>
+                    <th>NIP</th>
                     <th>Nama</th>
-                    <th>Wali Kelas</th>
-                    <th>NO Ruangan</th>
+                    <th>Hadir</th>
+                    <th>Sakit</th>
+                    <th>Alfa</th>
+                    <th>Izin</th>
+                    <th>Keterangan</th>
                 </tr>
                 </thead>
                 <tbody>
-                
-                </tbody>
-                <tfoot>
                 <tr>
-                    <th>NO</th>
-                    <th>Kode</th>
-                    <th>Nama</th>
-                    <th>Wali Kelas</th>
-                    <th>NO Ruangan</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" name="gender" value="male"></td>
+                    <td><input type="radio" name="gender" value="male"></td>
+                    <td><input type="radio" name="gender" value="male"></td>
+                    <td><input type="radio" name="gender" value="male"></td>
+                    <td><input type="text" class="form-control" name="gender"></td>
                 </tr>
-                </tfoot>
+                </tbody>
+             
                 </table>
+                <button class="btn btn-success btn-sm pull-right">Submit</button>
             </div>
 <!-- /.box-body -->
         </div>

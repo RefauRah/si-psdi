@@ -121,9 +121,9 @@
             </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="{{url('/absensiswa')}}"><i class="fa fa-circle-o">Absen Total</i></a></li>
-                <li><a href="#"><i class="fa fa-circle-o">Absen Pengajian</i></a></li>
-                <li><a href="#"><i class="fa fa-circle-o">Absen Sekolah</i></a></li>
+                <li><a href="{{url('/absensiswa')}}"><i class="fa fa-circle-o"></i>Absen Total</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Absen Pengajian</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Absen Sekolah</a></li>
 
             </ul>
             </li>
