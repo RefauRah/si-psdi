@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAbsensiTable extends Migration
+class CreateJnsKegiatanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateAbsensiTable extends Migration
      */
     public function up()
     {
-        Schema::create('absensi', function (Blueprint $table) {
-            $table->bigIncrements('id_absen');
-            $table->integer('id_siswa');
-            $table->char('status_hadir',100);
-            $table->integer('pertemuanke');
-            $table->string('id_kegiatan',100);
+        Schema::create('jns_kegiatan', function (Blueprint $table) {
+            $table->bigIncrements('id_kegiatan');
+            $table->string('nama',50);  
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateAbsensiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('absensi');
+        Schema::dropIfExists('jns_kegiatan');
     }
 }

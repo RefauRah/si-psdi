@@ -39,7 +39,7 @@
                     <td>{{ $row->id_absen}}</td>
                     <td>{{ $row->nm}}</td>
                     <td>{{ $row->mrd}}</td>
-                    <td>{{ $row->jns_kegiatan}}</td>
+                    <td>{{ $row->jnm}}</td>
                     <td>{{ $row->pertemuanke}}</td>
                     <td>{{ $row->status_hadir}}</td>
                 </tr>

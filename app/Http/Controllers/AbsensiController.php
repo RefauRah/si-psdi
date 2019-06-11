@@ -15,14 +15,16 @@ class AbsensiController extends Controller
 
 	   	$data= DB::table('absensi')
     	->join('siswa as murid','absensi.id_siswa','=','murid.id_siswa')
-    	->select('absensi.id_absen','murid.nama as mrd','murid.nik as nm','absensi.pertemuanke','absensi.status_hadir','absensi.jns_kegiatan')->get();
+    	->join('jns_kegiatan as jns','absensi.id_kegiatan','=','jns.id_kegiatan')
+    	->select('absensi.id_absen','murid.nama as mrd','murid.nik as nm','jns.nama as jnm','absensi.pertemuanke','absensi.status_hadir','absensi.id_kegiatan')->get();
 
     	$filterKeyword = $request->get('keyword');
 
     	if($filterKeyword){
     		$data= DB::table('absensi')
     		->join('siswa as murid','absensi.id_siswa','=','murid.id_siswa')
-    		->select('absensi.id_absen','murid.nama as mrd','murid.nik as nm','absensi.pertemuanke','absensi.status_hadir','absensi.jns_kegiatan')->where('absensi.pertemuanke', 'LIKE', "%filterKeyword%")->get();
+    		->join('jns_kegiatan as jns','absensi.id_kegiatan','=','jns.id_kegiatan')
+    		->select('absensi.id_absen','murid.nama as mrd','murid.nik as nm','jns.nama as jnm','absensi.pertemuanke','absensi.status_hadir','absensi.id_kegiatan')->where('absensi.pertemuanke', 'LIKE', "%filterKeyword%")->get();
     	}
 
     	// return view('admin/siswa/siswa',['absensi'=>$absensi]);
