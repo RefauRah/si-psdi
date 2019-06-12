@@ -77,5 +77,11 @@ Route::get('/absensiswasekolah', function () {
 Route::get('/absensiswapengajian', function () {
     return view('/admin/absensi/siswaPengajian');
 });
+Route::get('/laporansiswasekolah', function () {
+    return view('/admin/absensi/laporanSiswaSekolah');
+});
+Route::get('/laporansiswapengajian', function () {
+    return view('/admin/absensi/laporanSiswaPengajian');
+});
 
 Route::get('/absensiswa','AbsensiController@index');

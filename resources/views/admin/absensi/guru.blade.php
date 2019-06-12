@@ -7,7 +7,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Kelas</li>
+        <li class="active">Absensi</li>
       </ol>
 </section>
 <section class="content">
