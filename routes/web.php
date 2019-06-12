@@ -71,5 +71,11 @@ Route::post('/mapel/create', 'MapelController@store');
 Route::get('/absenguru', function () {
     return view('/admin/absensi/guru');
 });
+Route::get('/absensiswasekolah', function () {
+    return view('/admin/absensi/siswaSekolah');
+});
+Route::get('/absensiswapengajian', function () {
+    return view('/admin/absensi/siswaPengajian');
+});
 
 Route::get('/absensiswa','AbsensiController@index');

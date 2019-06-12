@@ -27,6 +27,7 @@
                     <th>NO</th>
                     <th>NIS</th>
                     <th>Nama</th>
+                    <th>Kelas</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
