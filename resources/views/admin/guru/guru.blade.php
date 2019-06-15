@@ -28,12 +28,18 @@
                 <thead>
                 <tr>
                     <th>NO</th>
-                    <th>NIK</th>
+                    <th>NIP</th>
                     <th>Nama</th>
                     <th>Alamat</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
+                    <th>Tanggal Masuk</th>
+                    <th>Pendidikan Terakhir</th>
+                    <th>Jabatan</th>
+                    <th>Boarding/PP</th>
+                    <th>Status Pernikahan</th>
+                    <th>Jumlah Keluarga</th>
                     <th>Option</th>
                 </tr>
                 </thead>
@@ -65,6 +71,12 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
+                    <th>Tanggal Masuk</th>
+                    <th>Pendidikan Terakhir</th>
+                    <th>Jabatan</th>
+                    <th>Boarding/PP</th>
+                    <th>Status Pernikahan</th>
+                    <th>Jumlah Keluarga</th>
                     <th>Option</th>
                 </tr>
                 </tfoot>
