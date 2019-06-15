@@ -22,8 +22,7 @@ Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 
 Route::get('/home', function () {
     return view('/admin/home');
-});
-//->middleware('auth')->name('home')
+})->middleware('auth')->name('home');
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
@@ -68,9 +67,14 @@ Route::get('/mapel', 'MapelController@index');
 Route::get('/mapel/create', 'MapelController@create');
 Route::post('/mapel/create', 'MapelController@store');
 
-Route::get('/absenguru', function () {
-    return view('/admin/absensi/guru');
-});
+// Route::get('/absenguru', function () {
+//     return view('/admin/absensi/guru');
+// });
+
+Route::get('/absenguru', 'AbsensiGuruController@index');
+//Route::get('/guru/{id}', 'GuruController@show');
+Route::post('/absenguru', 'AbsensiGuruController@store');
+
 Route::get('/absensiswasekolah', function () {
     return view('/admin/absensi/siswaSekolah');
 });

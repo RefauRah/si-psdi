@@ -23,6 +23,7 @@ class CreateGurusTable extends Migration
             $table->date('tgl_lahir');
             $table->string('no_telp',20);
         });
+
     }
 
     /**
