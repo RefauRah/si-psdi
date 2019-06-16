@@ -43,7 +43,7 @@
                 <tr>
                     <td>{{$nomer}}</td>
                     <?php $getid[$nomer] = $row->id; ?>
-                    <td>{{$row->nik}}</td>
+                    <td>{{$row->nip}}</td>
                     <td>{{$row->nama}}</td>
                     <td><input type = "radio" name = "id_guru" value = "{{$getid[$nomer]}}" required/></td>
                     <?php $nomer++; ?>

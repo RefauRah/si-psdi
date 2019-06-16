@@ -50,12 +50,18 @@
                 @foreach ($guru as $row)
                 <tr>
                     <td>{{$nomer}}</td>
-                    <td>{{ $row->nik}}</td>
+                    <td>{{ $row->nip}}</td>
                     <td>{{ $row->nama}}</td>
                     <td>{{ $row->alamat}}</td>
                     <td>{{ $row->tempat_lahir}}</td>
                     <td>{{ $row->tgl_lahir}}</td>
                     <td>{{ $row->no_telp}}</td>
+                    <td>{{ $row->tgl_masuk}}</td>
+                    <td>{{ $row->pend_terakhir}}</td>
+                    <td>{{ $row->jabatan}}</td>
+                    <td>{{ $row->boarding}}</td>
+                    <td>{{ $row->status_nikah}}</td>
+                    <td>{{ $row->jumlah_kel}}</td>
                     <?php $nomer++; ?>
                 </tr>
 
@@ -65,7 +71,7 @@
                 <tfoot>
                 <tr>
                 <th>NO</th>
-                    <th>NIK</th>
+                    <th>NIP</th>
                     <th>Nama</th>
                     <th>Alamat</th>
                     <th>Tempat Lahir</th>

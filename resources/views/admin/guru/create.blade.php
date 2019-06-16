@@ -27,7 +27,7 @@
                   <label for="inputNIP" class="col-sm-2">NIP</label>
 
                   <div class="col-sm-10">
-                    <input name="nik" type="text" class="form-control" id="inputNIP" placeholder="No Induk Pegawai">
+                    <input name="nip" type="text" class="form-control" id="inputNIP" placeholder="No Induk Pegawai" ">
                   </div>
                 </div>
                 <div class="form-group">
@@ -70,6 +70,49 @@
 
                   <div class="col-sm-10">
                     <input name="no_telp" type="text" class="form-control" id="inputTlp">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputTanggalMasuk" class="col-sm-2">Tanggal Masuk</label>
+
+                  <div class="col-sm-10">
+                    <input name="tgl_masuk" type="date" class="form-control" id="inputTanggalMasuk">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPend" class="col-sm-2">Pendidikan Terakhir</label>
+
+                  <div class="col-sm-10">
+                    <input name="pend_terakhir" type="text" class="form-control" id="inputPend">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputJabatan" class="col-sm-2">Jabatan</label>
+
+                  <div class="col-sm-10">
+                    <input name="jabatan" type="text" class="form-control" id="inputJabatan">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputBoarding" class="col-sm-2">Boarding/PP</label>
+
+                  <div class="col-sm-10">
+                    <input name="boarding" type="text" class="form-control" id="inputBoarding">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputNikah" class="col-sm-2">Status Pernikahan</label>
+
+                  <div class="col-sm-10">
+                    <input name="status_nikah" type="radio" id="inputNikah" value="Sudah Menikah">Sudah Menikah
+                    <input name="status_nikah" type="radio" id="inputNikah" value="Belum Menikah">Belum Menikah
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputKel" class="col-sm-2">Jumlah Keluarga</label>
+
+                  <div class="col-sm-10">
+                    <input name="jumlah_kel" type="text" class="form-control" id="inputKel">
                   </div>
                 </div>
               </div>

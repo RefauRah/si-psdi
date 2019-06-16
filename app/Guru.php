@@ -10,14 +10,18 @@ class Guru extends Model
     public $table = 'guru';
 
         protected $fillable = [
-    	'nik',
+    	'nip',
     	'nama',
     	'email',
     	'alamat',
     	'tempat_lahir',
     	'tgl_lahir',
-    	'no_telp'
+    	'no_telp',
+    	'tgl_masuk',
+        'pend_terakhir',
+        'jabatan',
+        'boarding',
+        'status_nikah',
+        'jumlah_kel'
     ];
-
-    public $timestamps = false;
 }
