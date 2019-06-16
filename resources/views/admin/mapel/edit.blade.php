@@ -3,12 +3,12 @@
 <section class="content-header">
       <h1>
         Tambah
-        <small>data kelas</small>
+        <small>data mata pelajaran</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="">Kelas</li>
-        <li class="active">Create</li>
+        <li class="">Mata Pelajaran</li>
+        <li class="active">Edit</li>
       </ol>
 </section>
 <section class="content">
@@ -16,25 +16,25 @@
      <!-- Horizontal Form -->
      <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Form Kelas</h3>
+              <h3 class="box-title">Form Mata Pelajaran</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="post" action="/kelas/create">
+            <form class="form-horizontal" method="post" action="/mapel/create">
               @csrf
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputNIK" class="col-sm-2">Kode Kelas</label>
+                  <label for="inputKode" class="col-sm-2">Kode Mata Pelajaran</label>
 
                   <div class="col-sm-10">
-                    <input name="kode_kelas" type="text" class="form-control" id="inputNIK" placeholder="Kode Kelas">
+                    <input name="kode" type="text" class="form-control" id="inputNIK" placeholder="Kode Mata Pelajaran">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputNama" class="col-sm-2">Nama Kelas</label>
+                  <label for="inputNama" class="col-sm-2">Nama Mata Pelajaran</label>
 
                   <div class="col-sm-10">
-                    <input name="nama" type="text" class="form-control" id="inputNama" placeholder="Nama Kelas">
+                    <input name="nama" type="text" class="form-control" id="inputNama" placeholder="Nama Mata Pelajaran">
                   </div>
                 </div>
               <!-- /.box-body -->

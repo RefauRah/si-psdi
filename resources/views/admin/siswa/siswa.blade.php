@@ -31,7 +31,11 @@
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
+
                     <th>Tindakan</th>
+
+                    <th>#</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -41,6 +45,7 @@
                 @foreach ($siswa as $siswa)
                 <tr>
                     <td>{{$nomer}}</td>
+
                     <td><a href="{{url('/siswa/'.$siswa->nik)}}">{{ $siswa->nik}}</a></td>
                     <td>{{ $siswa->nama}}</a></td>
                     <td>{{ $siswa->kelas}}</td>
@@ -51,7 +56,7 @@
                     <td>
                         <a href="{{url('/siswa/hapus')}}" class="btn btn-sm btn-danger">Hapus</a>
                         <a href="{{url('/siswa/edit')}}" class="btn btn-sm btn-primary">Edit</a> 
-                    </td>
+
                     <?php $nomer++; ?>
                 </tr>
                 @endforeach
@@ -67,7 +72,10 @@
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
+
                     <th>Tindakan</th>
+
+                    <th>#</th>
                 </tr>
                 </tfoot>
                 </table>

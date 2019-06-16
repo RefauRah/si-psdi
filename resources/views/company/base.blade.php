@@ -44,7 +44,7 @@
                 <div class="banner-info-w3layouts text-center">
                     <h3>Selamat Datang di PSDI</h3>
                     <div class="read-more">
-                        <a href="#" class="read-more scroll">Home </a> </div>
+                        <a href="{{url('/home')}}" class="read-more scroll">Home </a> </div>
                 </div>
                 
             </div>

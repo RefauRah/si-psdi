@@ -22,8 +22,10 @@ Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 
 Route::get('/home', function () {
     return view('/admin/home');
+
 });
 /*->middleware('auth')->name('home')*/
+
 
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
@@ -32,21 +34,25 @@ Route::get('/admin', function () {
     return view('/admin/admin/admin');
 });
 
+Route::get('/admin/create', function () {
+    return view('/admin/admin/create');
+});
+
 Route::get('/siswa','SiswaController@index');
 Route::get('/siswa/create', 'SiswaController@create');
 Route::post('/siswa/create', 'SiswaController@store');
 Route::get ('/siswa/{siswa}', 'SiswaController@show');
 
-// Route::get('/siswa', function () {
-//     return view('/admin/siswa/siswa');
-// });
+Route::get('/siswa/show', function () {
+    return view('/admin/siswa/show');
+});
 
 /*Route::get('/guru', function () {
     return view('/admin/guru/guru');
-});
-Route::get('/guru/create', function () {
-    return view('/admin/guru/create');
 });*/
+Route::get('/guru/show', function () {
+    return view('/admin/guru/show');
+});
 
 Route::get('/guru', 'GuruController@index');
 //Route::get('/guru/{id}', 'GuruController@show');
@@ -64,15 +70,23 @@ Route::get('/walikelas', function () {
 Route::get('/walikelas/create', function () {
     return view('/admin/wali_kelas/create');
 });
+Route::get('/walikelas/show', function () {
+    return view('/admin/wali_kelas/show');
+});
 
 Route::get('/mapel', 'MapelController@index');
 
 Route::get('/mapel/create', 'MapelController@create');
 Route::post('/mapel/create', 'MapelController@store');
 
-Route::get('/absenguru', function () {
-    return view('/admin/absensi/guru');
-});
+// Route::get('/absenguru', function () {
+//     return view('/admin/absensi/guru');
+// });
+
+Route::get('/absenguru', 'AbsensiGuruController@index');
+//Route::get('/guru/{id}', 'GuruController@show');
+Route::post('/absenguru', 'AbsensiGuruController@store');
+
 Route::get('/absensiswasekolah', function () {
     return view('/admin/absensi/siswaSekolah');
 });

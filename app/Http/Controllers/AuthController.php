@@ -19,8 +19,8 @@ class AuthController extends Controller
     			return redirect()->back();
 
     	}
-
-    	return redirect()->route('home');
+        
+        return redirect()->route('home');
     }
 
     public function getRegister()

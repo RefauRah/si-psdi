@@ -23,10 +23,10 @@
             <form class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputNIK" class="col-sm-2">NIK</label>
+                  <label for="inputNIP" class="col-sm-2">NIP</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputNIK" placeholder="No Induk Kependudukan">
+                    <input type="text" class="form-control" id="inputNIP" placeholder="No Induk Pegawai">
                   </div>
                 </div>
                 <div class="form-group">

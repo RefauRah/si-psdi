@@ -28,13 +28,13 @@
                 <thead>
                 <tr>
                     <th>NO</th>
-                    <th>NIK</th>
+                    <th>NIP</th>
                     <th>Nama</th>
                     <th>Alamat</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>Option</th>
+                    <th>#</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -44,12 +44,13 @@
                 @foreach ($guru as $row)
                 <tr>
                     <td>{{$nomer}}</td>
-                    <td>{{ $row->nik}}</td>
+                    <td>{{ $row->nip}}</td>
                     <td>{{ $row->nama}}</td>
                     <td>{{ $row->alamat}}</td>
                     <td>{{ $row->tempat_lahir}}</td>
                     <td>{{ $row->tgl_lahir}}</td>
                     <td>{{ $row->no_telp}}</td>
+                    <td><a href="#" class="btn btn-sm btn-primary">Lihat Profil</a></td>
                     <?php $nomer++; ?>
                 </tr>
 
@@ -59,13 +60,13 @@
                 <tfoot>
                 <tr>
                 <th>NO</th>
-                    <th>NIK</th>
+                    <th>NIP</th>
                     <th>Nama</th>
                     <th>Alamat</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>Option</th>
+                    <th>#</th>
                 </tr>
                 </tfoot>
                 </table>

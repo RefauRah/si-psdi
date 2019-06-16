@@ -361,11 +361,13 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
 
     public static $classMap = array (
         'AbsensiSeeder' => __DIR__ . '/../..' . '/database/seeds/AbsensiSeeder.php',
+        'App\\AbsensiGuru' => __DIR__ . '/../..' . '/app/AbsensiGuru.php',
         'App\\AbsensiModel' => __DIR__ . '/../..' . '/app/AbsensiModel.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Guru' => __DIR__ . '/../..' . '/app/Guru.php',
         'App\\Http\\Controllers\\AbsensiController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiController.php',
+        'App\\Http\\Controllers\\AbsensiGuruController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiGuruController.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
