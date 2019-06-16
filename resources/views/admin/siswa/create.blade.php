@@ -27,7 +27,7 @@
                   <label for="inputNIK" class="col-sm-2">NIS</label>
 
                   <div class="col-sm-10">
-                    <input name='nik' type="text" class="form-control" id="inputNIK" placeholder="No Induk Kependudukan">
+                    <input name='nik' type="text" class="form-control" id="inputNIK" placeholder="No Induk Siswa">
                   </div>
                 </div>
                 <div class="form-group">

@@ -34,13 +34,7 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>Tanggal Masuk</th>
-                    <th>Pendidikan Terakhir</th>
-                    <th>Jabatan</th>
-                    <th>Boarding/PP</th>
-                    <th>Status Pernikahan</th>
-                    <th>Jumlah Keluarga</th>
-                    <th>Option</th>
+                    <th>#</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,12 +50,7 @@
                     <td>{{ $row->tempat_lahir}}</td>
                     <td>{{ $row->tgl_lahir}}</td>
                     <td>{{ $row->no_telp}}</td>
-                    <td>{{ $row->tgl_masuk}}</td>
-                    <td>{{ $row->pend_terakhir}}</td>
-                    <td>{{ $row->jabatan}}</td>
-                    <td>{{ $row->boarding}}</td>
-                    <td>{{ $row->status_nikah}}</td>
-                    <td>{{ $row->jumlah_kel}}</td>
+                    <td><a href="#" class="btn btn-sm btn-primary">Lihat Profil</a></td>
                     <?php $nomer++; ?>
                 </tr>
 
@@ -77,13 +66,7 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>Tanggal Masuk</th>
-                    <th>Pendidikan Terakhir</th>
-                    <th>Jabatan</th>
-                    <th>Boarding/PP</th>
-                    <th>Status Pernikahan</th>
-                    <th>Jumlah Keluarga</th>
-                    <th>Option</th>
+                    <th>#</th>
                 </tr>
                 </tfoot>
                 </table>

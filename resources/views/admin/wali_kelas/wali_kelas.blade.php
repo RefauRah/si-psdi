@@ -30,7 +30,7 @@
                     <th>Alamat</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
-                    <th>NO Tlp</th>
+                    <th>No Tlp</th>
                     <th>Option</th>
                 </tr>
                 </thead>
@@ -39,7 +39,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                    <th>NO</th>
+                    <th>No</th>
                     <th>NIK</th>
                     <th>Nama</th>
                     <th>Alamat</th>

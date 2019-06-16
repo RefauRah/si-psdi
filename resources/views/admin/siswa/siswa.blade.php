@@ -32,6 +32,7 @@
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
+                    <th>#</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,7 @@
                     <td>{{ $row->tgl_lahir}}</td>
                     <td>{{ $row->jk}}</td>
                     <td>{{ $row->alamat}}</td>
+                    <td><a href="#" class="btn btn-sm btn-primary">Lihat Profil</a></td>
                     <?php $nomer++; ?>
                 </tr>
                 @endforeach
@@ -62,6 +64,7 @@
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
+                    <th>#</th>
                 </tr>
                 </tfoot>
                 </table>
