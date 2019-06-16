@@ -15,7 +15,7 @@ class CreateSiswaTable extends Migration
     {
         Schema::create('siswa', function (Blueprint $table) {
             $table->bigIncrements('id_siswa');
-            $table->integer('nik');
+            $table->string('nik',100);
             $table->string('nama',100);
             $table->string('email',100);
             $table->date('tgl_lahir');

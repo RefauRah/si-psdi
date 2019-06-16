@@ -23,9 +23,7 @@ Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 Route::get('/home', function () {
     return view('/admin/home');
 
-});
-/*->middleware('auth')->name('home')*/
-
+})->middleware('auth')->name('home');
 
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');

@@ -38,10 +38,11 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputNama" class="col-sm-2">Jenis Kelamin</label>
+                  <label for="jk" class="col-sm-2">Jenis Kelamin</label>
 
                   <div class="col-sm-10">
-                    <input name='jk'type="text" class="form-control" id="inputJk" placeholder="Jenis Kelamin">
+                    <input name="jk" type="radio" id="jk" value="Laki-Laki">Laki-Laki
+                    <input name="jk" type="radio" id="jk" value="Perempuan">Perempuan
                   </div>
                 </div>
                 <div class="form-group">
