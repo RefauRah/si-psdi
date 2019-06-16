@@ -56,6 +56,7 @@
 
     <!-- Main content -->
         @yield('content')
+        @yield('contentprofile')
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

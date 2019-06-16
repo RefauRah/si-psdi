@@ -23,7 +23,8 @@ Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 Route::get('/home', function () {
     return view('/admin/home');
 });
-//->middleware('auth')->name('home')
+/*->middleware('auth')->name('home')*/
+
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
@@ -34,6 +35,7 @@ Route::get('/admin', function () {
 Route::get('/siswa','SiswaController@index');
 Route::get('/siswa/create', 'SiswaController@create');
 Route::post('/siswa/create', 'SiswaController@store');
+Route::get ('/siswa/{siswa}', 'SiswaController@show');
 
 // Route::get('/siswa', function () {
 //     return view('/admin/siswa/siswa');

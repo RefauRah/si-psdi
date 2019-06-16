@@ -1,14 +1,14 @@
 @extends('admin.template.base')
 @section('content')
 <section class="content-header">
-      <h1>
-        Tabel
-        <small>tabel siswa</small>
-      </h1>
-      <ol class="breadcrumb">
+    <h1>
+    Tabel
+    <small>tabel siswa</small>
+    </h1>
+    <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Siswa</li>
-      </ol>
+    </ol>
 </section>
 <section class="content">
     <div class="col-xs-12">
@@ -18,7 +18,6 @@
                 <a href="{{url('/siswa/create')}}" class="btn btn-sm btn-success pull-right">
                     <i class="fa fa-plus"></i> Tambah
                 </a>
-            </div>
 <!-- /.box-header -->
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -32,21 +31,27 @@
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
+                    <th>Tindakan</th>
                 </tr>
                 </thead>
                 <tbody>
 
                 <?php $nomer = 1; ?>
                 
-                @foreach ($siswa as $row)
+                @foreach ($siswa as $siswa)
                 <tr>
                     <td>{{$nomer}}</td>
-                    <td>{{ $row->nik}}</td>
-                    <td>{{ $row->nama}}</td>
-                    <td>{{ $row->tmpt_lahir}}</td>
-                    <td>{{ $row->tgl_lahir}}</td>
-                    <td>{{ $row->jk}}</td>
-                    <td>{{ $row->alamat}}</td>
+                    <td><a href="{{url('/siswa/'.$siswa->nik)}}">{{ $siswa->nik}}</a></td>
+                    <td>{{ $siswa->nama}}</a></td>
+                    <td>{{ $siswa->kelas}}</td>
+                    <td>{{ $siswa->tmpt_lahir}}</td>
+                    <td>{{ $siswa->tgl_lahir}}</td>
+                    <td>{{ $siswa->jk}}</td>
+                    <td>{{ $siswa->alamat}}</td>
+                    <td>
+                        <a href="{{url('/siswa/hapus')}}" class="btn btn-sm btn-danger">Hapus</a>
+                        <a href="{{url('/siswa/edit')}}" class="btn btn-sm btn-primary">Edit</a> 
+                    </td>
                     <?php $nomer++; ?>
                 </tr>
                 @endforeach
@@ -62,6 +67,7 @@
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
+                    <th>Tindakan</th>
                 </tr>
                 </tfoot>
                 </table>
