@@ -1,150 +1,157 @@
-<!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
-<!-- sidebar: style can be found in sidebar.less -->
-<section class="sidebar">
-    <!-- Sidebar user panel -->
-    <div class="user-panel">
-    <div class="pull-left image">
-        <img src="{{url('/assets/admin/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-    </div>
-    <div class="pull-left info">
-        <p>Admin</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-    </div>
-    </div>
-    <!-- search form -->
-    <form action="#" method="get" class="sidebar-form">
-    <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search...">
-        <span class="input-group-btn">
-            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-            </button>
-            </span>
-    </div>
-    </form>
-    <!-- /.search form -->
-    <!-- sidebar menu: : style can be found in sidebar.less -->
-    <ul class="sidebar-menu" data-widget="tree">
-    <li class="bg-black">
-        <a href="{{url('/home')}}">
-        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-        </a>
-    </li>
-    <li class="header">DATA CIVITAS AKADEMIKA</li>
-    <li class="">
-        <a href="{{url('/admin')}}">
-            <i class="fa fa-user"></i>
-            <span>Admin</span>
-            <span class="">
-                <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
-            </span>
-        </a>
-        
-    </li>
-    <li class="">
-        <a href="{{url('/guru')}}">
-        <i class="fa fa-users"></i>
-        <span>Guru</span>
-        <span class="">
-            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
-        </span>
-        </a>
-        
-    </li>
-    <li class="">
-        <a href="{{url('/siswa')}}">
-        <i class="fa fa-users"></i>
-        <span>Siswa</span>
-        <span class="">
-            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
-        </span>
-        </a>
-        
-    </li>
-    <li class="">
-        <a href="{{url('/kelas')}}">
-        <i class="fa fa-sitemap"></i>
-        <span>Kelas</span>
-        <span class="">
-            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
-        </span>
-        </a>
-        
-    </li>
-    <li class="">
-        <a href="{{url('/walikelas')}}">
-        <i class="fa fa-user"></i>
-        <span>Wali Kelas</span>
-        <span class="">
-            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
-        </span>
-        </a>
-        
-    </li>
-    <li class="">
-        <a href="{{url('/mapel')}}">
-        <i class="fa fa-book"></i>
-        <span>Mata Pelajaran</span>
-        <span class="">
-            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
-        </span>
-        </a>
-        
-    </li>
-    <li class="">
+<aside class="menu-sidebar2">
+    <div class="logo">
         <a href="#">
-        <i class="fa fa-book"></i>
-        <span>Jam Pelajaran</span>
-        <span class="">
-            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
-        </span>
+            <img src="{{url('/assets/admin2/images/icon/logo-white.png')}}" alt="Cool Admin" />
         </a>
-    </li>
-    <li class="header">DATA ABSENSI</li>
-    <li class="treeview">
-        <a href="#">
-        <i class="fa fa-calendar"></i>
-        <span>Absensi</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-        </a>
-        <ul class="treeview-menu">
-        <li><a href="{{url('/absenguru')}}"><i class="fa fa-circle-o"></i> Guru</a></li>
-        <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li>
-        <li class="treeview">
-            <a href="#">
-            <i class="fa fa-users"></i>
-            <span>Siswa</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angel-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="{{url('/absensiswa')}}"><i class="fa fa-circle-o"></i>Absen Total</a></li>
-                <li><a href="/absensiswapengajian"><i class="fa fa-circle-o"></i>Absen Pengajian</a></li>
-                <li><a href="/absensiswasekolah"><i class="fa fa-circle-o"></i>Absen Sekolah</a></li>
-
+    </div>
+    <div class="menu-sidebar2__content js-scrollbar1">
+        <div class="account2">
+            <div class="image img-cir img-120">
+                <img src="{{url('/assets/admin2/images/icon/avatar-big-01.jpg')}}" alt="John Doe" />
+            </div>
+            <h4 class="name">john doe</h4>
+            <a href="#">Sign out</a>
+        </div>
+        <nav class="navbar-sidebar2">
+            <ul class="list-unstyled navbar__list">
+                <li class="active has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard 1</a>
+                        </li>
+                        <li>
+                            <a href="index2.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard 2</a>
+                        </li>
+                        <li>
+                            <a href="index3.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
+                        </li>
+                        <li>
+                            <a href="index4.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="inbox.html">
+                        <i class="fas fa-chart-bar"></i>Inbox</a>
+                    <span class="inbox-num">3</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-basket"></i>eCommerce</a>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-trophy"></i>Features
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Pages
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="login.html">
+                                <i class="fas fa-sign-in-alt"></i>Login</a>
+                        </li>
+                        <li>
+                            <a href="register.html">
+                                <i class="fas fa-user"></i>Register</a>
+                        </li>
+                        <li>
+                            <a href="forget-pass.html">
+                                <i class="fas fa-unlock-alt"></i>Forget Password</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-desktop"></i>UI Elements
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="button.html">
+                                <i class="fab fa-flickr"></i>Button</a>
+                        </li>
+                        <li>
+                            <a href="badge.html">
+                                <i class="fas fa-comment-alt"></i>Badges</a>
+                        </li>
+                        <li>
+                            <a href="tab.html">
+                                <i class="far fa-window-maximize"></i>Tabs</a>
+                        </li>
+                        <li>
+                            <a href="card.html">
+                                <i class="far fa-id-card"></i>Cards</a>
+                        </li>
+                        <li>
+                            <a href="alert.html">
+                                <i class="far fa-bell"></i>Alerts</a>
+                        </li>
+                        <li>
+                            <a href="progress-bar.html">
+                                <i class="fas fa-tasks"></i>Progress Bars</a>
+                        </li>
+                        <li>
+                            <a href="modal.html">
+                                <i class="far fa-window-restore"></i>Modals</a>
+                        </li>
+                        <li>
+                            <a href="switch.html">
+                                <i class="fas fa-toggle-on"></i>Switchs</a>
+                        </li>
+                        <li>
+                            <a href="grid.html">
+                                <i class="fas fa-th-large"></i>Grids</a>
+                        </li>
+                        <li>
+                            <a href="fontawesome.html">
+                                <i class="fab fa-font-awesome"></i>FontAwesome</a>
+                        </li>
+                        <li>
+                            <a href="typo.html">
+                                <i class="fas fa-font"></i>Typography</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-            </li>
-        </ul>
-    </li>
-    <li class="treeview">
-        <a href="#">
-        <i class="fa fa-print"></i>
-        <span>Laporan Absensi</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-        </a>
-        <ul class="treeview-menu">
-        <li><a href="#"><i class="fa fa-circle-o"></i> Guru</a></li>
-        <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li>
-        <li><a href="/laporansiswasekolah"><i class="fa fa-circle-o"></i> Siswa Sekolah</a></li>
-        <li><a href="/laporansiswapengajian"><i class="fa fa-circle-o"></i> Siswa Pengajian</a></li>
-        </ul>
-    </li>
-    </ul>
-</section>
-<!-- /.sidebar -->
+        </nav>
+    </div>
 </aside>
