@@ -35,8 +35,6 @@
 
                     <th>Tindakan</th>
 
-                    <th>#</th>
-
                 </tr>
                 </thead>
                 <tbody>
@@ -75,8 +73,6 @@
                     <th>Alamat</th>
 
                     <th>Tindakan</th>
-
-                    <th>#</th>
                 </tr>
                 </tfoot>
                 </table>

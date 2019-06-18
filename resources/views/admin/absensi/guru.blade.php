@@ -27,7 +27,7 @@
             </div>
 <!-- /.box-header -->
             <div class="box-body">
-                <table class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>NO</th>
@@ -36,21 +36,32 @@
                     <th>Pilih</th>
                 </tr>
                 </thead>
+                
                 <tbody>
                 <?php $nomer = 1; ?>
                 <?php $getid = array(); ?>
                 @foreach ($guru as $row)
                 <tr>
+                <?php $getid[$nomer] = $row->id; ?>
                     <td>{{$nomer}}</td>
-                    <?php $getid[$nomer] = $row->id; ?>
                     <td>{{$row->nip}}</td>
                     <td>{{$row->nama}}</td>
                     <td><input type = "radio" name = "id_guru" value = "{{$getid[$nomer]}}" required/></td>
-                    <?php $nomer++; ?>
+                <?php $nomer++; ?>
                 </tr>
                 @endforeach
                 </tbody>
+                <tfoot>
+                <tr>
+                    <th>NO</th>
+                    <th>NIP</th>
+                    <th>Nama</th>
+                    <th>Pilih</th>
+                </tr>
+                </tfoot>
+
                 </table>
+                <br>
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>Hadir</th>
