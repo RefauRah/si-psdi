@@ -11,7 +11,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard 2</title>
+    <title>Dashboard</title>
 
     <!-- Fontfaces CSS-->
     <link href="{{url('/assets/admin2/css/font-face.css')}}" rel="stylesheet" media="all">
