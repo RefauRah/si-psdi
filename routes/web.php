@@ -48,12 +48,15 @@ Route::get('/siswa/show', function () {
 /*Route::get('/guru', function () {
     return view('/admin/guru/guru');
 });*/
-Route::get('/guru/show', function () {
-    return view('/admin/guru/show');
-});
+// Route::get('/guru/show', function () {
+//     return view('/admin/guru/show');
+// });
 
 Route::get('/guru', 'GuruController@index');
-//Route::get('/guru/{id}', 'GuruController@show');
+Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru');
+// Route::get('guru/show/{id}',
+//         ['as'=> 'showGuru', 'uses'=>'GuruController@show']
+// );
 Route::get('/guru/create', 'GuruController@create');
 Route::post('/guru/create', 'GuruController@store');
  

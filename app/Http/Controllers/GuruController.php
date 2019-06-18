@@ -15,10 +15,10 @@ class GuruController extends Controller
         return view('admin/guru/guru', ['guru' => $guru]);
     }
     
-    /*public function show(Guru $id)
+    public function show(Guru $id)
     {
-        return view('guru.show', ['guru' => $id]);
-    }*/
+        return view('admin.guru.show', ['guru' => $id]);
+    }
     
     public function create()
     {
