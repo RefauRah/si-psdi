@@ -36,10 +36,12 @@ Route::get('/admin/create', function () {
     return view('/admin/admin/create');
 });
 
-Route::get('/siswa','SiswaController@index');
+Route::get('/siswa','SiswaController@index')->middleware('auth')->name('siswa');
 Route::get('/siswa/create', 'SiswaController@create');
 Route::post('/siswa/create', 'SiswaController@store');
 Route::get ('/siswa/{siswa}', 'SiswaController@show');
+
+
 
 Route::get('/siswa/show', function () {
     return view('/admin/siswa/show');
@@ -56,6 +58,7 @@ Route::get('/guru', 'GuruController@index');
 //Route::get('/guru/{id}', 'GuruController@show');
 Route::get('/guru/create', 'GuruController@create');
 Route::post('/guru/create', 'GuruController@store');
+Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf');
  
 Route::get('/kelas', 'KelasController@index');
 

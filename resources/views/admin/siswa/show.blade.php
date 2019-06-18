@@ -28,6 +28,7 @@
             </div>
 <!-- /.box-header ALTER TABLE `siswa` AUTO_INCREMENT = 0;-->
             <div class="box-body">
+                
                 <table class="table table-bordered table-striped">
                 <thead>
                 </thead>

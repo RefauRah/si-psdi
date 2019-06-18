@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Guru;
+use PDF;
 
 class GuruController extends Controller
 {
@@ -47,5 +48,13 @@ class GuruController extends Controller
         \Session::flash('flash_message','successfully saved.');
 
         return redirect('/guru');
+    }
+
+    public function cetak_pdf()
+    {
+        $guru= Guru::all();
+
+        $gpdf = PDF::loadview('admin/guru/guruPDF',['guru'=>$guru]);
+        return $gpdf->download('laporan-guru-pdf');
     }
 }

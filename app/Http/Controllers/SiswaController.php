@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\SiswaModel;
+use PDF;
 
 class SiswaController extends Controller
 {
@@ -55,5 +56,7 @@ class SiswaController extends Controller
         return view('admin.siswa.show',['users'=>$users]);
 
     }
+
+   
     
 }

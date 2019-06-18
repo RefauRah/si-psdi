@@ -27,7 +27,7 @@
                   <label for="inputNIP" class="col-sm-2">NIP</label>
 
                   <div class="col-sm-10">
-                    <input name="nip" type="text" class="form-control" id="inputNIP" placeholder="No Induk Pegawai" ">
+                    <input name="nip" type="text" class="form-control" id="inputNIP" placeholder="No Induk Pegawai" >
                   </div>
                 </div>
                 <div class="form-group">

@@ -24,6 +24,7 @@
             </div>
 <!-- /.box-header ALTER TABLE `guru` AUTO_INCREMENT = 0;-->
             <div class="box-body">
+                <a href="/guru/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
