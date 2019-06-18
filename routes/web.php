@@ -25,7 +25,6 @@ Route::get('/home', function () {
 
 })->middleware('auth')->name('home');
 
-
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
 Route::get('/admin', function () {
@@ -45,18 +44,10 @@ Route::get('/siswa/show', function () {
     return view('/admin/siswa/show');
 });
 
-/*Route::get('/guru', function () {
-    return view('/admin/guru/guru');
-});*/
-// Route::get('/guru/show', function () {
-//     return view('/admin/guru/show');
-// });
 
 Route::get('/guru', 'GuruController@index');
 Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru');
-// Route::get('guru/show/{id}',
-//         ['as'=> 'showGuru', 'uses'=>'GuruController@show']
-// );
+
 Route::get('/guru/create', 'GuruController@create');
 Route::post('/guru/create', 'GuruController@store');
  
