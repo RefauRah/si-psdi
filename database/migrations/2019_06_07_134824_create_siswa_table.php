@@ -21,6 +21,7 @@ class CreateSiswaTable extends Migration
             $table->date('tgl_lahir');
             $table->string('tmpt_lahir',100);
             $table->string('jk',20);
+            $table->string('image')->default('default.png');
             $table->string('alamat',100);
             $table->string('no_telp',20);
             // $table->string('id_kelas',10);

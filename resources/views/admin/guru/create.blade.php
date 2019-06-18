@@ -38,6 +38,13 @@
                   </div>
                 </div>
                 <div class="form-group">
+                  <label for="image" class="col-sm-2">Foto</label>
+
+                  <div class="col-sm-10">
+                    <input name="image" type="file" id="image" placeholder="Nama">
+                  </div>
+                </div>
+                <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2">Email</label>
 
                   <div class="col-sm-10">

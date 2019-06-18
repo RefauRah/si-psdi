@@ -21,7 +21,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <form class="form-horizontal" method="post" action="/siswa/create">
-               @csrf
+            {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
                   <label for="inputNIK" class="col-sm-2">NIS</label>
@@ -35,6 +35,13 @@
 
                   <div class="col-sm-10">
                     <input name='nama'type="text" class="form-control" id="inputNama" placeholder="Nama">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="image" class="col-sm-2">Foto</label>
+
+                  <div class="col-sm-10">
+                    <input name="image" type="file" id="image">
                   </div>
                 </div>
                 <div class="form-group">

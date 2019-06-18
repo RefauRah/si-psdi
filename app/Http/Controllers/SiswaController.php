@@ -30,7 +30,7 @@ class SiswaController extends Controller
         return view('admin/siswa/create');
     }
 
-        public function store()
+        public function store(Request $request)
     {
         $siswa = new SiswaModel;
         
@@ -43,6 +43,12 @@ class SiswaController extends Controller
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
         //$siswa->image = request()->file('image')->store('public/images');
+        if ($request->file('image') != null) {
+            $file = $request->file('image')->store('public/files/siswa');  
+            $format = $request->file('image')->getClientOriginalExtension();
+            $siswa->image = $file;
+        }
+        
         $siswa->save();
 
         \Session::flash('flash_message','successfully saved.');

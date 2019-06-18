@@ -16,7 +16,8 @@ class SiswaModel extends Model
     	'tgl_lahir',
     	'tmpt_lahir',
     	'jk',
-    	'alamat',
+		'alamat',
+		'image',
     	'created_at',
     	'updated_at'
     ];

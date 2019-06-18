@@ -42,6 +42,7 @@ class GuruController extends Controller
         $guru->boarding = request('boarding');
         $guru->status_nikah = request('status_nikah');
         $guru->jumlah_kel = request('jumlah_kel');
+        //image
         //$guru->image = request()->file('image')->store('public/images');
         $guru->save();
 
