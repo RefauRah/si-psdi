@@ -43,7 +43,7 @@ class SiswaController extends Controller
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
        
-        $file = $request->file('image')->store('public/files/siswa');  
+        $file = $request->file('image')->store('upload/images');  
         $format = $request->file('image')->getClientOriginalExtension();
         $siswa->image = $file;
         // $file = $request->file('image');
