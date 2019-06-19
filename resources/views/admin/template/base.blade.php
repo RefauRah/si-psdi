@@ -34,7 +34,7 @@
 
     <!-- Main CSS-->
     <link href="{{url('/assets/admin2/css/theme.css')}}" rel="stylesheet" media="all">
-
+    <link rel="stylesheet" type="text/css" href="css/stail.css">
 </head>
 
 <body class="animsition">

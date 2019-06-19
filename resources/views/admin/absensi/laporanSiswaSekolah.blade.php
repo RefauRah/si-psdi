@@ -1,91 +1,117 @@
 @extends('admin.template.base')
 @section('content')
-<section class="content-header">
-      <h1>
-        Tabel
-        <small>Laporan Absensi Siswa Sekolah</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Laporan</li>
-      </ol>
-</section>
-<section class="content">
-    <div class="col-xs-12">
-        <div class="box">
-            <div class="box-header">
-                <h3 class="box-title">Kelas : <input type="text" class="form-control"></h3>
-            </div>
-<!-- /.box-header -->
-            <div class="box-body">
-                <table class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <td rowspan="3" align=center>NO</td>
-                    <td rowspan="3" align=center>NIS</td>
-                    <td rowspan="3" align=center>Nama</td>
-                    <td rowspan="3" align=center>Jenis Kelamin</td>
-                    <td colspan="3">Tgl: </td>
-                    <td colspan="3">Tgl: </td>
-                    <td colspan="3">Tgl: </td>
-                    <td colspan="3">Tgl: </td>
-                    <td colspan="3">Tgl: </td>
-                    <td rowspan="3" align=center>Keterangan</td>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th rowspan="3">NO</th>
+            <th rowspan="3">NIS</th>
+            <th rowspan="3">Nama</th>
+            <th rowspan="3">Jenis Kelamin</th>
+            <th colspan="3">Tgl: </th>
+            <th colspan="3">Tgl: </th>
+            <th colspan="3">Tgl: </th>
+            <th colspan="3">Tgl: </th>
+            <th colspan="3">Tgl: </th>
+            <th rowspan="3">Keterangan</th>
+        </tr>
+        <tr>
+                    <th colspan="3" align=center>Sesi</th>
+                    <th colspan="3" align=center>Sesi</th>
+                    <th colspan="3" align=center>Sesi</th>
+                    <th colspan="3" align=center>Sesi</th>
+                    <th colspan="3" align=center>Sesi</th>
                 </tr>
                 <tr>
-                    <td colspan="3" align=center>Sesi</td>
-                    <td colspan="3" align=center>Sesi</td>
-                    <td colspan="3" align=center>Sesi</td>
-                    <td colspan="3" align=center>Sesi</td>
-                    <td colspan="3" align=center>Sesi</td>
+                    <th align=center>2</th>
+                    <th align=center>3</th>
+                    <th align=center>4</th>
+                    <th align=center>2</th>
+                    <th align=center>3</th>
+                    <th align=center>4</th>
+                    <th align=center>2</th>
+                    <th align=center>3</th>
+                    <th align=center>4</th>
+                    <th align=center>2</th>
+                    <th align=center>3</th>
+                    <th align=center>4</th>
+                    <th align=center>2</th>
+                    <th align=center>3</th>
+                    <th align=center>4</th>
                 </tr>
-                <tr>
-                    <td align=center>2</td>
-                    <td align=center>3</td>
-                    <td align=center>4</td>
-                    <td align=center>2</td>
-                    <td align=center>3</td>
-                    <td align=center>4</td>
-                    <td align=center>2</td>
-                    <td align=center>3</td>
-                    <td align=center>4</td>
-                    <td align=center>2</td>
-                    <td align=center>3</td>
-                    <td align=center>4</td>
-                    <td align=center>2</td>
-                    <td align=center>3</td>
-                    <td align=center>4</td>
-                </tr>
-                </thead>
-                <tbody> 
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                
-                </tbody>
-                </table>
-            </div>
-<!-- /.box-body -->
-        </div>
-    </div>
-</section>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Content 1</td>
+            <td>Content 1</td>
+            <td>Content 1</td>
+            <td>Content 1</td>
+            <td>Content 1</td>
+        </tr>
+        <tr>
+            <td>Content 2</td>
+            <td>Content 2</td>
+            <td>Content 2</td>
+            <td>Content 2</td>
+            <td>Content 2</td>
+        </tr>
+        <tr>
+            <td>Content 3</td>
+            <td>Content 3</td>
+            <td>Content 3</td>
+            <td>Content 3</td>
+            <td>Content 3</td>
+        </tr>
+        <tr>
+            <td>Content 4</td>
+            <td>Content 4</td>
+            <td>Content 4</td>
+            <td>Content 4</td>
+            <td>Content 4</td>
+        </tr>
+        <tr>
+            <td>Content 5</td>
+            <td>Content 5</td>
+            <td>Content 5</td>
+            <td>Content 5</td>
+            <td>Content 5</td>
+        </tr>
+        <tr>
+            <td>Content 6</td>
+            <td>Content 6</td>
+            <td>Content 6</td>
+            <td>Content 6</td>
+            <td>Content 6</td>
+        </tr>
+        <tr>
+            <td>Content 7</td>
+            <td>Content 7</td>
+            <td>Content 7</td>
+            <td>Content 7</td>
+            <td>Content 7</td>
+        </tr>
+        <tr>
+            <td>Content 8</td>
+            <td>Content 8</td>
+            <td>Content 8</td>
+            <td>Content 8</td>
+            <td>Content 8</td>
+        </tr>
+        <tr>
+            <td>Content 9</td>
+            <td>Content 9</td>
+            <td>Content 9</td>
+            <td>Content 9</td>
+            <td>Content 9</td>
+        </tr>
+        <tr>
+            <td>Content 10</td>
+            <td>Content 10</td>
+            <td>Content 10</td>
+            <td>Content 10</td>
+            <td>Content 10</td>
+        </tr>
+        <tbody>
+    </table>
+</div>
 @endsection
