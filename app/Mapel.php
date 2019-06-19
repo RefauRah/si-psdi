@@ -13,5 +13,4 @@ class Mapel extends Model
     	'nama'
     ];
 
-    public $timestamps = false;
 }

@@ -1,5 +1,11 @@
 @extends('admin.template.base')
 @section('content')
+@if(Session::has('flash_message'))
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
+@endif
+@if(Session::has('flash_message_fail'))
+    <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
+@endif
 <section class="content-header">
       <h1>
         Tabel
@@ -46,7 +52,7 @@
                     <td>{{$nomer}}</td>
                     <td>{{$row->nip}}</td>
                     <td>{{$row->nama}}</td>
-                    <td><input type = "radio" name = "id_guru" value = "{{$getid[$nomer]}}" required/></td>
+                    <td><input type = "checkbox" name = "id_guru[]" value = "{{$getid[$nomer]}}"/></td>
                 <?php $nomer++; ?>
                 </tr>
                 @endforeach

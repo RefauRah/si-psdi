@@ -13,5 +13,4 @@ class Kelas extends Model
     	'nama'
     ];
 
-    public $timestamps = false;
 }
