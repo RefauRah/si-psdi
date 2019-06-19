@@ -42,12 +42,16 @@ class SiswaController extends Controller
         $siswa->tmpt_lahir = request('tmpt_lahir');
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
-        //$siswa->image = request()->file('image')->store('public/images');
-        if ($request->file('image') != null) {
-            $file = $request->file('image')->store('public/files/siswa');  
-            $format = $request->file('image')->getClientOriginalExtension();
-            $siswa->image = $file;
-        }
+       
+        $file = $request->file('image')->store('public/files/siswa');  
+        $format = $request->file('image')->getClientOriginalExtension();
+        $siswa->image = $file;
+        // $file = $request->file('image');
+        // $ext = $file->getClientOriginalExtension();
+        // $newName = rand(100000,1001238912).".".$ext;
+        // $file->move('uploads/file',$newName);
+        // $siswa->image = $newName;
+        
         
         $siswa->save();
 
