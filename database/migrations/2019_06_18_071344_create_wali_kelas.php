@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAbsensiguru extends Migration
+class CreateWaliKelas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreateAbsensiguru extends Migration
      */
     public function up()
     {
-        Schema::create('absensiguru', function (Blueprint $table) {
+        Schema::create('walikelas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_guru')->unsigned();
-            $table->char('absen',100);
-            $table->date('tgl_absen');
-            $table->string('keterangan',100)->nullable();
-            // $table->string('id_kegiatan',20);
-            // $table->string('keterangan',50);
+            $table->bigInteger('id_kelas')->unsigned();
             $table->timestamps();
 
             $table->foreign('id_guru')->references('id')->on('guru')->onDelete('cascade');
-        }); 
+            $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade');
+        });
     }
 
     /**
@@ -34,6 +31,6 @@ class CreateAbsensiguru extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('absensiguru');
+        Schema::dropIfExists('wali_kelas');
     }
 }

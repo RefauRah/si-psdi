@@ -22,8 +22,8 @@ Route::post('/register', 'AuthController@postRegister')->middleware('guest');
 
 Route::get('/home', function () {
     return view('/admin/home');
+})->middleware('auth')->name('home');
 
-});//->middleware('auth')->name('home');
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
@@ -60,15 +60,9 @@ Route::get('/kelas', 'KelasController@index');
 Route::get('/kelas/create', 'KelasController@create');
 Route::post('/kelas/create', 'KelasController@store');
 
-Route::get('/walikelas', function () {
-    return view('/admin/wali_kelas/wali_kelas');
-});
-Route::get('/walikelas/create', function () {
-    return view('/admin/wali_kelas/create');
-});
-Route::get('/walikelas/show', function () {
-    return view('/admin/wali_kelas/show');
-});
+Route::get('/walikelas', 'WaliKelasController@index');
+Route::get('/walikelas/create', 'WaliKelasController@create');
+Route::post('/walikelas/create', 'WaliKelasController@store');
 
 Route::get('/mapel', 'MapelController@index');
 

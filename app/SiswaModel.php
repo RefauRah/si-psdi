@@ -16,13 +16,10 @@ class SiswaModel extends Model
     	'tgl_lahir',
     	'tmpt_lahir',
     	'jk',
-		'alamat',
-		'image',
+    	'alamat',
     	'created_at',
     	'updated_at'
     ];
-
-    public $timestamps = false;
 
     // public function get_absensi(){
     // 	return $this->hasMany('App\AbsensiModel','id_siswa');

@@ -27,25 +27,28 @@
                     <th>NO</th>
                     <th>NIK</th>
                     <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>Tempat Lahir</th>
-                    <th>Tanggal Lahir</th>
-                    <th>No Tlp</th>
+                    <th>Kelas</th>
                     <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
-                
+                <?php $nomer = 1; ?>
+                @foreach ($walikelas as $row)
+                <tr>
+                    <td>{{$nomer}}</td>
+                    <td>{{$row->guru->nip }}</td>
+                    <td>{{$row->guru->nama}}</td>
+                    <td>{{$row->kelas->nama}}</td>
+                    <td></td>
+                </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                     <th>No</th>
-                    <th>NIK</th>
+                    <th>NIP</th>
                     <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>Tempat Lahir</th>
-                    <th>Tanggal Lahir</th>
-                    <th>NO Tlp</th>
+                    <th>Kelas</th>
                     <th>Option</th>
                 </tr>
                 </tfoot>

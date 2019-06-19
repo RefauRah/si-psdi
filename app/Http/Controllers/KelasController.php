@@ -31,12 +31,6 @@ class KelasController extends Controller
         
         $kelas->kode_kelas = request('kode_kelas');
         $kelas->nama = request('nama');
-        // $kelas->email = request('email');
-        // $kelas->alamat = request('alamat');
-        // $kelas->tempat_lahir = request('tempat_lahir');
-        // $kelas->tgl_lahir = request('tgl_lahir');
-        // $kelas->no_telp = request('no_telp');
-        //$kelas->image = request()->file('image')->store('public/images');
         $kelas->save();
 
         \Session::flash('flash_message','successfully saved.');

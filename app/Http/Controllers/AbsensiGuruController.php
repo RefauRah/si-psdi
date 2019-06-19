@@ -27,22 +27,35 @@ class AbsensiGuruController extends Controller
     public function store()
     {
         $guru = new AbsensiGuru;
-        $nomer = request('nomer');
 
-        $guru->id_guru = request('id_guru'.$nomer);
-        $guru->absen = request('absen'.$nomer);
-        $guru->keterangan = request('keterangan'.$nomer);
-        $guru->tgl_absen = request('tgl_absen');
-        // $guru->alamat = request('alamat');
-        // $guru->tempat_lahir = request('tempat_lahir');
-        // $guru->tgl_lahir = request('tgl_lahir');
-        // $guru->no_telp = request('no_telp');
-        //$guru->image = request()->file('image')->store('public/images');
-        $guru->save();
+        if (is_null($guru->absen = request('id_guru'))){
+			\Session::flash('flash_message_fail',' Error : Tidak ada data yand dipilih.');
+			return redirect()->back();
+		}
+		else{
+			$counter = count(request('id_guru'));
 
-        // \Session::flash('flash_message','successfully saved.');
+			$id_guru = request('id_guru');
 
-        return redirect('/absenguru');
+			for ( $i=0; $i< $counter; $i++) {
+			    $guru = new AbsensiGuru;
+				$guru->id_guru = $id_guru[$i];
+		        $guru->absen = request('absen');
+		        $guru->keterangan = request('keterangan');
+		        $guru->tgl_absen = request('tgl_absen');
+		        $guru->save();
+			}   
+
+			// $guru->id_guru = request('id_guru');
+	  //       $guru->absen = request('absen');
+	  //       $guru->keterangan = request('keterangan');
+	  //       $guru->tgl_absen = request('tgl_absen');
+	  //       $guru->save();
+
+	        \Session::flash('flash_message','successfully saved.');
+
+	        return redirect('/absenguru');
+		}
     }
 
 }
