@@ -23,9 +23,9 @@
                         </div>
                         <input type="date" class="form-control" style="width:14%" name="tgl_absen" required>
                     </div>
-                <!-- /.input group -->
+
             </div>
-<!-- /.box-header -->
+
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -80,7 +80,7 @@
                 </table>
                 <td><button type="submit"class="btn btn-success btn-sm pull-right">Submit</button></td>
             </div>
-<!-- /.box-body -->
+
         </div>
     </div>
 </form>

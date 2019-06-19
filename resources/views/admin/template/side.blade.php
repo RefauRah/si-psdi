@@ -55,7 +55,7 @@
                     </a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="#">
+                            <a href="{{url('/absenguru')}}">
                                 <i class="fas fa-circle"></i>Guru</a>
                         </li>
                         <li>
@@ -89,7 +89,7 @@
                                 <i class="fas fa-circle"></i>Jam Mengajar</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{url('/laporansiswapengajian')}}">
                                 <i class="fas fa-circle"></i>Siswa Pengajian</a>
                         </li>
                         <li>
