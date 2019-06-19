@@ -60,14 +60,14 @@
                         </li>
                         <li>
                             <a href="#">
+                                <i class="fas fa-circle"></i>Jam Pelajaran</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/absensiswapengajian')}}">
                                 <i class="fas fa-circle"></i>Siswa Pengajian</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-circle"></i>Siswa Pengajian</a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="{{url('/absensiswasekolah')}}">
                                 <i class="fas fa-circle"></i>Siswa Sekolah</a>
                         </li>
                     </ul>
@@ -93,7 +93,7 @@
                                 <i class="fas fa-circle"></i>Siswa Pengajian</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{url('/laporansiswasekolah')}}">
                                 <i class="fas fa-circle"></i>Siswa Sekolah</a>
                         </li>
                     </ul>

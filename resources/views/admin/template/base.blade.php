@@ -53,7 +53,7 @@
             <!-- BREADCRUMB-->
             @include('admin.template.breadcrumb')
             <!-- END BREADCRUMB-->
-
+            @yield('content')
             <!-- FOOTER -->
             @include('admin.template.footer')
             <!-- END FOOTER -->
