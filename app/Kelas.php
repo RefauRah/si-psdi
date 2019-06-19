@@ -13,4 +13,8 @@ class Kelas extends Model
     	'nama'
     ];
 
+    public function waliKelas()
+	{
+    	return $this->hasOne('App\WaliKelas', 'id_kelas', 'id');
+	}
 }

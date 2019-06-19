@@ -20,8 +20,8 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal">
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="/walikelas/create">
+            @csrf
               <div class="box-body">
                 <div class="form-group">
                   <label for="inputGuru" class="col-sm-2">Guru</label>
@@ -29,18 +29,24 @@
 <!--                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputGuru">
                   </div> -->
-
-                  <select name="id_guru" id="inputGuru">
+                  <div class="col-sm-10">
+                    <select name="id_guru" id="inputGuru">
                     @foreach ($guru as $row)
-                    <option value="volvo">{{$row->nip}} - {{$row->nama}}</option>
+                    <option value="{{$row->id}}">{{$row->nip}} - {{$row->nama}}</option>
                     @endforeach
-                  </select>
+                    </select>
+                  </div>
+
                 </div>
                 <div class="form-group">
                   <label for="inputKelas" class="col-sm-2">Kelas</label>
 
                   <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputKelas">
+                    <select name="id_kelas" id="inputKelas">
+                    @foreach ($kelas as $row)
+                    <option value="{{$row->id}}">{{$row->kode_kelas}} - {{$row->nama}}</option>
+                    @endforeach
+                    </select>
                   </div>
                 </div>
               </div>

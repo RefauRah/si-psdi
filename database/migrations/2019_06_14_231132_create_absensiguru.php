@@ -23,7 +23,7 @@ class CreateAbsensiguru extends Migration
             // $table->string('keterangan',50);
             $table->timestamps();
 
-            $table->foreign('id_guru')->references('id')->on('guru');
+            $table->foreign('id_guru')->references('id')->on('guru')->onDelete('cascade');
         }); 
     }
 

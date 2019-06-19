@@ -61,7 +61,6 @@ Route::get('/kelas/create', 'KelasController@create');
 Route::post('/kelas/create', 'KelasController@store');
 
 Route::get('/walikelas', 'WaliKelasController@index');
-Route::get('/walikelas/show/{id}', 'WaliKelasController@show')->name('showWaliKelas');
 Route::get('/walikelas/create', 'WaliKelasController@create');
 Route::post('/walikelas/create', 'WaliKelasController@store');
 

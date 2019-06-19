@@ -36,9 +36,9 @@
                 @foreach ($walikelas as $row)
                 <tr>
                     <td>{{$nomer}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$row->guru->nip }}</td>
+                    <td>{{$row->guru->nama}}</td>
+                    <td>{{$row->kelas->nama}}</td>
                     <td></td>
                 </tr>
                 @endforeach
@@ -46,7 +46,7 @@
                 <tfoot>
                 <tr>
                     <th>No</th>
-                    <th>NIK</th>
+                    <th>NIP</th>
                     <th>Nama</th>
                     <th>Kelas</th>
                     <th>Option</th>

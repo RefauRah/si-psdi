@@ -19,8 +19,8 @@ class CreateWaliKelas extends Migration
             $table->bigInteger('id_kelas')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_guru')->references('id')->on('guru');
-            $table->foreign('id_kelas')->references('id')->on('kelas');
+            $table->foreign('id_guru')->references('id')->on('guru')->onDelete('cascade');
+            $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade');
         });
     }
 
