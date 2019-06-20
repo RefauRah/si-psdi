@@ -10,21 +10,35 @@
         <div class="card-body">
             <div class="container">      
             <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="control-label col-sm-2">Absensi Tanggal :</label>
-                    <div class="col-sm-3">
-                        <input type="date" class="form-control">
+                <div class="row form-group">
+                    <div class="col col-sm-1">
+                        <label for="tanggal" class=" form-control-label">Tanggal</label>
+                    </div>
+                    <div class="col col-sm-3">
+                        <input type="date" id="input-normal" name="input-normal" class="form-control">
+                    </div>
+                    <div class="input-group col-md-4 ml-auto">
+                    <div class="input-group-btn">
+                        <button class="btn btn-secondary">
+                            <i class="fa fa-search"></i> Search
+                        </button>
+                    </div>
+                    <input type="text" id="input1-group2" name="input1-group2" placeholder="Cari" class="form-control">
+                </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-sm-1">
+                        <label for="kelas" class=" form-control-label">Kelas</label>
+                    </div>
+                    <div class="col col-sm-3">
+                        <input type="text" id="input-normal" name="input-normal" class="form-control">
                     </div>
                 </div>
-                <div class="form-group">
-                   <label class="control-label col-sm-2" for="alamat">Kelas :</label>
-                   <div class="col-sm-3">
-                        <input type="text" class="form-control">
+                <div class="row form-group">
+                    <div class="col col-sm-1">
+                        <label for="sesi" class=" form-control-label">Sesi</label>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="alamat">Sesi :</label>
-                    <div class="col-sm-2">
+                    <div class="col col-sm-3">
                         <select class="form-control">
                             <option>2</option>
                             <option>3</option>

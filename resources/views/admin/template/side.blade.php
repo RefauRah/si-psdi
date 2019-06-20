@@ -24,7 +24,7 @@
                         <i class="fas fa-user"></i>Admin</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{url('/guru')}}">
                         <i class="fas fa-users"></i>Guru</a>
                 </li>
                 <li>

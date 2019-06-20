@@ -18,6 +18,15 @@
             <div class="container">         
         <!-- Tabel -->
         <div class="col-lg-12">
+            <div class="row form-group">
+                <div class="input-group col-md-4 ml-auto">
+                    <div class="input-group-btn">
+                        <button class="btn btn-secondary">
+                            <i class="fa fa-search"></i> Search
+                        </button>
+                    </div>
+                    <input type="text" id="input1-group2" name="input1-group2" placeholder="Cari" class="form-control">
+                </div>
             <div class="table-responsive fl-table">
                 <table id="example1" class="table table-borderless table-data3 table-wrapper">
                     <thead>
@@ -43,6 +52,7 @@
                 <a href="{{url('/admin/create')}}" class="btn btn-sm btn-success pull-right">
                     <i class="fa fa-plus"></i> Tambah
                 </a>
+            </div>
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@
       </ol>
 </section>
 <section class="content">
-<div class="col-md-10 offset-md-1">
+<div class="col-md-12 offset-md-0.1">
   <div class="card">
       <div class="card-header">Form Admin</div>
       <div class="card-body card-block">
