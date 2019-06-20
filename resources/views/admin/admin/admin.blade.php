@@ -1,10 +1,9 @@
 @extends('admin.template.base')
 @section('content')
 <section class="content-header">
-      <h1>
-        Tabel
+      <h2 class="col-md-12">Tabel
         <small>Admin</small>
-      </h1>
+      </h2>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa-dashboard"></i> Home</a></li>
         <li class="active">Admin</li>
