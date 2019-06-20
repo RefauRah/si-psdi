@@ -20,12 +20,12 @@
                 </a>
 <!-- /.box-header -->
             <div class="box-body">
-                
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>NO</th>
                     <th>NIS</th>
+                    <th>foto</th>
                     <th>Nama</th>
                     <th>Kelas</th>
                     <th>Tempat Lahir</th>
@@ -46,6 +46,13 @@
                     <td>{{$nomer}}</td>
 
                     <td><a href="{{url('/siswa/'.$siswa->nik)}}">{{ $siswa->nik}}</a></td>
+                    @if(is_null($siswa->image))
+                        <td>
+                            <img src="{{ asset('images/default.png') }}" style="height: 50px" class="img-fluid">
+                        </td>
+                    @else
+                        <td><img class="img-fluid" style="height: 50px"  src="{{asset('storage/files/siswa/'.$siswa->image)}}"></td>
+                    @endif
                     <td>{{ $siswa->nama}}</a></td>
                     <td>{{ $siswa->kelas}}</td>
                     <td>{{ $siswa->tmpt_lahir}}</td>
@@ -65,6 +72,7 @@
                 <tr>
                     <th>NO</th>
                     <th>NIS</th>
+                    <th>foto</th>
                     <th>Nama</th>
                     <th>Kelas</th>
                     <th>Tempat Lahir</th>
