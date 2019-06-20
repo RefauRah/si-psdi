@@ -41,6 +41,7 @@
                     <td>{{$row->kelas->nama}}</td>
                     <td></td>
                 </tr>
+                <?php $nomer++; ?>
                 @endforeach
                 </tbody>
                 <tfoot>

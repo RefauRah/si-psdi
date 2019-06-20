@@ -28,7 +28,13 @@
             </div>
 <!-- /.box-header ALTER TABLE `siswa` AUTO_INCREMENT = 0;-->
             <div class="box-body">
-                
+                <div class="col-md-4" style="padding-top:20px">
+                    @if(is_null($key->image))
+                        <img src="{{ asset('images/default.png') }}" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
+                    @else
+                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/siswa/'.$key->image)}}" alt="Profile">
+                    @endif
+                </div> 
                 <table class="table table-bordered table-striped">
                 <thead>
                 </thead>
@@ -37,6 +43,11 @@
                 <tr>
                     <th>NIS</th>
                     <td>{{$key->nik}}</td>
+                </tr>
+
+                <tr>
+                    <th>Foto</th>
+                    <td></td>
                 </tr>
                 
                 <tr>
@@ -74,13 +85,6 @@
                 <tr>
                 </tfoot>
                 </table>
-                <div class="col-md-4" style="padding-top:20px">
-                        @if($key->image == 'default.png')
-                            <img src="{{ url('images/default.png') }}" alt="Profile" class="img-thumbnail">
-                        @else
-                            <img src="{{ Storage::url($key->image) }}" alt="Profile" class="img-thumbnail">
-                        @endif
-                    </div>
             </div>
 <!-- /.box-body -->
 <div class="button" style="margin-left:10px;margin-right:10px;padding-bottom:10px;">

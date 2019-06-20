@@ -29,17 +29,17 @@ Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout'
 
 Route::get('/admin', function () {
     return view('/admin/admin/admin');
-});
+})->middleware('auth')->name('admin');
 
 Route::get('/admin/create', function () {
     return view('/admin/admin/create');
 });
 
-Route::get('/siswa','SiswaController@index');
+Route::get('/siswa','SiswaController@index')->middleware('auth')->name('siswa');
 //->middleware('auth')->name('siswa');
-Route::get('/siswa/create', 'SiswaController@create');
+Route::get('/siswa/create', 'SiswaController@create')->middleware('auth')->name('siswa');
 Route::post('/siswa/create', 'SiswaController@store');
-Route::get ('/siswa/{siswa}', 'SiswaController@show');
+Route::get ('/siswa/{siswa}', 'SiswaController@show')->middleware('auth')->name('siswa');
 
 
 
@@ -48,25 +48,25 @@ Route::get('/siswa/show', function () {
 });
 
 
-Route::get('/guru', 'GuruController@index');
-Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru');
+Route::get('/guru', 'GuruController@index')->middleware('auth')->name('guru');
+Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru')->middleware('auth')->name('guru');
 
-Route::get('/guru/create', 'GuruController@create');
+Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('guru/create');
 Route::post('/guru/create', 'GuruController@store');
-Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf');
+Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf')->middleware('auth')->name('guru/cetak_pdf');
  
-Route::get('/kelas', 'KelasController@index');
+Route::get('/kelas', 'KelasController@index')->middleware('auth')->name('kelas');
 
-Route::get('/kelas/create', 'KelasController@create');
+Route::get('/kelas/create', 'KelasController@create')->middleware('auth')->name('kelas');
 Route::post('/kelas/create', 'KelasController@store');
 
-Route::get('/walikelas', 'WaliKelasController@index');
-Route::get('/walikelas/create', 'WaliKelasController@create');
+Route::get('/walikelas', 'WaliKelasController@index')->middleware('auth')->name('walikelas');
+Route::get('/walikelas/create', 'WaliKelasController@create')->middleware('auth')->name('walikelas');
 Route::post('/walikelas/create', 'WaliKelasController@store');
 
-Route::get('/mapel', 'MapelController@index');
+Route::get('/mapel', 'MapelController@index')->middleware('auth')->name('mapel');
 
-Route::get('/mapel/create', 'MapelController@create');
+Route::get('/mapel/create', 'MapelController@create')->middleware('auth')->name('mapel');
 Route::post('/mapel/create', 'MapelController@store');
 
 // Route::get('/absenguru', function () {
@@ -95,3 +95,6 @@ Route::get('/absensiswa','AbsensiController@index');
 
 
 Route::get('/kirimemail','AdminEmailController@index');
+
+Auth::routes();
+

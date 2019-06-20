@@ -43,18 +43,29 @@ class SiswaController extends Controller
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
        
+<<<<<<< HEAD
         $file = $request->file('image')->store('upload/images');  
         $format = $request->file('image')->getClientOriginalExtension();
         $siswa->image = $file;
+=======
+        // $file = $request->file('image')->store('public/files/siswa');
+        // $format = $request->file('image')->getClientOriginalExtension();
+        // $siswa->image = $file;
+        if(!is_null($request->file('image'))){
+            $file = $request->file('image')->store('public/files/siswa');
+            $filename = $request->file('image')->hashName();
+            $format = $request->file('image')->getClientOriginalExtension();
+            $siswa->image = $filename;
+        }
+
+>>>>>>> 4a232d31e6e6bf27d942c72e8b487c35c98d2ee2
         // $file = $request->file('image');
         // $ext = $file->getClientOriginalExtension();
         // $newName = rand(100000,1001238912).".".$ext;
         // $file->move('uploads/file',$newName);
         // $siswa->image = $newName;
-        
-        
-        $siswa->save();
 
+        $siswa->save();
         \Session::flash('flash_message','successfully saved.');
 
         return redirect('/siswa');

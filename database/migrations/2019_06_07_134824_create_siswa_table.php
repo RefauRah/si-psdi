@@ -24,6 +24,8 @@ class CreateSiswaTable extends Migration
             $table->text('image')->nullable();
             $table->string('alamat',100);
             $table->string('no_telp',20);
+            $table->string('ortu',100);
+            $table->string('emailortu',100);
             // $table->string('id_kelas',10);
             $table->timestamps();
         });
