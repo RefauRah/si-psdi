@@ -81,13 +81,29 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputTlp" class="col-sm-2">No Tlp</label>
+                  <label for="inputTlp" class="col-sm-2">No Telepon Orang Tua</label>
 
                   <div class="col-sm-10">
                     <input name='no_telp'type="text" class="form-control" id="inputTlp">
                   </div>
                 </div>
-              </div>
+
+                <!-- <div class="form-group">
+                  <label for="inputOrtu" class="col-sm-2">Nama Orang Tua</label>
+
+                  <div class="col-sm-10">
+                    <input name='ortu'type="text" class="form-control" id="inputOrtu">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputemailOrtu" class="col-sm-2">Email Orang Tua</label>
+
+                  <div class="col-sm-10">
+                    <input name='emailortu'type="text" class="form-control" id="inputemailOrtu">
+                  </div>
+                </div>
+              </div> -->
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="submit" class="btn btn-default">Cancel</button>

@@ -177,6 +177,8 @@ return [
 
         Barryvdh\DomPDF\ServiceProvider::class,
 
+        Yugo\SMSGateway\Providers\SmsServiceProvider::class,
+
     ],
 
     /*

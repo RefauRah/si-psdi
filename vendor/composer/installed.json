@@ -1183,6 +1183,54 @@
         ]
     },
     {
+        "name": "mashape/unirest-php",
+        "version": "v3.0.4",
+        "version_normalized": "3.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Mashape/unirest-php.git",
+            "reference": "842c0f242dfaaf85f16b72e217bf7f7c19ab12cb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Mashape/unirest-php/zipball/842c0f242dfaaf85f16b72e217bf7f7c19ab12cb",
+            "reference": "842c0f242dfaaf85f16b72e217bf7f7c19ab12cb",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "codeclimate/php-test-reporter": "0.1.*",
+            "phpunit/phpunit": "~4.4"
+        },
+        "suggest": {
+            "ext-json": "Allows using JSON Bodies for sending and parsing requests"
+        },
+        "time": "2016-08-11T17:49:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Unirest\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Unirest PHP",
+        "homepage": "https://github.com/Mashape/unirest-php",
+        "keywords": [
+            "client",
+            "curl",
+            "http",
+            "https",
+            "rest"
+        ]
+    },
+    {
         "name": "mockery/mockery",
         "version": "1.2.2",
         "version_normalized": "1.2.2.0",
@@ -4804,5 +4852,64 @@
             "check",
             "validate"
         ]
+    },
+    {
+        "name": "yugo/smsgateway",
+        "version": "v1.4.1",
+        "version_normalized": "1.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arvernester/laravel-sms.git",
+            "reference": "45b085e0d57a707a4c57d610703e05ae1be86314"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/arvernester/laravel-sms/zipball/45b085e0d57a707a4c57d610703e05ae1be86314",
+            "reference": "45b085e0d57a707a4c57d610703e05ae1be86314",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": ">=5.4",
+            "mashape/unirest-php": "3.0.4",
+            "php": ">=7.0.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "7.1.5"
+        },
+        "time": "2018-05-18T02:23:39+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Yugo\\SMSGateway\\Providers\\SmsServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Yugo\\SMSGateway": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dedy Yugo Purwanto",
+                "email": "dedy.yugo.purwanto@gmail.com",
+                "homepage": "https://laravel.web.id",
+                "role": "Developer"
+            }
+        ],
+        "description": "SMS gateway for Laravel using various vendors (SMSGateway.me, Zenziva, etc)",
+        "homepage": "https://github.com/arvernester/smsgateway",
+        "keywords": [
+            "laravel",
+            "sms",
+            "smsgateway"
+        ],
+        "abandoned": true
     }
 ]

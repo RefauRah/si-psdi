@@ -92,6 +92,16 @@
         
     </li>
     <li class="">
+        <a href="{{url('/keuangan')}}">
+        <i class="fa fa-money"></i>
+        <span>Pembayaran</span>
+        <span class="">
+            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
+        </span>
+        </a>
+        
+    </li>
+    <li class="">
         <a href="#">
         <i class="fa fa-book"></i>
         <span>Jam Pelajaran</span>

@@ -17,9 +17,16 @@ class SiswaModel extends Model
     	'tmpt_lahir',
     	'jk',
     	'alamat',
+        // 'ortu',
+        // 'emailortu',
     	'created_at',
     	'updated_at'
     ];
+
+    public function keuangan()
+    {
+        return $this->hasMany('App\Keuangan', 'id_siswa','id_siswa');
+    }
 
     // public function get_absensi(){
     // 	return $this->hasMany('App\AbsensiModel','id_siswa');

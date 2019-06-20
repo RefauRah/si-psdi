@@ -343,6 +343,20 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
     );
 
     public static $prefixesPsr0 = array (
+        'Y' => 
+        array (
+            'Yugo\\SMSGateway' => 
+            array (
+                0 => __DIR__ . '/..' . '/yugo/smsgateway/src',
+            ),
+        ),
+        'U' => 
+        array (
+            'Unirest\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/mashape/unirest-php/src',
+            ),
+        ),
         'S' => 
         array (
             'Svg\\' => 
@@ -389,12 +403,15 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'AbsensiSeeder' => __DIR__ . '/../..' . '/database/seeds/AbsensiSeeder.php',
         'App\\AbsensiGuru' => __DIR__ . '/../..' . '/app/AbsensiGuru.php',
         'App\\AbsensiModel' => __DIR__ . '/../..' . '/app/AbsensiModel.php',
+        'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Guru' => __DIR__ . '/../..' . '/app/Guru.php',
         'App\\Http\\Controllers\\AbsensiController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiController.php',
         'App\\Http\\Controllers\\AbsensiGuruController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiGuruController.php',
+        'App\\Http\\Controllers\\AdminEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminEmailController.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
+        'App\\Http\\Controllers\\Auth\\AdminLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminLoginController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -403,9 +420,11 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Exa' => __DIR__ . '/../..' . '/app/Http/Controllers/Exa.php',
         'App\\Http\\Controllers\\GuruController' => __DIR__ . '/../..' . '/app/Http/Controllers/GuruController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\KelasController' => __DIR__ . '/../..' . '/app/Http/Controllers/KelasController.php',
         'App\\Http\\Controllers\\MapelController' => __DIR__ . '/../..' . '/app/Http/Controllers/MapelController.php',
         'App\\Http\\Controllers\\SiswaController' => __DIR__ . '/../..' . '/app/Http/Controllers/SiswaController.php',
+        'App\\Http\\Controllers\\WaliKelasController' => __DIR__ . '/../..' . '/app/Http/Controllers/WaliKelasController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -416,6 +435,7 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Kelas' => __DIR__ . '/../..' . '/app/Kelas.php',
         'App\\Login' => __DIR__ . '/../..' . '/app/Login.php',
+        'App\\Mail\\AdminEmail' => __DIR__ . '/../..' . '/app/Mail/AdminEmail.php',
         'App\\Mapel' => __DIR__ . '/../..' . '/app/Mapel.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -424,6 +444,7 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\SiswaModel' => __DIR__ . '/../..' . '/app/SiswaModel.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\WaliKelas' => __DIR__ . '/../..' . '/app/WaliKelas.php',
         'Barryvdh\\DomPDF\\Facade' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/Facade.php',
         'Barryvdh\\DomPDF\\PDF' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/PDF.php',
         'Barryvdh\\DomPDF\\ServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/ServiceProvider.php',
@@ -4048,6 +4069,11 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Unirest\\Exception' => __DIR__ . '/..' . '/mashape/unirest-php/src/Unirest/Exception.php',
+        'Unirest\\Method' => __DIR__ . '/..' . '/mashape/unirest-php/src/Unirest/Method.php',
+        'Unirest\\Request' => __DIR__ . '/..' . '/mashape/unirest-php/src/Unirest/Request.php',
+        'Unirest\\Request\\Body' => __DIR__ . '/..' . '/mashape/unirest-php/src/Unirest/Request/Body.php',
+        'Unirest\\Response' => __DIR__ . '/..' . '/mashape/unirest-php/src/Unirest/Response.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',
@@ -4068,6 +4094,12 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'Yugo\\SMSGateway\\Interfaces\\SMS' => __DIR__ . '/..' . '/yugo/smsgateway/src/Interfaces/SMS.php',
+        'Yugo\\SMSGateway\\Providers\\SmsServiceProvider' => __DIR__ . '/..' . '/yugo/smsgateway/src/Providers/SmsServiceProvider.php',
+        'Yugo\\SMSGateway\\Vendors\\Smsgatewayme' => __DIR__ . '/..' . '/yugo/smsgateway/src/Vendors/Smsgatewayme.php',
+        'Yugo\\SMSGateway\\Vendors\\Smsgatewayme\\Callback' => __DIR__ . '/..' . '/yugo/smsgateway/src/Vendors/Smsgatewayme/Callback.php',
+        'Yugo\\SMSGateway\\Vendors\\Smsgatewayme\\Contact' => __DIR__ . '/..' . '/yugo/smsgateway/src/Vendors/Smsgatewayme/Contact.php',
+        'Yugo\\SMSGateway\\Vendors\\Zenziva' => __DIR__ . '/..' . '/yugo/smsgateway/src/Vendors/Zenziva.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

@@ -49,7 +49,7 @@ Route::get('/siswa/show', function () {
 
 
 Route::get('/guru', 'GuruController@index')->middleware('auth')->name('guru');
-Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru')->middleware('auth')->name('guru');
+Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru');
 
 Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('guru/create');
 Route::post('/guru/create', 'GuruController@store');
@@ -61,8 +61,12 @@ Route::get('/kelas/create', 'KelasController@create')->middleware('auth')->name(
 Route::post('/kelas/create', 'KelasController@store');
 
 Route::get('/walikelas', 'WaliKelasController@index')->middleware('auth')->name('walikelas');
-Route::get('/walikelas/create', 'WaliKelasController@create')->middleware('auth')->name('walikelas');
+Route::get('/walikelas/create', 'WaliKelasController@create')->middleware('auth')->name('walikelas/create');
 Route::post('/walikelas/create', 'WaliKelasController@store');
+
+Route::get('/keuangan', 'KeuanganController@index')->middleware('auth')->name('keuangan');
+Route::get('/keuangan/create', 'KeuanganController@create')->middleware('auth')->name('keuangan');
+Route::post('/keuangan/create', 'keuanganController@store');
 
 Route::get('/mapel', 'MapelController@index')->middleware('auth')->name('mapel');
 
@@ -98,3 +102,7 @@ Route::get('/kirimemail','AdminEmailController@index');
 
 Auth::routes();
 
+Route::get('/admin-login','AdminLoginController@showLoginForm');
+Route::post('/admin-login', ['as' => 'admin-login', 'uses' => 'AdminLoginController@login']);
+Route::get('/admin-register','AdminLoginController@showRegisterPage');
+Route::post('/admin-register', 'AdminLoginController@register')->name('admin.register');

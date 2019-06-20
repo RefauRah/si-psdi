@@ -80,6 +80,11 @@
                     <td>{{$key->tgl_lahir}}</td>
                 </tr>
 
+                <tr>
+                    <th>Pembayaran</th>
+                    <td>{{$key->keuangan->pembayaran}}</td>
+                </tr>
+
                 </tbody>
                 <tfoot>
                 <tr>
