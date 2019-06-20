@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{url('/admin')}}">
                         <i class="fas fa-user"></i>Admin</a>
                 </li>
                 <li>
