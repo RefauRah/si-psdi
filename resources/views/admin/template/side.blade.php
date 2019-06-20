@@ -28,7 +28,7 @@
                         <i class="fas fa-users"></i>Guru</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{url('/siswa')}}">
                         <i class="fas fa-users"></i>Siswa</a>
                 </li>
                 <li>

@@ -41,7 +41,7 @@
                             <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
                             <th>No Tlp</th>
-                            <th class="text-left">#</th>
+                            <th class="text-left">Option</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,6 +64,7 @@
                     </table>
                 </div>
             </div>
+            <a href="{{url('/guru/cetak_pdf')}}" class="btn btn-sm btn-primary" target="_blank">Cetak PDF</a>
             <a href="{{url('/guru/create')}}" class="btn btn-sm btn-success pull-right">
                     <i class="fa fa-plus"></i> Tambah
                 </a>
