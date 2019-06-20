@@ -22,7 +22,8 @@ class Guru extends Model
         'jabatan',
         'boarding',
         'status_nikah',
-        'jumlah_kel'
+        'jumlah_kel',
+        'image'
     ];
 
     public function waliKelas()

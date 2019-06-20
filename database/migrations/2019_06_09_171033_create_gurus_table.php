@@ -44,6 +44,7 @@ class CreateGurusTable extends Migration
             $table->string('boarding',100);
             $table->string('status_nikah',100);
             $table->integer('jumlah_kel', false, true)->length(20);
+            $table->text('image')->nullable();
             $table->timestamps();
         });
 

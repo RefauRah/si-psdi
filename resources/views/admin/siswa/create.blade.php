@@ -87,6 +87,20 @@
                     <input name='no_telp'type="text" class="form-control" id="inputTlp">
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="inputNamaortu" class="col-sm-2">Nama Orang Tua</label>
+
+                  <div class="col-sm-10">
+                    <input name='ortu'type="text" class="form-control" id="inputNamaortu">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmailortu" class="col-sm-2">Email Ortu</label>
+
+                  <div class="col-sm-10">
+                    <input name='emailortu'type="email" class="form-control" id="inputEmailOrtu">
+                  </div>
+                </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">

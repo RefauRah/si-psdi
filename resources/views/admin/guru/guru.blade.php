@@ -30,6 +30,7 @@
                 <tr>
                     <th>NO</th>
                     <th>NIP</th>
+                    <th>Foto</th>
                     <th>Nama</th>
                     <th>Alamat</th>
                     <th>Tempat Lahir</th>
@@ -46,12 +47,23 @@
                 <tr>
                     <td>{{$nomer}}</td>
                     <td>{{ $row->nip}}</td>
+                    @if(is_null($row->image))
+                        <td>
+                            <img src="{{ asset('images/default.png') }}" style="height: 50px" class="img-fluid">
+                        </td>
+                    @else
+                        <td><img class="img-fluid" style="height: 50px"  src="{{asset('storage/files/guru/'.$row->image)}}"></td>
+                    @endif
                     <td>{{ $row->nama}}</td>
                     <td>{{ $row->alamat}}</td>
                     <td>{{ $row->tempat_lahir}}</td>
                     <td>{{ $row->tgl_lahir}}</td>
                     <td>{{ $row->no_telp}}</td>
-                    <td><a href="{{route('showGuru', $row->id)}}" class="btn btn-sm btn-primary">Lihat Profil</a></td>
+                    <td>
+                        <a href="{{url('/guru/hapus')}}" class="btn btn-sm btn-danger">Hapus</a>
+                        <a href="{{route('editGuru', $row->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="{{route('showGuru', $row->id)}}" class="btn btn-sm btn-primary">Lihat Profil</a>
+                    </td>
                     <?php $nomer++; ?>
                 </tr>
 
@@ -60,8 +72,9 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                <th>NO</th>
+                    <th>NO</th>
                     <th>NIP</th>
+                    <th>Foto</th>
                     <th>Nama</th>
                     <th>Alamat</th>
                     <th>Tempat Lahir</th>

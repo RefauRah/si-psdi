@@ -20,7 +20,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="post" action="/guru/create">
+            <form class="form-horizontal" method="post" action="/guru/create" enctype="multipart/form-data">
               @csrf
               <div class="box-body">
                 <div class="form-group">
@@ -41,7 +41,7 @@
                   <label for="image" class="col-sm-2">Foto</label>
 
                   <div class="col-sm-10">
-                    <input name="image" type="file" id="image" placeholder="Nama">
+                    <input name="image" type="file" id="image">
                   </div>
                 </div>
                 <div class="form-group">

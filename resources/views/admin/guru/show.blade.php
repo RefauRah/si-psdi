@@ -22,6 +22,13 @@
             </div>
 <!-- /.box-header ALTER TABLE `guru` AUTO_INCREMENT = 0;-->
             <div class="box-body">
+                <div class="col-md-4" style="padding-top:20px">
+                    @if(is_null($guru->image))
+                        <img src="{{ asset('images/default.png') }}" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
+                    @else
+                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/guru/'.$guru->image)}}" alt="Profile">
+                    @endif
+                </div> 
                 <table class="table table-bordered table-striped">
                 <thead>
                 </thead>
