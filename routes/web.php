@@ -91,3 +91,7 @@ Route::get('/laporansiswapengajian', function () {
 });
 
 Route::get('/absensiswa','AbsensiController@index');
+
+
+
+Route::get('/kirimemail','AdminEmailController@index');
