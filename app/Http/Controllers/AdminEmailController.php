@@ -12,7 +12,7 @@ class AdminEmailController extends Controller
 {
     public function index(){
  
-		Mail::to("galangsatria071@gmail.com")->send(new AdminEmail());
+		Mail::to("brogalangsatria@gmail.com")->send(new AdminEmail());
  
 		return "Email dikirim";
  

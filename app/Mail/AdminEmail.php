@@ -28,11 +28,11 @@ class AdminEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('brogalangsatria@gmail.com')
+        return $this->from('psditrial@gmail.com')
                    ->view('email')
                    ->with(
                     [
-                        'nama' => 'Galang Satria Wibowo',
+                        'nama' => 'Orang Tua murid',
                         'website' => 'psdi',
                     ]);
     }
