@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Kelas;
+use App\SiswaModel;
+use DB;
 
 class KelasController extends Controller
 {
@@ -15,10 +17,11 @@ class KelasController extends Controller
         return view('admin/kelas/kelas', ['kelas' => $kelas]);
     }
     
-    /*public function show(kelas $id)
+    public function show(Kelas $id)
     {
-        return view('kelas.show', ['kelas' => $id]);
-    }*/
+        $siswa = DB::select('select * from siswa where id_kelas = ?', [$id->value('id')]);
+        return view('admin.kelas.show', ['kelas' => $id], ['siswa' => $siswa]);
+    }
     
     public function create()
     {

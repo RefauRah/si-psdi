@@ -15,6 +15,7 @@ class CreateSiswaTable extends Migration
     {
         Schema::create('siswa', function (Blueprint $table) {
             $table->bigIncrements('id_siswa');
+            $table->bigInteger('id_kelas')->unsigned()->nullable();
             $table->string('nik',100);
             $table->string('nama',100);
             $table->string('email',50);
@@ -26,7 +27,6 @@ class CreateSiswaTable extends Migration
             $table->string('no_telp',20);
             // $table->string('ortu',100);
             // $table->string('emailortu',50);
-            $table->string('id_kelas', 10);
             $table->timestamps();
         });
     }

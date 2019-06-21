@@ -31,6 +31,11 @@ class SiswaModel extends Model
         return $this->hasMany('App\Keuangan', 'id_siswa','id_siswa');
     }
 
+    public function kelas()
+    {
+        return $this->belongsTo('App\Kelas', 'id_kelas', 'id');
+    }
+
     // public function get_absensi(){
     // 	return $this->hasMany('App\AbsensiModel','id_siswa');
     // }

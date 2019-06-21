@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\SiswaModel;
+use App\Kelas;
 use PDF;
 
 class SiswaController extends Controller
@@ -16,7 +17,8 @@ class SiswaController extends Controller
 
     public function index()
     {
-        $siswa = SiswaModel::all();
+        // $siswa = SiswaModel::all();
+        $siswa = SiswaModel::with('kelas')->get();
         return view('admin/siswa/siswa', ['siswa' => $siswa]);
     }
     
@@ -27,7 +29,8 @@ class SiswaController extends Controller
     
     public function create()
     {
-        return view('admin/siswa/create');
+        $kelas = Kelas::all();
+        return view('admin/siswa/create', ['kelas' => $kelas]);
     }
 
         public function store(Request $request)
@@ -42,6 +45,7 @@ class SiswaController extends Controller
         $siswa->tmpt_lahir = request('tmpt_lahir');
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
+        $siswa->id_kelas = request('id_kelas');
         // $siswa->ortu = request('ortu');
         // $siswa->emailortu = request ('emailortu');
        
@@ -57,7 +61,7 @@ class SiswaController extends Controller
         // $file = $request->file('image')->store('public/files/siswa');
         // $format = $request->file('image')->getClientOriginalExtension();
         // $siswa->image = $file;
-        
+
         if(!is_null($request->file('image'))){
             $file = $request->file('image')->store('public/files/siswa');
             $filename = $request->file('image')->hashName();

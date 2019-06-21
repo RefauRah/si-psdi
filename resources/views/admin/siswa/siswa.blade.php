@@ -54,7 +54,7 @@
                         <td><img class="img-fluid" style="height: 50px"  src="{{asset('storage/files/siswa/'.$siswa->image)}}"></td>
                     @endif
                     <td>{{ $siswa->nama}}</a></td>
-                    <td>{{ $siswa->kelas}}</td>
+                    <td>{{ $siswa->kelas->nama }}</td>
                     <td>{{ $siswa->tmpt_lahir}}</td>
                     <td>{{ $siswa->tgl_lahir}}</td>
                     <td>{{ $siswa->jk}}</td>

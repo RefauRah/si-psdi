@@ -48,7 +48,7 @@ Route::get('/siswa/show', function () {
 
 Route::get('/guru', 'GuruController@index')->middleware('auth')->name('guru');
 
-Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru');
+
 Route::get('/guru/show/{id}', 'GuruController@show')->middleware('auth')->name('showGuru');
 
 // Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('guru/create');
@@ -60,7 +60,7 @@ Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf')->middleware('auth')->
 
  
 Route::get('/kelas', 'KelasController@index')->middleware('auth')->name('kelas');
-
+Route::get('/guru/show/{id}', 'KelasController@show')->middleware('auth')->name('showKelas');
 Route::get('/kelas/create', 'KelasController@create')->middleware('auth')->name('kelas');
 Route::post('/kelas/create', 'KelasController@store');
 
