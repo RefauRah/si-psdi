@@ -49,11 +49,8 @@ Route::get('/siswa/show', function () {
 
 
 Route::get('/guru', 'GuruController@index')->middleware('auth')->name('guru');
-<<<<<<< HEAD
 Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru');
-=======
 Route::get('/guru/show/{id}', 'GuruController@show')->middleware('auth')->name('showGuru');
->>>>>>> 1bad1722b98fd9309cff1cb741bd5cbc5438ae44
 
 // Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('guru/create');
 Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('createGuru');
@@ -121,3 +118,9 @@ Route::post('/admin-login', 'AdminController@login')->name('admin.login');
 Route::post('/admin-register', 'AdminController@register')->name('admin.register');
 Route::get('/admin-home', 'AdminController@index')->middleware('auth:admin')->name('admin.home');
 Route::get('/admin-logout', 'AdminController@logout')->name('admin.logout');
+
+
+// Route::get('/notif', function() {
+//     $user = \App\SiswaModel::first();
+//     $user->notify(new \App\Notifications\Daftar);
+// });

@@ -29,11 +29,9 @@
 <!-- /.box-header ALTER TABLE `siswa` AUTO_INCREMENT = 0;-->
             <div class="box-body">
                 <div class="col-md-4" style="padding-top:20px">
-                    @if(is_null($key->image))
-                        <img src="{{ asset('images/default.png') }}" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
-                    @else
+                   
                         <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/siswa/'.$key->image)}}" alt="Profile">
-                    @endif
+                   
                 </div> 
                 <table class="table table-bordered table-striped">
                 <thead>
@@ -75,20 +73,8 @@
                     <td>{{$key->tgl_lahir}}</td>
                 </tr>
 
-                <tr>
-<<<<<<< HEAD
-                    <th>Pembayaran</th>
-                    <td>{{$key->keuangan->pembayaran}}</td>
-=======
-                    <th>Nama Orang Tua</th>
-                    <td>{{$key->ortu}}</td>
-                </tr>
+         
 
-                <tr>
-                    <th>Email Orang Tua</th>
-                    <td>{{$key->emailortu}}</td>
->>>>>>> 1bad1722b98fd9309cff1cb741bd5cbc5438ae44
-                </tr>
 
                 </tbody>
                 <tfoot>

@@ -19,6 +19,7 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Profil Guru PSDI</h3>
+                <a href="/guru/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
             </div>
 <!-- /.box-header ALTER TABLE `guru` AUTO_INCREMENT = 0;-->
             <div class="box-body">

@@ -42,34 +42,26 @@ class SiswaController extends Controller
         $siswa->tmpt_lahir = request('tmpt_lahir');
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
-<<<<<<< HEAD
         // $siswa->ortu = request('ortu');
         // $siswa->emailortu = request ('emailortu');
        
 
-        $file = $request->file('image')->store('upload/images');  
-        $format = $request->file('image')->getClientOriginalExtension();
-        $siswa->image = $file;
+        // $file = $request->file('image')->store('upload/images');  
+        // $format = $request->file('image')->getClientOriginalExtension();
+        // $siswa->image = $file;
 
-=======
-        $siswa->ortu = request('ortu');
-        $siswa->emailortu = request('emailortu');
-       
->>>>>>> 1bad1722b98fd9309cff1cb741bd5cbc5438ae44
+        // $siswa->ortu = request('ortu');
+        // $siswa->emailortu = request('emailortu');
         // $file = $request->file('image')->store('public/files/siswa');
         // $format = $request->file('image')->getClientOriginalExtension();
         // $siswa->image = $file;
-        if(!is_null($request->file('image'))){
+        
             $file = $request->file('image')->store('public/files/siswa');
             $filename = $request->file('image')->hashName();
             $format = $request->file('image')->getClientOriginalExtension();
             $siswa->image = $filename;
-        }
+        
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 1bad1722b98fd9309cff1cb741bd5cbc5438ae44
         // $file = $request->file('image');
         // $ext = $file->getClientOriginalExtension();
         // $newName = rand(100000,1001238912).".".$ext;
@@ -82,7 +74,7 @@ class SiswaController extends Controller
         return redirect('/siswa');
     }
 
-        public function show($nik,)
+        public function show($nik)
     {   
         $users = DB::select('select * from siswa where nik = ?',[$nik]);
 
