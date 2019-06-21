@@ -94,8 +94,17 @@ Route::get('/absensiswapengajian', function () {
 Route::get('/laporansiswasekolah', function () {
     return view('/admin/absensi/laporanSiswaSekolah');
 });
+
 Route::get('/laporansiswapengajian', function () {
     return view('/admin/absensi/laporanSiswaPengajian');
+});
+
+Route::get('/staff', function () {
+    return view('/admin/staff/staff');
+});
+
+Route::get('/staff/create', function () {
+    return view('/admin/staff/create');
 });
 
 Route::get('/absensiswa','AbsensiController@index');
@@ -143,3 +152,4 @@ Route::group(['middleware' => 'App\Http\Middleware\AbsensiMiddleware'], function
 {
 Route::match(['get', 'post'], '/AbsensiOnlyPage/', 'HomeController@Absensi');
 });
+

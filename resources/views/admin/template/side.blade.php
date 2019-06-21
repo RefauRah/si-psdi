@@ -4,24 +4,10 @@
 <section class="sidebar">
     <!-- Sidebar user panel -->
     <div class="user-panel">
-    <div class="pull-left image">
-        <img src="{{url('/assets/admin/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-    </div>
-    <div class="pull-left info">
-        <p>Admin</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-    </div>
+    <h4 class="header text-center" style="color:white">Admin</h4>
     </div>
     <!-- search form -->
-    <form action="#" method="get" class="sidebar-form">
-    <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search...">
-        <span class="input-group-btn">
-            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-            </button>
-            </span>
-    </div>
-    </form>
+    
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
@@ -45,6 +31,16 @@
         <a href="{{url('/guru')}}">
         <i class="fa fa-users"></i>
         <span>Guru</span>
+        <span class="">
+            <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
+        </span>
+        </a>
+        
+    </li>
+    <li class="">
+        <a href="{{url('/staff')}}">
+        <i class="fa fa-users"></i>
+        <span>Staff</span>
         <span class="">
             <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
         </span>
@@ -91,7 +87,7 @@
         </a>
         
     </li>
-    <li class="">
+    <!-- <li class="">
         <a href="{{url('/keuangan')}}">
         <i class="fa fa-money"></i>
         <span>Pembayaran</span>
@@ -100,8 +96,8 @@
         </span>
         </a>
         
-    </li>
-    <li class="">
+    </li> -->
+    <!-- <li class="">
         <a href="#">
         <i class="fa fa-book"></i>
         <span>Jam Pelajaran</span>
@@ -109,7 +105,7 @@
             <i class="fa fa-angle-double-right pull-right" style="margin-right:10px;"></i>
         </span>
         </a>
-    </li>
+    </li> -->
     <li class="header">DATA ABSENSI</li>
     <li class="treeview">
         <a href="#">
