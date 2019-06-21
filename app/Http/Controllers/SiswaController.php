@@ -1,14 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests;
 use App\SiswaModel;
+use PDF;
 
 class SiswaController extends Controller
 {
+    function __contruct(){
+        $siswa = SiswaModel::all();
+    }
+
     public function index()
     {
         $siswa = SiswaModel::all();
@@ -25,7 +30,7 @@ class SiswaController extends Controller
         return view('admin/siswa/create');
     }
 
-        public function store()
+        public function store(Request $request)
     {
         $siswa = new SiswaModel;
         
@@ -37,11 +42,36 @@ class SiswaController extends Controller
         $siswa->tmpt_lahir = request('tmpt_lahir');
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
-        //$siswa->image = request()->file('image')->store('public/images');
-        $siswa->save();
+       
+        // $file = $request->file('image')->store('public/files/siswa');
+        // $format = $request->file('image')->getClientOriginalExtension();
+        // $siswa->image = $file;
+        if(!is_null($request->file('image'))){
+            $file = $request->file('image')->store('public/files/siswa');
+            $filename = $request->file('image')->hashName();
+            $format = $request->file('image')->getClientOriginalExtension();
+            $siswa->image = $filename;
+        }
 
+        // $file = $request->file('image');
+        // $ext = $file->getClientOriginalExtension();
+        // $newName = rand(100000,1001238912).".".$ext;
+        // $file->move('uploads/file',$newName);
+        // $siswa->image = $newName;
+
+        $siswa->save();
         \Session::flash('flash_message','successfully saved.');
 
         return redirect('/siswa');
     }
+
+        public function show($nik)
+    {   
+        $users = DB::select('select * from siswa where nik = ?',[$nik]);
+        return view('admin.siswa.show',['users'=>$users]);
+
+    }
+
+   
+    
 }

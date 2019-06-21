@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Guru;
+use PDF;
 
 class GuruController extends Controller
 {
@@ -15,10 +16,10 @@ class GuruController extends Controller
         return view('admin/guru/guru', ['guru' => $guru]);
     }
     
-    /*public function show(Guru $id)
+    public function show(Guru $id)
     {
-        return view('guru.show', ['guru' => $id]);
-    }*/
+        return view('admin.guru.show', ['guru' => $id]);
+    }
     
     public function create()
     {
@@ -41,11 +42,20 @@ class GuruController extends Controller
         $guru->boarding = request('boarding');
         $guru->status_nikah = request('status_nikah');
         $guru->jumlah_kel = request('jumlah_kel');
+        //image
         //$guru->image = request()->file('image')->store('public/images');
         $guru->save();
 
         \Session::flash('flash_message','successfully saved.');
 
         return redirect('/guru');
+    }
+
+    public function cetak_pdf()
+    {
+        $guru= Guru::all();
+
+        $gpdf = PDF::loadview('admin/guru/guruPDF',['guru'=>$guru]);
+        return $gpdf->download('laporan-guru-pdf');
     }
 }

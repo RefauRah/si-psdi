@@ -13,5 +13,8 @@ class Kelas extends Model
     	'nama'
     ];
 
-    public $timestamps = false;
+    public function waliKelas()
+	{
+    	return $this->hasOne('App\WaliKelas', 'id_kelas', 'id');
+	}
 }

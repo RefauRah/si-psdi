@@ -1,60 +1,62 @@
 @extends('admin.template.base')
 @section('content')
 <section class="content-header">
-      <h1>
-        Tabel
-        <small>tabel kelas</small>
-      </h1>
+      <h2 class="col-md-12">Tabel
+        <small>Kelas</small>
+      </h2>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{{url('/home')}}"><i class="fa fa-home"></i> Home</a></li>
         <li class="active">Kelas</li>
       </ol>
 </section>
 <section class="content">
-    <div class="col-xs-12">
-        <div class="box">
-            <div class="box-header">
-                <h3 class="box-title">Data Kelas PSDI</h3>
-                <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
-                    <i class="fa fa-plus"></i> Tambah
-                </a>
-            </div>
-<!-- /.box-header -->
-            <div class="box-body">
-                <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>NO</th>
-                    <th>Kode</th>
-                    <th>Nama</th>
-                   <!--  <th>Wali Kelas</th>
-                    <th>NO Ruangan</th> -->
-                </tr>
-                </thead>
-                <tbody>
-                <?php $nomer = 1; ?>
+    <div class="card">
+        <div class="card-header">
+            <h3>Data Kelas PSDI</h3>
+        </div>
+        <div class="card-body">
+            <div class="container">         
+        <!-- Tabel -->
+        <div class="col-lg-12">
+            <div class="row form-group">
+                <div class="input-group col-md-4 ml-auto">
+                    <div class="input-group-btn">
+                        <button class="btn btn-secondary">
+                            <i class="fa fa-search"></i> Search
+                        </button>
+                    </div>
+                    <input type="text" id="input1-group2" name="input1-group2" placeholder="Cari" class="form-control">
+                </div>
+            <div class="table-responsive fl-table">
+                <table id="example1" class="table table-borderless table-data3 table-wrapper">
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>Kode</th>
+                            <th class="text-center">Nama</th>
+                            <!--  <th>Wali Kelas</th>
+                            <th>NO Ruangan</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php $nomer = 1; ?>
 
-                @foreach ($kelas as $row)
-                <tr>
-                    <td>{{$nomer}}</td>
-                    <td>{{ $row->kode_kelas}}</td>
-                    <td>{{ $row->nama}}</td>
-                    <?php $nomer++; ?>
-                </tr>
-                @endforeach
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>NO</th>
-                    <th>Kode</th>
-                   <!--  <th>Nama</th>
-                    <th>Wali Kelas</th>
-                    <th>NO Ruangan</th> -->
-                </tr>
-                </tfoot>
-                </table>
+                    @foreach ($kelas as $row)
+                        <tr>
+                            <td>{{$nomer}}</td>
+                            <td>{{ $row->kode_kelas}}</td>
+                            <td class="text-left">{{ $row->nama}}</td>
+                            <?php $nomer++; ?>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                    </table>
+                </div>
             </div>
-<!-- /.box-body -->
+            <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
+                <i class="fa fa-plus"></i> Tambah
+            </a>
+            </div>
         </div>
     </div>
 </section>

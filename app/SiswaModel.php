@@ -21,8 +21,6 @@ class SiswaModel extends Model
     	'updated_at'
     ];
 
-    public $timestamps = false;
-
     // public function get_absensi(){
     // 	return $this->hasMany('App\AbsensiModel','id_siswa');
     // }

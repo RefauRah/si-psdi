@@ -32,19 +32,19 @@
                         <i class="fas fa-users"></i>Siswa</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{url('/kelas')}}">
                         <i class="fas fa-sitemap"></i>Kelas</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{url('/walikelas')}}">
                         <i class="fas fa-user"></i>Wali Kelas</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{url('/mapel')}}">
                         <i class="fas fa-book"></i>Mata Pelajaran</a>
                 </li>
                 <li>
-                    <a>Data Absensi</a>
+                    <a href="">Data Absensi</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">

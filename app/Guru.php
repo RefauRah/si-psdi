@@ -24,4 +24,10 @@ class Guru extends Model
         'status_nikah',
         'jumlah_kel'
     ];
+
+    public function waliKelas()
+    {
+        return $this->hasOne('App\WaliKelas', 'id_guru', 'id');
+        // return $this->hasOne('App\UserProfile', 'profile_user_id', 'user_id');
+    }
 }
