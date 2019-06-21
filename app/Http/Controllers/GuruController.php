@@ -77,6 +77,6 @@ class GuruController extends Controller
         $guru= Guru::all();
 
         $gpdf = PDF::loadview('admin/guru/guruPDF',['guru'=>$guru]);
-        return $gpdf->download('laporan-guru-pdf');
+        return $gpdf->download('laporan-guru.pdf');
     }
 }
