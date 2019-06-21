@@ -1,33 +1,25 @@
-@extends('admin.template.base')
-@section('content')
-@if(Session::has('flash_message'))
-    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
-@endif
-<section class="content-header">
-      <h1>
-        Lihat
-        <small>data guru</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="">Guru</li>
-        <li class="active">Profil</li>
-      </ol>
-</section>
-<section class="content">
-    <div class="col-xs-12">
-        <div class="box">
-            <div class="box-header">
-                <h3 class="box-title">Profil Guru PSDI</h3>
-                <a href="{{route('guru/cetak_profil_pdf', $guru->id)}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
-            </div>
-<!-- /.box-header ALTER TABLE `guru` AUTO_INCREMENT = 0;-->
-            <div class="box-body">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profil Guru PSDI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <style type="text/css">
+        table tr td,
+        table tr th{
+            font-size: 9pt;
+        }
+    </style>
+    <center>
+        <h5>Daftar Guru PSDI</h4>
+<!--         <h6><a target="_blank" href="https://www.malasngoding.com/membuat-laporan-…n-dompdf-laravel/">www.malasngoding.com</a></h5> -->
+    </center>
                 <div class="col-md-4" style="padding-top:20px">
                     @if(is_null($guru->image))
-                        <img src="{{ asset('images/default.png') }}" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
+                        <img src="images/default.png" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
                     @else
-                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/guru/'.$guru->image)}}" alt="Profile">
+                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="storage/files/guru/{{$guru->image}}" alt="Profile">
                     @endif
                 </div> 
                 <table class="table table-bordered table-striped">
@@ -89,19 +81,11 @@
                     <th>Jumlah Keluarga Yang Dibawa</th>
                     <td>{{$guru->jumlah_kel}}</td>   
                 </tr>
-
                 </tbody>
                 <tfoot>
                 <tr>
                 </tfoot>
                 </table>
-            </div>
-<!-- /.box-body -->
-<div class="button" style="margin-left:10px;margin-right:10px;padding-bottom:10px;">
-            <a href="#" class="btn btn-success pull-right">Edit</a>
-            <a href="{{url('/guru')}}" class="btn btn-primary">Kembali</a>
-</div>
-        </div>
-    </div>
-</section>
-@endsection
+
+</body>
+</html>

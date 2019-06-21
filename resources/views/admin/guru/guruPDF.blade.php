@@ -35,9 +35,15 @@
             <tr>
                 <td>{{ $i++ }}</td>
                 <td>{{ $row->nip}}</td>
-                        <td>
-                            <img src="storage/files/guru/{{$row->image}}" style="height: 50px">
-                        </td>
+                @if(!is_null($row->image))
+                    <td>
+                        <img src="storage/files/guru/{{$row->image}}" style="height: 50px">
+                    </td>
+                @else
+                    <td>
+                        <img src="images/default.png" style="height: 50px">
+                    </td>
+                @endif
                 <td>{{ $row->nama}}</td>
                 <td>{{ $row->alamat}}</td>
                 <td>{{ $row->tempat_lahir}}</td>

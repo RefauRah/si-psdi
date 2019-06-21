@@ -8,6 +8,7 @@ use App\Http\Requests;
 
 use App\Guru;
 use PDF;
+use DB;
 
 class GuruController extends Controller
 {
@@ -77,6 +78,13 @@ class GuruController extends Controller
         $guru= Guru::all();
 
         $gpdf = PDF::loadview('admin/guru/guruPDF',['guru'=>$guru]);
-        return $gpdf->download('laporan-guru.pdf');
+        return $gpdf->download('daftar-guru.pdf');
+    }
+
+    public function cetak_profil_pdf(Guru $id)
+    {
+        // return $id;
+        $gpdf = PDF::loadview('admin/guru/profilguruPDF',['guru'=>$id]);
+        return $gpdf->download('profil-guru.pdf');
     }
 }
