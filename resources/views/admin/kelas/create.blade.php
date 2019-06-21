@@ -37,6 +37,15 @@
                     <input name="nama" type="text" class="form-control" id="inputNama" placeholder="Nama Kelas">
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="inputJenisKelas" class="col-sm-2">Nama Kelas</label>
+
+                  <div class="col-sm-10">
+                    <div class="col-sm-10">
+                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Reguler">Reguler
+                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pengajian">Pengajian
+                  </div>
+                </div>
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="reset" class="btn btn-default">Reset</button>
