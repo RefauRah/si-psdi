@@ -5,7 +5,7 @@
         <small>data guru</small>
       </h2>
       <ol class="breadcrumb">
-        <li><a href="{{url('/home')}}"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="{{url('/home')}}"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="">Guru</li>
         <li class="active">Create</li>
       </ol>

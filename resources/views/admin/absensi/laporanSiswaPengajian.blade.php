@@ -11,15 +11,19 @@
         <div class="card-body">
             <div class="container">      
             <form class="form-horizontal">
-                <div class="form-group">
-                   <label class="control-label col-sm-2" for="kelas">Kelas :</label>
-                   <div class="col-sm-3">
-                        <input type="text" class="form-control">
+                <div class="row form-group">
+                    <div class="col col-sm-1">
+                        <label for="kelas" class=" form-control-label">Kelas</label>
+                    </div>
+                    <div class="col col-sm-3">
+                        <input type="text" id="input-normal" name="input-normal" class="form-control">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="kelas">Bulan :</label>
-                    <div class="col-sm-2">
+                <div class="row form-group">
+                    <div class="col col-sm-1">
+                        <label for="bulan" class=" form-control-label">Bulan</label>
+                    </div>
+                    <div class="col col-sm-3">
                         <select class="form-control">
                             <option>Januari</option>
                             <option>Februari</option>

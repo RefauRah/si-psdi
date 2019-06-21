@@ -11,7 +11,7 @@
         <small>Absensi Guru</small>
       </h2>
       <ol class="breadcrumb">
-        <li><a href="{{url('/home')}}"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="{{url('/home')}}"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active">Absensi</li>
       </ol>
 </section>
@@ -48,7 +48,7 @@
                             <th>NO</th>
                             <th>NIP</th>
                             <th>Nama</th>
-                            <th class="text-left">Pilih</th>
+                            <th class="text-center">Pilih</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,7 +60,7 @@
                         <td>{{$nomer}}</td>
                         <td>{{$row->nip}}</td>
                         <td>{{$row->nama}}</td>
-                        <td><input type = "checkbox" name = "id_guru[]" value = "{{$getid[$nomer]}}"/></td>
+                        <td class="text-center"><input type = "checkbox" name = "id_guru[]" value = "{{$getid[$nomer]}}"/></td>
                     <?php $nomer++; ?>
                     </tr>
                     @endforeach
