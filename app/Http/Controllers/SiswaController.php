@@ -52,15 +52,18 @@ class SiswaController extends Controller
 
         // $siswa->ortu = request('ortu');
         // $siswa->emailortu = request('emailortu');
+        // $siswa->ortu = request('ortu');
+        // $siswa->emailortu = request('emailortu');
         // $file = $request->file('image')->store('public/files/siswa');
         // $format = $request->file('image')->getClientOriginalExtension();
         // $siswa->image = $file;
         
+        if(!is_null($request->file('image'))){
             $file = $request->file('image')->store('public/files/siswa');
             $filename = $request->file('image')->hashName();
             $format = $request->file('image')->getClientOriginalExtension();
             $siswa->image = $filename;
-        
+        }
 
         // $file = $request->file('image');
         // $ext = $file->getClientOriginalExtension();

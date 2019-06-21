@@ -47,6 +47,7 @@ Route::get('/siswa/show', function () {
 
 
 Route::get('/guru', 'GuruController@index')->middleware('auth')->name('guru');
+
 Route::get('/guru/show/{id}', 'GuruController@show')->name('showGuru');
 Route::get('/guru/show/{id}', 'GuruController@show')->middleware('auth')->name('showGuru');
 

@@ -27,6 +27,7 @@
                     <th>NO</th>
                     <th>Kode</th>
                     <th>Nama</th>
+                    <th>Jenis Kelas</th>
                    <!--  <th>Wali Kelas</th>
                     <th>NO Ruangan</th> -->
                 </tr>
@@ -39,6 +40,7 @@
                     <td>{{$nomer}}</td>
                     <td>{{ $row->kode_kelas}}</td>
                     <td>{{ $row->nama}}</td>
+                    <td>{{$row->jenis_kelas}}</td>
                     <?php $nomer++; ?>
                 </tr>
                 @endforeach
@@ -47,6 +49,8 @@
                 <tr>
                     <th>NO</th>
                     <th>Kode</th>
+                    <th>Nama</th>
+                    <th>Jenis Kelas</th>
                    <!--  <th>Nama</th>
                     <th>Wali Kelas</th>
                     <th>NO Ruangan</th> -->
