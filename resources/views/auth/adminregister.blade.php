@@ -4,8 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+                @if (session()->has('success'))
+                    <div class="alert alert-success">
+                        <span>{{ session()->get('success') }}</span>
+                    </div>
+                @endif
             <div class="card">
-                <div class="card-header">Admin {{ __('Register') }}</div>
+                <div class="card-header">{{ __('Register admin') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.register') }}">

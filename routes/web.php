@@ -102,7 +102,14 @@ Route::get('/kirimemail','AdminEmailController@index');
 
 Auth::routes();
 
-Route::get('/admin-login','AdminLoginController@showLoginForm');
-Route::post('/admin-login', ['as' => 'admin-login', 'uses' => 'AdminLoginController@login']);
-Route::get('/admin-register','AdminLoginController@showRegisterPage');
-Route::post('/admin-register', 'AdminLoginController@register')->name('admin.register');
+// Route::get('/admin-login','AdminLoginController@showLoginForm');
+// Route::post('/admin-login', ['as' => 'admin-login', 'uses' => 'AdminLoginController@login']);
+// Route::get('/admin-register','AdminLoginController@showRegisterPage');
+// Route::post('/admin-register', 'AdminLoginController@register')->name('admin.register');
+
+Route::get('/admin-login', 'AdminController@showLoginForm')->name('admin.loginform');
+Route::get('/admin-register', 'AdminController@showRegisterForm')->name('admin.registerform');
+Route::post('/admin-login', 'AdminController@login')->name('admin.login');
+Route::post('/admin-register', 'AdminController@register')->name('admin.register');
+Route::get('/admin-home', 'AdminController@index')->middleware('auth:admin')->name('admin.home');
+Route::get('/admin-logout', 'AdminController@logout')->name('admin.logout');
