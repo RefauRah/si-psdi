@@ -87,6 +87,7 @@
                     <input name='no_telp'type="text" class="form-control" id="inputTlp">
                   </div>
                 </div>
+<<<<<<< HEAD
 
                 <!-- <div class="form-group">
                   <label for="inputOrtu" class="col-sm-2">Nama Orang Tua</label>
@@ -104,6 +105,23 @@
                   </div>
                 </div>
               </div> -->
+=======
+                <div class="form-group">
+                  <label for="inputNamaortu" class="col-sm-2">Nama Orang Tua</label>
+
+                  <div class="col-sm-10">
+                    <input name='ortu'type="text" class="form-control" id="inputNamaortu">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmailortu" class="col-sm-2">Email Ortu</label>
+
+                  <div class="col-sm-10">
+                    <input name='emailortu'type="email" class="form-control" id="inputEmailOrtu">
+                  </div>
+                </div>
+              </div>
+>>>>>>> 1bad1722b98fd9309cff1cb741bd5cbc5438ae44
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="submit" class="btn btn-default">Cancel</button>

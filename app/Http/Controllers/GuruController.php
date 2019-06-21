@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
 
 use App\Guru;
 use PDF;
@@ -26,7 +27,7 @@ class GuruController extends Controller
         return view('admin/guru/create');
     }
 
-        public function store()
+        public function store(Request $request)
     {
         $guru = new Guru;
         $guru->nip = request('nip');
@@ -42,13 +43,33 @@ class GuruController extends Controller
         $guru->boarding = request('boarding');
         $guru->status_nikah = request('status_nikah');
         $guru->jumlah_kel = request('jumlah_kel');
-        //image
-        //$guru->image = request()->file('image')->store('public/images');
+        if(!is_null($request->file('image'))){
+            $file = $request->file('image')->store('public/files/guru');
+            $filename = $request->file('image')->hashName();
+            $format = $request->file('image')->getClientOriginalExtension();
+            $guru->image = $filename;
+        }
+
         $guru->save();
 
         \Session::flash('flash_message','successfully saved.');
 
         return redirect('/guru');
+    }
+
+    // public function edit(Guru $id){
+    //     $guru = Guru::all();
+    //     return view('admin.guru.show', ['guru' => $id]);
+    // }
+
+    public function edit(Guru $id)
+    {
+        return view('admin.guru.edit', ['guru' => $id]);
+    }
+
+    public function update(Request $request){
+        // \Session::flash('flash_message','successfully saved.');
+        return view('admin.guru.edit', ['guru' => $id]);
     }
 
     public function cetak_pdf()

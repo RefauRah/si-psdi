@@ -44,11 +44,6 @@
                     <th>NIS</th>
                     <td>{{$key->nik}}</td>
                 </tr>
-
-                <tr>
-                    <th>Foto</th>
-                    <td></td>
-                </tr>
                 
                 <tr>
                     <th>Nama</th>
@@ -81,8 +76,18 @@
                 </tr>
 
                 <tr>
+<<<<<<< HEAD
                     <th>Pembayaran</th>
                     <td>{{$key->keuangan->pembayaran}}</td>
+=======
+                    <th>Nama Orang Tua</th>
+                    <td>{{$key->ortu}}</td>
+                </tr>
+
+                <tr>
+                    <th>Email Orang Tua</th>
+                    <td>{{$key->emailortu}}</td>
+>>>>>>> 1bad1722b98fd9309cff1cb741bd5cbc5438ae44
                 </tr>
 
                 </tbody>

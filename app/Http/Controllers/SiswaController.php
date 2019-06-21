@@ -42,6 +42,7 @@ class SiswaController extends Controller
         $siswa->tmpt_lahir = request('tmpt_lahir');
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
+<<<<<<< HEAD
         // $siswa->ortu = request('ortu');
         // $siswa->emailortu = request ('emailortu');
        
@@ -50,6 +51,11 @@ class SiswaController extends Controller
         $format = $request->file('image')->getClientOriginalExtension();
         $siswa->image = $file;
 
+=======
+        $siswa->ortu = request('ortu');
+        $siswa->emailortu = request('emailortu');
+       
+>>>>>>> 1bad1722b98fd9309cff1cb741bd5cbc5438ae44
         // $file = $request->file('image')->store('public/files/siswa');
         // $format = $request->file('image')->getClientOriginalExtension();
         // $siswa->image = $file;
@@ -60,7 +66,10 @@ class SiswaController extends Controller
             $siswa->image = $filename;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1bad1722b98fd9309cff1cb741bd5cbc5438ae44
         // $file = $request->file('image');
         // $ext = $file->getClientOriginalExtension();
         // $newName = rand(100000,1001238912).".".$ext;
