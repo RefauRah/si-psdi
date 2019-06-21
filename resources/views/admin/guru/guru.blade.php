@@ -56,7 +56,7 @@
                             <td>{{ $row->tempat_lahir}}</td>
                             <td>{{ $row->tgl_lahir}}</td>
                             <td>{{ $row->no_telp}}</td>
-                            <td><a href="{{url('/guru/show')}}" class="btn btn-sm btn-primary">Lihat Profil</a></td>
+                            <td><a href="{{route('showGuru', $row->id)}}" class="btn btn-sm btn-primary">Lihat Profil</a></td>
                             <?php $nomer++; ?>
                         </tr>
                         @endforeach

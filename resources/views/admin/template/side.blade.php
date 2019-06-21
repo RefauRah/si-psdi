@@ -44,7 +44,7 @@
                         <i class="fas fa-book"></i>Mata Pelajaran</a>
                 </li>
                 <li>
-                    <a href="">Data Absensi</a>
+                    <a href="#" class="text-center">Data Absensi</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
