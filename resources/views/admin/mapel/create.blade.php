@@ -27,14 +27,14 @@
                   <label for="inputKode" class="col-sm-2">Kode Mata Pelajaran</label>
 
                   <div class="col-sm-10">
-                    <input name="kode" type="text" class="form-control" id="inputNIK" placeholder="Kode Mata Pelajaran">
+                    <input name="kode" type="text" class="form-control" id="inputNIK" placeholder="Kode Mata Pelajaran" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputNama" class="col-sm-2">Nama Mata Pelajaran</label>
 
                   <div class="col-sm-10">
-                    <input name="nama" type="text" class="form-control" id="inputNama" placeholder="Nama Mata Pelajaran">
+                    <input name="nama" type="text" class="form-control" id="inputNama" placeholder="Nama Mata Pelajaran" required>
                   </div>
                 </div>
               <!-- /.box-body -->

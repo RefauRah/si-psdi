@@ -1,82 +1,59 @@
-@extends('layouts.app')
-
+@extends('admin.template.base')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-                @if (session()->has('success'))
-                    <div class="alert alert-success">
-                        <span>{{ session()->get('success') }}</span>
-                    </div>
-                @endif
-            <div class="card">
-                <div class="card-header">{{ __('Register admin') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('admin.register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<section class="content-header">
+      <h1>
+        Tambah
+        <small>data kelas</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="">Kelas</li>
+        <li class="active">Create</li>
+      </ol>
+</section>
+<section class="content">
+    <div class="col-xs-12">
+     <!-- Horizontal Form -->
+     <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Form Admin</h3>
             </div>
-        </div>
-    </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal" method="post" action="/admin/create">
+              @csrf
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="inputNIK" class="col-sm-2">Nama Admin</label>
+
+                  <div class="col-sm-10">
+                    <input name="name" type="text" class="form-control" id="inputName" placeholder="Nama Admin" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail" class="col-sm-2">Email Admin</label>
+
+                  <div class="col-sm-10">
+                    <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email Admin" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-sm-2">Password Admin</label>
+
+                  <div class="col-sm-10">
+                    <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password Admin" required>
+                  </div>
+                </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="reset" class="btn btn-default">Reset</button>
+                <button type="submit" class="btn btn-info pull-right">Submit</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+          <!-- /.box -->
+
 </div>
+</section>
 @endsection

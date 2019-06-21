@@ -32,7 +32,7 @@
                   <div class="col-sm-10">
                     <select name="id_guru" id="inputGuru">
                     @foreach ($guru as $row)
-                    <option value="{{$row->id}}">{{$row->nip}} - {{$row->nama}}</option>
+                    <option value="{{$row->id}}" required>{{$row->nip}} - {{$row->nama}} </option>
                     @endforeach
                     </select>
                   </div>
@@ -44,7 +44,7 @@
                   <div class="col-sm-10">
                     <select name="id_kelas" id="inputKelas">
                     @foreach ($kelas as $row)
-                    <option value="{{$row->id}}">{{$row->kode_kelas}} - {{$row->nama}}</option>
+                    <option value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
                     @endforeach
                     </select>
                   </div>

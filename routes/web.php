@@ -27,13 +27,11 @@ Route::get('/home', function () {
 
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 
-Route::get('/admin', function () {
-    return view('/admin/admin/admin');
-})->middleware('auth')->name('admin');
 
-Route::get('/admin/create', function () {
-    return view('/admin/admin/create');
-});
+
+Route::get('/admin', 'DashboardController@index')->middleware('auth')->name('admin');
+Route::get('/admin/create', 'DashboardController@create')->middleware('auth')->name('admin/create');
+Route::post('/admin/create', 'DashboardController@store');
 
 Route::get('/siswa','SiswaController@index')->middleware('auth')->name('siswa');
 //->middleware('auth')->name('siswa');
@@ -113,9 +111,9 @@ Auth::routes();
 // Route::post('/admin-register', 'AdminLoginController@register')->name('admin.register');
 
 Route::get('/admin-login', 'AdminController@showLoginForm')->name('admin.loginform');
-Route::get('/admin-register', 'AdminController@showRegisterForm')->name('admin.registerform');
+// Route::get('/admin-register', 'AdminController@showRegisterForm')->name('admin.registerform');
 Route::post('/admin-login', 'AdminController@login')->name('admin.login');
-Route::post('/admin-register', 'AdminController@register')->name('admin.register');
+// Route::post('/admin-register', 'AdminController@register')->name('admin.register');
 Route::get('/admin-home', 'AdminController@index')->middleware('auth:admin')->name('admin.home');
 Route::get('/admin-logout', 'AdminController@logout')->name('admin.logout');
 
@@ -124,3 +122,23 @@ Route::get('/admin-logout', 'AdminController@logout')->name('admin.logout');
 //     $user = \App\SiswaModel::first();
 //     $user->notify(new \App\Notifications\Daftar);
 // });
+
+Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+{
+Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
+});
+
+Route::group(['middleware' => 'App\Http\Middleware\SuperAdminMiddleware'], function()
+{
+Route::match(['get', 'post'], '/SuperAdminOnlyPage/', 'HomeController@super_admin');
+});
+
+Route::group(['middleware' => 'App\Http\Middleware\KeuanganMiddleware'], function()
+{
+Route::match(['get', 'post'], '/KeuanganOnlyPage/', 'HomeController@Keuangan');
+});
+
+Route::group(['middleware' => 'App\Http\Middleware\AbsensiMiddleware'], function()
+{
+Route::match(['get', 'post'], '/AbsensiOnlyPage/', 'HomeController@Absensi');
+});

@@ -32,7 +32,7 @@
                   <div class="col-sm-10">
                     <select name="id_siswa" id="inputSiswa">
                     @foreach ($siswa as $row)
-                    <option value="{{$row->id_siswa}}">{{$row->nik}} - {{$row->nama}}</option>
+                    <option value="{{$row->id_siswa}}" required>{{$row->nik}} - {{$row->nama}}</option>
                     @endforeach
                     </select>
                   </div>
@@ -42,7 +42,7 @@
                   <label for="inputPembayaran" class="col-sm-2">Pembayaran</label>
 
                   <div class="col-sm-10">
-                    <input name="pembayaran" type="text" class="form-control" id="inputPembayaran" placeholder="Jumlah Pembayaran">
+                    <input name="pembayaran" type="text" class="form-control" id="inputPembayaran" placeholder="Jumlah Pembayaran" required>
                   </div>
                 </div>
               </div>

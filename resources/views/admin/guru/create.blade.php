@@ -27,14 +27,14 @@
                   <label for="inputNIP" class="col-sm-2">NIP</label>
 
                   <div class="col-sm-10">
-                    <input name="nip" type="text" class="form-control" id="inputNIP" placeholder="No Induk Pegawai" >
+                    <input name="nip" type="text" class="form-control" id="inputNIP" placeholder="No Induk Pegawai" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputNama" class="col-sm-2">Nama</label>
 
                   <div class="col-sm-10">
-                    <input name="nama" type="text" class="form-control" id="inputNama" placeholder="Nama">
+                    <input name="nama" type="text" class="form-control" id="inputNama" placeholder="Nama" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -48,63 +48,63 @@
                   <label for="inputEmail3" class="col-sm-2">Email</label>
 
                   <div class="col-sm-10">
-                    <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputAlamat" class="col-sm-2">Alamat</label>
 
                   <div class="col-sm-10">
-                    <textarea name="alamat" class="form-control" id="inputAlamat" cols="30" rows="4"></textarea>
+                    <textarea name="alamat" class="form-control" id="inputAlamat" cols="30" rows="4" required></textarea>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputTempatLahir" class="col-sm-2">Tempat Lahir</label>
 
                   <div class="col-sm-10">
-                    <input name="tempat_lahir" type="text" class="form-control" id="inputTempatLahir" placeholder="Tempat Lahir">
+                    <input name="tempat_lahir" type="text" class="form-control" id="inputTempatLahir" placeholder="Tempat Lahir" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputTanggalLahir" class="col-sm-2">Tanggal Lahir</label>
 
                   <div class="col-sm-10">
-                    <input name="tgl_lahir" type="date" class="form-control" id="inputTanggalLahir">
+                    <input name="tgl_lahir" type="date" class="form-control" id="inputTanggalLahir" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputTlp" class="col-sm-2">No Tlp</label>
 
                   <div class="col-sm-10">
-                    <input name="no_telp" type="text" class="form-control" id="inputTlp">
+                    <input name="no_telp" type="text" class="form-control" id="inputTlp" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputTanggalMasuk" class="col-sm-2">Tanggal Masuk</label>
 
                   <div class="col-sm-10">
-                    <input name="tgl_masuk" type="date" class="form-control" id="inputTanggalMasuk">
+                    <input name="tgl_masuk" type="date" class="form-control" id="inputTanggalMasuk" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPend" class="col-sm-2">Pendidikan Terakhir</label>
 
                   <div class="col-sm-10">
-                    <input name="pend_terakhir" type="text" class="form-control" id="inputPend">
+                    <input name="pend_terakhir" type="text" class="form-control" id="inputPend" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputJabatan" class="col-sm-2">Jabatan</label>
 
                   <div class="col-sm-10">
-                    <input name="jabatan" type="text" class="form-control" id="inputJabatan">
+                    <input name="jabatan" type="text" class="form-control" id="inputJabatan" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputBoarding" class="col-sm-2">Boarding/PP</label>
 
                   <div class="col-sm-10">
-                    <input name="boarding" type="text" class="form-control" id="inputBoarding">
+                    <input name="boarding" type="text" class="form-control" id="inputBoarding" required>
                   </div>
                 </div>
                 <div class="form-group">
