@@ -1,5 +1,11 @@
 @extends('admin.template.base')
 @section('content')
+@if(Session::has('flash_message'))
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
+@endif
+@if(Session::has('flash_message_fail'))
+    <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
+@endif
 <section class="content-header">
       <h1>
         Tabel
@@ -11,9 +17,12 @@
       </ol>
 </section>
 <section class="content">
+ <form class="" method="post" action="/absenguru">
+    @csrf
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
+
                 <form class="form-horizontal">
                 <div class="row form-group">
                     <div class="col col-sm-1">
@@ -34,7 +43,11 @@
                         <div class="input-group-addon">
                             <i class="fa fa-building"></i>
                         </div>
-                        <input type="text" id="input-normal" style="width:17%" name="input-normal" class="form-control">
+                        <select name="id_kelas" id="inputKelas" class="form-control">
+                        @foreach ($kelas as $row)
+                            <option value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
+                        @endforeach
+                    </select>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -49,8 +62,6 @@
                         </select>
                     </div>
                 </div>      
-            </form>
-            </div>
 <!-- /.box-header -->
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -60,25 +71,24 @@
                     <th>NIS</th>
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
-                    <th>Hadir</th>
-                    <th>Sakit</th>
-                    <th>Alfa</th>
-                    <th>Izin</th>
-                    <th>Keterangan</th>
+                    <th>Pilih</th>
                 </tr>
                 </thead>
-                <tbody> 
+                
+                <tbody>
+                <?php $nomer = 1; ?>
+                <?php $getid = array(); ?>
+                @foreach ($siswa as $row)
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><input type="radio" name="gender" value="male"></td>
-                    <td><input type="radio" name="gender" value="male"></td>
-                    <td><input type="radio" name="gender" value="male"></td>
-                    <td><input type="radio" name="gender" value="male"></td>
-                    <td><input type="text" class="form-control" name="gender"></td>
+                <?php $getid[$nomer] = $row->id_siswa; ?>
+                    <td>{{$nomer}}</td>
+                    <td>{{$row->nik}}</td>
+                    <td>{{$row->nama}}</td>
+                    <td>{{$row->jk}}</td>
+                    <td><input type = "checkbox" name = "id_siswa[]" value = "{{$getid[$nomer]}}"/></td>
+                <?php $nomer++; ?>
                 </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
@@ -86,14 +96,29 @@
                     <th>NIS</th>
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
-                    <th>Hadir</th>
-                    <th>Sakit</th>
-                    <th>Alfa</th>
-                    <th>Izin</th>
-                    <th>Keterangan</th>
+                    <th>Pilih</th>
                 </tr>
                 </tfoot>
+
                 </table>
+                <br>
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th>Hadir</th>
+                        <th>Sakit</th>
+                        <th>Alfa</th>
+                        <th>Izin</th>
+                        <th>Pilih</th>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="absen" value="hadir" required></td>
+                        <td><input type="radio" name="absen" value="sakit"></td>
+                        <td><input type="radio" name="absen" value="alfa"></td>
+                        <td><input type="radio" name="absen" value="izin"></td>
+                        <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
+                    </tr>
+                </table>
+                <td><button type="submit"class="btn btn-success btn-sm pull-right">Submit</button></td>
             </div>
 <!-- /.box-body -->
             <div class="box-footer">

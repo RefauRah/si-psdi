@@ -85,13 +85,9 @@ Route::get('/absenguru', 'AbsensiGuruController@index');
 //Route::get('/guru/{id}', 'GuruController@show');
 Route::post('/absenguru', 'AbsensiGuruController@store');
 
-Route::get('/absenstaff', function () {
-    return view('/admin/absensi/staff');
-});
+Route::get('/absensiswasekolah', 'AbsensiSiswaSekolahController@index');
+Route::post('/absensiswasekolah', 'AbsensiSiswaSekolahController@store');
 
-Route::get('/absensiswasekolah', function () {
-    return view('/admin/absensi/siswaSekolah');
-});
 Route::get('/absensiswapengajian', function () {
     return view('/admin/absensi/siswaPengajian');
 });

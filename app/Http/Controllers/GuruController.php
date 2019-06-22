@@ -10,6 +10,7 @@ use App\Guru;
 use PDF;
 use DB;
 
+
 class GuruController extends Controller
 {
     public function index()
@@ -81,13 +82,13 @@ class GuruController extends Controller
         $guru= Guru::all();
 
         $gpdf = PDF::loadview('admin/guru/guruPDF',['guru'=>$guru]);
-        return $gpdf->download('daftar-guru.pdf');
+        return $gpdf->download('daftar-guru-'.date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
 
     public function cetak_profil_pdf(Guru $id)
     {
         // return $id;
         $gpdf = PDF::loadview('admin/guru/profilguruPDF',['guru'=>$id]);
-        return $gpdf->download('profil-guru.pdf');
+        return $gpdf->download('profil-guru-'.$id->value("nama")."-".date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
 }
