@@ -14,7 +14,7 @@ class GuruController extends Controller
 {
     public function index()
     {
-        if(!\Gate::allows('isSuper_admin')){
+        if(!\Gate::allows('isSuper_admin')||\Gate::allows('isBimbel')){
             abort(403,"Sorry, You can't access here");
         }
         $guru = Guru::all();
