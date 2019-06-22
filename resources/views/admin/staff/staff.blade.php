@@ -15,9 +15,6 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Data Staff PSDI</h3>
-                <a href="{{url('/staff/create')}}" class="btn btn-sm btn-success pull-right">
-                    <i class="fa fa-plus"></i> Tambah
-                </a>
             </div>
 <!-- /.box-header ALTER TABLE `staff` AUTO_INCREMENT = 0;-->
             <div class="box-body">
@@ -29,6 +26,7 @@
                         <th>NIP</th>
                         <th>Foto</th>
                         <th>Nama</th>
+                        <th>Jabatan</th>
                         <th>Alamat</th>
                         <th>No Tlp</th>
                         <th>Option</th>
@@ -36,6 +34,7 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -55,6 +54,7 @@
                         <th>NIP</th>
                         <th>Foto</th>
                         <th>Nama</th>
+                        <th>Jabatan</th>
                         <th>Alamat</th>
                         <th>No Tlp</th>
                         <th>Option</th>
@@ -63,6 +63,11 @@
                 </table>
             </div>
 <!-- /.box-body -->
+            <div class="box-footer">
+                <a href="{{url('/staff/create')}}" class="btn btn-sm btn-success pull-right">
+                    <i class="fa fa-plus"></i> Tambah
+                </a>
+            </div>
         </div>
     </div>
 </section>

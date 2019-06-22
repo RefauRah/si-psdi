@@ -20,7 +20,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" method="post" action="/staff/create" enctype="multipart/form-data">
+            <form class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
                   <label for="inputNIP" class="col-sm-2">NIP</label>

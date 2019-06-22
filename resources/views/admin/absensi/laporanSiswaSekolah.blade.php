@@ -14,7 +14,17 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Kelas : <input type="text" class="form-control"></h3>
+                <div class="row form-group">
+                    <div class="col col-sm-1">
+                        <label for="kelas" class=" form-control-label">Kelas</label>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-building"></i>
+                        </div>
+                        <input type="text" id="input-normal" style="width:17%" name="input-normal" class="form-control">
+                    </div>
+                </div>
             </div>
 <!-- /.box-header -->
             <div class="box-body">
@@ -24,7 +34,7 @@
                     <td rowspan="3" align=center>NO</td>
                     <td rowspan="3" align=center>NIS</td>
                     <td rowspan="3" align=center>Nama</td>
-                    <td rowspan="3" align=center>Jenis Kelamin</td>
+                    <td rowspan="3" align=center>L/P</td>
                     <td colspan="3">Tgl: </td>
                     <td colspan="3">Tgl: </td>
                     <td colspan="3">Tgl: </td>

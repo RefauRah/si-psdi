@@ -22,12 +22,14 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <label>Tanggal:</label>
+                <div class="col col-sm-1">
+                        <label>Tanggal</label>
+                    </div>
                     <div class="input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="date" class="form-control" style="width:14%" name="tgl_absen" required>
+                        <input type="date" class="form-control" style="width:17%" name="tgl_absen" required>
                     </div>
                 <!-- /.input group -->
             </div>
@@ -84,9 +86,11 @@
                         <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
                     </tr>
                 </table>
-                <td><button type="submit"class="btn btn-success btn-sm pull-right">Submit</button></td>
             </div>
 <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="submit"class="btn btn-success btn-sm pull-right">Submit</button>
+            </div>
         </div>
     </div>
 </form>

@@ -85,7 +85,7 @@
 <!-- /.box-body -->
 <div class="button" style="margin-left:10px;margin-right:10px;padding-bottom:10px;">
             <a href="#" class="btn btn-success pull-right">Edit</a>
-            <a href="#" class="btn btn-primary">Kembali</a>
+            <a href="{{url('/siswa')}}" class="btn btn-primary">Kembali</a>
 </div>
         </div>
     </div>

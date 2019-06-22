@@ -14,7 +14,38 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Kelas : <input type="text" class="form-control"></h3>
+                <div class="row form-group">
+                    <div class="col col-sm-1">
+                        <label for="kelas" class=" form-control-label">Kelas</label>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-building"></i>
+                        </div>
+                        <input type="text" id="input-normal" style="width:17%" name="input-normal" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-sm-1">
+                        <label for="bulan" class=" form-control-label">Bulan</label>
+                    </div>
+                    <div class="input-group">
+                        <select class="form-control">
+                            <option>Januari</option>
+                            <option>Februari</option>
+                            <option>Maret</option>
+                            <option>April</option>
+                            <option>Mei</option>
+                            <option>Juni</option>
+                            <option>Juli</option>
+                            <option>Agustus</option>
+                            <option>September</option>
+                            <option>Oktober</option>
+                            <option>November</option>
+                            <option>Desember</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 <!-- /.box-header -->
             <div class="box-body">
