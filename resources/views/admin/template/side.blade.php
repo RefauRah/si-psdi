@@ -49,6 +49,7 @@
         </a>
         
     </li>
+    @can ('isBimbel','isSuper_admin')
     <li class="">
         <a href="{{url('/siswa')}}">
         <i class="fa fa-users"></i>
@@ -59,6 +60,7 @@
         </a>
         
     </li>
+    @endcan
     <li class="">
         <a href="{{url('/kelas')}}">
         <i class="fa fa-sitemap"></i>
