@@ -16,13 +16,31 @@
             <div class="box-header">
                 <div class="row form-group">
                     <div class="col col-sm-1">
+                        <label for="siswa" class=" form-control-label">Siswa</label>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <select class="form-control" style="width:17%">
+                            <option>Pra MT</option>
+                            <option>Paska MT</option>
+                            <option>MTI</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-sm-1">
                         <label for="kelas" class=" form-control-label">Kelas</label>
                     </div>
                     <div class="input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-building"></i>
                         </div>
-                        <input type="text" id="input-normal" style="width:17%" name="input-normal" class="form-control">
+                        <select class="form-control" style="width:17%">
+                            <option>Lambatan</option>
+                            <option>Cepatan</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row form-group">

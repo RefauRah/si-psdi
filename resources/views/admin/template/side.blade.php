@@ -117,6 +117,7 @@
         </a>
         <ul class="treeview-menu">
         <li><a href="{{url('/absenguru')}}"><i class="fa fa-circle-o"></i> Guru</a></li>
+        <li><a href="{{url('/absenstaff')}}"><i class="fa fa-circle-o"></i> Staff</a></li>
         <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li> -->
         <li class="treeview">
             <a href="#">
