@@ -121,7 +121,8 @@
         </a>
         <ul class="treeview-menu">
         <li><a href="{{url('/absenguru')}}"><i class="fa fa-circle-o"></i> Guru</a></li>
-        <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li>
+        <li><a href="{{url('/absenstaff')}}"><i class="fa fa-circle-o"></i> Staff</a></li>
+        <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li> -->
         <li class="treeview">
             <a href="#">
             <i class="fa fa-users"></i>
@@ -149,7 +150,7 @@
         </a>
         <ul class="treeview-menu">
         <li><a href="#"><i class="fa fa-circle-o"></i> Guru</a></li>
-        <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li>
+        <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li> -->
         <li><a href="/laporansiswasekolah"><i class="fa fa-circle-o"></i> Siswa Sekolah</a></li>
         <li><a href="/laporansiswapengajian"><i class="fa fa-circle-o"></i> Siswa Pengajian</a></li>
         </ul>

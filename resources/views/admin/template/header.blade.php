@@ -17,21 +17,21 @@
     <ul class="nav navbar-nav">
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span class="hidden-xs">Admin</span>
+        <a href="{{route ('logout')}}">
+            <span class="hidden-xs">Sign Out</span>
         </a>
-        <ul class="dropdown-menu">
+        <!-- <ul class="dropdown-menu"> -->
             <!-- User image -->
-            <li class="user-header">
+            <!-- <li class="user-header">
             <img src="{{url('/assets/admin/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
 
             <p>
                 Alexander Pierce - Web Developer
                 <small>Member since Nov. 2012</small>
             </p>
-            </li>
+            </li> -->
             <!-- Menu Footer-->
-            <li class="user-footer">
+            <!-- <li class="user-footer">
             <div class="pull-left">
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
             </div>
@@ -40,7 +40,7 @@
             </div>
             </li>
         </ul>
-        </li>
+        </li> -->
         <!-- Control Sidebar Toggle Button -->
         <!-- <li>
         <a href="{{route ('logout')}}" data-toggle="control-sidebar"><i class="fa fa-power-off"></i></a>

@@ -85,6 +85,10 @@ Route::get('/absenguru', 'AbsensiGuruController@index');
 //Route::get('/guru/{id}', 'GuruController@show');
 Route::post('/absenguru', 'AbsensiGuruController@store');
 
+Route::get('/absenstaff', function () {
+    return view('/admin/absensi/staff');
+});
+
 Route::get('/absensiswasekolah', function () {
     return view('/admin/absensi/siswaSekolah');
 });

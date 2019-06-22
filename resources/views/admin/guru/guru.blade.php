@@ -18,13 +18,9 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Data Guru PSDI</h3>
-                <a href="{{url('/guru/create')}}" class="btn btn-sm btn-success pull-right">
-                    <i class="fa fa-plus"></i> Tambah
-                </a>
             </div>
 <!-- /.box-header ALTER TABLE `guru` AUTO_INCREMENT = 0;-->
             <div class="box-body">
-                <a href="/guru/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -36,7 +32,7 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>#</th>
+                    <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -62,7 +58,7 @@
                     <td>
                         <a href="{{url('/guru/hapus')}}" class="btn btn-sm btn-danger">Hapus</a>
                         <a href="{{route('editGuru', $row->id)}}" class="btn btn-sm btn-primary">Edit</a>
-                        <a href="{{route('showGuru', $row->id)}}" class="btn btn-sm btn-primary">Lihat Profil</a>
+                        <a href="{{route('showGuru', $row->id)}}" class="btn btn-sm btn-info">Lihat Profil</a>
                     </td>
                     <?php $nomer++; ?>
                 </tr>
@@ -80,12 +76,18 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>#</th>
+                    <th>Option</th>
                 </tr>
                 </tfoot>
                 </table>
             </div>
 <!-- /.box-body -->
+            <div class="box-footer">
+                <a href="{{url('/guru/create')}}" class="btn btn-sm btn-success pull-right">
+                    <i class="fa fa-plus"></i> Tambah
+                </a>
+                <a href="/guru/cetak_pdf" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-print"></i> CETAK PDF</a>
+            </div>
         </div>
     </div>
 </section>

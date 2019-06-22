@@ -46,6 +46,8 @@
                     <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pengajian">Pengajian
                   </div>
                 </div>
+              </div>
+            </div>
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="reset" class="btn btn-default">Reset</button>

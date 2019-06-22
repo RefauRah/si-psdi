@@ -1,15 +1,9 @@
 @extends('admin.template.base')
 @section('content')
-@if(Session::has('flash_message'))
-    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
-@endif
-@if(Session::has('flash_message_fail'))
-    <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
-@endif
 <section class="content-header">
       <h1>
         Tabel
-        <small>Absensi Guru</small>
+        <small>Absensi Staff</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -17,8 +11,7 @@
       </ol>
 </section>
 <section class="content">
-    <form class="" method="post" action="/absenguru">
-    @csrf
+    <form class="" method="post" action="#">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
@@ -41,29 +34,26 @@
                     <th>NO</th>
                     <th>NIP</th>
                     <th>Nama</th>
+                    <th>Jabatan</th>
                     <th>Pilih</th>
                 </tr>
                 </thead>
                 
                 <tbody>
-                <?php $nomer = 1; ?>
-                <?php $getid = array(); ?>
-                @foreach ($guru as $row)
                 <tr>
-                <?php $getid[$nomer] = $row->id; ?>
-                    <td>{{$nomer}}</td>
-                    <td>{{$row->nip}}</td>
-                    <td>{{$row->nama}}</td>
-                    <td><input type = "checkbox" name = "id_guru[]" value = "{{$getid[$nomer]}}"/></td>
-                <?php $nomer++; ?>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type = "checkbox" name = "staff"></td>
                 </tr>
-                @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                     <th>NO</th>
                     <th>NIP</th>
                     <th>Nama</th>
+                    <th>Jabatan</th>
                     <th>Pilih</th>
                 </tr>
                 </tfoot>

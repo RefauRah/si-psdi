@@ -15,9 +15,6 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Data Kelas PSDI</h3>
-                <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
-                    <i class="fa fa-plus"></i> Tambah
-                </a>
             </div>
 <!-- /.box-header -->
             <div class="box-body">
@@ -64,6 +61,11 @@
                 </table>
             </div>
 <!-- /.box-body -->
+            <div class="box-footer">
+                <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
+                    <i class="fa fa-plus"></i> Tambah
+                </a>
+            </div>
         </div>
     </div>
 </section>
