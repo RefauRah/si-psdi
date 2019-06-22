@@ -58,9 +58,9 @@
                     <td>{{ $siswa->jk}}</td>
                     <td>{{ $siswa->alamat}}</td>
                     <td>
-                        <a href="{{url('/siswa/hapus')}}" class="btn btn-sm btn-danger">Hapus</a>
-                        <a href="{{url('/siswa/edit')}}" class="btn btn-sm btn-primary">Edit</a> 
-                        <a href="{{url('/siswa/'.$siswa->nik)}}" class="btn btn-sm btn-primary">Lihat Profil</a>
+                    <a href="{{url('/siswa/hapus/'.$siswa->nik)}}" class="btn btn-sm btn-danger">Hapus</a>
+                    <a href="{{url('/siswa/edit')}}" class="btn btn-sm btn-primary">Edit</a> 
+                    <a href="{{url('/siswa/'.$siswa->nik)}}" class="btn btn-sm btn-primary">Lihat Profil</a>
 
                     <?php $nomer++; ?>
                 </tr>

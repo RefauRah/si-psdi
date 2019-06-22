@@ -38,6 +38,7 @@ Route::get('/siswa','SiswaController@index')->middleware('auth')->name('siswa');
 Route::get('/siswa/create', 'SiswaController@create')->middleware('auth')->name('siswa');
 Route::post('/siswa/create', 'SiswaController@store');
 Route::get ('/siswa/{siswa}', 'SiswaController@show')->middleware('auth')->name('siswa');
+Route::get('/siswa/hapus/{siswa}','SiswaController@hapus');
 
 
 
