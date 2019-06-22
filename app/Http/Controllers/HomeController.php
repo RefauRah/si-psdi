@@ -26,17 +26,17 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function admin(Request $req){
-    return view('middleware')->withMessage("Admin");
-    }
-    public function super_admin(Request $req){
-    return view('middleware')->withMessage("Super Admin");
-    }
-    public function keuangan(Request $req){
-    return view('middleware')->withMessage("Keuangan");
-    }
+    // public function admin(Request $req){
+    // return view('middleware')->withMessage("Admin");
+    // }
+    // public function super_admin(Request $req){
+    // return view('middleware')->withMessage("Super Admin");
+    // }
+    // public function keuangan(Request $req){
+    // return view('middleware')->withMessage("Keuangan");
+    // }
 
-    public function absensi(Request $req){
-    return view('middleware')->withMessage("Absensi");
-    }
+    // public function absensi(Request $req){
+    // return view('middleware')->withMessage("Absensi");
+    // }
 }

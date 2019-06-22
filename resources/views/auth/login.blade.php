@@ -40,6 +40,18 @@
                         </div>
 
                         <div class="form-group row">
+                        <label for="user_type" class="col-md-4 col-form-label text-md-right">Peran User:</label>
+                        <div class="col-md-6">
+                        <select class="form-control" name="user_type" id="user_type">
+                        <option value="admin">Admin</option>
+                        <option value="super_admin">Super Admin</option>
+                        <option value="pondok">Pondok</option>
+                        <option value="Bimbel">Bimbel</option>
+                        </select>
+                        </div>
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>

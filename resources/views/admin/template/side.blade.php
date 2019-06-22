@@ -17,6 +17,7 @@
         </a>
     </li>
     <li class="header">DATA CIVITAS AKADEMIKA</li>
+    
     <li class="">
         <a href="{{url('/admin')}}">
             <i class="fa fa-user"></i>
@@ -27,6 +28,7 @@
         </a>
         
     </li>
+   
     <li class="">
         <a href="{{url('/guru')}}">
         <i class="fa fa-users"></i>
@@ -47,6 +49,7 @@
         </a>
         
     </li>
+    @can ('isBimbel')
     <li class="">
         <a href="{{url('/siswa')}}">
         <i class="fa fa-users"></i>
@@ -57,6 +60,7 @@
         </a>
         
     </li>
+    @endcan
     <li class="">
         <a href="{{url('/kelas')}}">
         <i class="fa fa-sitemap"></i>

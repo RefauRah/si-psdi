@@ -133,23 +133,23 @@ Route::get('/admin-logout', 'AdminController@logout')->name('admin.logout');
 //     $user->notify(new \App\Notifications\Daftar);
 // });
 
-Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
-{
-Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
-});
+// Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
+// {
+// Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
+// });
 
-Route::group(['middleware' => 'App\Http\Middleware\SuperAdminMiddleware'], function()
-{
-Route::match(['get', 'post'], '/SuperAdminOnlyPage/', 'HomeController@super_admin');
-});
+// Route::group(['middleware' => 'App\Http\Middleware\SuperAdminMiddleware'], function()
+// {
+// Route::match(['get', 'post'], '/SuperAdminOnlyPage/', 'HomeController@super_admin');
+// });
 
-Route::group(['middleware' => 'App\Http\Middleware\KeuanganMiddleware'], function()
-{
-Route::match(['get', 'post'], '/KeuanganOnlyPage/', 'HomeController@Keuangan');
-});
+// Route::group(['middleware' => 'App\Http\Middleware\KeuanganMiddleware'], function()
+// {
+// Route::match(['get', 'post'], '/KeuanganOnlyPage/', 'HomeController@Keuangan');
+// });
 
-Route::group(['middleware' => 'App\Http\Middleware\AbsensiMiddleware'], function()
-{
-Route::match(['get', 'post'], '/AbsensiOnlyPage/', 'HomeController@Absensi');
-});
+// Route::group(['middleware' => 'App\Http\Middleware\AbsensiMiddleware'], function()
+// {
+// Route::match(['get', 'post'], '/AbsensiOnlyPage/', 'HomeController@Absensi');
+// });
 

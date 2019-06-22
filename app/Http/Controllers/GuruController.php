@@ -14,6 +14,9 @@ class GuruController extends Controller
 {
     public function index()
     {
+        if(!\Gate::allows('isSuper_admin')){
+            abort(403,"Sorry, You can't access here");
+        }
         $guru = Guru::all();
         return view('admin/guru/guru', ['guru' => $guru]);
     }
