@@ -14,6 +14,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
+                @foreach ($kelas as $kelas)
                 <h3 class="box-title" style="margin: 0px 0px 20px">Data Kelas {{ $kelas->nama}}</h3>
                 <div class="row form-group">
                     <div class="col col-sm-2">
@@ -31,6 +32,7 @@
                         <label>{{$kelas->jenis_kelas}}</label>
                     </div>
                 </div>
+                @endforeach
                 <!-- <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
                     <i class="fa fa-plus"></i> Tambah
                 </a> -->

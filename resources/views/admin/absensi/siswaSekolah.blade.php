@@ -1,11 +1,6 @@
 @extends('admin.template.base')
 @section('content')
-@if(Session::has('flash_message'))
-    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
-@endif
-@if(Session::has('flash_message_fail'))
-    <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
-@endif
+
 <section class="content-header">
       <h1>
         Tabel
@@ -17,7 +12,7 @@
       </ol>
 </section>
 <section class="content">
- <form class="" method="post" action="/absenguru">
+ <form class="" method="post" action="/absensiswasekolah">
     @csrf
     <div class="col-xs-12">
         <div class="box">
@@ -45,7 +40,7 @@
                         </div>
                         <select name="id_kelas" id="inputKelas" class="form-control">
                         @foreach ($kelas as $row)
-                            <option value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
+                            <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
                         @endforeach
                     </select>
                     </div>
@@ -54,11 +49,11 @@
                     <div class="col col-sm-1">
                         <label for="sesi" class=" form-control-label">Sesi</label>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group" name="pertemuan">
                         <select class="form-control">
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                     </div>
                 </div>      
@@ -118,13 +113,12 @@
                         <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
                     </tr>
                 </table>
+            <div class="box-footer">
                 <td><button type="submit"class="btn btn-success btn-sm pull-right">Submit</button></td>
             </div>
 <!-- /.box-body -->
-            <div class="box-footer">
-                <button class="btn btn-success btn-sm pull-right">Submit</button>
-            </div>
         </div>
     </div>
+</form>
 </section>
 @endsection

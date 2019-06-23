@@ -12,7 +12,7 @@
         }
     </style>
     <center>
-        <h5>Daftar Guru PSDI</h4>
+        <h5>Data Guru PSDI</h4>
 <!--         <h6><a target="_blank" href="https://www.malasngoding.com/membuat-laporan-…n-dompdf-laravel/">www.malasngoding.com</a></h5> -->
     </center>
                 <div class="col-md-4" style="padding-top:20px">

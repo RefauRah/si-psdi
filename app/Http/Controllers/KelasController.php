@@ -17,10 +17,12 @@ class KelasController extends Controller
         return view('admin/kelas/kelas', ['kelas' => $kelas]);
     }
     
-    public function show(Kelas $id)
+    public function show($id)
     {
-        $siswa = DB::select('select * from siswa where id_kelas = ?', [$id->value('id')]);
-        return view('admin.kelas.show', ['kelas' => $id], ['siswa' => $siswa]);
+        $kelas = DB::select('select * from kelas where id = ?', [$id]);
+        $siswa = DB::select('select * from siswa where id_kelas = ?', [$id]);
+        // return $kelas;
+        return view('admin.kelas.show', ['kelas' => $kelas], ['siswa' => $siswa]);
     }
     
     public function create()

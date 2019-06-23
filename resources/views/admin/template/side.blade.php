@@ -17,7 +17,7 @@
         </a>
     </li>
     <li class="header">DATA CIVITAS AKADEMIKA</li>
-    
+    @if(Gate::check('isAdmin')|| Gate::check('isSuper_admin'))
     <li class="">
         <a href="{{url('/admin')}}">
             <i class="fa fa-user"></i>
@@ -49,7 +49,8 @@
         </a>
         
     </li>
-    @can ('isBimbel','isSuper_admin')
+    @endif
+    @if(Gate::check('isBimbel')|| Gate::check('isSuper_admin')|| Gate::check('isAdmin'))
     <li class="">
         <a href="{{url('/siswa')}}">
         <i class="fa fa-users"></i>
@@ -60,7 +61,8 @@
         </a>
         
     </li>
-    @endcan
+   @endif
+   @if(Gate::check('isAdmin')|| Gate::check('isSuper_admin'))
     <li class="">
         <a href="{{url('/kelas')}}">
         <i class="fa fa-sitemap"></i>
@@ -156,6 +158,7 @@
         </ul>
     </li>
     </ul>
+    @endif
 </section>
 <!-- /.sidebar -->
 </aside>

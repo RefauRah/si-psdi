@@ -22,11 +22,11 @@ class AbsensiSiswaSekolahController extends Controller
     {
         $siswa = new AbsensiSiswaSekolah;
 
-        if (is_null($guru->absen = request('id_siswa'))){
-			\Session::flash('flash_message_fail',' Error : Tidak ada data yand dipilih.');
-			return redirect()->back();
-		}
-		else{
+  //       if (is_null($siswa->absen = request('id_siswa'))){
+		// 	\Session::flash('flash_message_fail',' Error : Tidak ada data yand dipilih.');
+		// 	return redirect()->back();
+		// }
+		// else{
 			$counter = count(request('id_siswa'));
 
 			$id_guru = request('id_siswa');
@@ -40,7 +40,7 @@ class AbsensiSiswaSekolahController extends Controller
 		        $siswa->keterangan = request('keterangan');
 		        $siswa->tgl_absen = request('tgl_absen');
 		        $siswa->save();
-			}   
+			// }   
 
 			// $guru->id_guru = request('id_guru');
 	  //       $guru->absen = request('absen');
@@ -48,9 +48,9 @@ class AbsensiSiswaSekolahController extends Controller
 	  //       $guru->tgl_absen = request('tgl_absen');
 	  //       $guru->save();
 
-	        \Session::flash('flash_message','successfully saved.');
+	        // \Session::flash('flash_message','successfully saved.');
 
-	        return redirect('/absenguru');
+	        return redirect('/absensiswasekolah');
 		}
     }
 }
