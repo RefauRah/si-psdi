@@ -32,7 +32,7 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>Option</th>
+                    <th>Tindakan</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -76,7 +76,7 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>Option</th>
+                    <th>Tindakan</th>
                 </tr>
                 </tfoot>
                 </table>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use DB;
 use App\Mapel;
 
 class MapelController extends Controller
@@ -41,6 +41,13 @@ class MapelController extends Controller
 
         \Session::flash('flash_message','successfully saved.');
 
+        return redirect('/mapel');
+    }
+        public function hapus($id_mapel)
+    {
+        DB::table('mapel')->where('id_mapel',$id_mapel)->delete();
+        
+    // alihkan halaman ke halaman guru
         return redirect('/mapel');
     }
 }

@@ -24,6 +24,7 @@
                     <th>NO</th>
                     <th>Kode</th>
                     <th>Nama</th>
+                    <th>Tindakan</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,6 +35,8 @@
                     <td>{{$nomer}}</td>
                     <td>{{ $row->kode}}</td>
                     <td>{{ $row->nama}}</td>
+                    <td><a href="{{url('/mapel/hapus/'.$row->id_mapel)}}" class="btn btn-sm btn-danger">Hapus</a></td>
+
                     <?php $nomer++; ?>
                 </tr>
 
@@ -44,6 +47,7 @@
                     <th>NO</th>
                     <th>Kode</th>
                     <th>Nama</th>
+                    <th>Tindakan</th>
                 </tr>
                 </tfoot>
                 </table>

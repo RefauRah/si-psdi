@@ -30,7 +30,6 @@
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
-
                     <th>Tindakan</th>
 
                 </tr>

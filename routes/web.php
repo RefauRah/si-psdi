@@ -78,6 +78,7 @@ Route::get('/mapel', 'MapelController@index')->middleware('auth')->name('mapel')
 
 Route::get('/mapel/create', 'MapelController@create')->middleware('auth')->name('mapel');
 Route::post('/mapel/create', 'MapelController@store');
+Route::get('/mapel/hapus/{mapel}','MapelController@hapus');
 
 // Route::get('/absenguru', function () {
 //     return view('/admin/absensi/guru');
