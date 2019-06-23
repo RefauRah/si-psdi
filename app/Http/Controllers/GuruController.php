@@ -90,4 +90,11 @@ class GuruController extends Controller
         $gpdf = PDF::loadview('admin/guru/profilguruPDF',['guru'=>$id]);
         return $gpdf->download('profil-guru.pdf');
     }
+    public function hapus($id)
+    {
+        DB::table('guru')->where('id',$id)->delete();
+        
+    // alihkan halaman ke halaman guru
+        return redirect('/guru');
+    }
 }

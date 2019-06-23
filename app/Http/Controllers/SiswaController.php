@@ -105,10 +105,9 @@ class SiswaController extends Controller
 
     public function hapus($nik)
     {
-        // menghapus data pegawai berdasarkan id yang dipilih
+       
         DB::table('siswa')->where('nik',$nik)->delete();
         
-    // alihkan halaman ke halaman pegawai
         return redirect('/siswa');
     }
 

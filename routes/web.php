@@ -59,6 +59,7 @@ Route::get('/guru/edit/{id}', 'GuruController@edit')->middleware('auth')->name('
 Route::post('/guru/edit', 'GuruController@update');
 Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf')->middleware('auth')->name('guru/cetak_pdf');
 Route::get ('/guru/cetak_profil_pdf/{id}', 'GuruController@cetak_profil_pdf')->middleware('auth')->name('guru/cetak_profil_pdf');
+Route::get('/guru/hapus/{guru}','GuruController@hapus');
  
 Route::get('/kelas', 'KelasController@index')->middleware('auth')->name('kelas');
 Route::get('/kelas/show/{id}', 'KelasController@show')->middleware('auth')->name('showKelas');
