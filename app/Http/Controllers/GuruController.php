@@ -91,4 +91,11 @@ class GuruController extends Controller
         $gpdf = PDF::loadview('admin/guru/profilguruPDF',['guru'=>$id]);
         return $gpdf->download('profil-guru-'.$id->value("nama")."-".date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
+    public function hapus($id)
+    {
+        DB::table('guru')->where('id',$id)->delete();
+        
+    // alihkan halaman ke halaman guru
+        return redirect('/guru');
+    }
 }

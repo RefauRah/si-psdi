@@ -32,7 +32,7 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>Option</th>
+                    <th>Tindakan</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,7 +56,7 @@
                     <td>{{ $row->tgl_lahir}}</td>
                     <td>{{ $row->no_telp}}</td>
                     <td>
-                        <a href="{{url('/guru/hapus')}}" class="btn btn-sm btn-danger">Hapus</a>
+                        <a href="{{url('/guru/hapus/'.$row->id)}}" class="btn btn-sm btn-danger">Hapus</a>
                         <a href="{{route('editGuru', $row->id)}}" class="btn btn-sm btn-primary">Edit</a>
                         <a href="{{route('showGuru', $row->id)}}" class="btn btn-sm btn-info">Lihat Profil</a>
                     </td>
@@ -76,7 +76,7 @@
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>No Tlp</th>
-                    <th>Option</th>
+                    <th>Tindakan</th>
                 </tr>
                 </tfoot>
                 </table>

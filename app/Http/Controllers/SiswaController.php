@@ -103,6 +103,14 @@ class SiswaController extends Controller
 
     }
 
+    public function hapus($nik)
+    {
+       
+        DB::table('siswa')->where('nik',$nik)->delete();
+        
+        return redirect('/siswa');
+    }
+
    
     
 }

@@ -38,6 +38,7 @@ Route::get('/siswa','SiswaController@index')->middleware('auth')->name('siswa');
 Route::get('/siswa/create', 'SiswaController@create')->middleware('auth')->name('siswa');
 Route::post('/siswa/create', 'SiswaController@store');
 Route::get ('/siswa/{siswa}', 'SiswaController@show')->middleware('auth')->name('siswa');
+Route::get('/siswa/hapus/{siswa}','SiswaController@hapus');
 
 
 
@@ -58,6 +59,7 @@ Route::get('/guru/edit/{id}', 'GuruController@edit')->middleware('auth')->name('
 Route::post('/guru/edit', 'GuruController@update');
 Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf')->middleware('auth')->name('guru/cetak_pdf');
 Route::get ('/guru/cetak_profil_pdf/{id}', 'GuruController@cetak_profil_pdf')->middleware('auth')->name('guru/cetak_profil_pdf');
+Route::get('/guru/hapus/{guru}','GuruController@hapus');
  
 Route::get('/kelas', 'KelasController@index')->middleware('auth')->name('kelas');
 Route::get('/kelas/show/{id}', 'KelasController@show')->middleware('auth')->name('showKelas');
@@ -76,6 +78,7 @@ Route::get('/mapel', 'MapelController@index')->middleware('auth')->name('mapel')
 
 Route::get('/mapel/create', 'MapelController@create')->middleware('auth')->name('mapel');
 Route::post('/mapel/create', 'MapelController@store');
+Route::get('/mapel/hapus/{mapel}','MapelController@hapus');
 
 // Route::get('/absenguru', function () {
 //     return view('/admin/absensi/guru');
