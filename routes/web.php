@@ -104,12 +104,24 @@ Route::get('/laporansiswapengajian', function () {
     return view('/admin/absensi/laporanSiswaPengajian');
 });
 
+Route::get('/laporanguru', function () {
+    return view('/admin/absensi/laporanGuru');
+});
+
 Route::get('/staff', function () {
     return view('/admin/staff/staff');
 });
 
+Route::get('/absenstaff', function () {
+    return view('/admin/absensi/staff');
+});
+
 Route::get('/staff/create', function () {
     return view('/admin/staff/create');
+});
+
+Route::get('/laporanstaff', function () {
+    return view('/admin/absensi/laporanStaff');
 });
 
 Route::get('/absensiswa','AbsensiController@index');
