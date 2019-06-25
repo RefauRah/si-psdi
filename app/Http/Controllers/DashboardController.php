@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Admin;
+use App\User;
 class DashboardController extends Controller
 {
     public function index()
     {
-        $dashboard = Admin::all();
-        return view('admin/admin/admin', ['Admins' => $dashboard]);
+        $user = User::all();
+        return view('admin/admin/admin', ['user' => $user]);
     }
     
     /*public function show(kelas $id)
@@ -24,17 +24,22 @@ class DashboardController extends Controller
         return view('admin/admin/create');
     }
 
-        public function store()
+        public function store(Request $request)
     {
-        $dashboard = new Admin;
-        
-        $dashboard->name = request('name');
-        $dashboard->email = request('email');
-        $dashboard->password = request('password');
-        $dashboard->save();
+
+        date_default_timezone_set("Asia/Bangkok");
+        User::create([
+            'name'=>$request->name,
+            'username' =>$request->username,
+            'email'=>$request->email,
+            'password'=>bcrypt ($request->password),
+            'user_type'=>$request->user_type
+        ]);
+
+        \Session::flash('flash_message','successfully saved.');
+        return redirect('/admin');
 
         \Session::flash('flash_message','successfully saved.');
 
-        return redirect('/admin');
     }
 }
