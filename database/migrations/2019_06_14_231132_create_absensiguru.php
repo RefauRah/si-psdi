@@ -15,7 +15,7 @@ class CreateAbsensiguru extends Migration
     {
         Schema::create('absensiguru', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_guru')->unsigned();
+            $table->integer('nip');
             $table->char('absen',100);
             $table->date('tgl_absen');
             $table->string('keterangan',100)->nullable();
@@ -23,7 +23,7 @@ class CreateAbsensiguru extends Migration
             // $table->string('keterangan',50);
             $table->timestamps();
 
-            $table->foreign('id_guru')->references('id')->on('guru')->onDelete('cascade');
+            $table->foreign('nip')->references('nip')->on('guru')->onDelete('cascade');
         }); 
     }
 

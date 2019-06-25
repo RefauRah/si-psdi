@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('/company/base');
 });
+Route::get('/test', 'PagesController@index'); // localhost:8000/
+Route::get('/test/getUsers/{id}','PagesController@getUsers');
 
 Route::get('/login', 'AuthController@getLogin')->middleware('guest')->name('login');
 Route::post('/login', 'AuthController@postLogin')->middleware('guest');
@@ -50,15 +52,15 @@ Route::get('/siswa/show', function () {
 Route::get('/guru', 'GuruController@index')->middleware('auth')->name('guru');
 
 
-Route::get('/guru/show/{id}', 'GuruController@show')->middleware('auth')->name('showGuru');
+Route::get('/guru/show/{nip}', 'GuruController@show')->middleware('auth')->name('showGuru');
 
 // Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('guru/create');
 Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('createGuru');
 Route::post('/guru/create', 'GuruController@store');
-Route::get('/guru/edit/{id}', 'GuruController@edit')->middleware('auth')->name('editGuru');
+Route::get('/guru/edit/{nip}', 'GuruController@edit')->middleware('auth')->name('editGuru');
 Route::post('/guru/edit', 'GuruController@update');
 Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf')->middleware('auth')->name('guru/cetak_pdf');
-Route::get ('/guru/cetak_profil_pdf/{id}', 'GuruController@cetak_profil_pdf')->middleware('auth')->name('guru/cetak_profil_pdf');
+Route::get ('/guru/cetak_profil_pdf/{nip}', 'GuruController@cetak_profil_pdf')->middleware('auth')->name('guru/cetak_profil_pdf');
 Route::get('/guru/hapus/{guru}','GuruController@hapus');
  
 Route::get('/kelas', 'KelasController@index')->middleware('auth')->name('kelas');

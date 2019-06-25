@@ -6,22 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateGurusTable extends Migration
 {
-                   // <th>NO</th>
-                   //  <th>NIP</th>
-                   //  <th>Nama</th>
-                   //  <th>Alamat</th>
-                   //  <th>Tempat Lahir</th>
-                   //  <th>Tanggal Lahir</th>
-                   //  <th>No Tlp</th>
-                   //  <th>Tanggal Masuk</th>
-                   //  <th>Pendidikan Terakhir</th>
-                   //  <th>Jabatan</th>
-                   //  <th>Boarding/PP</th>
-                   //  <th>Status Pernikahan</th>
-                   //  <th>Jumlah Keluarga</th>
-                   //  <th>Option</th>
-
-
     /**
      * Run the migrations.
      *
@@ -30,8 +14,8 @@ class CreateGurusTable extends Migration
     public function up()
     {
         Schema::create('guru', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('nip', false, true)->length(20);
+            // $table->bigIncrements('id');
+            $table->integer('nip', 11);
             $table->string('nama',100);
             $table->string('email',100);
             $table->string('alamat',200);

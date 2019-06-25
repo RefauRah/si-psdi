@@ -8,6 +8,7 @@ class Guru extends Model
 {
     //
     public $table = 'guru';
+    protected $primaryKey = 'nip';
 
         protected $fillable = [
     	'nip',
@@ -28,7 +29,7 @@ class Guru extends Model
 
     public function waliKelas()
 	{
-    	return $this->hasOne('App\WaliKelas', 'id_guru', 'id');
+    	return $this->hasOne('App\WaliKelas', 'id_guru', 'nip');
     	// return $this->hasOne('App\UserProfile', 'profile_user_id', 'user_id');
 	}
 }

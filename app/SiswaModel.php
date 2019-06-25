@@ -10,9 +10,10 @@ class SiswaModel extends Model
 
     use Notifiable;
     public $table = 'siswa';
+    protected $primaryKey = 'nis';
 
     protected $fillable = [
-    	'nik',
+    	'nis',
     	'nama',
     	'email',
     	'no_telp',
@@ -26,10 +27,10 @@ class SiswaModel extends Model
     	'updated_at'
     ];
 
-    public function keuangan()
-    {
-        return $this->hasMany('App\Keuangan', 'id_siswa','id_siswa');
-    }
+    // public function keuangan()
+    // {
+    //     return $this->hasMany('App\Keuangan', 'nis','nis');
+    // }
 
     public function kelas()
     {

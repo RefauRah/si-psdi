@@ -1,14 +1,10 @@
 <?php
 
 namespace App;
-
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 
-class AbsensiSiswaSekolah extends Model
-{
- 	protected $table = 'absensi_siswa_sekolah';   
-
+class Page extends Model {
   public static function getuserData($id=0){
 
     if($id==0){

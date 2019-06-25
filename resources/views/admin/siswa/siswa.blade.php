@@ -42,7 +42,7 @@
                 <tr>
                     <td>{{$nomer}}</td>
 
-                    <td>{{ $siswa->nik}}</td>
+                    <td>{{ $siswa->nis}}</td>
                     @if(is_null($siswa->image))
                         <td>
                             <img src="{{ asset('images/default.png') }}" style="height: 50px" class="img-fluid">
@@ -57,9 +57,9 @@
                     <td>{{ $siswa->jk}}</td>
                     <td>{{ $siswa->alamat}}</td>
                     <td>
-                    <a href="{{url('/siswa/hapus/'.$siswa->nik)}}" class="btn btn-sm btn-danger">Hapus</a>
+                    <a href="{{url('/siswa/hapus/'.$siswa->nis)}}" class="btn btn-sm btn-danger">Hapus</a>
                     <a href="{{url('/siswa/edit')}}" class="btn btn-sm btn-primary">Edit</a> 
-                    <a href="{{url('/siswa/'.$siswa->nik)}}" class="btn btn-sm btn-primary">Lihat Profil</a>
+                    <a href="{{url('/siswa/'.$siswa->nis)}}" class="btn btn-sm btn-primary">Lihat Profil</a>
 
                     <?php $nomer++; ?>
                 </tr>

@@ -29,9 +29,11 @@
 <!-- /.box-header ALTER TABLE `siswa` AUTO_INCREMENT = 0;-->
             <div class="box-body">
                 <div class="col-md-4" style="padding-top:20px">
-                   
+                   @if(is_null($key->image))
+                        <img src="{{ asset('images/default.png') }}" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
+                    @else
                         <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/siswa/'.$key->image)}}" alt="Profile">
-                   
+                    @endif
                 </div> 
                 <table class="table table-bordered table-striped">
                 <thead>
@@ -40,7 +42,7 @@
 
                 <tr>
                     <th>NIS</th>
-                    <td>{{$key->nik}}</td>
+                    <td>{{$key->nis}}</td>
                 </tr>
                 
                 <tr>

@@ -22,9 +22,9 @@ class GuruController extends Controller
         return view('admin/guru/guru', ['guru' => $guru]);
     }
     
-    public function show(Guru $id)
+    public function show(Guru $nip)
     {
-        return view('admin.guru.show', ['guru' => $id]);
+        return view('admin.guru.show', ['guru' => $nip]);
     }
     
     public function create()
@@ -67,14 +67,14 @@ class GuruController extends Controller
     //     return view('admin.guru.show', ['guru' => $id]);
     // }
 
-    public function edit(Guru $id)
+    public function edit(Guru $nip)
     {
-        return view('admin.guru.edit', ['guru' => $id]);
+        return view('admin.guru.edit', ['guru' => $nip]);
     }
 
     public function update(Request $request){
         // \Session::flash('flash_message','successfully saved.');
-        return view('admin.guru.edit', ['guru' => $id]);
+        return view('admin.guru.edit', ['guru' => $nip]);
     }
 
     public function cetak_pdf()
@@ -85,15 +85,15 @@ class GuruController extends Controller
         return $gpdf->download('daftar-guru-'.date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
 
-    public function cetak_profil_pdf(Guru $id)
+    public function cetak_profil_pdf(Guru $nip)
     {
         // return $id;
-        $gpdf = PDF::loadview('admin/guru/profilguruPDF',['guru'=>$id]);
-        return $gpdf->download('profil-guru-'.$id->value("nama")."-".date("Y/m/d").':'.date("H/i/s").'.pdf');
+        $gpdf = PDF::loadview('admin/guru/profilguruPDF',['guru'=>$nip]);
+        return $gpdf->download('profil-guru-'.$nip->value("nama")."-".date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
-    public function hapus($id)
+    public function hapus($guru)
     {
-        DB::table('guru')->where('id',$id)->delete();
+        DB::table('guru')->where('nip',$guru)->delete();
         
     // alihkan halaman ke halaman guru
         return redirect('/guru');

@@ -37,7 +37,7 @@ class SiswaController extends Controller
     {
         $siswa = new SiswaModel;
         
-        $siswa->nik = request('nik');
+        $siswa->nis = request('nis');
         $siswa->nama = request('nama');
         $siswa->email = request('email');
         $siswa->alamat = request('alamat');
@@ -81,9 +81,9 @@ class SiswaController extends Controller
         return redirect('/siswa');
     }
 
-        public function show($nik)
+        public function show($nis)
     {   
-        $users = DB::select('select * from siswa where nik = ?',[$nik]);
+        $users = DB::select('select * from siswa where nis = ?',[$nis]);
 
         // $siswa= DB::table('siswa')
         // ->join('keuangan as money','siswa.id_siswa','=','money.id_siswa')
@@ -103,10 +103,10 @@ class SiswaController extends Controller
 
     }
 
-    public function hapus($nik)
+    public function hapus($nis)
     {
        
-        DB::table('siswa')->where('nik',$nik)->delete();
+        DB::table('siswa')->where('nik',$nis)->delete();
         
         return redirect('/siswa');
     }

@@ -10,7 +10,7 @@ class WaliKelas extends Model
 
     public function guru()
     {
-        return $this->belongsTo('App\Guru', 'id_guru', 'id');
+        return $this->belongsTo('App\Guru', 'id_guru', 'nip');
     }
 
     public function kelas()

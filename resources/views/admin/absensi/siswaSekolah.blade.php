@@ -1,5 +1,111 @@
 @extends('admin.template.base')
 @section('content')
+@if(Session::has('flash_message'))
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
+@endif
+@if(Session::has('flash_message_fail'))
+    <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
+@endif
+
+
+     ==INI TEST AJAX!!!==<br>
+     <input type='text' id='search' name='search' placeholder='Enter id kelas'><input type='button' value='Search' id='but_search'>
+     <br/>
+     <input type='button' value='Fetch all records' id='but_fetchall'>
+     
+     <table border='1' id='userTable' style='border-collapse: collapse;'>
+       <thead>
+        <tr>
+          <th>NO</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>JK</th>
+        </tr>
+       </thead>
+       <tbody></tbody>
+     </table>
+
+     <!-- Script -->
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --> <!-- jQuery CDN -->
+                        <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+
+     <script type='text/javascript'>
+     $(document).ready(function(){
+
+       // Fetch all records
+       $('#but_fetchall').click(function(){
+     fetchRecords(0);
+       });
+
+       // Search by userid
+       $('#but_search').click(function(){
+          var userid = Number($('#search').val().trim());
+                
+      if(userid > 0){
+        fetchRecords(userid);
+      }
+
+       });
+
+     });
+
+     function fetchRecords(id){
+       $.ajax({
+         url: 'test/getUsers/'+id,
+         type: 'get',
+         dataType: 'json',
+         success: function(response){
+
+           var len = 0;
+           $('#tabelabsen tbody').empty(); // Empty <tbody>
+           if(response['data'] != null){
+             len = response['data'].length;
+           }
+
+           // var getid = new Array();
+           if(len > 0){
+             for(var i=0; i<len; i++){
+               var nis = response['data'][i].nis;
+               var nama = response['data'][i].nama;
+               var email = response['data'][i].email;
+               var jk = response['data'][i].jk;
+               var id_kelas = response['data'][i].id_kelas;
+               
+               $("#getids").append("<?php $getid = array(); ?>");
+               var tr_str = "<tr>" +
+                   "<td>" + (i+1) + "</td>" +
+                   "<td>" + nis + "</td>" +
+                   "<td>" + nama + "</td>" +
+                   "<td>" + jk + "</td>" +
+                   "<td>" + id_kelas + "</td>" +
+                   "<td><input type = 'checkbox' name = 'nis[]' value = '{{$getid[$i]}}'/></td>"+
+               "</tr>";
+
+               $("#tabelabsen tbody").append(tr_str);
+             }
+           }else if(response['data'] != null){
+              var tr_str = "<tr>" +
+                  "<td>1</td>" +
+                  "<td>" + response['data'].nis + "</td>" +
+                  "<td>" + response['data'].nama + "</td>" + 
+                  "<td>" + response['data'].jk + "</td>" +
+                    "<td><input type = 'checkbox' name = 'nis[]' value = '{{$getid[$i]}}'/></td>"+
+              "</tr>";
+
+              $("#tabelabsen tbody").append(tr_str);
+           }else{
+              var tr_str = "<tr>" +
+                  "<td align='center' colspan='4'>No record found.</td>" +
+              "</tr>";
+
+              $("#tabelabsen tbody").append(tr_str);
+           }
+
+         }
+       });
+     }
+     </script>
+     ===
 
 <section class="content-header">
       <h1>
@@ -18,7 +124,7 @@
         <div class="box">
             <div class="box-header">
 
-                <form class="form-horizontal">
+                <!-- <form class="form-horizontal">
                 <div class="row form-group">
                     <div class="col col-sm-1">
                         <label for="tanggal" class="form-control-label">Tanggal</label>
@@ -29,7 +135,7 @@
                         </div>
                         <input type="date" class="form-control" style="width:17%" name="tgl_absen" required>
                     </div>
-                </div>
+                </div> -->
                 <div class="row form-group">
                     <div class="col col-sm-1">
                         <label for="kelas" class=" form-control-label">Kelas</label>
@@ -49,8 +155,8 @@
                     <div class="col col-sm-1">
                         <label for="sesi" class=" form-control-label">Sesi</label>
                     </div>
-                    <div class="input-group" name="pertemuan">
-                        <select class="form-control">
+                    <div class="input-group">
+                        <select class="form-control" name="pertemuan">
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -59,7 +165,7 @@
                 </div>      
 <!-- /.box-header -->
             <div class="box-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="tabelabsen" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>NO</th>
@@ -72,15 +178,16 @@
                 
                 <tbody>
                 <?php $nomer = 1; ?>
-                <?php $getid = array(); ?>
+                <!-- <?php $getid = array(); ?> -->
                 @foreach ($siswa as $row)
                 <tr>
-                <?php $getid[$nomer] = $row->id_siswa; ?>
+                <!-- <?php $getid[$nomer] = $row->nis; ?> -->
+                <div id="getidup"></div>
                     <td>{{$nomer}}</td>
-                    <td>{{$row->nik}}</td>
+                    <td>{{$row->nis}}</td>
                     <td>{{$row->nama}}</td>
                     <td>{{$row->jk}}</td>
-                    <td><input type = "checkbox" name = "id_siswa[]" value = "{{$getid[$nomer]}}"/></td>
+                    <td><input type = "checkbox" name = "nis[]" value = "{{$getid[$nomer]}}"/></td>
                 <?php $nomer++; ?>
                 </tr>
                 @endforeach

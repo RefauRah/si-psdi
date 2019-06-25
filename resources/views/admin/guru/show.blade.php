@@ -19,7 +19,7 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Profil Guru PSDI</h3>
-                <a href="{{route('guru/cetak_profil_pdf', $guru->id)}}" class="btn btn-primary pull-right" target="_blank">CETAK PDF</a>
+                <a href="{{route('guru/cetak_profil_pdf', $guru->nip)}}" class="btn btn-primary pull-right" target="_blank">CETAK PDF</a>
             </div>
 <!-- /.box-header ALTER TABLE `guru` AUTO_INCREMENT = 0;-->
             <div class="box-body">

@@ -19,7 +19,7 @@ class CreateKeuanganTable extends Migration
             $table->integer('pembayaran',false,true)->lenght(70);
             $table->timestamps();
 
-            $table->foreign('id_siswa')->references('id_siswa')->on('siswa')->onDelete('cascade');
+            // $table->foreign('id_siswa')->references('id_siswa')->on('siswa')->onDelete('cascade');
         });
     }
 

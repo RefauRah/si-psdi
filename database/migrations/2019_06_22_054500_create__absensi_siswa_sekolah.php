@@ -15,7 +15,7 @@ class CreateAbsensiSiswaSekolah extends Migration
     {
         Schema::create('absensi_siswa_sekolah', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_siswa')->unsigned();
+            $table->integer('nis');
             $table->bigInteger('id_kelas')->unsigned();
             $table->string('pertemuan');
             $table->char('absen',100);
@@ -25,7 +25,7 @@ class CreateAbsensiSiswaSekolah extends Migration
             // $table->string('keterangan',50);
             $table->timestamps();
 
-            $table->foreign('id_siswa')->references('id_siswa')->on('siswa')->onDelete('cascade');
+            $table->foreign('nis')->references('nis')->on('siswa')->onDelete('cascade');
             $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade');
         });
     }

@@ -15,12 +15,12 @@ class CreateWaliKelas extends Migration
     {
         Schema::create('walikelas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_guru')->unsigned();
+            $table->bigInteger('nip')->unsigned();
             $table->bigInteger('id_kelas')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_guru')->references('id')->on('guru')->onDelete('cascade');
-            $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade');
+            // $table->foreign('nip_guru')->references('nip')->on('guru')->onDelete('cascade');
+            // $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade');
         });
     }
 

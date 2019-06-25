@@ -28,21 +28,23 @@ class AbsensiGuruController extends Controller
     {
         $guru = new AbsensiGuru;
 
-        if (is_null($guru->absen = request('id_guru'))){
+        if (is_null($guru->absen = request('nip'))){
 			\Session::flash('flash_message_fail',' Error : Tidak ada data yand dipilih.');
 			return redirect()->back();
 		}
 		else{
-			$counter = count(request('id_guru'));
+			$counter = count(request('nip'));
 
-			$id_guru = request('id_guru');
+			$nip = request('nip');
+			date_default_timezone_set("Asia/Bangkok");
+			$tgl_absen = date("Y-m-d")." ".date("H:i:s");
 
 			for ( $i=0; $i< $counter; $i++) {
 			    $guru = new AbsensiGuru;
-				$guru->id_guru = $id_guru[$i];
+				$guru->nip = $nip[$i];
 		        $guru->absen = request('absen');
 		        $guru->keterangan = request('keterangan');
-		        $guru->tgl_absen = request('tgl_absen');
+		        $guru->tgl_absen = $tgl_absen;
 		        $guru->save();
 			}   
 
