@@ -24,8 +24,10 @@ class DashboardController extends Controller
         return view('admin/admin/create');
     }
 
-        public function store()
+        public function store(Request $request)
     {
+
+        date_default_timezone_set("Asia/Bangkok");
         User::create([
             'name'=>$request->name,
             'username' =>$request->username,

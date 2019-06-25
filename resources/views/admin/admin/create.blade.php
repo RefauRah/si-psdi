@@ -38,10 +38,10 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword" class="col-sm-2">Password Admin</label>
+                  <label for="inputPassword" class="col-sm-2">Password</label>
 
                   <div class="col-sm-10">
-                    <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password Admin" required>
+                    <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password Admin" required autocomplete="new-password">
                   </div>
                 </div>
 
