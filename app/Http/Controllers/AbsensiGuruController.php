@@ -60,4 +60,14 @@ class AbsensiGuruController extends Controller
 		}
     }
 
+        public function show()
+    {
+     	$users = DB::table('absensiguru')
+		->join('guru', 'absensiguru.nip', '=', 'guru.nip')
+		->select('absensiguru.*', 'guru.nama')
+		->get();
+   
+       return view('admin.absensi.laporanGuru',['users'=>$users]);
+    }
+
 }
