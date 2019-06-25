@@ -22,7 +22,7 @@ class AbsensiSiswaSekolahController extends Controller
 
   public function getUsers($id = 0){
     // Fetch all records
-    $userData['data'] = Page::getuserData($id);
+    $userData['data'] = AbsensiSiswaSekolah::getuserData($id);
 
     echo json_encode($userData);
     exit;

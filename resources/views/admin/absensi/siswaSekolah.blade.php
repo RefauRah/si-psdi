@@ -123,7 +123,7 @@
 
      function fetchRecords(id){
        $.ajax({
-         url: 'test/getUsers/'+id,
+         url: 'absensiswasekolah/getUsers/'+id,
          type: 'get',
          dataType: 'json',
          success: function(response){

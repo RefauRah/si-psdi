@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('/company/base');
 });
 Route::get('/test', 'PagesController@index'); // localhost:8000/
-Route::get('/test/getUsers/{id}','PagesController@getUsers');
+Route::get('/absensiswasekolah/getUsers/{id}','AbsensiSiswaSekolahController@getUsers');
 
 Route::get('/login', 'AuthController@getLogin')->middleware('guest')->name('login');
 Route::post('/login', 'AuthController@postLogin')->middleware('guest');
