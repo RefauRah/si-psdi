@@ -92,6 +92,7 @@ Route::get('/mapel/hapus/{mapel}','MapelController@hapus');
 Route::get('/absenguru', 'AbsensiGuruController@index');
 //Route::get('/guru/{id}', 'GuruController@show');
 Route::post('/absenguru', 'AbsensiGuruController@store');
+Route::get('/absenguru/laporanAbsensiGuru', 'AbsensiGuruController@show');
 
 Route::get('/absensiswasekolah', 'AbsensiSiswaSekolahController@index');
 Route::post('/absensiswasekolah', 'AbsensiSiswaSekolahController@store');

@@ -83,7 +83,8 @@ class SiswaController extends Controller
 
         public function show($nis)
     {   
-        $users = DB::select('select * from siswa where nis = ?',[$nis]);
+        $users = DB::select('select * from siswa where nis = ?',[$nis]);     
+/*        $walikelas = DB::select('select * from walikelas where nip = ?',[$nip]);*/
 
         // $siswa= DB::table('siswa')
         // ->join('keuangan as money','siswa.id_siswa','=','money.id_siswa')
@@ -106,10 +107,11 @@ class SiswaController extends Controller
     public function hapus($nis)
     {
        
-        DB::table('siswa')->where('nik',$nis)->delete();
+        DB::table('siswa')->where('nis',$nis)->delete();
         
         return redirect('/siswa');
     }
+
 
    
     

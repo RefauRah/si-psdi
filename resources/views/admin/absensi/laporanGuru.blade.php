@@ -35,31 +35,27 @@
                     <th>NO</th>
                     <th>NIP</th>
                     <th>Nama</th>
-                    <th>Mapel</th>
-                    <th>Absen</th>
+                    <th>Status Absen</th>
+                    <th>Tangal/date</th>
+                    <th>Jenis Aktifitas</th>
                     <th>Keterangan</th>
                 </tr>
                 </thead>
-                
                 <tbody>
+                <?php $nomer = 1; ?>
+                @foreach ($users as $guru)
                 <tr>
+                    <td>{{$nomer}}</td>
+                    <td>{{ $guru->nip}}</td>
+                    <td>{{ $guru->nama}}</td>
+                    <td>{{ $guru->absen}}</td>
+                    <td>{{ $guru->tgl_absen}}</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $guru->keterangan}}</td>
+            
+                <?php $nomer++; ?>
                 </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>NO</th>
-                    <th>NIP</th>
-                    <th>Nama</th>
-                    <th>Mapel</th>
-                    <th>Absen</th>
-                    <th>Keterangan</th>
-                </tr>
+                @endforeach
                 </tfoot>
 
                 </table>
