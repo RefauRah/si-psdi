@@ -29,7 +29,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                
+                <?php $nomer = 1; ?>
+
+                @foreach ($user as $row)
+                <tr>
+                    <td>{{$nomer}}</td>
+                    <td>{{ $row->name}}</td>
+                    <td>{{ $row->email}}</td>
+                    <td>{{$row->user_type}}</td>
+                    <?php $nomer++; ?>
+                </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 <tr>

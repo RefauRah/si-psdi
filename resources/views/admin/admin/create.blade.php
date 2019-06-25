@@ -44,6 +44,18 @@
                     <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password Admin" required>
                   </div>
                 </div>
+
+                <div class="form-group">
+                        <label for="user_type" class="col-sm-2">Peran User</label>
+                        <div class="col-sm-10">
+                        <select class="form-control" name="user_type" id="user_type">
+                        <option value="admin">Admin</option>
+                        <option value="super_admin">Super Admin</option>
+                        <option value="pondok">Pondok</option>
+                        <option value="Bimbel">Bimbel</option>
+                        </select>
+                        </div>
+                        </div>
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="reset" class="btn btn-default">Reset</button>

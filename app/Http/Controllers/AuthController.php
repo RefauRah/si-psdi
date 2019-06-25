@@ -15,7 +15,7 @@ class AuthController extends Controller
 
     public function postLogin(Request $request)
     {
-    	if(!\Auth::attempt(['username'=>$request->username, 'password' => $request->password])){
+    	if(!\Auth::attempt(['username'=>$request->username, 'password' => $request->password, 'user_type' => $request->user_type])){
     			return redirect()->back();
 
     	}
@@ -41,7 +41,9 @@ class AuthController extends Controller
     		'name'=>$request->name,
     		'username' =>$request->username,
     		'email'=>$request->email,
+            'user_type'=>$request->user_type,
     		'password'=>bcrypt ($request->password)
+
     	]);
 
     	return redirect()->back();
@@ -53,5 +55,9 @@ class AuthController extends Controller
 
     		return redirect()->route('login');
     	}
+
+        // if(!\Gate::allows('isSuper_admin')){
+        //     abort(403,"Sorry, You can't access here");
+        // }
     
 }
