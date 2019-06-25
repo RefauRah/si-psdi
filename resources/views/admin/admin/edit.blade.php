@@ -20,30 +20,41 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="/admin/update" enctype="multipart/form-data">
+              @csrf
               <div class="box-body">
                 <div class="form-group">
                   <label for="inputNama" class="col-sm-2">Nama</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputNama" placeholder="Nama">
+                    <input type="text" name="name" class="form-control" id="inputNama" placeholder="Nama">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2">Email</label>
 
                   <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputAlamat" class="col-sm-2">Alamat</label>
+                  <label for="inputPassword" class="col-sm-2">Password</label>
 
                   <div class="col-sm-10">
-                    <textarea name="alamat" class="form-control" id="inputAlamat" cols="30" rows="4"></textarea>
+                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password"></input>
                   </div>
                 </div>
-              </div>
+              <div class="form-group">
+                        <label for="user_type" class="col-sm-2">Peran User</label>
+                        <div class="col-sm-10">
+                        <select class="form-control" name="user_type" id="user_type">
+                        <option value="admin">Admin</option>
+                        <option value="super_admin">Super Admin</option>
+                        <option value="pondok">Pondok</option>
+                        <option value="Bimbel">Bimbel</option>
+                        </select>
+                        </div>
+                        </div>
               <!-- /.box-body -->
               <div class="box-footer">
                 <button type="reset" class="btn btn-default">Cancel</button>

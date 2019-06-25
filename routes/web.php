@@ -34,6 +34,9 @@ Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout'
 Route::get('/admin', 'DashboardController@index')->middleware('auth')->name('admin');
 Route::get('/admin/create', 'DashboardController@create')->middleware('auth')->name('admin/create');
 Route::post('/admin/create', 'DashboardController@store');
+Route::get('/admin/hapus/{users}','DashboardController@hapus');
+Route::get('/admin/edit/{users}','DashboardController@edit')->name('/admin/edit');
+Route::post('/admin/update','DashboardController@update');
 
 Route::get('/siswa','SiswaController@index')->middleware('auth')->name('siswa');
 //->middleware('auth')->name('siswa');

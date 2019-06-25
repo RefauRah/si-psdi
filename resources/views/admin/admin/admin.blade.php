@@ -38,6 +38,10 @@
                     <td>{{ $row->email}}</td>
                     <td>{{$row->user_type}}</td>
                     <?php $nomer++; ?>
+                    <td>
+                    <a href="{{url('/admin/hapus/'.$row->id)}}" class="btn btn-sm btn-danger">Hapus</a>
+                    <a href="{{url('/admin/edit/'.$row->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                    </td>
                 </tr>
                 @endforeach
                 </tbody>
