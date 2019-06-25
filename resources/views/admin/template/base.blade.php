@@ -32,6 +32,9 @@
     <link href="{{url('/assets/admin2/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
     <link href="{{url('/assets/admin2/vendor/vector-map/jqvmap.min.css')}}" rel="stylesheet" media="all">
 
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
     <!-- Main CSS-->
     <link href="{{url('/assets/admin2/css/theme.css')}}" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="{{url('/assets/admin2/css/style.css')}}">
@@ -87,6 +90,14 @@
     <script src="{{url('/assets/admin2/vendor/vector-map/jquery.vmap.min.js')}}"></script>
     <script src="{{url('/assets/admin2/vendor/vector-map/jquery.vmap.sampledata.js')}}"></script>
     <script src="{{url('/assets/admin2/vendor/vector-map/jquery.vmap.world.js')}}"></script>
+
+    <!-- Datatables -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.data').DataTable();
+        });
+    </script>
 
     <!-- Main JS-->
     <script src="{{url('/assets/admin2/js/main.js')}}"></script>

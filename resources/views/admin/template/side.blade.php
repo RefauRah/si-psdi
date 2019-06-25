@@ -35,10 +35,7 @@
                     <a href="{{url('/kelas')}}">
                         <i class="fas fa-sitemap"></i>Kelas</a>
                 </li>
-                <li>
-                    <a href="{{url('/walikelas')}}">
-                        <i class="fas fa-user"></i>Wali Kelas</a>
-                </li>
+           
                 <li>
                     <a href="{{url('/mapel')}}">
                         <i class="fas fa-book"></i>Mata Pelajaran</a>

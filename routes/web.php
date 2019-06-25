@@ -60,10 +60,6 @@ Route::get('/kelas', 'KelasController@index');
 Route::get('/kelas/create', 'KelasController@create');
 Route::post('/kelas/create', 'KelasController@store');
 
-Route::get('/walikelas', 'WaliKelasController@index');
-Route::get('/walikelas/create', 'WaliKelasController@create');
-Route::post('/walikelas/create', 'WaliKelasController@store');
-
 Route::get('/mapel', 'MapelController@index');
 
 Route::get('/mapel/create', 'MapelController@create');
