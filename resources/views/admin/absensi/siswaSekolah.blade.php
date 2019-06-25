@@ -6,107 +6,6 @@
 @if(Session::has('flash_message_fail'))
     <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
 @endif
-
-
-     ==INI TEST AJAX!!!==<br>
-     <input type='text' id='search' name='search' placeholder='Enter id kelas'><input type='button' value='Search' id='but_search'>
-     <br/>
-     <input type='button' value='Fetch all records' id='but_fetchall'>
-     
-     <table border='1' id='userTable' style='border-collapse: collapse;'>
-       <thead>
-        <tr>
-          <th>NO</th>
-          <th>Nama</th>
-          <th>Email</th>
-          <th>JK</th>
-        </tr>
-       </thead>
-       <tbody></tbody>
-     </table>
-
-     <!-- Script -->
-     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --> <!-- jQuery CDN -->
-                        <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-
-     <script type='text/javascript'>
-     $(document).ready(function(){
-
-       // Fetch all records
-       $('#but_fetchall').click(function(){
-     fetchRecords(0);
-       });
-
-       // Search by userid
-       $('#but_search').click(function(){
-          var userid = Number($('#search').val().trim());
-                
-      if(userid > 0){
-        fetchRecords(userid);
-      }
-
-       });
-
-     });
-
-     function fetchRecords(id){
-       $.ajax({
-         url: 'test/getUsers/'+id,
-         type: 'get',
-         dataType: 'json',
-         success: function(response){
-
-           var len = 0;
-           $('#tabelabsen tbody').empty(); // Empty <tbody>
-           if(response['data'] != null){
-             len = response['data'].length;
-           }
-
-           // var getid = new Array();
-           if(len > 0){
-             for(var i=0; i<len; i++){
-               var nis = response['data'][i].nis;
-               var nama = response['data'][i].nama;
-               var email = response['data'][i].email;
-               var jk = response['data'][i].jk;
-               var id_kelas = response['data'][i].id_kelas;
-               
-               $("#getids").append("<?php $getid = array(); ?>");
-               var tr_str = "<tr>" +
-                   "<td>" + (i+1) + "</td>" +
-                   "<td>" + nis + "</td>" +
-                   "<td>" + nama + "</td>" +
-                   "<td>" + jk + "</td>" +
-                   "<td>" + id_kelas + "</td>" +
-                   "<td><input type = 'checkbox' name = 'nis[]' value = '{{$getid[$i]}}'/></td>"+
-               "</tr>";
-
-               $("#tabelabsen tbody").append(tr_str);
-             }
-           }else if(response['data'] != null){
-              var tr_str = "<tr>" +
-                  "<td>1</td>" +
-                  "<td>" + response['data'].nis + "</td>" +
-                  "<td>" + response['data'].nama + "</td>" + 
-                  "<td>" + response['data'].jk + "</td>" +
-                    "<td><input type = 'checkbox' name = 'nis[]' value = '{{$getid[$i]}}'/></td>"+
-              "</tr>";
-
-              $("#tabelabsen tbody").append(tr_str);
-           }else{
-              var tr_str = "<tr>" +
-                  "<td align='center' colspan='4'>No record found.</td>" +
-              "</tr>";
-
-              $("#tabelabsen tbody").append(tr_str);
-           }
-
-         }
-       });
-     }
-     </script>
-     ===
-
 <section class="content-header">
       <h1>
         Tabel
@@ -144,10 +43,16 @@
                         <div class="input-group-addon">
                             <i class="fa fa-building"></i>
                         </div>
-                        <select name="id_kelas" id="inputKelas" class="form-control">
+                        <select name="id_kelas" id="search" class="form-control">
                         @foreach ($kelas as $row)
                             <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
                         @endforeach
+
+                        <!-- <input type='text' id='search' name='search' placeholder='Enter id kelas'> -->
+                        <input type='button' value='Pilih Kelas' id='but_search'>
+                         <br/>
+                         <!-- <input type='button' value='Tampilkan seluruh data' id='but_fetchall'> -->
+
                     </select>
                     </div>
                 </div>
@@ -177,11 +82,11 @@
                 </thead>
                 
                 <tbody>
-                <?php $nomer = 1; ?>
-                <!-- <?php $getid = array(); ?> -->
+<!--                 <?php $nomer = 1; ?>
+                <?php $getid = array(); ?>
                 @foreach ($siswa as $row)
                 <tr>
-                <!-- <?php $getid[$nomer] = $row->nis; ?> -->
+                <?php $getid[$nomer] = $row->nis; ?> 
                 <div id="getidup"></div>
                     <td>{{$nomer}}</td>
                     <td>{{$row->nis}}</td>
@@ -190,8 +95,88 @@
                     <td><input type = "checkbox" name = "nis[]" value = "{{$getid[$nomer]}}"/></td>
                 <?php $nomer++; ?>
                 </tr>
-                @endforeach
+                @endforeach -->
                 </tbody>
+
+
+                        <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+
+     <script type='text/javascript'>
+     $(document).ready(function(){
+
+       // Fetch all records
+       $('#but_fetchall').click(function(){
+     fetchRecords(0);
+       });
+
+       // Search by userid
+       $('#but_search').click(function(){
+          var userid = Number($('#search').val().trim());
+                
+      if(userid > 0){
+        fetchRecords(userid);
+      }
+
+       });
+
+     });
+
+     function fetchRecords(id){
+       $.ajax({
+         url: 'test/getUsers/'+id,
+         type: 'get',
+         dataType: 'json',
+         success: function(response){
+
+           var len = 0;
+           $('#tabelabsen tbody').empty(); // Empty <tbody>
+           if(response['data'] != null){
+             len = response['data'].length;
+           }
+
+           var getid = [];
+           if(len > 0){
+             for(var i=0; i<len; i++){
+               var nis = response['data'][i].nis;
+               var nama = response['data'][i].nama;
+               var email = response['data'][i].email;
+               var jk = response['data'][i].jk;
+               var id_kelas = response['data'][i].id_kelas;
+               getid[i] = response['data'][i].nis;
+               
+               var tr_str = "<tr>" +
+                   "<td>" + (i+1) + "</td>" +
+                   "<td>" + nis + "</td>" +
+                   "<td>" + nama + "</td>" +
+                   "<td>" + jk + "</td>" +
+                   "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
+               "</tr>";
+
+               $("#tabelabsen tbody").append(tr_str);
+             }
+           }else if(response['data'] != null){
+              var tr_str = "<tr>" +
+                  "<td>1</td>" +
+                  "<td>" + response['data'].nis + "</td>" +
+                  "<td>" + response['data'].nama + "</td>" + 
+                  "<td>" + response['data'].jk + "</td>" +
+                    "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
+              "</tr>";
+
+              $("#tabelabsen tbody").append(tr_str);
+           }else{
+              var tr_str = "<tr>" +
+                  "<td align='center' colspan='4'>No record found.</td>" +
+              "</tr>";
+
+              $("#tabelabsen tbody").append(tr_str);
+           }
+
+         }
+       });
+     }
+     </script>
+
                 <tfoot>
                 <tr>
                     <th>NO</th>
