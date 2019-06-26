@@ -124,7 +124,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="button" onclick="history.back();" class="btn btn-danger">Cancel</button>
+                <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>
                 <button type="submit" class="btn btn-info pull-right">Submit</button>
               </div>
               <!-- /.box-footer -->

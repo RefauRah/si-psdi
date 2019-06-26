@@ -49,16 +49,20 @@
                         <label for="user_type" class="col-sm-2">Peran User</label>
                         <div class="col-sm-10">
                         <select class="form-control" name="user_type" id="user_type">
-                        <option value="admin">Admin</option>
+                        <option value=""></option>
                         <option value="super_admin">Super Admin</option>
-                        <option value="pondok">Pondok</option>
-                        <option value="Bimbel">Bimbel</option>
+                        <option value="admin">Admin</option>
+                        <option value="smarter">Smarter</option>
+                        <option value="bimbel">Bimbel</option>
+                        <option value="pesantren">Pesantren</option>
+                        <option value="pasca_mubaligh">Pasca Mubaligh</option>
+                        <option value="pra_mubaligh">Pra Mubaligh</option>
                         </select>
                         </div>
                         </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="reset" class="btn btn-default">Reset</button>
+                <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>
                 <button type="submit" class="btn btn-info pull-right">Submit</button>
               </div>
               <!-- /.box-footer -->

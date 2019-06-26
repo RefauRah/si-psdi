@@ -13,12 +13,42 @@ class KelasController extends Controller
 {
     public function index()
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         $kelas = Kelas::all();
         return view('admin/kelas/kelas', ['kelas' => $kelas]);
     }
     
     public function show($id)
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         $kelas = DB::select('select * from kelas where id = ?', [$id]);
         $siswa = DB::select('select * from siswa where id_kelas = ?', [$id]);
         // return $kelas;
@@ -27,11 +57,41 @@ class KelasController extends Controller
     
     public function create()
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         return view('admin/kelas/create');
     }
 
-        public function store()
+    public function store()
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         $kelas = new Kelas;
         
         $kelas->kode_kelas = request('kode_kelas');

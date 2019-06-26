@@ -65,10 +65,14 @@
                         <label for="user_type" class="col-md-4 col-form-label text-md-right">Peran User:</label>
                         <div class="col-md-6">
                         <select class="form-control" name="user_type" id="user_type">
-                        <option value="admin">Admin</option>
+                        <option value=""></option>
                         <option value="super_admin">Super Admin</option>
-                        <option value="pondok">Pondok</option>
-                        <option value="Bimbel">Bimbel</option>
+                        <option value="admin">Admin</option>
+                        <option value="smarter">Smarter</option>
+                        <option value="bimbel">Bimbel</option>
+                        <option value="pesantren">Pesantren</option>
+                        <option value="pasca_mubaligh">Pasca Mubaligh</option>
+                        <option value="pra_mubaligh">Pra Mubaligh</option>
                         </select>
                         </div>
                         </div>

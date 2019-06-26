@@ -15,25 +15,88 @@ class GuruController extends Controller
 {
     public function index()
     {
-        if(!\Gate::allows('isSuper_admin')||\Gate::allows('isBimbel')){
+        if(\Gate::allows('isPasca_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        // elseif(!\Gate::allows('isBimbel')){
+        //     abort(403,"Sorry, You can't access here");
+        // }
+        // else{
+        //     return redirect('/home');
+        // }
         $guru = Guru::all();
         return view('admin/guru/guru', ['guru' => $guru]);
     }
     
     public function show(Guru $nip)
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         return view('admin.guru.show', ['guru' => $nip]);
     }
     
     public function create()
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         return view('admin/guru/create');
     }
 
         public function store(Request $request)
-    {
+    {   
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         $guru = new Guru;
         $guru->nip = request('nip');
         $guru->nama = request('nama');
@@ -69,16 +132,67 @@ class GuruController extends Controller
 
     public function edit(Guru $nip)
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isAdmin')){
+            abort(403,"Sorry, You can't access here");
+        }
         return view('admin.guru.edit', ['guru' => $nip]);
     }
 
     public function update(Request $request){
         // \Session::flash('flash_message','successfully saved.');
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isAdmin')){
+            abort(403,"Sorry, You can't access here");
+        }
         return view('admin.guru.edit', ['guru' => $nip]);
     }
 
     public function cetak_pdf()
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         $guru= Guru::all();
 
         $gpdf = PDF::loadview('admin/guru/guruPDF',['guru'=>$guru]);
@@ -88,11 +202,44 @@ class GuruController extends Controller
     public function cetak_profil_pdf(Guru $nip)
     {
         // return $id;
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         $gpdf = PDF::loadview('admin/guru/profilguruPDF',['guru'=>$nip]);
         return $gpdf->download('profil-guru-'.$nip->value("nama")."-".date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
     public function hapus($guru)
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isAdmin')){
+            abort(403,"Sorry, You can't access here");
+        }
         DB::table('guru')->where('nip',$guru)->delete();
         
     // alihkan halaman ke halaman guru

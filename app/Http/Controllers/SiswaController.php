@@ -17,6 +17,21 @@ class SiswaController extends Controller
 
     public function index()
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         // $siswa = SiswaModel::all();
         $siswa = SiswaModel::with('kelas')->get();
         return view('admin/siswa/siswa', ['siswa' => $siswa]);
@@ -29,12 +44,48 @@ class SiswaController extends Controller
     
     public function create()
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isAdmin')){
+            abort(403,"Sorry, You can't access here");
+        }
         $kelas = Kelas::all();
         return view('admin/siswa/create', ['kelas' => $kelas]);
     }
 
-        public function store(Request $request)
+    public function store(Request $request)
     {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isAdmin')){
+            abort(403,"Sorry, You can't access here");
+        }
         $siswa = new SiswaModel;
         
         $siswa->nis = request('nis');
@@ -83,6 +134,21 @@ class SiswaController extends Controller
 
         public function show($nis)
     {   
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
         $users = DB::select('select * from siswa where nis = ?',[$nis]);     
 /*        $walikelas = DB::select('select * from walikelas where nip = ?',[$nip]);*/
 
@@ -106,7 +172,24 @@ class SiswaController extends Controller
 
     public function hapus($nis)
     {
-       
+     if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }  
+        elseif(\Gate::allows('isAdmin')){
+            abort(403,"Sorry, You can't access here");
+        }
         DB::table('siswa')->where('nis',$nis)->delete();
         
         return redirect('/siswa');

@@ -89,8 +89,9 @@
             </div>
 <!-- /.box-body -->
             <div class="box-footer">
-                <button type="submit"class="btn btn-success btn-sm pull-right">Submit</button>
-            </div>
+                <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>
+                <button type="submit" class="btn btn-info pull-right">Submit</button>
+              </div>
         </div>
     </div>
 </form>

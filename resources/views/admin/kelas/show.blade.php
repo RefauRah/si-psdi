@@ -55,7 +55,7 @@
                 @foreach ($siswa as $row)
                 <tr>
                     <td>{{$nomer}}</td>
-                    <td>{{ $row->nik}}</td>
+                    <td>{{ $row->nis}}</td>
                     <td>{{ $row->nama}}</td>
                     <?php $nomer++; ?>
                 </tr>
@@ -73,6 +73,9 @@
                 </tr>
                 </tfoot>
                 </table>
+                 <div class="box-footer">
+                    <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>
+                </div>
             </div>
 <!-- /.box-body -->
         </div>

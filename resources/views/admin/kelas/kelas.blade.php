@@ -59,6 +59,7 @@
                 </tr>
                 </tfoot>
                 </table>
+               
             </div>
 <!-- /.box-body -->
             <div class="box-footer">
