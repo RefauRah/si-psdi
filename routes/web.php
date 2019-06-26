@@ -44,6 +44,9 @@ Route::get('/siswa/create', 'SiswaController@create')->middleware('auth')->name(
 Route::post('/siswa/create', 'SiswaController@store');
 Route::get ('/siswa/{siswa}', 'SiswaController@show')->middleware('auth')->name('siswa');
 Route::get('/siswa/hapus/{siswa}','SiswaController@hapus');
+Route::get('/siswa/edit/{siswa}','SiswaController@edit');
+Route::post('/siswa/update','SiswaController@update');
+
 
 
 

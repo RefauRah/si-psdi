@@ -131,7 +131,7 @@ class SiswaController extends Controller
 
         return redirect('/siswa');
     }
-
+     
         public function show($nis)
     {   
         if(\Gate::allows('isPasca_mubaligh')){
@@ -195,6 +195,30 @@ class SiswaController extends Controller
         return redirect('/siswa');
     }
 
+    public function edit ($nis)
+    {
+
+        $useredit = DB::select('select * from siswa where nis = ?',[$nis]);     
+
+        return view('admin.siswa.edit',['useredit'=>$useredit]);
+
+    }
+
+    public function update(Request $request)
+    {
+
+        DB::table('siswa')->where('nis',$request->nis)->update([
+        'nis' => $request->nis,
+        'nama' => $request->nama,
+        'id_kelas' => $request->id_kelas,
+        'jk' => $request->jk,
+        'alamat' => $request->alamat,
+        'tmpt_lahir' => $request->tmpt_lahir,
+        'tgl_lahir' => $request->tgl_lahir
+        
+        ]);
+         return redirect('/siswa');
+    }
 
    
     
