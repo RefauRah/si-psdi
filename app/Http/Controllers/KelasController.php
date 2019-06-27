@@ -28,7 +28,7 @@ class KelasController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        $kelas = Kelas::all();
+        $kelas = Kelas::all()->sortBy('nama');
         return view('admin/kelas/kelas', ['kelas' => $kelas]);
     }
     
@@ -97,6 +97,7 @@ class KelasController extends Controller
         $kelas->kode_kelas = request('kode_kelas');
         $kelas->nama = request('nama');
         $kelas->jenis_kelas = request('jenis_kelas');
+        $kelas->prapasca = request('prapasca');
         $kelas->save();
 
         \Session::flash('flash_message','successfully saved.');

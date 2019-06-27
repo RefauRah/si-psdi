@@ -38,12 +38,25 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputJenisKelas" class="col-sm-2">Nama Kelas</label>
+                  <label for="inputJenisKelas" class="col-sm-2">Jenis Kelas</label>
 
                   <div class="col-sm-10">
                     <div class="col-sm-10">
-                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Reguler">Reguler
-                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pengajian">Pengajian
+                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Reguler" checked>Reguler<br>
+                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pengajian">Pengajian<br>
+                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Bimbel">Bimbel<br>
+                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Ekskul">Ekstrakulikuler
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                  <label for="inputPraPasca" class="col-sm-2">Pra/Pasca Mubaligh (*Khusus kelas pengajian)</label>
+
+                  <div class="col-sm-10">
+                    <div class="col-sm-10">
+                    <input name="prapasca" type="radio" id="inutPraPasca" value="Pra Mubaligh" checked>Pra Mubaligh<br>
+                    <input name="prapasca" type="radio" id="inutPraPasca" value="Pasca Mubaligh">Pasca Mubaligh
                   </div>
                 </div>
               </div>

@@ -137,6 +137,8 @@
                 <li><a href="{{url('/absensiswa')}}"><i class="fa fa-circle-o"></i>Absen Total</a></li>
                 <li><a href="/absensiswapengajian"><i class="fa fa-circle-o"></i>Absen Pengajian</a></li>
                 <li><a href="/absensiswasekolah"><i class="fa fa-circle-o"></i>Absen Sekolah</a></li>
+                <li><a href="/absenbimbel"><i class="fa fa-circle-o"></i>Absen Bimbel</a></li>
+                <li><a href="/absenpesantren"><i class="fa fa-circle-o"></i>Absen Pesantren</a></li>
 
             </ul>
             </li>

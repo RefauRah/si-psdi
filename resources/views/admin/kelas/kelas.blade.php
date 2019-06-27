@@ -38,7 +38,11 @@
                     <td>{{$nomer}}</td>
                     <td>{{ $row->kode_kelas}}</td>
                     <td>{{ $row->nama}}</td>
-                    <td>{{$row->jenis_kelas}}</td>
+                    @if($row->jenis_kelas == 'Pengajian')
+                        <td>{{$row->jenis_kelas}} - {{$row->prapasca}}</td>
+                    @else
+                        <td>{{$row->jenis_kelas}}</td>
+                    @endif
                     <td>
                         <a href="{{route('showKelas', $row->id)}}" class="btn btn-sm btn-primary">Daftar Siswa</a>
                     </td>
