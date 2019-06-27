@@ -114,29 +114,31 @@
     </li> -->
     <li class="header">DATA ABSENSI</li>
     <li class="treeview">
-        <a href="#">
+        <a href="#absen">
         <i class="fa fa-calendar"></i>
         <span>Absensi</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
         </span>
         </a>
-        <ul class="treeview-menu">
+        <ul id="absen" class="treeview-menu">
         <li><a href="{{url('/absenguru')}}"><i class="fa fa-circle-o"></i> Guru</a></li>
         <li><a href="{{url('/absenstaff')}}"><i class="fa fa-circle-o"></i> Staff</a></li>
         <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li> -->
-        <li class="treeview">
-            <a href="#">
+        <li  class="treeview">
+            <a href="#siswa">
             <i class="fa fa-users"></i>
             <span>Siswa</span>
             <span class="pull-right-container">
                 <i class="fa fa-angel-left pull-right"></i>
             </span>
             </a>
-            <ul class="treeview-menu">
+            <ul id="siswa" class="treeview-menu">
                 <li><a href="{{url('/absensiswa')}}"><i class="fa fa-circle-o"></i>Absen Total</a></li>
                 <li><a href="/absensiswapengajian"><i class="fa fa-circle-o"></i>Absen Pengajian</a></li>
                 <li><a href="/absensiswasekolah"><i class="fa fa-circle-o"></i>Absen Sekolah</a></li>
+                <li><a href="/absenbimbel"><i class="fa fa-circle-o"></i>Absen Bimbel</a></li>
+                <li><a href="/absenpesantren"><i class="fa fa-circle-o"></i>Absen Pesantren</a></li>
 
             </ul>
             </li>

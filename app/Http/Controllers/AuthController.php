@@ -15,7 +15,7 @@ class AuthController extends Controller
 
     public function postLogin(Request $request)
     {
-    	if(!\Auth::attempt(['username'=>$request->username, 'password' => $request->password, 'user_type' => $request->user_type])){
+    	if(!\Auth::attempt(['username'=>$request->username, 'password' => $request->password])){
     			return redirect()->back();
 
     	}

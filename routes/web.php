@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('/company/base');
 });
-Route::get('/test', 'PagesController@index'); // localhost:8000/
-Route::get('/absensiswasekolah/getUsers/{id}','AbsensiSiswaSekolahController@getUsers');
+// Route::get('/test', 'PagesController@index'); // localhost:8000/
+// Route::get('/absensiswasekolah/getUsers/{id}','AbsensiSiswaSekolahController@getUsers');
 
 Route::get('/login', 'AuthController@getLogin')->middleware('guest')->name('login');
 Route::post('/login', 'AuthController@postLogin')->middleware('guest');
@@ -44,6 +44,9 @@ Route::get('/siswa/create', 'SiswaController@create')->middleware('auth')->name(
 Route::post('/siswa/create', 'SiswaController@store');
 Route::get ('/siswa/{siswa}', 'SiswaController@show')->middleware('auth')->name('siswa');
 Route::get('/siswa/hapus/{siswa}','SiswaController@hapus');
+Route::get('/siswa/edit/{siswa}','SiswaController@edit');
+Route::post('/siswa/update','SiswaController@update');
+
 
 
 
@@ -96,10 +99,23 @@ Route::get('/absenguru/laporanAbsensiGuru', 'AbsensiGuruController@show');
 
 Route::get('/absensiswasekolah', 'AbsensiSiswaSekolahController@index');
 Route::post('/absensiswasekolah', 'AbsensiSiswaSekolahController@store');
+Route::get('/absensiswasekolah/getUsers/{id}','AbsensiSiswaSekolahController@getUsers');
 
-Route::get('/absensiswapengajian', function () {
-    return view('/admin/absensi/siswaPengajian');
-});
+Route::get('/absenbimbel', 'AbsensiBimbelController@index');
+Route::post('/absenbimbel', 'AbsensiBimbelController@store');
+Route::get('/absenbimbel/getUsers/{id}','AbsensiBimbelController@getUsers');
+
+Route::get('/absensiswapengajian', 'AbsensiPengajianController@index');
+Route::post('/absensiswapengajian', 'AbsensiPengajianController@store');
+Route::get('/absensiswapengajian/getUsers/{id}','AbsensiPengajianController@getUsers');
+
+Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
+Route::post('/absenpesantren', 'AbsensiPesantrenController@store');
+Route::get('/absenpesantren/getUsers/{id}','AbsensiPesantrenController@getUsers');
+
+// Route::get('/absensiswapengajian', function () {
+//     return view('/admin/absensi/siswaPengajian');
+// });
 Route::get('/laporansiswasekolah', function () {
     return view('/admin/absensi/laporanSiswaSekolah');
 });

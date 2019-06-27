@@ -6,6 +6,25 @@
 @if(Session::has('flash_message_fail'))
     <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
 @endif
+
+<script type="text/javascript">
+      window.onload = function()
+    {
+        var sekolahBefore = sessionStorage.getItem('searchSiswa');
+        if(sekolahBefore != null){ 
+            // alert(sekolahBefore);
+            document.getElementById("searchSiswa").value = sekolahBefore; 
+        }
+        var userid = Number($('#searchSiswa').val().trim());
+        if(userid > 0){
+          fetchRecords(userid);
+        }
+    }
+
+    window.onbeforeunload = function() {
+        sessionStorage.setItem("searchSiswa", $('#searchSiswa').val());
+    }
+</script>
 <section class="content-header">
       <h1>
         Tabel
@@ -43,13 +62,13 @@
                         <div class="input-group-addon">
                             <i class="fa fa-building"></i>
                         </div>
-                        <select name="id_kelas" id="search" class="form-control">
+                        <select name="id_kelas" id="searchSiswa" class="form-control">
                         @foreach ($kelas as $row)
                             <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
                         @endforeach
 
                         <!-- <input type='text' id='search' name='search' placeholder='Enter id kelas'> -->
-                        <input type='button' value='Pilih Kelas' id='but_search'>
+                        <!-- <input type='button' value='Pilih Kelas' id='but_search'> -->
                          <br/>
                          <!-- <input type='button' value='Tampilkan seluruh data' id='but_fetchall'> -->
 
@@ -109,6 +128,13 @@
      fetchRecords(0);
        });
 
+      $('#searchSiswa').on('change', function(){
+          var userid = Number($('#searchSiswa').val().trim());
+                if(userid > 0){
+                  fetchRecords(userid);
+                }
+       });
+
        // Search by userid
        $('#but_search').click(function(){
           var userid = Number($('#search').val().trim());
@@ -155,12 +181,16 @@
                $("#tabelabsen tbody").append(tr_str);
              }
            }else if(response['data'] != null){
-              var tr_str = "<tr>" +
-                  "<td>1</td>" +
-                  "<td>" + response['data'].nis + "</td>" +
-                  "<td>" + response['data'].nama + "</td>" + 
-                  "<td>" + response['data'].jk + "</td>" +
-                    "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
+              // var tr_str = "<tr>" +
+              //     "<td>1</td>" +
+              //     "<td>" + response['data'].nis + "</td>" +
+              //     "<td>" + response['data'].nama + "</td>" + 
+              //     "<td>" + response['data'].jk + "</td>" +
+              //       "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
+              // "</tr>";
+
+                var tr_str = "<tr>" +
+                  "<td align='center' colspan='4'>No record found.</td>" +
               "</tr>";
 
               $("#tabelabsen tbody").append(tr_str);

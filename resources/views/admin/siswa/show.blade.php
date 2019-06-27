@@ -6,9 +6,7 @@
       <h1>Profil Siswa {{$key->nama}}</h1>
       <p>{{$key->alamat}}</p>
     <?php endforeach; ?>
-@if(Session::has('flash_message'))
-    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
-@endif
+
 <section class="content-header">
       <h1>
         Lihat
@@ -75,7 +73,6 @@
                     <td>{{$key->tgl_lahir}}</td>
                 </tr>
 
-         
 
 
                 </tbody>
@@ -86,7 +83,7 @@
             </div>
 <!-- /.box-body -->
 <div class="button" style="margin-left:10px;margin-right:10px;padding-bottom:10px;">
-            <a href="#" class="btn btn-success pull-right">Edit</a>
+
             <a href="{{url('/siswa')}}" class="btn btn-primary">Kembali</a>
 </div>
         </div>

@@ -10,25 +10,26 @@
 <script type="text/javascript">
       window.onload = function()
     {
-        var pengajianBefore = sessionStorage.getItem('searchPengajian');
-        if(pengajianBefore != null){ 
-            // alert(pengajianBefore);
-            document.getElementById("searchPengajian").value = pengajianBefore; 
+        var bimbelBefore = sessionStorage.getItem('search');
+        if(bimbelBefore != null){ 
+            // alert(bimbelBefore);
+            document.getElementById("search").value = bimbelBefore; 
         }
-        var userid = Number($('#searchPengajian').val().trim());
+        var userid = Number($('#search').val().trim());
         if(userid > 0){
           fetchRecords(userid);
         }
     }
 
     window.onbeforeunload = function() {
-        sessionStorage.setItem("searchPengajian", $('#searchPengajian').val());
+        sessionStorage.setItem("search", $('#search').val());
     }
 </script>
+
 <section class="content-header">
       <h1>
         Tabel
-        <small>Absensi Siswa Pengajian</small>
+        <small>Absensi Bimbel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -36,7 +37,7 @@
       </ol>
 </section>
 <section class="content">
- <form class="" method="post" action="/absensiswapengajian">
+ <form class="" method="post" action="/absenbimbel">
     @csrf
     <div class="col-xs-12">
         <div class="box">
@@ -62,7 +63,7 @@
                         <div class="input-group-addon">
                             <i class="fa fa-building"></i>
                         </div>
-                        <select name="id_kelas" id="searchPengajian" class="form-control">
+                        <select name="id_kelas" id="search" class="form-control">
                         @foreach ($kelas as $row)
                             <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
                         @endforeach
@@ -81,12 +82,9 @@
                     </div>
                     <div class="input-group">
                         <select class="form-control" name="pertemuan">
-                            <option value="K1">K1</option>
-                            <option value="K2">K3</option>
-                            <option value="K3">K2</option>
-                            <option value="K4">K4</option>
-                            <option value="K5">K5</option>
-                            <option value="K6">K6</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                     </div>
                 </div>      
@@ -131,8 +129,9 @@
      fetchRecords(0);
        });
 
-      $('#searchPengajian').on('change', function(){
-          var userid = Number($('#searchPengajian').val().trim());
+
+      $('#search').on('change', function(){
+          var userid = Number($('#search').val().trim());
                 if(userid > 0){
                   fetchRecords(userid);
                 }
@@ -140,7 +139,7 @@
 
        // Search by userid
        $('#but_search').click(function(){
-          var userid = Number($('#searchPengajian').val().trim());
+          var userid = Number($('#search').val().trim());
                 
       if(userid > 0){
         fetchRecords(userid);
@@ -152,7 +151,7 @@
 
      function fetchRecords(id){
        $.ajax({
-         url: 'absensiswapengajian/getUsers/'+id,
+         url: 'absenbimbel/getUsers/'+id,
          type: 'get',
          dataType: 'json',
          success: function(response){
@@ -191,10 +190,10 @@
               //     "<td>" + response['data'].jk + "</td>" +
               //       "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
               // "</tr>";
-
-                var tr_str = "<tr>" +
+                            var tr_str = "<tr>" +
                   "<td align='center' colspan='4'>No record found.</td>" +
               "</tr>";
+
 
               $("#tabelabsen tbody").append(tr_str);
            }else{

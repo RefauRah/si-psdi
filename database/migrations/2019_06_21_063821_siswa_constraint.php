@@ -14,7 +14,7 @@ class SiswaConstraint extends Migration
     public function up()
     {
         Schema::table('siswa', function (Blueprint $table) {
-            $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade'); 
+            $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('set null'); 
         });
     }
 

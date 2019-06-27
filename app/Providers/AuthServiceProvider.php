@@ -26,20 +26,26 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        $gate->define('isAdmin', function($user){
-            return $user->user_type =='admin';
-        });
-
         $gate->define('isSuper_admin', function($user){
             return $user->user_type == 'super_admin';
         });
-
-        $gate->define('isPondok', function($user){
-            return $user->user_type == 'pondok';
+        $gate->define('isAdmin', function($user){
+            return $user->user_type =='admin';
         });
-
+        $gate->define('isSmarter', function($user){
+            return $user->user_type == 'smarter';
+        });
         $gate->define('isBimbel',function($user){
-            return $user->user_type == 'Bimbel';
+            return $user->user_type == 'bimbel';
+        });
+        $gate->define('isPesantren',function($user){
+            return $user->user_type == 'pesantren';
+        });
+        $gate->define('isPasca_mubaligh',function($user){
+            return $user->user_type == 'pasca_mubaligh';
+        });
+        $gate->define('isPra_mubaligh',function($user){
+            return $user->user_type == 'pra_mubaligh';
         });
     }
 }

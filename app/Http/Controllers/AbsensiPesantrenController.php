@@ -4,25 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\AbsensiSiswaSekolah;
+use App\AbsensiPesantren;
 use App\SiswaModel;
 use DB;
 
-class AbsensiSiswaSekolahController extends Controller
+class AbsensiPesantrenController extends Controller
 {
     //
     public function index()
     {
         $siswa = SiswaModel::with('kelas')->get();
-        $kelas = DB::select("select * from kelas where jenis_kelas = 'Reguler'");
+        $kelas = DB::select("select * from kelas where jenis_kelas = 'Pesantren'");
 
-        return view('/admin/absensi/siswaSekolah', ['siswa' => $siswa], ['kelas' => $kelas]);
+        return view('/admin/absensi/pesantren', ['siswa' => $siswa], ['kelas' => $kelas]);
     }
 
 
   public function getUsers($id = 0){
     // Fetch all records
-    $userData['data'] = AbsensiSiswaSekolah::getuserData($id);
+    $userData['data'] = AbsensiPesantren::getuserData($id);
 
     echo json_encode($userData);
     exit;
@@ -30,7 +30,7 @@ class AbsensiSiswaSekolahController extends Controller
 
     public function store()
     {
-        $siswa = new AbsensiSiswaSekolah;
+        $siswa = new AbsensiPesantren;
 
         if (is_null(request('nis'))){
 			\Session::flash('flash_message_fail',' Error : Tidak ada data yand dipilih.');
@@ -45,7 +45,7 @@ class AbsensiSiswaSekolahController extends Controller
 			$tgl_absen = date("Y-m-d")." ".date("H:i:s");
 
 			for ( $i=0; $i< $counter; $i++) {
-			    $siswa = new AbsensiSiswaSekolah;
+			    $siswa = new AbsensiPesantren;
 				$siswa->nis = $nis[$i];
 				$siswa->id_kelas = request('id_kelas');
 				$siswa->pertemuan = request('pertemuan');
