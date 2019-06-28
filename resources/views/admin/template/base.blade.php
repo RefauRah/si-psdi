@@ -33,7 +33,8 @@
     <link href="{{url('/assets/admin2/vendor/vector-map/jqvmap.min.css')}}" rel="stylesheet" media="all">
 
     <!-- Datatables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link href="{{url('/assets/admin2/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{url('/assets/admin2/vendor/datatables/bootstrap.css')}}" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
     <link href="{{url('/assets/admin2/css/theme.css')}}" rel="stylesheet" media="all">
@@ -93,6 +94,8 @@
 
     <!-- Datatables -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="{{url('/assets/admin2/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    
     <script type="text/javascript">
         $(document).ready(function(){
             $('.data').DataTable();

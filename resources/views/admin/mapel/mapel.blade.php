@@ -2,6 +2,11 @@
 @section('content')
 
 <div class="container mt-4">
+<div class="card bg-light">
+	<div class="card-header">
+		<h5>Data Mata Pelajaran</h5>
+	</div>
+	<div class="card-body">
 		<table class="table table-striped table-bordered data">
 			<thead>
 				<tr>	
@@ -15,5 +20,7 @@
 			</tbody>
 		</table>
 	</div>
+</div>
+</div>
 
 @endsection

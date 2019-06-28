@@ -4,7 +4,12 @@
     <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
 @endif
 <div class="container mt-4">
-		<table class="table table-striped table-bordered data">
+<div class="card bg-light">
+    <div class="card-header">
+        <h4>Data Guru</h4>
+    </div>
+    <div class="card-body">
+    <table class="table table-striped table-bordered data">
 			<thead>
 				<tr>
                     <th>No</th>
@@ -35,5 +40,8 @@
             @endforeach
 			</tbody>
 		</table>
+    </div>
+</div>
+		
 	</div>
 @endsection

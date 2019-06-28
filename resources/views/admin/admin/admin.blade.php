@@ -1,6 +1,11 @@
 @extends('admin.template.base')
 @section('content')
 <div class="container mt-4">
+<div class="card bg-light">
+    <div class="card-header">
+        <h4>Data Admin</h4>
+    </div>
+    <div class="card-body">
 		<table class="table table-striped table-bordered data">
 			<thead>
 				<tr>			
@@ -15,5 +20,7 @@
 				
 			</tbody>
 		</table>
+    </div>
+</div>
 	</div>
 @endsection

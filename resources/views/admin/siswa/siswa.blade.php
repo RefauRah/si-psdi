@@ -2,7 +2,12 @@
 @section('content')
 
 <div class="container mt-4">
-		<table class="table table-striped table-bordered data">
+<div class="card bg-light">
+    <div class="card-header">
+        <h5>Data Siswa</h5>
+    </div>
+    <div class="card-body">
+    <table class="table table-striped table-bordered data">
 			<thead>
 				<tr>
                     <th>No</th>
@@ -47,6 +52,9 @@
                     @endforeach
 			</tbody>
 		</table>
-	</div>
+    </div>
+</div>
+		
+</div>
 
 @endsection

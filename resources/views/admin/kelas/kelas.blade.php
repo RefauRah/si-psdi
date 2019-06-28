@@ -2,17 +2,22 @@
 @section('content')
 
 <div class="container mt-4">
-		<table class="table table-striped table-bordered data">
-			<thead>
-				<tr>
+<div class="card bg-light">
+    <div class="card-header">
+        <h5>Data Kelas</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-bordered data">
+            <thead>
+                <tr>
                     <th>No</th>
                     <th>Kode</th>			
-					<th>Nama</th>
-					<th>Jenis</th>
-					
-				</tr>
-			</thead>
-			<tbody>
+                    <th>Nama</th>
+                    <th>Jenis</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
             <?php $nomer = 1; ?>
 
             @foreach ($kelas as $row)
@@ -24,8 +29,10 @@
                     <?php $nomer++; ?>
                 </tr>
             @endforeach
-			</tbody>
-		</table>
-	</div>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
 
 @endsection
