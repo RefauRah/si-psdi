@@ -73,7 +73,7 @@
                 <tr>
                     <div class="form-group has-feedback">
                         <th><label for="kelas">Kelas</label></th>
-                        <td><input type="text" name="kelas" class="form-control" value=""></td>
+                        <td><input type="text" name="kelas" class="form-control" value="{{$key->kode_kelas}} - {{$key->nama}}"></td>
                     </div>
                 </tr>
 

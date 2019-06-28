@@ -183,18 +183,20 @@ class SiswaController extends Controller
 
     public function edit ($nis)
     {
+/*
+        $useredit = DB::select('select * from siswa where nis = ?',[$nis]);  
 
-        $useredit = DB::select('select * from siswa where nis = ?',[$nis]);     
 
         return view('admin.siswa.edit',['useredit'=>$useredit]);
+*/
 
-
-       //  $useredit = DB::table('siswa')
-       //  ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id')
-       //  ->select('siswa.*', 'kelas.kode_kelas', 'kelas.nama')
-       //  ->get();
+       $useredit = DB::table('siswa')
+       ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id')
+        ->select('siswa.*', 'kelas.kode_kelas', 'kelas.nama')
+        ->where('siswa.nis', $nis)
+       ->get(); 
    
-       // return view('admin.siswa.edit',['useredit'=>$useredit]);
+       return view('admin.siswa.edit',['useredit'=>$useredit]);
 
 
     }

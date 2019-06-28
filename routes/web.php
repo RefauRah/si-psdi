@@ -47,8 +47,8 @@ Route::get('/siswa/hapus/{siswa}','SiswaController@hapus');
 Route::get('/siswa/edit/{siswa}','SiswaController@edit');
 Route::post('/siswa/update','SiswaController@update');
 
-
-
+/*
+Route::get('/TestPercobaan','SiswaController@edit');*/
 
 Route::get('/siswa/show', function () {
     return view('/admin/siswa/show');

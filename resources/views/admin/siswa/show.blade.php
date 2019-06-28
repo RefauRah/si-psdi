@@ -50,7 +50,7 @@
 
                 <tr>
                     <th>Kelas</th>
-                    <td>#</td>
+                    <td>{{$key->nama}}</td>
                 </tr>
 
                 <tr>
