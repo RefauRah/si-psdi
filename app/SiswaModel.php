@@ -14,13 +14,13 @@ class SiswaModel extends Model
 
     protected $fillable = [
     	'nis',
-    	'nama',
+    	'nama_siswa',
     	'email',
     	'no_telp',
     	'tgl_lahir',
     	'tmpt_lahir',
-    	'jk',
-    	'alamat',
+    	'jk_siswa',
+    	'alamat_siswa',
         // 'ortu',
         // 'emailortu',
     	'created_at',

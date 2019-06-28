@@ -3,8 +3,8 @@
 @section('content')
 <section class="content-header">
     <?php foreach ($useredit as $key): ?>
-      <h1>Profil Siswa {{$key->nama}}</h1>
-      <p>{{$key->alamat}}</p>
+      <h1>Profil Siswa {{$key->nama_siswa}}</h1>
+      <p>{{$key->alamat_siswa}}</p>
     <?php endforeach; ?>
 @if(Session::has('flash_message'))
     <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
@@ -43,6 +43,13 @@
                 <thead>
                 </thead>
                 <tbody>
+
+                <tr>
+                    <div class="form-group has-feedback">
+                        <th><label for="nis">NIS</label></th>
+                        <td><input type="text" name="nis" class="form-control" value="{{$key->nis}}"></td>
+                    </div>
+                </tr> 
                 
                 <tr>
                 <div class="form-group">
@@ -54,17 +61,12 @@
                 </div>
                 </tr>
                 
-                <tr>
-                    <div class="form-group has-feedback">
-                        <th><label for="nis">NIS</label></th>
-                        <td><input type="text" name="nis" class="form-control" value="{{$key->nis}}"></td>
-                    </div>
-                </tr> 
+                
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="nama">Nama</label></th>
-                        <td><input type="text" name="nama" class="form-control" value="{{$key->nama}}"></td>
+                        <th><label for="nama_siswa">Nama</label></th>
+                        <td><input type="text" name="nama_siswa" class="form-control" value="{{$key->nama_siswa}}"></td>
                     </div>
                 </tr>
 
@@ -77,10 +79,10 @@
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="jk">Jenis Kelamin</label></th>
+                        <th><label for="jk_siswa">Jenis Kelamin</label></th>
                         <td>
-                        <select class="form-control" name="jk" >
-                        <option value="{{$key->jk}}">{{$key->jk}}</option>
+                        <select class="form-control" name="jk_siswa" >
+                        <option value="{{$key->jk_siswa}}">{{$key->jk_siswa}}</option>
                         <option value="Laki-Laki">Laki-Laki</option>
                         <option value="Perempuan">Perempuan</option>
                         </select></td>
@@ -91,7 +93,7 @@
                 <tr>
                     <div class="form-group has-feedback">
                         <th><label for="alamat">Alamat</label></th>
-                        <td><input type="text" name="alamat" class="form-control" value="{{$key->alamat}}"></td>
+                        <td><input type="text" name="alamat_siswa" class="form-control" value="{{$key->alamat_siswa}}"></td>
                     </div>
                 </tr>
 

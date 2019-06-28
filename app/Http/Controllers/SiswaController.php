@@ -32,7 +32,7 @@ class SiswaController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        // $siswa = SiswaModel::all();
+        $siswa = SiswaModel::all();
         $siswa = SiswaModel::with('kelas')->get();
         return view('admin/siswa/siswa', ['siswa' => $siswa]);
     }
@@ -89,10 +89,10 @@ class SiswaController extends Controller
         $siswa = new SiswaModel;
         
         $siswa->nis = request('nis');
-        $siswa->nama = request('nama');
+        $siswa->nama_siswa = request('nama_siswa');
         $siswa->email = request('email');
-        $siswa->alamat = request('alamat');
-        $siswa->jk = request('jk');
+        $siswa->alamat_siswa = request('alamat_siswa');
+        $siswa->jk_siswa = request('jk_siswa');
         $siswa->tmpt_lahir = request('tmpt_lahir');
         $siswa->tgl_lahir = request('tgl_lahir');
         $siswa->no_telp = request('no_telp');
@@ -149,22 +149,8 @@ class SiswaController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
+
         $users = DB::select('select * from siswa where nis = ?',[$nis]);     
-/*        $walikelas = DB::select('select * from walikelas where nip = ?',[$nip]);*/
-
-        // $siswa= DB::table('siswa')
-        // ->join('keuangan as money','siswa.id_siswa','=','money.id_siswa')
-        // ->select('money.pembayaran as mp')->get();
-
-        // $filterKeyword = $request->get('keyword');
-
-        // if($filterKeyword){
-        //     $siswa= DB::table('siswa')
-        //     ->join('keuangan as money','siswa.id_siswa','=','money.id_siswa')
-        //     ->select('money.pembayaran as mp')->where('siswa.id_siswa', 'LIKE', "%filterKeyword%")->get();
-        // }
-
-        // $users =SiswaModel::with('keuangan')->get();
 
         return view('admin.siswa.show',['users'=>$users]);
 
@@ -202,6 +188,15 @@ class SiswaController extends Controller
 
         return view('admin.siswa.edit',['useredit'=>$useredit]);
 
+
+       //  $useredit = DB::table('siswa')
+       //  ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id')
+       //  ->select('siswa.*', 'kelas.kode_kelas', 'kelas.nama')
+       //  ->get();
+   
+       // return view('admin.siswa.edit',['useredit'=>$useredit]);
+
+
     }
 
     public function update(Request $request)
@@ -209,10 +204,10 @@ class SiswaController extends Controller
 
         DB::table('siswa')->where('nis',$request->nis)->update([
         'nis' => $request->nis,
-        'nama' => $request->nama,
+        'nama_siswa' => $request->nama_siswa,
         'id_kelas' => $request->id_kelas,
-        'jk' => $request->jk,
-        'alamat' => $request->alamat,
+        'jk_siswa' => $request->jk_siswa,
+        'alamat_siswa' => $request->alamat_siswa,
         'tmpt_lahir' => $request->tmpt_lahir,
         'tgl_lahir' => $request->tgl_lahir
         

@@ -17,13 +17,13 @@ class CreateSiswaTable extends Migration
             // $table->bigIncrements('id_siswa');
             $table->integer('nis',11);
             $table->bigInteger('id_kelas')->unsigned()->nullable();
-            $table->string('nama',100);
+            $table->string('nama_siswa',100);
             $table->string('email',50);
             $table->date('tgl_lahir');
             $table->string('tmpt_lahir',20);
-            $table->string('jk',20);
+            $table->string('jk_siswa',20);
             $table->text('image')->nullable();
-            $table->string('alamat',100);
+            $table->string('alamat_siswa',100);
             $table->string('no_telp',20);
             // $table->string('ortu',100);
             // $table->string('emailortu',50);

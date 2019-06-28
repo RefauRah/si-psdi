@@ -3,8 +3,8 @@
 @section('content')
 <section class="content-header">
     <?php foreach ($users as $key): ?>
-      <h1>Profil Siswa {{$key->nama}}</h1>
-      <p>{{$key->alamat}}</p>
+      <h1>Profil Siswa {{$key->nama_siswa}}</h1>
+      <p>{{$key->alamat_siswa}}</p>
     <?php endforeach; ?>
 
 <section class="content-header">
@@ -45,7 +45,7 @@
                 
                 <tr>
                     <th>Nama</th>
-                    <td>{{$key->nama}}</td>
+                    <td>{{$key->nama_siswa}}</td>
                 </tr>
 
                 <tr>
@@ -55,12 +55,12 @@
 
                 <tr>
                     <th>Jenis Kelamin</th>
-                    <td>{{$key->jk}}</td>
+                    <td>{{$key->jk_siswa}}</td>
                 </tr>
 
                 <tr>
                     <th>Alamat</th>
-                    <td>{{$key->alamat}}</td>
+                    <td>{{$key->alamat_siswa}}</td>
                 </tr>
                 
                 <tr>

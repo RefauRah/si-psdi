@@ -34,7 +34,7 @@
                   <label for="inputNama" class="col-sm-2">Nama</label>
 
                   <div class="col-sm-10">
-                    <input name='nama'type="text" class="form-control" id="inputNama" placeholder="Nama" required>
+                    <input name='nama_siswa'type="text" class="form-control" id="inputNama" placeholder="Nama" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -45,15 +45,15 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="jk" class="col-sm-2">Jenis Kelamin</label>
+                  <label for="jk_siswa" class="col-sm-2">Jenis Kelamin</label>
 
                   <div class="col-sm-10">
-                    <input name="jk" type="radio" id="jk" value="Laki-Laki" required>Laki-Laki
-                    <input name="jk" type="radio" id="jk" value="Perempuan" required>Perempuan
+                    <input name="jk_siswa" type="radio" id="jk" value="Laki-Laki" required>Laki-Laki
+                    <input name="jk_siswa" type="radio" id="jk" value="Perempuan" required>Perempuan
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2">Email Orang Tua</label>
+                  <label for="inputEmail" class="col-sm-2">Email Orang Tua</label>
 
                   <div class="col-sm-10">
                     <input name='email'type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
@@ -63,7 +63,7 @@
                   <label for="inputAlamat" class="col-sm-2">Alamat</label>
 
                   <div class="col-sm-10">
-                    <textarea name="alamat" class="form-control" id="inputAlamat" cols="30" rows="4" required></textarea>
+                    <textarea name="alamat_siswa" class="form-control" id="inputAlamat" cols="30" rows="4" required></textarea>
                   </div>
                 </div>
                 <div class="form-group">

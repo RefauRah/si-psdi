@@ -50,12 +50,12 @@
                     @else
                         <td><img class="img-fluid" style="height: 50px"  src="{{asset('storage/files/siswa/'.$siswa->image)}}"></td>
                     @endif
-                    <td>{{ $siswa->nama}}</a></td>
-                    <td>{{ $siswa->kelas}}</td>
+                    <td>{{ $siswa->nama_siswa}}</a></td>
+                    <td>{{ $siswa->kelas->kode_kelas}}</td>
                     <td>{{ $siswa->tmpt_lahir}}</td>
                     <td>{{ $siswa->tgl_lahir}}</td>
-                    <td>{{ $siswa->jk}}</td>
-                    <td>{{ $siswa->alamat}}</td>
+                    <td>{{ $siswa->jk_siswa}}</td>
+                    <td>{{ $siswa->alamat_siswa}}</td>
                     <td>
                     <a href="{{url('/siswa/hapus/'.$siswa->nis)}}" class="btn btn-sm btn-danger">Hapus</a>
                     <a href="{{url('/siswa/edit/'.$siswa->nis)}}" class="btn btn-sm btn-primary">Edit</a> 
