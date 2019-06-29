@@ -46,6 +46,9 @@ Route::get ('/siswa/{siswa}', 'SiswaController@show');
 Route::get('/siswa/show', function () {
     return view('/admin/siswa/show');
 });
+Route::get('/siswa/edit', function () {
+    return view('/admin/siswa/edit');
+});
 
 
 Route::get('/guru', 'GuruController@index');

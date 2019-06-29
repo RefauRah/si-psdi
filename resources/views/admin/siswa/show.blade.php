@@ -5,13 +5,12 @@
 @endif
 
 <section class="content mt-4">
-    <div class="col-xs-12">
-        <div class="box">
-            <div class="box-header">
-                <h3 class="box-title">Profil Siswa PSDI</h3>
+    <div class="col-md-12 offset-md-0.1">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Profil Siswa PSDI</h3>
             </div>
-<!-- /.box-header ALTER TABLE `siswa` AUTO_INCREMENT = 0;-->
-            <div class="box-body">
+            <div class="card-body">
                 <table class="table table-bordered table-striped">
                 <thead>
                 </thead>
