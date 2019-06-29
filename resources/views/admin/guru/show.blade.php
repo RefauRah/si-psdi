@@ -3,18 +3,8 @@
 @if(Session::has('flash_message'))
     <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
 @endif
-<section class="content-header">
-      <h3 class="col-md-12">
-        Lihat
-        <small>data guru</small>
-      </h3>
-      <ol class="breadcrumb">
-        <li><a href="{{url('/home')}}"><i class="fas fa-tachometer-alt"></i> Home</a></li>
-        <li class="">Guru</li>
-        <li class="active">Profil</li>
-      </ol>
-</section>
-<section class="content">
+
+<section class="content mt-4">
     <div class="col-md-12 offset-md-0.1">
         <div class="card">
             <div class="card-header">
