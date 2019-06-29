@@ -27,7 +27,7 @@
                 <h3 class="box-title">Profil Siswa PSDI</h3>
             </div>
 <!-- /.box-header ALTER TABLE `siswa` AUTO_INCREMENT = 0;-->
-        @foreach($useredit as $key)
+
         <form action="/siswa/update" method="post">
             <div class="box-body">
                 <div class="col-md-4" style="padding-top:20px">
@@ -62,7 +62,6 @@
                 </tr>
                 
                 
-
                 <tr>
                     <div class="form-group has-feedback">
                         <th><label for="nama_siswa">Nama</label></th>
@@ -70,24 +69,35 @@
                     </div>
                 </tr>
 
-                <tr>
-                    <div class="form-group has-feedback">
-                        <th><label for="kelas">Kelas</label></th>
-                        <td><input type="text" name="kelas" class="form-control" value="{{$key->kode_kelas}} - {{$key->nama}}"></td>
-                    </div>
-                </tr>
-
-                <tr>
+                 <tr>
                     <div class="form-group has-feedback">
                         <th><label for="jk_siswa">Jenis Kelamin</label></th>
                         <td>
                         <select class="form-control" name="jk_siswa" >
-                        <option value="{{$key->jk_siswa}}">{{$key->jk_siswa}}</option>
+                        <option value="{{$key->jk_siswa}}">({{$key->jk_siswa}})</option>
                         <option value="Laki-Laki">Laki-Laki</option>
                         <option value="Perempuan">Perempuan</option>
                         </select></td>
                     </div>
                 </tr>
+
+
+
+                <tr>
+                    <div class="form-group">
+                        <th><label for="id_kelas">Kelas</label></th>
+                        <div class="col-sm-10">
+                        <td><select class="form-control" name="id_kelas" ">
+                        <option value="{{$key->id_kelas}}">({{$key->kode_kelas}} - {{$key->nama}})</option>
+                        @foreach ($kelas as $row)
+                        <option value="{{$row->id}}">{{$row->kode_kelas}} - {{$row->nama}}</option>
+                        @endforeach
+                        </select></td>
+                        </div>
+                     </div>
+                </tr>
+
+
 
 
                 <tr>
@@ -124,7 +134,7 @@
             <input type="submit" value="Simpan Data"> 
             </div>
             </form>
-            @endforeach
+
 
             
         </div>

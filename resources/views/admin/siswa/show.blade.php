@@ -50,7 +50,7 @@
 
                 <tr>
                     <th>Kelas</th>
-                    <td>{{$key->nama}}</td>
+                    <td>{{$key->kode_kelas}} - {{$key->nama}}  </td>
                 </tr>
 
                 <tr>
