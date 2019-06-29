@@ -10,25 +10,25 @@
 <script type="text/javascript">
       window.onload = function()
     {
-        var pengajianBefore = sessionStorage.getItem('searchPengajian');
+        var pengajianBefore = sessionStorage.getItem('searchPascaMubaligh');
         if(pengajianBefore != null){ 
             // alert(pengajianBefore);
-            document.getElementById("searchPengajian").value = pengajianBefore; 
+            document.getElementById("searchPascaMubaligh").value = pengajianBefore; 
         }
-        var userid = Number($('#searchPengajian').val().trim());
+        var userid = Number($('#searchPascaMubaligh').val().trim());
         if(userid > 0){
           fetchRecords(userid);
         }
     }
 
     window.onbeforeunload = function() {
-        sessionStorage.setItem("searchPengajian", $('#searchPengajian').val());
+        sessionStorage.setItem("searchPascaMubaligh", $('#searchPascaMubaligh').val());
     }
 </script>
 <section class="content-header">
       <h1>
         Tabel
-        <small>Absensi Siswa Pengajian</small>
+        <small>Absensi Siswa PascaMubaligh</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -62,9 +62,9 @@
                         <div class="input-group-addon">
                             <i class="fa fa-building"></i>
                         </div>
-                        <select name="id_kelas" id="searchPengajian" class="form-control">
+                        <select name="id_kelas" id="searchPascaMubaligh" class="form-control">
                         @foreach ($kelas as $row)
-                            <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama_siswa}}</option>
+                            <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
                         @endforeach
 
                         <!-- <input type='text' id='search' name='search' placeholder='Enter id kelas'> -->
@@ -97,7 +97,7 @@
                 <tr>
                     <th>NO</th>
                     <th>NIS</th>
-                    <th>Nama_siswa</th>
+                    <th>Nama</th>
                     <th>Jenis Kelamin</th>
                     <th>Pilih</th>
                 </tr>
@@ -112,7 +112,7 @@
                 <div id="getidup"></div>
                     <td>{{$nomer}}</td>
                     <td>{{$row->nis}}</td>
-                    <td>{{$row->nama_siswa}}</td>
+                    <td>{{$row->nama}}</td>
                     <td>{{$row->jk}}</td>
                     <td><input type = "checkbox" name = "nis[]" value = "{{$getid[$nomer]}}"/></td>
                 <?php $nomer++; ?>
@@ -131,8 +131,8 @@
      fetchRecords(0);
        });
 
-      $('#searchPengajian').on('change', function(){
-          var userid = Number($('#searchPengajian').val().trim());
+      $('#searchPascaMubaligh').on('change', function(){
+          var userid = Number($('#searchPascaMubaligh').val().trim());
                 if(userid > 0){
                   fetchRecords(userid);
                 }
@@ -140,7 +140,7 @@
 
        // Search by userid
        $('#but_search').click(function(){
-          var userid = Number($('#searchPengajian').val().trim());
+          var userid = Number($('#searchPascaMubaligh').val().trim());
                 
       if(userid > 0){
         fetchRecords(userid);
@@ -152,7 +152,7 @@
 
      function fetchRecords(id){
        $.ajax({
-         url: 'absensiswapengajian/getUsers/'+id,
+         url: 'absenpascamubaligh/getUsers/'+id,
          type: 'get',
          dataType: 'json',
          success: function(response){
@@ -169,7 +169,7 @@
                var nis = response['data'][i].nis;
                var nama_siswa = response['data'][i].nama_siswa;
                var email = response['data'][i].email;
-               var jk = response['data'][i].jk;
+               var jk_siswa = response['data'][i].jk_siswa;
                var id_kelas = response['data'][i].id_kelas;
                getid[i] = response['data'][i].nis;
                
@@ -177,7 +177,7 @@
                    "<td>" + (i+1) + "</td>" +
                    "<td>" + nis + "</td>" +
                    "<td>" + nama_siswa + "</td>" +
-                   "<td>" + jk + "</td>" +
+                   "<td>" + jk_siswa + "</td>" +
                    "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
                "</tr>";
 
@@ -187,7 +187,7 @@
               // var tr_str = "<tr>" +
               //     "<td>1</td>" +
               //     "<td>" + response['data'].nis + "</td>" +
-              //     "<td>" + response['data'].nama_siswa + "</td>" + 
+              //     "<td>" + response['data'].nama + "</td>" + 
               //     "<td>" + response['data'].jk + "</td>" +
               //       "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
               // "</tr>";
@@ -214,7 +214,7 @@
                 <tr>
                     <th>NO</th>
                     <th>NIS</th>
-                    <th>Nama_siswa</th>
+                    <th>Nama</th>
                     <th>Jenis Kelamin</th>
                     <th>Pilih</th>
                 </tr>

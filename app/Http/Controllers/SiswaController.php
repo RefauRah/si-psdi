@@ -150,9 +150,13 @@ class SiswaController extends Controller
             abort(403,"Sorry, You can't access here");
         }
 
-        $users = DB::select('select * from siswa where nis = ?',[$nis]);     
-
-        return view('admin.siswa.show',['users'=>$users]);
+         $users = DB::table('siswa')
+        ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id')
+        ->select('siswa.*', 'kelas.kode_kelas', 'kelas.nama')
+        ->where('siswa.nis', $nis)
+        ->get(); 
+   
+       return view('admin.siswa.show',['users'=>$users]);
 
     }
 
@@ -183,20 +187,30 @@ class SiswaController extends Controller
 
     public function edit ($nis)
     {
-/*
+/*      
         $useredit = DB::select('select * from siswa where nis = ?',[$nis]);  
 
 
         return view('admin.siswa.edit',['useredit'=>$useredit]);
 */
 
+       $kelas = Kelas::all();
        $useredit = DB::table('siswa')
-       ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id')
-        ->select('siswa.*', 'kelas.kode_kelas', 'kelas.nama')
+        ->join('kelas', 'siswa.id_kelas', '=', 'kelas.id')
+        ->select('siswa.*', 'kelas.kode_kelas', 'kelas.nama', 'kelas.id')
         ->where('siswa.nis', $nis)
-       ->get(); 
+        ->get(); 
    
-       return view('admin.siswa.edit',['useredit'=>$useredit]);
+       return view('admin.siswa.edit',['useredit'=>$useredit], ['kelas'=>$kelas]);
+
+
+    }
+
+     public function editpilihankelas ()
+    {
+
+       $kelas = Kelas::all();
+        return view('admin/siswa/edit', ['kelas' => $kelas]);
 
 
     }
@@ -204,7 +218,7 @@ class SiswaController extends Controller
     public function update(Request $request)
     {
 
-        DB::table('siswa')->where('nis',$request->nis)->update([
+        DB::table('siswa','kelas. *')->where('nis',$request->nis)->update([
         'nis' => $request->nis,
         'nama_siswa' => $request->nama_siswa,
         'id_kelas' => $request->id_kelas,
@@ -214,6 +228,8 @@ class SiswaController extends Controller
         'tgl_lahir' => $request->tgl_lahir
         
         ]);
+
+
          return redirect('/siswa');
     }
 

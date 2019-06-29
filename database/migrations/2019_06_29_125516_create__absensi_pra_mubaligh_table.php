@@ -13,7 +13,7 @@ class CreateAbsensiPraMubalighTable extends Migration
      */
     public function up()
     {
-        Schema::create('Absensi_PraMubaligh', function (Blueprint $table) {
+        Schema::create('absensi_pramubaligh', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('nis');
             $table->bigInteger('id_kelas')->unsigned();
@@ -37,6 +37,6 @@ class CreateAbsensiPraMubalighTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('AbsensiPraMubaligh');
+        Schema::dropIfExists('absensi_pramubaligh');
     }
 }

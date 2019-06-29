@@ -166,7 +166,7 @@
                var nis = response['data'][i].nis;
                var nama_siswa = response['data'][i].nama_siswa;
                var email = response['data'][i].email;
-               var jk = response['data'][i].jk;
+               var jk_siswa = response['data'][i].jk_siswa;
                var id_kelas = response['data'][i].id_kelas;
                getid[i] = response['data'][i].nis;
                
@@ -174,7 +174,7 @@
                    "<td>" + (i+1) + "</td>" +
                    "<td>" + nis + "</td>" +
                    "<td>" + nama_siswa + "</td>" +
-                   "<td>" + jk + "</td>" +
+                   "<td>" + jk_siswa + "</td>" +
                    "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
                "</tr>";
 

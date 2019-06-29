@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class AbsensiPengajian extends Model
+class AbsensiPascaMubaligh extends Model
 {
     //
-     	protected $table = 'absensi_pengajian';   
+     	protected $table = 'absensi_pascamubaligh';   
 
   public static function getuserData($id=0){
 

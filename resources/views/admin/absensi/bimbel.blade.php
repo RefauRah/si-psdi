@@ -65,7 +65,7 @@
                         </div>
                         <select name="id_kelas" id="search" class="form-control">
                         @foreach ($kelas as $row)
-                            <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama_siswa}}</option>
+                            <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
                         @endforeach
 
                         <!-- <input type='text' id='search' name='search' placeholder='Enter id kelas'> -->
@@ -95,7 +95,7 @@
                 <tr>
                     <th>NO</th>
                     <th>NIS</th>
-                    <th>Nama_siswa</th>
+                    <th>Nama</th>
                     <th>Jenis Kelamin</th>
                     <th>Pilih</th>
                 </tr>
@@ -110,7 +110,7 @@
                 <div id="getidup"></div>
                     <td>{{$nomer}}</td>
                     <td>{{$row->nis}}</td>
-                    <td>{{$row->nama_siswa}}</td>
+                    <td>{{$row->nama}}</td>
                     <td>{{$row->jk}}</td>
                     <td><input type = "checkbox" name = "nis[]" value = "{{$getid[$nomer]}}"/></td>
                 <?php $nomer++; ?>
@@ -168,7 +168,7 @@
                var nis = response['data'][i].nis;
                var nama_siswa = response['data'][i].nama_siswa;
                var email = response['data'][i].email;
-               var jk = response['data'][i].jk;
+               var jk_siswa = response['data'][i].jk_siswa;
                var id_kelas = response['data'][i].id_kelas;
                getid[i] = response['data'][i].nis;
                
@@ -176,7 +176,7 @@
                    "<td>" + (i+1) + "</td>" +
                    "<td>" + nis + "</td>" +
                    "<td>" + nama_siswa + "</td>" +
-                   "<td>" + jk + "</td>" +
+                   "<td>" + jk_siswa + "</td>" +
                    "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
                "</tr>";
 
@@ -186,7 +186,7 @@
               // var tr_str = "<tr>" +
               //     "<td>1</td>" +
               //     "<td>" + response['data'].nis + "</td>" +
-              //     "<td>" + response['data'].nama_siswa + "</td>" + 
+              //     "<td>" + response['data'].nama + "</td>" + 
               //     "<td>" + response['data'].jk + "</td>" +
               //       "<td><input type = 'checkbox' name = 'nis[]' value = '"+getid[i]+"'/></td>"+
               // "</tr>";
@@ -213,7 +213,7 @@
                 <tr>
                     <th>NO</th>
                     <th>NIS</th>
-                    <th>Nama_siswa</th>
+                    <th>Nama</th>
                     <th>Jenis Kelamin</th>
                     <th>Pilih</th>
                 </tr>
