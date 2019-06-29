@@ -15,7 +15,7 @@ class CreateGurusTable extends Migration
     {
         Schema::create('guru', function (Blueprint $table) {
             // $table->bigIncrements('id');
-            $table->integer('nip', 11);
+            $table->integer('nip', 20);
             $table->string('nama',100);
             $table->string('email',100);
             $table->string('alamat',200);
