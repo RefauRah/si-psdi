@@ -70,6 +70,9 @@
                 <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
                     <i class="fa fa-plus"></i> Tambah
                 </a>
+                <a href="{{route('anggota')}}" class="btn btn-sm btn-success pull-right">
+                    <i class="fa fa-plus"></i> Tambah Anggota Kelas
+                </a>
             </div>
         </div>
     </div>
