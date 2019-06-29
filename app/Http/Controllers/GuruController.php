@@ -130,50 +130,45 @@ class GuruController extends Controller
     //     return view('admin.guru.show', ['guru' => $id]);
     // }
 
-    public function edit(Guru $nip)
+    public function edit ($nip)
     {
-        if(\Gate::allows('isPasca_mubaligh')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isPesantren')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isBimbel')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isSmarter')){
-            abort(403,"Sorry, You can't access here");
-        }
-         elseif(\Gate::allows('isPra_mubaligh')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isAdmin')){
-            abort(403,"Sorry, You can't access here");
-        }
-        return view('admin.guru.edit', ['guru' => $nip]);
+/*      
+        $useredit = DB::select('select * from siswa where nis = ?',[$nis]);  
+
+
+        return view('admin.siswa.edit',['useredit'=>$useredit]);
+*/
+
+       
+       $guru = DB::table('guru')
+        ->where('nip', $nip)
+        ->get(); 
+   
+       return view('admin.guru.edit', ['guru'=>$guru]);
+
+
     }
 
-    public function update(Request $request){
-        // \Session::flash('flash_message','successfully saved.');
-        if(\Gate::allows('isPasca_mubaligh')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isPesantren')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isBimbel')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isSmarter')){
-            abort(403,"Sorry, You can't access here");
-        }
-         elseif(\Gate::allows('isPra_mubaligh')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isAdmin')){
-            abort(403,"Sorry, You can't access here");
-        }
-        return view('admin.guru.edit', ['guru' => $nip]);
+    public function update(Request $request)
+    {
+
+        DB::table('guru')->where('nip',$request->nip)->update([
+        'nama' => $request->nama,
+        'email' => $request->email,
+        'alamat' => $request->alamat,
+        'tempat_lahir' => $request->tempat_lahir,
+        'tgl_lahir' => $request->tgl_lahir,
+        'no_telp' => $request->no_telp,
+        'tgl_masuk' => $request->tgl_masuk,
+        'pend_terakhir' => $request->pend_terakhir,
+        'jabatan' => $request->jabatan,
+        'boarding' => $request->boarding,
+        'status_nikah' => $request->status_nikah,
+        'jumlah_kel' => $request->jumlah_kel
+        
+        ]);
+
+        return redirect('/guru');
     }
 
     public function cetak_pdf()

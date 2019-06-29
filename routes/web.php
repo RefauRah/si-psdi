@@ -64,7 +64,7 @@ Route::get('/guru/show/{nip}', 'GuruController@show')->middleware('auth')->name(
 Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('createGuru');
 Route::post('/guru/create', 'GuruController@store');
 Route::get('/guru/edit/{nip}', 'GuruController@edit')->middleware('auth')->name('editGuru');
-Route::post('/guru/edit', 'GuruController@update');
+Route::post('/guru/update','GuruController@update');
 Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf')->middleware('auth')->name('guru/cetak_pdf');
 Route::get ('/guru/cetak_profil_pdf/{nip}', 'GuruController@cetak_profil_pdf')->middleware('auth')->name('guru/cetak_profil_pdf');
 Route::get('/guru/hapus/{guru}','GuruController@hapus');
@@ -75,7 +75,6 @@ Route::get('/staf', 'stafController@index')->middleware('auth')->name('staf');
 Route::get('/staf/create', 'StafController@create')->middleware('auth')->name('createStaf');
 Route::post('/staf/create', 'StafController@store');
 Route::get('/staf/edit/{nip_staf}', 'StafController@edit')->middleware('auth')->name('editStaf');
-Route::post('/staf/edit', 'StafController@update');
 Route::get ('/staf/cetak_pdf', 'StafController@cetak_pdf')->middleware('auth')->name('staf/cetak_pdf');
 Route::get ('/staf/cetak_profil_pdf/{nip_staf}', 'StafController@cetak_profil_pdf')->middleware('auth')->name('staf/cetak_profil_pdf');
 Route::get('/staf/hapus/{staf}','StafController@hapus');

@@ -83,7 +83,7 @@
         </a>
         
     </li>
-    <li class="">
+   <!--  <li class="">
         <a href="{{url('/mapel')}}">
         <i class="fa fa-book"></i>
         <span>Mata Pelajaran</span>
@@ -92,7 +92,7 @@
         </span>
         </a>
         
-    </li>
+    </li> -->
     <!-- <li class="">
         <a href="{{url('/keuangan')}}">
         <i class="fa fa-money"></i>
