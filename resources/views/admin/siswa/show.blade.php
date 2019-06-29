@@ -30,7 +30,7 @@
                    @if(is_null($key->image))
                         <img src="{{ asset('images/default.png') }}" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
                     @else
-                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/siswa/'.$key->image)}}" alt="Profile">
+                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('images/file/'.$key->image)}}" alt="Profile">
                     @endif
                 </div> 
                 <table class="table table-bordered table-striped">

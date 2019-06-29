@@ -48,7 +48,7 @@
                             <img src="{{ asset('images/default.png') }}" style="height: 50px" class="img-fluid">
                         </td>
                     @else
-                        <td><img class="img-fluid" style="height: 50px"  src="{{asset('storage/files/siswa/'.$siswa->image)}}"></td>
+                        <td><img class="img-fluid" style="height: 50px"  src="{{asset('images/file/'.$siswa->image)}}"></td>
                     @endif
                     <td>{{ $siswa->nama_siswa}}</a></td>
                     
