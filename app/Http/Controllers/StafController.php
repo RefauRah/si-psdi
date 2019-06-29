@@ -130,51 +130,9 @@ class StafController extends Controller
     //     return view('admin.staf.show', ['staf' => $id]);
     // }
 
-    public function edit(Staf $nip_staf)
-    {
-        if(\Gate::allows('isPasca_mubaligh')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isPesantren')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isBimbel')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isSmarter')){
-            abort(403,"Sorry, You can't access here");
-        }
-         elseif(\Gate::allows('isPra_mubaligh')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isAdmin')){
-            abort(403,"Sorry, You can't access here");
-        }
-        return view('admin.staf.edit', ['staf' => $nip_staf]);
-    }
+   
 
-    public function update(Request $request){
-        // \Session::flash('flash_message','successfully saved.');
-        if(\Gate::allows('isPasca_mubaligh')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isPesantren')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isBimbel')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isSmarter')){
-            abort(403,"Sorry, You can't access here");
-        }
-         elseif(\Gate::allows('isPra_mubaligh')){
-            abort(403,"Sorry, You can't access here");
-        }
-        elseif(\Gate::allows('isAdmin')){
-            abort(403,"Sorry, You can't access here");
-        }
-        return view('admin.staf.edit', ['staf' => $nip_staf]);
-    }
+   
 
     public function cetak_pdf()
     {
@@ -244,5 +202,47 @@ class StafController extends Controller
         
     // alihkan halaman ke halaman staf
         return redirect('/staf');
+    }
+
+    public function edit ($nip_staf)
+    {
+/*      
+        $useredit = DB::select('select * from siswa where nis = ?',[$nis]);  
+
+
+        return view('admin.siswa.edit',['useredit'=>$useredit]);
+*/
+
+       
+       $staf = DB::table('staf')
+        ->where('nip_staf', $nip_staf)
+        ->get(); 
+   
+       return view('admin.staf.edit', ['staf'=>$staf]);
+
+
+    }
+
+    public function update(Request $request)
+    {
+
+        DB::table('staf')->where('nip_staf',$request->nip_staf)->update([
+        'nama_staf' => $request->nama_staf,
+        'email_staf' => $request->email_staf,
+        'alamat_staf' => $request->alamat_staf,
+        'tempat_lahir_staf' => $request->tempat_lahir_staf,
+        'tgl_lahir_staf' => $request->tgl_lahir_staf,
+        'no_telp_staf' => $request->no_telp_staf,
+        'tgl_masuk_staf' => $request->tgl_masuk_staf,
+        'pend_terakhir_staf' => $request->pend_terakhir_staf,
+        'jabatan_staf' => $request->jabatan_staf,
+        'boarding_staf' => $request->boarding_staf,
+        'status_nikah_staf' => $request->status_nikah_staf,
+        'jumlah_kel_staf' => $request->jumlah_kel_staf
+        
+        ]);
+
+
+         return redirect('/staf');
     }
 }

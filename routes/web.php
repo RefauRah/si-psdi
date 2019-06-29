@@ -79,6 +79,7 @@ Route::post('/staf/edit', 'StafController@update');
 Route::get ('/staf/cetak_pdf', 'StafController@cetak_pdf')->middleware('auth')->name('staf/cetak_pdf');
 Route::get ('/staf/cetak_profil_pdf/{nip_staf}', 'StafController@cetak_profil_pdf')->middleware('auth')->name('staf/cetak_profil_pdf');
 Route::get('/staf/hapus/{staf}','StafController@hapus');
+Route::post('/staf/update','StafController@update');
  
 Route::get('/kelas', 'KelasController@index')->middleware('auth')->name('kelas');
 Route::get('/kelas/show/{id}', 'KelasController@show')->middleware('auth')->name('showKelas');
