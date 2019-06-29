@@ -1,16 +1,6 @@
 @extends('admin.template.base')
 @section('content')
-<section class="content-header">
-      <h2 class="col-md-12">Tambah
-        <small>data guru</small>
-      </h2>
-      <ol class="breadcrumb">
-        <li><a href="{{url('/home')}}"><i class="fas fa-tachometer-alt"></i> Home</a></li>
-        <li class="">Guru</li>
-        <li class="active">Create</li>
-      </ol>
-</section>
-<section class="content">
+<section class="content mt-4">
 <div class="col-md-12 offset-md-0.1">
   <div class="card">
       <div class="card-header">Form Guru</div>
