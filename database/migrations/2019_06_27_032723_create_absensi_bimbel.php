@@ -15,7 +15,7 @@ class CreateAbsensiBimbel extends Migration
     {
         Schema::create('absensi_bimbel', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('nis');
+            $table->bigInteger('nis');
             $table->bigInteger('id_kelas')->unsigned();
             $table->string('pertemuan');
             $table->char('absen',100);

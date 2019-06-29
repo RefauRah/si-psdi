@@ -56,7 +56,7 @@
                 <tr>
                     <td>{{$nomer}}</td>
                     <td>{{ $row->nis}}</td>
-                    <td>{{ $row->nama}}</td>
+                    <td>{{ $row->nama_siswa}}</td>
                     <?php $nomer++; ?>
                 </tr>
                 @endforeach
