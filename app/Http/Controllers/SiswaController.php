@@ -114,9 +114,9 @@ class SiswaController extends Controller
         // $siswa->image = $file;
 
         if(!is_null($request->file('image'))){
-            $file = $request->file('image')->store('public/files/siswa');
             $filename = $request->file('image')->hashName();
             $format = $request->file('image')->getClientOriginalExtension();
+            $file = $request->file('image')->move('images/file',$filename);
             $siswa->image = $filename;
         }
 
