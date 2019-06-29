@@ -15,7 +15,7 @@ class CreateAbsensiPascaMubaligh extends Migration
     {
         Schema::create('absensi_pascamubaligh', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('nis');
+            $table->bigInteger('nis');
             $table->bigInteger('id_kelas')->unsigned();
             $table->string('pertemuan');
             $table->char('absen',100);

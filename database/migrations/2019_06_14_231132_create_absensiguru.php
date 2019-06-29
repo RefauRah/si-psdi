@@ -15,7 +15,7 @@ class CreateAbsensiguru extends Migration
     {
         Schema::create('absensiguru', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('nip');
+            $table->bigInteger('nip');
             $table->char('absen',100);
             $table->date('tgl_absen');
             $table->string('keterangan',100)->nullable();
