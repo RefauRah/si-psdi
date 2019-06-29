@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class AbsensiPengajian extends Model
+class AbsensiPraMubaligh extends Model
 {
     //
-     	protected $table = 'absensi_pengajian';   
+    	protected $table = 'absensi_pramubaligh';   
 
   public static function getuserData($id=0){
 
@@ -19,6 +19,5 @@ class AbsensiPengajian extends Model
       $value=DB::table('siswa')->where('id_kelas', $id)->get();
     }
     return $value;
-  
   }
 }

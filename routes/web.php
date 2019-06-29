@@ -105,9 +105,13 @@ Route::get('/absenbimbel', 'AbsensiBimbelController@index');
 Route::post('/absenbimbel', 'AbsensiBimbelController@store');
 Route::get('/absenbimbel/getUsers/{id}','AbsensiBimbelController@getUsers');
 
-Route::get('/absensiswapengajian', 'AbsensiPengajianController@index');
-Route::post('/absensiswapengajian', 'AbsensiPengajianController@store');
-Route::get('/absensiswapengajian/getUsers/{id}','AbsensiPengajianController@getUsers');
+Route::get('/absenpramubaligh', 'AbsensiPraMubalighController@index');
+Route::post('/absenpramubaligh', 'AbsensiPraMubalighController@store');
+Route::get('/absenpramubaligh/getUsers/{id}','AbsensiPraMubalighController@getUsers');
+
+Route::get('/absenpascamubaligh', 'AbsensiPascaMubalighController@index');
+Route::post('/absenpascamubaligh', 'AbsensiPascaMubalighController@store');
+Route::get('/absenpascamubaligh/getUsers/{id}','AbsensiPascaMubalighController@getUsers');
 
 Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
 Route::post('/absenpesantren', 'AbsensiPesantrenController@store');

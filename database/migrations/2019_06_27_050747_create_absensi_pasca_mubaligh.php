@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAbsensiPengajian extends Migration
+class CreateAbsensiPascaMubaligh extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAbsensiPengajian extends Migration
      */
     public function up()
     {
-        Schema::create('absensi_pengajian', function (Blueprint $table) {
+        Schema::create('absensi_pascamubaligh', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('nis');
             $table->bigInteger('id_kelas')->unsigned();
@@ -37,6 +37,6 @@ class CreateAbsensiPengajian extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('absensi_pengajian');
+        Schema::dropIfExists('absensi_pascamubaligh');
     }
 }

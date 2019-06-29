@@ -51,7 +51,7 @@
                         <td><img class="img-fluid" style="height: 50px"  src="{{asset('storage/files/siswa/'.$siswa->image)}}"></td>
                     @endif
                     <td>{{ $siswa->nama_siswa}}</a></td>
-                    <td>{{ $siswa->kelas->nama}} Kode Kelas ({{ $siswa->kelas->kode_kelas}})</td>
+                    
                     <td>{{ $siswa->tmpt_lahir}}</td>
                     <td>{{ $siswa->tgl_lahir}}</td>
                     <td>{{ $siswa->jk_siswa}}</td>
