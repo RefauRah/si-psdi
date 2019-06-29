@@ -15,7 +15,7 @@
   <div class="card">
       <div class="card-header">Form Guru</div>
       <div class="card-body card-block">
-          <form action="" method="post" class="">
+          <form action="/guru/create" method="post" class="">
             @csrf
               <div class="form-group">
                   <div class="input-group">

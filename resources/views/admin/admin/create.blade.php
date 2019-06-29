@@ -1,21 +1,13 @@
 @extends('admin.template.base')
 @section('content')
-<section class="content-header">
-      <h2 class="col-md-12">Tambah
-        <small>data admin</small>
-      </h2>
-      <ol class="breadcrumb">
-        <li><a href="{{url('/home')}}"><i class="fas fa-tachometer-alt"></i> Home</a></li>
-        <li class="">Admin</li>
-        <li class="active">Create</li>
-      </ol>
-</section>
-<section class="content">
+
+<section class="content mt-4">
 <div class="col-md-12 offset-md-0.1">
   <div class="card">
       <div class="card-header">Form Admin</div>
       <div class="card-body card-block">
-          <form action="" method="post" class="">
+          <form action="/admin/create" method="post" class="">
+          @csrf
               <div class="form-group">
                   <div class="input-group">
                       <input type="text" class="form-control" id="inputNama" placeholder="Nama">
