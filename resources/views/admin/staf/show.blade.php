@@ -89,6 +89,10 @@
                     <th>Jumlah Keluarga Yang Dibawa</th>
                     <td>{{$staf->jumlah_kel_staf}}</td>   
                 </tr>
+                <tr>
+                    <th>Persentase Hadir</th>
+                    <td>{{$hadirPersen}}%</td>
+                </tr>
 
                 </tbody>
                 <tfoot>

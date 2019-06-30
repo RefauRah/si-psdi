@@ -57,7 +57,28 @@ class StafController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        return view('admin.staf.show', ['staf' => $nip_staf]);
+
+        if((DB::table('absenstaf')->select(DB::raw('count(*) as absen_count'))->where('nip_staf','=',$nip_staf->nip_staf)->value('absen_count'))>0){
+            $hadirMax = DB::table('absenstaf')
+                         ->select(DB::raw('count(*) as absen_count'))
+                         ->where('nip_staf','=',$nip_staf->nip_staf)
+                         ->value('absen_count');
+            // return $hadirMax;
+            $hadirlist = DB::table('absenstaf')
+                         ->select(DB::raw('count(*) as absen_count'))
+                         ->where([
+                            ['absen_staf', '=', 'hadir'],
+                            ['nip_staf', '=', $nip_staf->nip_staf]
+                        ])
+                         // ->groupBy('status')
+                         ->value('absen_count');
+            $hadirPersen = ($hadirlist/$hadirMax)*100; 
+        }
+        else{
+            $hadirPersen = 0;
+        }
+
+        return view('admin.staf.show', ['staf' => $nip_staf], ['hadirPersen' => $hadirPersen]);
     }
     
     public function create()

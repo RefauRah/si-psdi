@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\SiswaModel;
+use App\AbsensiSiswaSekolah;
 use App\Kelas;
 use PDF;
 
@@ -155,8 +156,28 @@ class SiswaController extends Controller
         ->select('siswa.*', 'kelas.kode_kelas', 'kelas.nama')
         ->where('siswa.nis', $nis)
         ->get(); 
-   
-       return view('admin.siswa.show',['users'=>$users]);
+
+        if((DB::table('absensi_siswa_sekolah')->select(DB::raw('count(*) as absen_count'))->where('nis','=',$nis)->value('absen_count'))>0){
+
+            $hadirMax = DB::table('absensi_siswa_sekolah')
+                         ->select(DB::raw('count(*) as absen_count'))
+                         ->where('nis','=',$nis)
+                         ->value('absen_count');
+            // return $hadirMax;
+            $hadirlist = DB::table('absensi_siswa_sekolah')
+                         ->select(DB::raw('count(*) as absen_count'))
+                         ->where([
+                            ['absen', '=', 'hadir'],
+                            ['nis', '=', $nis]
+                        ])
+                         // ->groupBy('status')
+                         ->value('absen_count');
+            $hadirPersen = ($hadirlist/$hadirMax)*100;
+        }
+        else{
+           $hadirPersen = 0; 
+        }
+       return view('admin.siswa.show',['users'=>$users],['hadirPersen'=>$hadirPersen]);
 
     }
 

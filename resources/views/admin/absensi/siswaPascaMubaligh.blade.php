@@ -10,10 +10,10 @@
 <script type="text/javascript">
       window.onload = function()
     {
-        var pengajianBefore = sessionStorage.getItem('searchPascaMubaligh');
-        if(pengajianBefore != null){ 
-            // alert(pengajianBefore);
-            document.getElementById("searchPascaMubaligh").value = pengajianBefore; 
+        var pascamubalighBefore = sessionStorage.getItem('searchPascaMubaligh');
+        if(pascamubalighBefore != null){ 
+            // alert(pascamubalighBefore);
+            document.getElementById("searchPascaMubaligh").value = pascamubalighBefore; 
         }
         var userid = Number($('#searchPascaMubaligh').val().trim());
         if(userid > 0){
@@ -36,13 +36,13 @@
       </ol>
 </section>
 <section class="content">
- <form class="" method="post" action="/absensiswapengajian">
+ <form class="" method="post" action="/absenpascamubaligh">
     @csrf
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
 
-                <!-- <form class="form-horizontal">
+                <form class="form-horizontal">
                 <div class="row form-group">
                     <div class="col col-sm-1">
                         <label for="tanggal" class="form-control-label">Tanggal</label>
@@ -53,7 +53,7 @@
                         </div>
                         <input type="date" class="form-control" style="width:17%" name="tgl_absen" required>
                     </div>
-                </div> -->
+                </div>
                 <div class="row form-group">
                     <div class="col col-sm-1">
                         <label for="kelas" class=" form-control-label">Kelas</label>

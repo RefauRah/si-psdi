@@ -21,7 +21,7 @@
     @csrf
     <div class="col-xs-12">
         <div class="box">
-            <!-- <div class="box-header">
+            <div class="box-header">
                 <div class="col col-sm-1">
                         <label>Tanggal</label>
                     </div>
@@ -30,9 +30,9 @@
                             <i class="fa fa-calendar"></i>
                         </div>
                         <input type="date" class="form-control" style="width:17%" name="tgl_absen" required>
-                    </div> -->
+                    </div>
                 <!-- /.input group -->
-            <!-- </div> -->
+            </div>
 <!-- /.box-header -->
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
