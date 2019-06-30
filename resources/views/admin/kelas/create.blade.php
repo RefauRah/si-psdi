@@ -43,7 +43,6 @@
                   <div class="col-sm-10">
                     <div class="col-sm-10">
                     <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Reguler" checked>Reguler<br>
-                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pengajian">Pengajian<br>
                     <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pramubaligh">Pra Mubaligh<br>
                     <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pascamubaligh">Pasca Mubaligh<br>
                     <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Bimbel">Bimbel<br>

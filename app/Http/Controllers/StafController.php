@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-use App\Guru;
+use App\Staf;
 use PDF;
 use DB;
 
 
-class GuruController extends Controller
+class StafController extends Controller
 {
     public function index()
     {
@@ -36,11 +36,11 @@ class GuruController extends Controller
         // else{
         //     return redirect('/home');
         // }
-        $guru = Guru::all();
-        return view('admin/guru/guru', ['guru' => $guru]);
+        $staf = Staf::all();
+        return view('admin/staf/staf', ['staf' => $staf]);
     }
     
-    public function show(Guru $nip)
+    public function show(Staf $nip_staf)
     {
         if(\Gate::allows('isPasca_mubaligh')){
             abort(403,"Sorry, You can't access here");
@@ -57,7 +57,7 @@ class GuruController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        return view('admin.guru.show', ['guru' => $nip]);
+        return view('admin.staf.show', ['staf' => $nip_staf]);
     }
     
     public function create()
@@ -77,7 +77,7 @@ class GuruController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        return view('admin/guru/create');
+        return view('admin/staf/create');
     }
 
         public function store(Request $request)
@@ -97,79 +97,42 @@ class GuruController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        $guru = new Guru;
-        $guru->nip = request('nip');
-        $guru->nama = request('nama');
-        $guru->email = request('email');
-        $guru->alamat = request('alamat');
-        $guru->tempat_lahir = request('tempat_lahir');
-        $guru->tgl_lahir = request('tgl_lahir');
-        $guru->no_telp = request('no_telp');
-        $guru->tgl_masuk = request('tgl_masuk');
-        $guru->pend_terakhir = request('pend_terakhir');
-        $guru->jabatan = request('jabatan');
-        $guru->boarding = request('boarding');
-        $guru->status_nikah = request('status_nikah');
-        $guru->jumlah_kel = request('jumlah_kel');
+        $staf = new Staf;
+        $staf->nip_staf = request('nip_staf');
+        $staf->nama_staf = request('nama_staf');
+        $staf->email_staf = request('email_staf');
+        $staf->alamat_staf = request('alamat_staf');
+        $staf->tempat_lahir_staf = request('tempat_lahir_staf');
+        $staf->tgl_lahir_staf = request('tgl_lahir_staf');
+        $staf->no_telp_staf = request('no_telp_staf');
+        $staf->tgl_masuk_staf = request('tgl_masuk_staf');
+        $staf->pend_terakhir_staf = request('pend_terakhir_staf');
+        $staf->jabatan_staf = request('jabatan_staf');
+        $staf->boarding_staf = request('boarding_staf');
+        $staf->status_nikah_staf = request('status_nikah_staf');
+        $staf->jumlah_kel_staf = request('jumlah_kel_staf');
         if(!is_null($request->file('image'))){
-            $file = $request->file('image')->store('public/files/guru');
+            $file = $request->file('image')->store('public/files/staf');
             $filename = $request->file('image')->hashName();
             $format = $request->file('image')->getClientOriginalExtension();
-            $guru->image = $filename;
+            $staf->image = $filename;
         }
 
-        $guru->save();
+        $staf->save();
 
         \Session::flash('flash_message','successfully saved.');
 
-        return redirect('/guru');
+        return redirect('/staf');
     }
 
-    // public function edit(Guru $id){
-    //     $guru = Guru::all();
-    //     return view('admin.guru.show', ['guru' => $id]);
+    // public function edit(staf $id){
+    //     $staf = staf::all();
+    //     return view('admin.staf.show', ['staf' => $id]);
     // }
 
-    public function edit ($nip)
-    {
-/*      
-        $useredit = DB::select('select * from siswa where nis = ?',[$nis]);  
-
-
-        return view('admin.siswa.edit',['useredit'=>$useredit]);
-*/
-
-       
-       $guru = DB::table('guru')
-        ->where('nip', $nip)
-        ->get(); 
    
-       return view('admin.guru.edit', ['guru'=>$guru]);
 
-
-    }
-
-    public function update(Request $request)
-    {
-
-        DB::table('guru')->where('nip',$request->nip)->update([
-        'nama' => $request->nama,
-        'email' => $request->email,
-        'alamat' => $request->alamat,
-        'tempat_lahir' => $request->tempat_lahir,
-        'tgl_lahir' => $request->tgl_lahir,
-        'no_telp' => $request->no_telp,
-        'tgl_masuk' => $request->tgl_masuk,
-        'pend_terakhir' => $request->pend_terakhir,
-        'jabatan' => $request->jabatan,
-        'boarding' => $request->boarding,
-        'status_nikah' => $request->status_nikah,
-        'jumlah_kel' => $request->jumlah_kel
-        
-        ]);
-
-        return redirect('/guru');
-    }
+   
 
     public function cetak_pdf()
     {
@@ -188,13 +151,13 @@ class GuruController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        $guru= Guru::all();
+        $staf= staf::all();
 
-        $gpdf = PDF::loadview('admin/guru/guruPDF',['guru'=>$guru]);
-        return $gpdf->download('daftar-guru-'.date("Y/m/d").':'.date("H/i/s").'.pdf');
+        $gpdf = PDF::loadview('admin/staf/stafPDF',['staf'=>$staf]);
+        return $gpdf->download('daftar-staf-'.date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
 
-    public function cetak_profil_pdf(Guru $nip)
+    public function cetak_profil_pdf(Staf $nip_staf)
     {
         // return $id;
         if(\Gate::allows('isPasca_mubaligh')){
@@ -212,10 +175,10 @@ class GuruController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        $gpdf = PDF::loadview('admin/guru/profilguruPDF',['guru'=>$nip]);
-        return $gpdf->download('profil-guru-'.$nip->value("nama")."-".date("Y/m/d").':'.date("H/i/s").'.pdf');
+        $gpdf = PDF::loadview('admin/staf/profilstafPDF',['staf'=>$nip_staf]);
+        return $gpdf->download('profil-staf-'.$nip->value("nama")."-".date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
-    public function hapus($guru)
+    public function hapus($staf)
     {
         if(\Gate::allows('isPasca_mubaligh')){
             abort(403,"Sorry, You can't access here");
@@ -235,9 +198,51 @@ class GuruController extends Controller
         elseif(\Gate::allows('isAdmin')){
             abort(403,"Sorry, You can't access here");
         }
-        DB::table('guru')->where('nip',$guru)->delete();
+        DB::table('staf')->where('nip_staf',$staf)->delete();
         
-    // alihkan halaman ke halaman guru
-        return redirect('/guru');
+    // alihkan halaman ke halaman staf
+        return redirect('/staf');
+    }
+
+    public function edit ($nip_staf)
+    {
+/*      
+        $useredit = DB::select('select * from siswa where nis = ?',[$nis]);  
+
+
+        return view('admin.siswa.edit',['useredit'=>$useredit]);
+*/
+
+       
+       $staf = DB::table('staf')
+        ->where('nip_staf', $nip_staf)
+        ->get(); 
+   
+       return view('admin.staf.edit', ['staf'=>$staf]);
+
+
+    }
+
+    public function update(Request $request)
+    {
+
+        DB::table('staf')->where('nip_staf',$request->nip_staf)->update([
+        'nama_staf' => $request->nama_staf,
+        'email_staf' => $request->email_staf,
+        'alamat_staf' => $request->alamat_staf,
+        'tempat_lahir_staf' => $request->tempat_lahir_staf,
+        'tgl_lahir_staf' => $request->tgl_lahir_staf,
+        'no_telp_staf' => $request->no_telp_staf,
+        'tgl_masuk_staf' => $request->tgl_masuk_staf,
+        'pend_terakhir_staf' => $request->pend_terakhir_staf,
+        'jabatan_staf' => $request->jabatan_staf,
+        'boarding_staf' => $request->boarding_staf,
+        'status_nikah_staf' => $request->status_nikah_staf,
+        'jumlah_kel_staf' => $request->jumlah_kel_staf
+        
+        ]);
+
+
+         return redirect('/staf');
     }
 }

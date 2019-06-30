@@ -64,15 +64,32 @@ Route::get('/guru/show/{nip}', 'GuruController@show')->middleware('auth')->name(
 Route::get('/guru/create', 'GuruController@create')->middleware('auth')->name('createGuru');
 Route::post('/guru/create', 'GuruController@store');
 Route::get('/guru/edit/{nip}', 'GuruController@edit')->middleware('auth')->name('editGuru');
-Route::post('/guru/edit', 'GuruController@update');
 Route::get ('/guru/cetak_pdf', 'GuruController@cetak_pdf')->middleware('auth')->name('guru/cetak_pdf');
 Route::get ('/guru/cetak_profil_pdf/{nip}', 'GuruController@cetak_profil_pdf')->middleware('auth')->name('guru/cetak_profil_pdf');
 Route::get('/guru/hapus/{guru}','GuruController@hapus');
+Route::post('/guru/update','GuruController@update');
+
+
+Route::get('/staf/show/{nip_staf}', 'StafController@show')->middleware('auth')->name('showStaf');
+Route::get('/staf', 'stafController@index')->middleware('auth')->name('staf');
+Route::get('/staf/create', 'StafController@create')->middleware('auth')->name('createStaf');
+Route::post('/staf/create', 'StafController@store');
+Route::get('/staf/edit/{nip_staf}', 'StafController@edit')->middleware('auth')->name('editStaf');
+Route::get ('/staf/cetak_pdf', 'StafController@cetak_pdf')->middleware('auth')->name('staf/cetak_pdf');
+Route::get ('/staf/cetak_profil_pdf/{nip_staf}', 'StafController@cetak_profil_pdf')->middleware('auth')->name('staf/cetak_profil_pdf');
+Route::get('/staf/hapus/{staf}','StafController@hapus');
+Route::post('/staf/update','StafController@update');
  
 Route::get('/kelas', 'KelasController@index')->middleware('auth')->name('kelas');
 Route::get('/kelas/show/{id}', 'KelasController@show')->middleware('auth')->name('showKelas');
 Route::get('/kelas/create', 'KelasController@create')->middleware('auth')->name('kelas');
 Route::post('/kelas/create', 'KelasController@store');
+
+
+Route::get('/anggota', 'AnggotaKelasController@index')->middleware('auth')->name('anggota');
+Route::post('/tambahanggota', 'AnggotaKelasController@update')->middleware('auth')->name('tambahanggota');
+
+
 
 Route::get('/walikelas', 'WaliKelasController@index')->middleware('auth')->name('walikelas');
 Route::get('/walikelas/create', 'WaliKelasController@create')->middleware('auth')->name('walikelas/create');
@@ -117,6 +134,10 @@ Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
 Route::post('/absenpesantren', 'AbsensiPesantrenController@store');
 Route::get('/absenpesantren/getUsers/{id}','AbsensiPesantrenController@getUsers');
 
+Route::get('/absenstaf', 'AbsenStafController@index');
+Route::post('/absenstaf', 'AbsenStafController@store');
+Route::get('/absenstaf/laporanAbsensiStaf', 'AbsenStafController@show');
+
 // Route::get('/absensiswapengajian', function () {
 //     return view('/admin/absensi/siswaPengajian');
 // });
@@ -148,7 +169,6 @@ Route::get('/laporanstaff', function () {
     return view('/admin/absensi/laporanStaff');
 });
 
-Route::get('/absensiswa','AbsensiController@index');
 
 
 

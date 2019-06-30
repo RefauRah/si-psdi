@@ -2,9 +2,9 @@
 
 @section('content')
 <section class="content-header">
-    <?php foreach ($guru as $key): ?>
-      <h1>Profil  {{$key->nama}}</h1>
-      <p>{{$key->alamat}}</p>
+    <?php foreach ($staf as $key): ?>
+      <h1>Profil Staf {{$key->nama_staf}}</h1>
+      <p>{{$key->alamat_staf}}</p>
     <?php endforeach; ?>
 @if(Session::has('flash_message'))
     <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
@@ -12,11 +12,11 @@
 <section class="content-header">
       <h1>
         Lihat
-        <small>data </small>
+        <small>data staf</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class=""></li>
+        <li class="">Staf</li>
         <li class="active">Profil</li>
       </ol>
 </section>
@@ -24,17 +24,17 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Profil Guru PSDI</h3>
+                <h3 class="box-title">Profil Staf PSDI</h3>
             </div>
 <!-- /.box-header ALTER TABLE `siswa` AUTO_INCREMENT = 0;-->
 
-        <form action="/guru/update" method="post">
+        <form action="/staf/update" method="post">
             <div class="box-body">
                 <div class="col-md-4" style="padding-top:20px">
                    @if(is_null($key->image))
                         <img src="{{ asset('images/default.png') }}" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
                     @else
-                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/'.$key->image)}}" alt="Profile">
+                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/staf'.$key->image)}}" alt="Profile">
                     @endif  
                 </div> 
 
@@ -46,8 +46,8 @@
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="nip">NIP</label></th>
-                        <td><input type="text" name="nip" class="form-control" value="{{$key->nip}}"></td>
+                        <th><label for="nip_staf">NIP</label></th>
+                        <td><input type="text" name="nip_staf" class="form-control" value="{{$key->nip_staf}}"></td>
                     </div>
                 </tr> 
                 
@@ -64,81 +64,81 @@
                 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="nama">Nama</label></th>
-                        <td><input type="text" name="nama" class="form-control" value="{{$key->nama}}"></td>
+                        <th><label for="nama_staf">Nama</label></th>
+                        <td><input type="text" name="nama_staf" class="form-control" value="{{$key->nama_staf}}"></td>
                     </div>
                 </tr>
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="email">Email</label></th>
-                        <td><input type="text" name="email" class="form-control" value="{{$key->email}}"></td>
+                        <th><label for="email_staf">Email</label></th>
+                        <td><input type="text" name="email_staf" class="form-control" value="{{$key->email_staf}}"></td>
                     </div>
                 </tr>
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="alamat">Alamat</label></th>
-                        <td><input type="text" name="alamat" class="form-control" value="{{$key->alamat}}"></td>
+                        <th><label for="alamat_staf">Alamat</label></th>
+                        <td><input type="text" name="alamat_staf" class="form-control" value="{{$key->alamat_staf}}"></td>
                     </div>
                 </tr>
 
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="tempat_lahir">Tempat Lahir</label></th>
-                        <td><input type="text" name="tempat_lahir" class="form-control" value="{{$key->tempat_lahir}}"></td>
+                        <th><label for="tempat_lahir_staf">Tempat Lahir</label></th>
+                        <td><input type="text" name="tempat_lahir_staf" class="form-control" value="{{$key->tempat_lahir_staf}}"></td>
                     </div>
                 </tr>
                
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="tgl_lahir">Tanggal Lahir</label></th>
-                        <td><input type="date" name="tgl_lahir" class="form-control" value="{{$key->tgl_lahir}}"></td>
+                        <th><label for="tgl_lahir_staf">Tanggal Lahir</label></th>
+                        <td><input type="date" name="tgl_lahir_staf" class="form-control" value="{{$key->tgl_lahir_staf}}"></td>
                     </div>
                 </tr>
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="no_telp">No Telepon</label></th>
-                        <td><input type="number" name="no_telp" class="form-control" value="{{$key->no_telp}}"></td>
+                        <th><label for="no_telp_staf">No Telepon</label></th>
+                        <td><input type="number" name="no_telp_staf" class="form-control" value="{{$key->no_telp_staf}}"></td>
                     </div>
                 </tr>
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="tgl_masuk">Tanggal Masuk</label></th>
-                        <td><input type="date" name="tgl_masuk" class="form-control" value="{{$key->tgl_masuk}}"></td>
+                        <th><label for="tgl_masuk_staf">Tanggal Masuk</label></th>
+                        <td><input type="date" name="tgl_masuk_staf" class="form-control" value="{{$key->tgl_masuk_staf}}"></td>
                     </div>
                 </tr>
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="pend_terakhir">Pendidikan Terakhir</label></th>
-                        <td><input type="text" name="pend_terakhir" class="form-control" value="{{$key->pend_terakhir}}"></td>
+                        <th><label for="pend_terakhir_staf">Pendidikan Terakhir</label></th>
+                        <td><input type="text" name="pend_terakhir_staf" class="form-control" value="{{$key->pend_terakhir_staf}}"></td>
                     </div>
                 </tr>
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="jabatan">Jabatan</label></th>
-                        <td><input type="text" name="jabatan" class="form-control" value="{{$key->jabatan}}"></td>
+                        <th><label for="jabatan_staf">Jabatan</label></th>
+                        <td><input type="text" name="jabatan_staf" class="form-control" value="{{$key->jabatan_staf}}"></td>
                     </div>
                 </tr>
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="boarding">Boarding/PP</label></th>
-                        <td><input type="text" name="boarding" class="form-control" value="{{$key->boarding}}"></td>
+                        <th><label for="boarding_staf">Boarding/PP</label></th>
+                        <td><input type="text" name="boarding_staf" class="form-control" value="{{$key->boarding_staf}}"></td>
                     </div>
                 </tr>
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="status_nikah">Status Menikah</label></th>
+                        <th><label for="status_nikah_staf">Status Menikah</label></th>
                         <td>
-                        <select class="form-control" name="status_nikah" >
-                        <option value="{{$key->status_nikah}}">({{$key->status_nikah}})</option>
+                        <select class="form-control" name="status_nikah_staf" >
+                        <option value="{{$key->status_nikah_staf}}">({{$key->status_nikah_staf}})</option>
                         <option value="Sudah Menikah">Sudah Menikah</option>
                         <option value="Belum Menikah">Belum Menikah</option>
                         </select></td>
@@ -147,8 +147,8 @@
 
                 <tr>
                     <div class="form-group has-feedback">
-                        <th><label for="jumlah_kel">Jumlah Keluarga</label></th>
-                        <td><input type="text" name="jumlah_kel" class="form-control" value="{{$key->jumlah_kel}}"></td>
+                        <th><label for="jumlah_kel_staf">Jumlah Keluarga</label></th>
+                        <td><input type="text" name="jumlah_kel_staf" class="form-control" value="{{$key->jumlah_kel_staf}}"></td>
                     </div>
                 </tr>
 
@@ -160,7 +160,7 @@
             </div>
 <!-- /.box-body -->
             <div class="button" style="margin-left:10px;margin-right:10px;padding-bottom:10px;">
-            <a href="{{url('/guru')}}" class="btn btn-danger">Kembali</a>
+            <a href="{{url('/staf')}}" class="btn btn-danger">Kembali</a>
             <input type="submit" value="Simpan Data"> 
             </div>
             </form>
