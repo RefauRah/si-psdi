@@ -15,6 +15,15 @@
         <div class="card-body">
             <form class="" method="post" action="/absenguru">
                 @csrf
+                <label for="tanggal">Tanggal</label>
+                <div class="col-sm-3">
+                    <div class="input-group mb-2" id="tanggal">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="date" class="form-control" name="tgl_absen" required>
+                    </div>
+                </div>
                 <table class="table table-striped table-bordered data">
                     <thead>
                         <tr>

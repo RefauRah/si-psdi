@@ -1,37 +1,45 @@
 @extends('admin.template.base')
 @section('content')
-<section class="content">
-    <div class="card">
+
+@if(Session::has('flash_message'))
+    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
+@endif
+@if(Session::has('flash_message_fail'))
+    <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
+@endif
+
+<div class="container py-4">
+    <div class="card bg-light">
         <div class="card-header">
-            <h3>Tabel
-                <small>Absensi Siswa Sekolah</small>
-            </h3>
+            <h4>Absensi Sekolah</h4>
         </div>
         <div class="card-body">
-            <div class="container">      
-            <form class="form-horizontal">
+            <form class="" method="post" action="">
+                @csrf
                 <div class="row form-group">
                     <div class="col col-sm-1">
-                        <label for="tanggal" class=" form-control-label">Tanggal</label>
+                        <label for="kelas" class=" form-control-label">Tanggal</label>
                     </div>
                     <div class="col col-sm-3">
-                        <input type="date" id="input-normal" name="input-normal" class="form-control">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="date" class="form-control" name="tgl_absen" required>
                     </div>
-                    <div class="input-group col-md-4 ml-auto">
-                    <div class="input-group-btn">
-                        <button class="btn btn-secondary">
-                            <i class="fa fa-search"></i> Search
-                        </button>
                     </div>
-                    <input type="text" id="input1-group2" name="input1-group2" placeholder="Cari" class="form-control">
-                </div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-sm-1">
                         <label for="kelas" class=" form-control-label">Kelas</label>
                     </div>
                     <div class="col col-sm-3">
-                        <input type="text" id="input-normal" name="input-normal" class="form-control">
+                    <div class="input-group" id="tanggal">
+                        <div class="input-group-addon">
+                            <i class="fa fa-building"></i>
+                        </div>
+                        <input type="date" class="form-control" name="tgl_absen" required>
+                    </div>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -45,55 +53,54 @@
                             <option>4</option>
                         </select>
                     </div>
-                </div>      
-            </form>     
-        </div>
-        <!-- Tabel -->
-        <div class="col-lg-12">
-            <div class="table-responsive fl-table">
-                <table class="table table-borderless table-data3 table-wrapper">
+                </div>
+                
+                <table class="table table-striped table-bordered data">
                     <thead>
                         <tr>
-                            <th>NO</th>
-                            <th>NIS</th>
+                            <th>No</th>
+                            <th>NIS</th>			
                             <th>Nama</th>
                             <th>Jenis Kelamin</th>
-                            <th>Hadir</th>
-                            <th>Sakit</th>
-                            <th>Alfa</th>
-                            <th>Izin</th>
-                            <th class="text-left">Keterangan</th>
+                            <th>Pilih</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>69</td>
-                            <td>1123</td>
-                            <td>Cecep Melon</td>
-                            <td>Ladyboy</td>
-                            <td><input type="radio" name="" value="male"></td>
-                            <td><input type="radio" name="" value="male"></td>
-                            <td><input type="radio" name="" value="male"></td>
-                            <td><input type="radio" name="" value="male"></td>
-                            <td><input type="text" class="form-control" name=""></td>
-                        </tr>
-                        <tr>
-                            <td>76</td>
-                            <td>1221</td>
-                            <td>Samuel Gapleh</td>
-                            <td>Ladyboy</td>
-                            <td><input type="radio" name="" value="male"></td>
-                            <td><input type="radio" name="" value="male"></td>
-                            <td><input type="radio" name="" value="male"></td>
-                            <td><input type="radio" name="" value="male"></td>
-                            <td><input type="text" class="form-control" name=""></td>
-                        </tr>
+                    
+                    
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-center"><input type = "checkbox" name = "" value = ""/></td>
+                        
+                    </tr>
+                    
                     </tbody>
-                    </table>
-                </div>
-                <input class="btn btn-success pull-right" type="submit" value="Submit">
-            </div>
+                </table>
+
+                <table class="table table-striped table-bordered mt-4">
+                    <tr>
+                        <th>Hadir</th>
+                        <th>Sakit</th>
+                        <th>Alfa</th>
+                        <th>Izin</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="absen" value="hadir" required></td>
+                        <td><input type="radio" name="absen" value="sakit"></td>
+                        <td><input type="radio" name="absen" value="alfa"></td>
+                        <td><input type="radio" name="absen" value="izin"></td>
+                        <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
+                    </tr>
+                </table>
+                    <button type="submit"class="btn btn-primary btn-sm float-right mt-2">Submit</button>
+            </form>
         </div>
     </div>
-</section>
+</div>
+    
+
 @endsection
