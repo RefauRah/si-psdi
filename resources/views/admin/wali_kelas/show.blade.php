@@ -1,98 +1,95 @@
 @extends('admin.template.base')
 @section('content')
-@if(Session::has('flash_message'))
-    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
-@endif
 <section class="content-header">
-      <h1>
-        Lihat
-        <small>data wali kelas</small>
-      </h1>
-      <ol class="breadcrumb">
+    <h1>
+    Tabel
+    <small>tabel siswa</small>
+    </h1>
+    <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="">Wali Kelas</li>
-        <li class="active">Profil</li>
-      </ol>
+        <li class="active">Siswa</li>
+    </ol>
 </section>
 <section class="content">
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Profil Wali Kelas PSDI</h3>
+                <h3 class="box-title">Data Siswa PSDI</h3>
             </div>
-<!-- /.box-header ALTER TABLE `wali_kelas` AUTO_INCREMENT = 0;-->
+<!-- /.box-header -->
             <div class="box-body">
-                <table class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped">
                 <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>NIS</th>
+                    <th>foto</th>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Alamat</th>
+                    <th>Tindakan</th>
+
+                </tr>
                 </thead>
                 <tbody>
 
-                <tr>
-                    <th>NIP</th>
-                    <td>#</td>
-                </tr>
+                <?php $nomer = 1; ?>
                 
+                @foreach ($siswa as $siswa)
                 <tr>
-                <th>Nama</th>
-                <td>#</td>
-                </tr>
+                    <td>{{$nomer}}</td>
 
-                <tr>
-                <th>Alamat</th>
-                <td>#</td>
-                </tr>
-                
-                <tr>
-                <th>Tempat Lahir</th>
-                <td>#</td>
-                </tr>
+                    <td>{{ $siswa->nis}}</td>
+                    @if(is_null($siswa->image))
+                        <td>
+                            <img src="{{ asset('images/default.png') }}" style="height: 50px" class="img-fluid">
+                        </td>
+                    @else
+                        <td><img class="img-fluid" style="height: 50px"  src="{{asset('images/file/'.$siswa->image)}}"></td>
+                    @endif
+                    <td>{{ $siswa->nama_siswa}}</a></td>
+                    
+                    <td>{{ $siswa->tmpt_lahir}}</td>
+                    <td>{{ $siswa->tgl_lahir}}</td>
+                    <td>{{ $siswa->jk_siswa}}</td>
+                    <td>{{ $siswa->alamat_siswa}}</td>
+                    <td>
+                    <a href="{{url('/siswa/hapus/'.$siswa->nis)}}" class="btn btn-sm btn-danger">Hapus</a>
+                    <a href="{{url('/siswa/edit/'.$siswa->nis)}}" class="btn btn-sm btn-primary">Edit</a> 
+                    <a href="{{url('/siswa/'.$siswa->nis)}}" class="btn btn-sm btn-primary">Lihat Profil</a>
+                    </td>
 
-                <tr>
-                <th>Tanggal Lahir</th>
-                <td>#</td>
+                    <?php $nomer++; ?>
                 </tr>
-
-                <tr>
-                    <th>No Tlp</th>
-                    <td>#</td>   
-                </tr>
-
-                <tr>
-                    <th>Tanggal Masuk PSDI</th>
-                    <td>#</td>   
-                </tr>
-                <tr>
-                    <th>Pendidikan Terakhir</th>
-                    <td>#</td>   
-                </tr>
-                <tr>
-                    <th>Jabatan</th>
-                    <td>#</td>   
-                </tr>
-                <tr>
-                    <th>Boarding/PP</th>
-                    <td>#</td>   
-                </tr>
-                <tr>
-                    <th>Status Pernikahan</th>
-                    <td>#</td>   
-                </tr>
-                <tr>
-                    <th>Jumlah Keluarga Yang Dibawa</th>
-                    <td>#</td>   
-                </tr>
-
+                @endforeach
+              
                 </tbody>
                 <tfoot>
                 <tr>
+                    <th>NO</th>
+                    <th>NIS</th>
+                    <th>foto</th>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Alamat</th>
+
+                    <th>Tindakan</th>
+                </tr>
                 </tfoot>
                 </table>
             </div>
 <!-- /.box-body -->
-<div class="button" style="margin-left:10px;margin-right:10px;padding-bottom:10px;">
-            <a href="#" class="btn btn-success pull-right">Edit</a>
-            <a href="#" class="btn btn-primary">Kembali</a>
-</div>
+            <div class="box-footer">
+                <a href="{{url('walikelas')}}" class="btn btn-sm btn-success pull-right">
+                    <i class="fa fa-plus"></i> Tambah
+                </a>
+            </div>
         </div>
     </div>
 </section>

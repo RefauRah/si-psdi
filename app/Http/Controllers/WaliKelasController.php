@@ -4,42 +4,48 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-use App\WaliKelas;
+use App\Http\Requests;
+use App\Guru;
+use App\Kelas;
 use DB;
 
 class WaliKelasController extends Controller
 {
+    
     public function index()
     {
-        // $walikelas = WaliKelas::all();
-        $walikelas = WaliKelas::with('guru', 'kelas')->get();
-        // return $walikelas;
-        // Fare::find($id)->with('payment')->get()
-        return view('admin.wali_kelas.wali_kelas', ['walikelas' => $walikelas]);
-    }
-    
-    // public function show(Guru $id)
-    // {
-    //     return view('admin.wali_kelas.show', ['walikelas' => $id]);
-    // }
-    
-    public function create()
-    {
-    	$guru = DB::table('guru')->get();
-    	$kelas = DB::table('kelas')->get();
-        return view('admin.wali_kelas.create', ['guru' => $guru], ['kelas' => $kelas]);
+        
+        $guru = Guru::all();
+        return view('admin/wali_kelas/wali_kelas', ['guru' => $guru]);
     }
 
-    public function store()
+    public function tambah()
     {
-        $walikelas = new WaliKelas;
-        $walikelas->id_guru = request('id_guru');
-        $walikelas->id_kelas = request('id_kelas');
-        $walikelas->save();
+        $guru = DB::table('guru')->get();
+        $kelas = DB::table('kelas')->get();
 
-        // \Session::flash('flash_message','successfully saved.');
+        return view('/admin/wali_kelas/create', ['guru' => $guru],['kelas'=>$kelas]);
+    }
 
+    public function update(Request $request)
+    {
+
+        DB::table('guru')->where('nip',$request->nip)->update([
+        'id_kelas' => $request->id_kelas
+        
+        ]);
+
+
+         return redirect('/walikelas');
+    }
+
+     public function hapus($guru)
+    {
+        DB::table('guru')->where('nip',$guru)->update([
+        'id_kelas' =>''
+        ]);
+        
+    // alihkan halaman ke halaman guru
         return redirect('/walikelas');
     }
 }

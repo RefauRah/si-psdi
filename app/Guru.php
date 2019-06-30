@@ -12,6 +12,7 @@ class Guru extends Model
 
         protected $fillable = [
     	'nip',
+        'id_kelas',
     	'nama',
     	'email',
     	'alamat',
@@ -32,4 +33,9 @@ class Guru extends Model
     	return $this->hasOne('App\WaliKelas', 'id_guru', 'nip');
     	// return $this->hasOne('App\UserProfile', 'profile_user_id', 'user_id');
 	}
+
+    public function kelas()
+    {
+        return $this->belongsTo('App\Kelas', 'id_kelas', 'id');
+    }
 }

@@ -20,6 +20,11 @@ class Kelas extends Model
 
 	public function siswa()
 	{
-    	return $this->hasOne('App\Siswa', 'id_kelas', 'id');
+    	return $this->hasOne('App\SiswaModel', 'id_kelas', 'id');
 	}
+
+    public function guru()
+    {
+        return $this->hasOne('App\SiswaModel', 'id_kelas', 'id');
+    }
 }

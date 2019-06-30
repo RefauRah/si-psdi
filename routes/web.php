@@ -90,10 +90,13 @@ Route::get('/anggota', 'AnggotaKelasController@index')->middleware('auth')->name
 Route::post('/tambahanggota', 'AnggotaKelasController@update')->middleware('auth')->name('tambahanggota');
 
 
+Route::get('/walikelas/tambah','WaliKelasController@tambah')->middleware('auth')->name('walikelas');
+Route::post('/tambahwalikelas', 'WaliKelasController@update')->middleware('auth')->name('tambahkelas');
+Route::get('/walikelas', 'WaliKelasController@index');
+Route::get('/walikelas/hapus/{guru}','WaliKelasController@hapus');
 
-Route::get('/walikelas', 'WaliKelasController@index')->middleware('auth')->name('walikelas');
-Route::get('/walikelas/create', 'WaliKelasController@create')->middleware('auth')->name('walikelas/create');
-Route::post('/walikelas/create', 'WaliKelasController@store');
+
+
 
 Route::get('/keuangan', 'KeuanganController@index')->middleware('auth')->name('keuangan');
 Route::get('/keuangan/create', 'KeuanganController@create')->middleware('auth')->name('keuangan');
