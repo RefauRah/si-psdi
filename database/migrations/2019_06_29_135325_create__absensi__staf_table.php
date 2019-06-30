@@ -13,17 +13,17 @@ class CreateAbsensiStafTable extends Migration
      */
     public function up()
     {
-        Schema::create('absensi_staf', function (Blueprint $table) {
+        Schema::create('absenstaf', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('nip');
-            $table->char('absen',100);
-            $table->date('tgl_absen');
-            $table->string('keterangan',100)->nullable();
+            $table->bigInteger('nip_staf');
+            $table->char('absen_staf',100);
+            $table->date('tgl_absen_staf');
+            $table->string('keterangan_staf',100)->nullable();
             // $table->string('id_kegiatan',20);
             // $table->string('keterangan',50);
             $table->timestamps();
 
-            $table->foreign('nip')->references('nip_staf')->on('staf')->onDelete('cascade');
+            $table->foreign('nip_staf')->references('nip_staf')->on('staf')->onDelete('cascade');
         });
     }
 

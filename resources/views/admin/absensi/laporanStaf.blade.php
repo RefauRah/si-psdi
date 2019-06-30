@@ -3,7 +3,7 @@
 <section class="content-header">
       <h1>
         Tabel
-        <small>Absensi Guru</small>
+        <small>Absensi Staf</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -11,7 +11,7 @@
       </ol>
 </section>
 <section class="content">
-    <form class="" method="post" action="/absenguru">
+    <form class="" method="post" action="/absenstaf">
     @csrf
     <div class="col-xs-12">
         <div class="box">
@@ -35,31 +35,27 @@
                     <th>NO</th>
                     <th>NIP</th>
                     <th>Nama</th>
-                    <th>Jabatan</th>
-                    <th>Absen</th>
+                    <th>Status Absen</th>
+                    <th>Tangal/date</th>
+                    <th>Jenis Aktifitas</th>
                     <th>Keterangan</th>
                 </tr>
                 </thead>
-                
                 <tbody>
+                <?php $nomer = 1; ?>
+                @foreach ($users as $staf)
                 <tr>
+                    <td>{{$nomer}}</td>
+                    <td>{{ $staf->nip_staf}}</td>
+                    <td>{{ $staf->nama_staf}}</td>
+                    <td>{{ $staf->absen_staf}}</td>
+                    <td>{{ $staf->tgl_absen_staf}}</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $staf->keterangan_staf}}</td>
+            
+                <?php $nomer++; ?>
                 </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>NO</th>
-                    <th>NIP</th>
-                    <th>Nama</th>
-                    <th>Jabatan</th>
-                    <th>Absen</th>
-                    <th>Keterangan</th>
-                </tr>
+                @endforeach
                 </tfoot>
 
                 </table>

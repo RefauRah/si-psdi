@@ -134,8 +134,8 @@
             </span>
             </a>
             <ul id="siswa" class="treeview-menu">
-                <li><a href="{{url('/absensiswa')}}"><i class="fa fa-circle-o"></i>Absen Total</a></li>
-                <li><a href="/absensiswapengajian"><i class="fa fa-circle-o"></i>Absen Pengajian</a></li>
+                <li><a href="/absenpascamubaligh"><i class="fa fa-circle-o"></i>Absen Pasca Mubaligh</a></li>
+                <li><a href="/absenpramubaligh"><i class="fa fa-circle-o"></i>Absen Pra Mubaligh</a></li>
                 <li><a href="/absensiswasekolah"><i class="fa fa-circle-o"></i>Absen Sekolah</a></li>
                 <li><a href="/absenbimbel"><i class="fa fa-circle-o"></i>Absen Bimbel</a></li>
                 <li><a href="/absenpesantren"><i class="fa fa-circle-o"></i>Absen Pesantren</a></li>
@@ -154,7 +154,7 @@
         </a>
         <ul class="treeview-menu">
         <li><a href="{{url('/absenguru/laporanAbsensiGuru')}}"><i class="fa fa-circle-o"></i> Guru</a></li>
-        <li><a href="{{url('/laporanstaf')}}"><i class="fa fa-circle-o"></i> Staff</a></li>
+        <li><a href="{{url('/absenstaf/laporanAbsensiStaf')}}"><i class="fa fa-circle-o"></i> Staff</a></li>
         <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li> -->
         <li><a href="/laporansiswasekolah"><i class="fa fa-circle-o"></i> Siswa Sekolah</a></li>
         <li><a href="/laporansiswapengajian"><i class="fa fa-circle-o"></i> Siswa Pengajian</a></li>

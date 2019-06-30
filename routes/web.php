@@ -134,6 +134,10 @@ Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
 Route::post('/absenpesantren', 'AbsensiPesantrenController@store');
 Route::get('/absenpesantren/getUsers/{id}','AbsensiPesantrenController@getUsers');
 
+Route::get('/absenstaf', 'AbsenStafController@index');
+Route::post('/absenstaf', 'AbsenStafController@store');
+Route::get('/absenstaf/laporanAbsensiStaf', 'AbsenStafController@show');
+
 // Route::get('/absensiswapengajian', function () {
 //     return view('/admin/absensi/siswaPengajian');
 // });
@@ -165,7 +169,6 @@ Route::get('/laporanstaff', function () {
     return view('/admin/absensi/laporanStaff');
 });
 
-Route::get('/absensiswa','AbsensiController@index');
 
 
 

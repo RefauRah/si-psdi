@@ -14,7 +14,7 @@ class CreateStafTable extends Migration
     public function up()
     {
         Schema::create('staf', function (Blueprint $table) {
-            $table->integer('nip_staf', 11);
+            $table->bigInteger('nip_staf', 20);
             $table->string('nama_staf',100);
             $table->string('email_staf',100);
             $table->string('alamat_staf',200);
