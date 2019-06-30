@@ -57,7 +57,28 @@ class GuruController extends Controller
          elseif(\Gate::allows('isPra_mubaligh')){
             abort(403,"Sorry, You can't access here");
         }
-        return view('admin.guru.show', ['guru' => $nip]);
+
+        if((DB::table('absensiguru')->select(DB::raw('count(*) as absen_count'))->where('nip','=',$nip->nip)->value('absen_count'))>0){
+            $hadirMax = DB::table('absensiguru')
+                         ->select(DB::raw('count(*) as absen_count'))
+                         ->where('nip','=',$nip->nip)
+                         ->value('absen_count');
+            // return $hadirMax;
+            $hadirlist = DB::table('absensiguru')
+                         ->select(DB::raw('count(*) as absen_count'))
+                         ->where([
+                            ['absen', '=', 'hadir'],
+                            ['nip', '=', $nip->nip]
+                        ])
+                         // ->groupBy('status')
+                         ->value('absen_count');
+            $hadirPersen = ($hadirlist/$hadirMax)*100; 
+        }
+        else{
+            $hadirPersen = 0;
+        }
+
+        return view('admin.guru.show', ['guru' => $nip], ['hadirPersen' => $hadirPersen]);
     }
     
     public function create()

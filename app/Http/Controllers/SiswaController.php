@@ -157,17 +157,26 @@ class SiswaController extends Controller
         ->where('siswa.nis', $nis)
         ->get(); 
 
-        $hadirMax = DB::table('absensi_siswa_sekolah')
-                     ->select(DB::raw('count(*) as absen_count'))
-                     ->value('absen_count');;
-        $hadirlist = DB::table('absensi_siswa_sekolah')
-                     ->select(DB::raw('count(*) as absen_count'))
-                     ->where('absen', '=', 'hadir')
-                     // ->groupBy('status')
-                     ->value('absen_count');
-        $hadirPersen = ($hadirlist/$hadirMax)*100;
-        // return $hadirPersen."%";
-   
+        if((DB::table('absensi_siswa_sekolah')->select(DB::raw('count(*) as absen_count'))->where('nis','=',$nis)->value('absen_count'))>0){
+
+            $hadirMax = DB::table('absensi_siswa_sekolah')
+                         ->select(DB::raw('count(*) as absen_count'))
+                         ->where('nis','=',$nis)
+                         ->value('absen_count');
+            // return $hadirMax;
+            $hadirlist = DB::table('absensi_siswa_sekolah')
+                         ->select(DB::raw('count(*) as absen_count'))
+                         ->where([
+                            ['absen', '=', 'hadir'],
+                            ['nis', '=', $nis]
+                        ])
+                         // ->groupBy('status')
+                         ->value('absen_count');
+            $hadirPersen = ($hadirlist/$hadirMax)*100;
+        }
+        else{
+           $hadirPersen = 0; 
+        }
        return view('admin.siswa.show',['users'=>$users],['hadirPersen'=>$hadirPersen]);
 
     }

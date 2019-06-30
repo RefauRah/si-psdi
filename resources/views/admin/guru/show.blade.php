@@ -90,6 +90,11 @@
                     <td>{{$guru->jumlah_kel}}</td>   
                 </tr>
 
+                <tr>
+                    <th>Persentase Hadir</th>
+                    <td>{{$hadirPersen}}%</td>
+                </tr>
+
                 </tbody>
                 <tfoot>
                 <tr>
