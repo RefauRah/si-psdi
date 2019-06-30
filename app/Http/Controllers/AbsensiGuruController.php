@@ -37,14 +37,14 @@ class AbsensiGuruController extends Controller
 
 			$nip = request('nip');
 			date_default_timezone_set("Asia/Bangkok");
-			$tgl_absen = date("Y-m-d")." ".date("H:i:s");
+			// $tgl_absen = date("Y-m-d")." ".date("H:i:s");
 
 			for ( $i=0; $i< $counter; $i++) {
 			    $guru = new AbsensiGuru;
 				$guru->nip = $nip[$i];
 		        $guru->absen = request('absen');
 		        $guru->keterangan = request('keterangan');
-		        $guru->tgl_absen = $tgl_absen;
+		        $guru->tgl_absen = request('tgl_absen');
 		        $guru->save();
 			}   
 

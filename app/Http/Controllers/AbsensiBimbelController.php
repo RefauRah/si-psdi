@@ -43,7 +43,7 @@ public function index()
 			$nis = request('nis');
 			// return $nis;
 			date_default_timezone_set("Asia/Bangkok");
-			$tgl_absen = date("Y-m-d")." ".date("H:i:s");
+			// $tgl_absen = date("Y-m-d")." ".date("H:i:s");
 
 			for ( $i=0; $i< $counter; $i++) {
 			    $siswa = new AbsensiBimbel;
@@ -52,7 +52,7 @@ public function index()
 				$siswa->pertemuan = request('pertemuan');
 		        $siswa->absen = request('absen');
 		        $siswa->keterangan = request('keterangan');
-		        $siswa->tgl_absen = $tgl_absen;
+		        $siswa->tgl_absen = request('tgl_absen');
 		        $siswa->save();
 			}   
 

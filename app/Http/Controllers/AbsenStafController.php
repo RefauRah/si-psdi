@@ -37,14 +37,14 @@ class AbsenStafController extends Controller
 
 			$nip_staf = request('nip_staf');
 			date_default_timezone_set("Asia/Bangkok");
-			$tgl_absen_staf = date("Y-m-d")." ".date("H:i:s");
+			// $tgl_absen_staf = date("Y-m-d")." ".date("H:i:s");
 
 			for ( $i=0; $i< $counter; $i++) {
 			    $staf = new AbsenStaf;
 				$staf->nip_staf = $nip_staf[$i];
 		        $staf->absen_staf = request('absen_staf');
 		        $staf->keterangan_staf = request('keterangan_staf');
-		        $staf->tgl_absen_staf = $tgl_absen_staf;
+		        $staf->tgl_absen_staf = request('tgl_absen');
 		        $staf->save();
 			}   
 
