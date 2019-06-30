@@ -10,10 +10,10 @@
 <script type="text/javascript">
       window.onload = function()
     {
-        var pengajianBefore = sessionStorage.getItem('searchPascaMubaligh');
-        if(pengajianBefore != null){ 
-            // alert(pengajianBefore);
-            document.getElementById("searchPascaMubaligh").value = pengajianBefore; 
+        var pascamubalighBefore = sessionStorage.getItem('searchPascaMubaligh');
+        if(pascamubalighBefore != null){ 
+            // alert(pascamubalighBefore);
+            document.getElementById("searchPascaMubaligh").value = pascamubalighBefore; 
         }
         var userid = Number($('#searchPascaMubaligh').val().trim());
         if(userid > 0){
@@ -36,7 +36,7 @@
       </ol>
 </section>
 <section class="content">
- <form class="" method="post" action="/absensiswapengajian">
+ <form class="" method="post" action="/absenpascamubaligh">
     @csrf
     <div class="col-xs-12">
         <div class="box">
