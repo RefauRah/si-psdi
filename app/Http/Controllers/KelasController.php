@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Kelas;
 use App\SiswaModel;
 use DB;
+use PDF;
 
 class KelasController extends Controller
 {
@@ -103,5 +104,27 @@ class KelasController extends Controller
         \Session::flash('flash_message','successfully saved.');
 
         return redirect('/kelas');
+    }
+    public function cetak_pdf()
+    {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        $kelas= Kelas::all();
+
+        $gpdf = PDF::loadview('admin/kelas/kelasPDF',['kelas'=>$kelas]);
+        return $gpdf->download('daftar-kelas-'.date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
 }

@@ -25,7 +25,6 @@
                     <th>NIP</th>
                     <th>Nama Guru</th>
                     <th>Nama Kelas</th>
-                    <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,9 +36,7 @@
                     <td>{{ $row->nip}}</td>
                     <td>{{ $row->nama}}</td>
                     <td>{{ $row->id_kelas}}</td>
-                    <td>
-                        <a href="{{url('/walikelas/hapus/'.$row->nip)}}" class="btn btn-sm btn-danger">Hapus</a>
-                    </td>
+                   
                     <?php $nomer++; ?>
                 </tr>
                 @endforeach
@@ -50,7 +47,6 @@
                     <th>NIP</th>
                     <th>Nama Guru</th>
                     <th>Nama Kelas</th>
-                    <th>Option</th>
                 </tr>
                 </tfoot>
                 </table>
@@ -60,6 +56,7 @@
                 <a href="{{url('/walikelas/tambah')}}" class="btn btn-sm btn-success pull-right">
                     <i class="fa fa-plus"></i> Tambah
                 </a>
+                <a href="/walikelas/cetak_pdf" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-print"></i> CETAK PDF</a>
             </div>
         </div>
     </div>

@@ -68,4 +68,14 @@ class AbsensiPascaMubalighController extends Controller
 	        return redirect()->back();
 		}
     }
+
+    public function show()
+    {
+     	$users = DB::table('absensi_pascamubaligh')
+		->join('siswa', 'absensi_pascamubaligh.nis', '=', 'siswa.nis')
+		->select('absensi_pascamubaligh.*', 'siswa.nama_siswa')
+		->get();
+   
+       return view('admin.absensi.laporanPascaMubaligh',['users'=>$users]);
+    }
 }

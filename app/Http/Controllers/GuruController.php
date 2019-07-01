@@ -132,10 +132,16 @@ class GuruController extends Controller
         $guru->boarding = request('boarding');
         $guru->status_nikah = request('status_nikah');
         $guru->jumlah_kel = request('jumlah_kel');
+        // if(!is_null($request->file('image'))){
+        //     $file = $request->file('image')->store('public/files/guru');
+        //     $filename = $request->file('image')->hashName();
+        //     $format = $request->file('image')->getClientOriginalExtension();
+        //     $guru->image = $filename;
+        // }
         if(!is_null($request->file('image'))){
-            $file = $request->file('image')->store('public/files/guru');
             $filename = $request->file('image')->hashName();
             $format = $request->file('image')->getClientOriginalExtension();
+            $file = $request->file('image')->move('images/file',$filename);
             $guru->image = $filename;
         }
 
@@ -153,14 +159,7 @@ class GuruController extends Controller
 
     public function edit ($nip)
     {
-/*      
-        $useredit = DB::select('select * from siswa where nis = ?',[$nis]);  
-
-
-        return view('admin.siswa.edit',['useredit'=>$useredit]);
-*/
-
-       
+      
        $guru = DB::table('guru')
         ->where('nip', $nip)
         ->get(); 

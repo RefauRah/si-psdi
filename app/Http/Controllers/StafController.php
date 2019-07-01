@@ -132,10 +132,16 @@ class StafController extends Controller
         $staf->boarding_staf = request('boarding_staf');
         $staf->status_nikah_staf = request('status_nikah_staf');
         $staf->jumlah_kel_staf = request('jumlah_kel_staf');
+        // if(!is_null($request->file('image'))){
+        //     $file = $request->file('image')->store('public/files/staf');
+        //     $filename = $request->file('image')->hashName();
+        //     $format = $request->file('image')->getClientOriginalExtension();
+        //     $staf->image = $filename;
+        // }
         if(!is_null($request->file('image'))){
-            $file = $request->file('image')->store('public/files/staf');
             $filename = $request->file('image')->hashName();
             $format = $request->file('image')->getClientOriginalExtension();
+            $file = $request->file('image')->move('images/file',$filename);
             $staf->image = $filename;
         }
 

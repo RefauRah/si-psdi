@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Guru;
 use App\Kelas;
 use DB;
+use PDF;
 
 class WaliKelasController extends Controller
 {
@@ -47,5 +48,28 @@ class WaliKelasController extends Controller
         
     // alihkan halaman ke halaman guru
         return redirect('/walikelas');
+    }
+
+    public function cetak_pdf()
+    {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        $guru= Guru::all();
+
+        $gpdf = PDF::loadview('admin/wali_kelas/wali_kelasPDF',['guru'=>$guru]);
+        return $gpdf->download('daftar-walikelas-'.date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
 }

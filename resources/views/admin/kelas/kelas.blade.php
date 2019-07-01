@@ -73,6 +73,7 @@
                 <a href="{{route('anggota')}}" class="btn btn-sm btn-success pull-right">
                     <i class="fa fa-plus"></i> Tambah Anggota Kelas
                 </a>
+                <a href="/kelas/cetak_pdf" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-print"></i> CETAK PDF</a>
             </div>
         </div>
     </div>

@@ -157,7 +157,8 @@
         <li><a href="{{url('/absenstaf/laporanAbsensiStaf')}}"><i class="fa fa-circle-o"></i> Staff</a></li>
         <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li> -->
         <li><a href="/laporansiswasekolah"><i class="fa fa-circle-o"></i> Siswa Sekolah</a></li>
-        <li><a href="/laporansiswapengajian"><i class="fa fa-circle-o"></i> Siswa Pengajian</a></li>
+        <li><a href="/absenpascamubaligh/LaporanPascaMubaligh"><i class="fa fa-circle-o"></i> Pasca Mubaligh</a></li>
+        <li><a href="/absenpramubaligh/LaporanPraMubaligh"><i class="fa fa-circle-o"></i> Pra Mubaligh</a></li>
         </ul>
     </li>
     </ul>

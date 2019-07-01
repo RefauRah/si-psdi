@@ -88,17 +88,6 @@
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label for="inputKelas" class="col-sm-2">Kelas</label>
-
-                  <div class="col-sm-10">
-                    <select name="id_kelas" id="inputKelas">
-                    @foreach ($kelas as $row)
-                    <option value="{{$row->id}}">{{$row->kode_kelas}} - {{$row->nama}}</option>
-                    @endforeach
-                    </select>
-                  </div>
-                </div>
 
 
                 <!-- <div class="form-group">
