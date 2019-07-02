@@ -51,8 +51,17 @@ class KelasController extends Controller
             abort(403,"Sorry, You can't access here");
         }
         $kelas = DB::select('select * from kelas where id = ?', [$id]);
-        $siswa = DB::select('select * from siswa where id_kelas = ?', [$id]);
-        // return $kelas;
+        if((DB::table('kelas')->where('id','=',$id)->value('jenis_kelas'))=='Reguler')
+            $siswa = DB::select('select * from siswa where id_kelas = ?', [$id]);
+        else if((DB::table('kelas')->where('id','=',$id)->value('jenis_kelas'))=='Pascamubaligh')
+            $siswa = DB::select('select * from siswa where id_pascamubaligh = ?', [$id]);
+        else if((DB::table('kelas')->where('id','=',$id)->value('jenis_kelas'))=='Pramubaligh')
+            $siswa = DB::select('select * from siswa where id_pramubaligh = ?', [$id]);
+        else if((DB::table('kelas')->where('id','=',$id)->value('jenis_kelas'))=='Bimbel')
+            $siswa = DB::select('select * from siswa where id_bimbel = ?', [$id]);
+        else if((DB::table('kelas')->where('id','=',$id)->value('jenis_kelas'))=='Pesantren')
+            $siswa = DB::select('select * from siswa where id_pesantren = ?', [$id]);
+        // return $test;
         return view('admin.kelas.show', ['kelas' => $kelas], ['siswa' => $siswa]);
     }
     
