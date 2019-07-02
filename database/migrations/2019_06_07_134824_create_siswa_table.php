@@ -14,17 +14,23 @@ class CreateSiswaTable extends Migration
     public function up()
     {
         Schema::create('siswa', function (Blueprint $table) {
-            $table->bigIncrements('id_siswa');
-            $table->string('nik',100);
-            $table->string('nama',100);
-            $table->string('email',100);
+            // $table->bigIncrements('id_siswa');
+            $table->bigInteger('nis',20);
+            $table->bigInteger('id_kelas')->unsigned()->nullable();
+            $table->bigInteger('id_pramubaligh')->unsigned()->nullable();
+            $table->bigInteger('id_pascamubaligh')->unsigned()->nullable();
+            $table->bigInteger('id_bimbel')->unsigned()->nullable();
+            $table->bigInteger('id_pesantren')->unsigned()->nullable();
+            $table->string('nama_siswa',100);
+            $table->string('email',50);
             $table->date('tgl_lahir');
-            $table->string('tmpt_lahir',100);
-            $table->string('jk',20);
+            $table->string('tmpt_lahir',20);
+            $table->string('jk_siswa',20);
             $table->text('image')->nullable();
-            $table->string('alamat',100);
+            $table->string('alamat_siswa',100);
             $table->string('no_telp',20);
-            // $table->string('id_kelas',10);
+            // $table->string('ortu',100);
+            // $table->string('emailortu',50);
             $table->timestamps();
         });
     }

@@ -28,6 +28,10 @@
                         <i class="fas fa-users"></i>Guru</a>
                 </li>
                 <li>
+                    <a href="{{url('/staf')}}">
+                        <i class="fas fa-users"></i>Staff</a>
+                </li>
+                <li>
                     <a href="{{url('/siswa')}}">
                         <i class="fas fa-users"></i>Siswa</a>
                 </li>
@@ -35,11 +39,11 @@
                     <a href="{{url('/kelas')}}">
                         <i class="fas fa-sitemap"></i>Kelas</a>
                 </li>
-           
                 <li>
-                    <a href="{{url('/mapel')}}">
-                        <i class="fas fa-book"></i>Mata Pelajaran</a>
+                    <a href="{{url('/walikelas')}}">
+                        <i class="fas fa-user"></i>Wali Kelas</a>
                 </li>
+           
                 <li>
                     <a href="#" class="text-center">Data Absensi</a>
                 </li>

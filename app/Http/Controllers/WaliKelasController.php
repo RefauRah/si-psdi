@@ -4,42 +4,72 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-use App\WaliKelas;
+use App\Http\Requests;
+use App\Guru;
+use App\Kelas;
 use DB;
+use PDF;
 
 class WaliKelasController extends Controller
 {
+    
     public function index()
     {
-        // $walikelas = WaliKelas::all();
-        $walikelas = WaliKelas::with('guru', 'kelas')->get();
-        // return $walikelas;
-        // Fare::find($id)->with('payment')->get()
-        return view('admin.wali_kelas.wali_kelas', ['walikelas' => $walikelas]);
-    }
-    
-    // public function show(Guru $id)
-    // {
-    //     return view('admin.wali_kelas.show', ['walikelas' => $id]);
-    // }
-    
-    public function create()
-    {
-    	$guru = DB::table('guru')->get();
-    	$kelas = DB::table('kelas')->get();
-        return view('admin.wali_kelas.create', ['guru' => $guru], ['kelas' => $kelas]);
+        
+        $guru = Guru::all();
+        return view('admin/wali_kelas/wali_kelas', ['guru' => $guru]);
     }
 
-    public function store()
+    public function tambah()
     {
-        $walikelas = new WaliKelas;
-        $walikelas->id_guru = request('id_guru');
-        $walikelas->id_kelas = request('id_kelas');
-        $walikelas->save();
+        $guru = DB::table('guru')->get();
+        $kelas = DB::table('kelas')->get();
 
-        // \Session::flash('flash_message','successfully saved.');
+        return view('/admin/wali_kelas/create', ['guru' => $guru],['kelas'=>$kelas]);
+    }
 
+    public function update(Request $request)
+    {
+
+        DB::table('guru')->where('nip',$request->nip)->update([
+        'id_kelas' => $request->id_kelas
+        
+        ]);
+
+
+         return redirect('/walikelas');
+    }
+
+     public function hapus($guru)
+    {
+        DB::table('guru')->where('nip',$guru)->update([
+        'id_kelas' =>''
+        ]);
+        
+    // alihkan halaman ke halaman guru
         return redirect('/walikelas');
+    }
+
+    public function cetak_pdf()
+    {
+        if(\Gate::allows('isPasca_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isPesantren')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isBimbel')){
+            abort(403,"Sorry, You can't access here");
+        }
+        elseif(\Gate::allows('isSmarter')){
+            abort(403,"Sorry, You can't access here");
+        }
+         elseif(\Gate::allows('isPra_mubaligh')){
+            abort(403,"Sorry, You can't access here");
+        }
+        $guru= Guru::all();
+
+        $gpdf = PDF::loadview('admin/wali_kelas/wali_kelasPDF',['guru'=>$guru]);
+        return $gpdf->download('daftar-walikelas-'.date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
 }

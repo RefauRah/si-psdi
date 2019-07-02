@@ -17,4 +17,14 @@ class Kelas extends Model
 	{
     	return $this->hasOne('App\WaliKelas', 'id_kelas', 'id');
 	}
+
+	public function siswa()
+	{
+    	return $this->hasOne('App\SiswaModel', 'id_kelas', 'id');
+	}
+
+    public function guru()
+    {
+        return $this->hasOne('App\SiswaModel', 'id_kelas', 'id');
+    }
 }

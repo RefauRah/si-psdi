@@ -8,9 +8,11 @@ class Guru extends Model
 {
     //
     public $table = 'guru';
+    protected $primaryKey = 'nip';
 
         protected $fillable = [
     	'nip',
+        'id_kelas',
     	'nama',
     	'email',
     	'alamat',
@@ -22,12 +24,18 @@ class Guru extends Model
         'jabatan',
         'boarding',
         'status_nikah',
-        'jumlah_kel'
+        'jumlah_kel',
+        'image'
     ];
 
     public function waliKelas()
+	{
+    	return $this->hasOne('App\WaliKelas', 'id_guru', 'nip');
+    	// return $this->hasOne('App\UserProfile', 'profile_user_id', 'user_id');
+	}
+
+    public function kelas()
     {
-        return $this->hasOne('App\WaliKelas', 'id_guru', 'id');
-        // return $this->hasOne('App\UserProfile', 'profile_user_id', 'user_id');
+        return $this->belongsTo('App\Kelas', 'id_kelas', 'id');
     }
 }

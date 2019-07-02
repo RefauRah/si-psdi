@@ -1,100 +1,73 @@
 @extends('admin.template.base')
 @section('content')
-<link rel="stylesheet" type="text/css" href="css/StyleLaporan.css">
+<section class="content-header">
+      <h1>
+        Tabel
+        <small>Absensi Guru</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Absensi</li>
+      </ol>
+</section>
 <section class="content">
-    <div class="card">
-        <div class="card-header">
-            <h3>Tabel
-                <small>Laporan Absensi Sekolah</small>
-            </h3>
-        </div>
-        <div class="card-body">
-            <div class="container">      
-            <form class="form-horizontal">
-                <div class="row form-group">
-                    <div class="col col-sm-1">
-                        <label for="kelas" class=" form-control-label">Kelas</label>
+    <form class="" method="post" action="/absenguru">
+    @csrf
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="col col-sm-1">
+                        <label>Tanggal</label>
                     </div>
-                    <div class="col col-sm-3">
-                        <input type="text" id="input-normal" name="input-normal" class="form-control">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type="date" class="form-control" style="width:17%" name="tgl_absen" required>
                     </div>
-                </div>     
-            </form>     
+                <!-- /.input group -->
             </div>
-            <!-- Tabel -->
-            <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                <div class="table-conteiner fl-tables" data-pattern="priority-columns">
-                <table class="table table-bordered table-hover table-data3 table-wrapper">
+<!-- /.box-header -->
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th rowspan="3" class="text-center">NO</th>
-                    <th rowspan="3" class="text-center">NIS</th>
-                    <th rowspan="3" class="text-center">Nama</th>
-                    <th rowspan="3" class="text-center">Jenis Kelamin</th>
-                    <th colspan="3" class="text-left">Tgl: </th>
-                    <th colspan="3" class="text-left">Tgl: </th>
-                    <th colspan="3" class="text-left">Tgl: </th>
-                    <th colspan="3" class="text-left">Tgl: </th>
-                    <th colspan="3" class="text-left">Tgl: </th>
-                    <th rowspan="3" class="text-center">Keterangan</th>
+                    <th>NO</th>
+                    <th>NIS</th>
+                    <th>Nama</th>
+                    <th>Status Absen</th>
+                    <th>Pertemuan</th>
+                    <th>Kelas</th>
+                    <th>Tanggal/date</th>
+                    <th>Keterangan</th>
                 </tr>
+                </thead>
+                <tbody>
+                <?php $nomer = 1; ?>
+                @foreach ($siswaSekolah as $pasca)
                 <tr>
-                    <th colspan="3" class="text-center">Sesi</th>
-                    <th colspan="3" class="text-center">Sesi</th>
-                    <th colspan="3" class="text-center">Sesi</th>
-                    <th colspan="3" class="text-center">Sesi</th>
-                    <th colspan="3" class="text-center">Sesi</th>
+                    <td>{{$nomer}}</td>
+                    <td>{{ $pasca->nis}}</td>
+                    <td>{{ $pasca->nama_siswa}}</td>
+                    <td>{{ $pasca->absen}}</td>
+                    <td>{{ $pasca->pertemuan}}</td>
+                    <td>{{ $pasca->kode_kelas}} - {{ $pasca->nama}} </td>
+                    <td>{{ $pasca->tgl_absen}}</td>
+                    <td>{{ $pasca->keterangan}}</td>
+            
+                <?php $nomer++; ?>
                 </tr>
-                <tr>
-                    <th class="text-center">2</th>
-                    <th class="text-center">3</th>
-                    <th class="text-center">4</th>
-                    <th class="text-center">2</th>
-                    <th class="text-center">3</th>
-                    <th class="text-center">4</th>
-                    <th class="text-center">2</th>
-                    <th class="text-center">3</th>
-                    <th class="text-center">4</th>
-                    <th class="text-center">2</th>
-                    <th class="text-center">3</th>
-                    <th class="text-center">4</th>
-                    <th class="text-center">2</th>
-                    <th class="text-center">3</th>
-                    <th class="text-center">4</th>
-                </tr>
-          </thead>
-          <tbody>
-                <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-            </tbody>
-          </table>
-      </div>
+                @endforeach
+                </tfoot>
+
+                </table>
+            </div>
+<!-- /.box-body -->
+            <div class="box-footer">
+                <a href="#" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-print"></i> CETAK PDF</a>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
-</div>
+</form>
 </section>
 @endsection

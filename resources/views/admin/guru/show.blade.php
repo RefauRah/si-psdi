@@ -3,16 +3,19 @@
 @if(Session::has('flash_message'))
     <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
 @endif
-
 <section class="content mt-4">
-    <div class="col-md-12 offset-md-0.1">
-        <div class="card">
-            <div class="card-header">
-                <h3>Profil Guru PSDI</h3>
-            </div>
-<!-- /.box-header ALTER TABLE `guru` AUTO_INCREMENT = 0;-->
-            <div class="card-body">
-                <table class="table table-bordered table-striped">
+<div class="col-md-12 offset-md-0.1">
+  <div class="card">
+      <div class="card-header">Profile Guru</div>
+      <div class="card-body card-block">
+          <div class="col-md-4" style="margin:20px 0px 20px">
+                    @if(is_null($guru->image))
+                        <img src="{{ asset('images/default.png') }}" alt="Profile" class="img-thumbnail img-fluid" style="height: 100px">
+                    @else
+                        <img class="img-fluid img-thumbnail" style="height: 100px"  src="{{asset('storage/files/guru/'.$guru->image)}}" alt="Profile">
+                    @endif
+                </div> 
+                <table class="table table-bordered table-striped" style="margin: 20px 0px 20px">
                 <thead>
                 </thead>
                 <tbody>
@@ -72,18 +75,23 @@
                     <td>{{$guru->jumlah_kel}}</td>   
                 </tr>
 
+                <tr>
+                    <th>Persentase Hadir</th>
+                    <td>{{$hadirPersen}}%</td>
+                </tr>
+
                 </tbody>
                 <tfoot>
                 <tr>
                 </tfoot>
                 </table>
-            </div>
-<!-- /.box-body -->
-<div class="button" style="margin-left:10px;margin-right:10px;padding-bottom:10px;">
-            <a href="#" class="btn btn-success pull-right">Edit</a>
-            <a href="{{url('/guru')}}" class="btn btn-primary">Kembali</a>
+                <div class="form-actions form-group">
+                  <a href="{{route('guru/cetak_profil_pdf', $guru->nip)}}" class="btn btn-primary" style="margin:0px 10px" target="_blank">CETAK PDF</a>
+                  <a href="#" class="btn btn-success">Edit</a>
+                  <button type="button" onclick="history.back();" class="btn btn-danger pull-right">Kembali</button>
+              </div>
+      </div>
+  </div>
 </div>
-        </div>
-    </div>
 </section>
 @endsection

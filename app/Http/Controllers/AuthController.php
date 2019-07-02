@@ -41,7 +41,9 @@ class AuthController extends Controller
     		'name'=>$request->name,
     		'username' =>$request->username,
     		'email'=>$request->email,
+            'user_type'=>$request->user_type,
     		'password'=>bcrypt ($request->password)
+
     	]);
 
     	return redirect()->back();
@@ -53,5 +55,9 @@ class AuthController extends Controller
 
     		return redirect()->route('login');
     	}
+
+        // if(!\Gate::allows('isSuper_admin')){
+        //     abort(403,"Sorry, You can't access here");
+        // }
     
 }

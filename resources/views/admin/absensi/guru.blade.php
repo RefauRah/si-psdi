@@ -6,49 +6,71 @@
 @if(Session::has('flash_message_fail'))
     <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
 @endif
-
-<div class="container py-4">
-    <div class="card bg-light">
-        <div class="card-header">
-            <h4>Absensi Guru</h4>
-        </div>
-        <div class="card-body">
-            <form class="" method="post" action="/absenguru">
-                @csrf
-                <label for="tanggal">Tanggal</label>
-                <div class="col-sm-3">
-                    <div class="input-group mb-2" id="tanggal">
+<section class="content-header">
+      <h1>
+        Tabel
+        <small>Absensi Guru</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Absensi</li>
+      </ol>
+</section>
+<section class="content">
+    <form class="" method="post" action="/absenguru">
+    @csrf
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="col col-sm-1">
+                        <label>Tanggal</label>
+                    </div>
+                    <div class="input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="date" class="form-control" name="tgl_absen" required>
+                        <input type="date" class="form-control" style="width:17%" name="tgl_absen" required>
                     </div>
-                </div>
-                <table class="table table-striped table-bordered data">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>NIP</th>			
-                            <th>Nama</th>
-                            <th>Pilih</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php $nomer = 1; ?>
-                    <?php $getid = array(); ?>
-                    @foreach ($guru as $row)
-                    <tr>
-                        <td>{{$nomer}}</td>
-                        <td>{{ $row->nip}}</td>
-                        <td>{{ $row->nama}}</td>
-                        <td class="text-center"><input type = "checkbox" name = "id_guru[]" value = "{{$getid[$nomer]}}"/></td>
-                        <?php $nomer++; ?>
-                    </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                <!-- /.input group -->
+            </div>
+<!-- /.box-header -->
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>NIP</th>
+                    <th>Nama</th>
+                    <th>Pilih</th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                <?php $nomer = 1; ?>
+                <?php $getid = array(); ?>
+                @foreach ($guru as $row)
+                <tr>
+                <?php $getid[$nomer] = $row->nip; ?>
+                    <td>{{$nomer}}</td>
+                    <td>{{$row->nip}}</td>
+                    <td>{{$row->nama}}</td>
+                    <td><input type = "checkbox" name = "nip[]" value = "{{$getid[$nomer]}}"/></td>
+                <?php $nomer++; ?>
+                </tr>
+                @endforeach
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>NO</th>
+                    <th>NIP</th>
+                    <th>Nama</th>
+                    <th>Pilih</th>
+                </tr>
+                </tfoot>
 
-                <table class="table table-striped table-bordered mt-4">
+                </table>
+                <br>
+                <table class="table table-bordered table-striped">
                     <tr>
                         <th>Hadir</th>
                         <th>Sakit</th>
@@ -64,12 +86,14 @@
                         <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
                     </tr>
                 </table>
-                    <button type="submit"class="btn btn-primary btn-sm float-right mt-2">Submit</button>
-                    <a href="#" class="btn btn-danger btn-sm float-left mt-2">Back</a>
-            </form>
+            </div>
+<!-- /.box-body -->
+            <div class="box-footer">
+                <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>
+                <button type="submit" class="btn btn-info pull-right">Submit</button>
+              </div>
         </div>
     </div>
-</div>
-    
-
+</form>
+</section>
 @endsection
