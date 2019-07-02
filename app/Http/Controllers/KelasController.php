@@ -107,7 +107,6 @@ class KelasController extends Controller
         $kelas->kode_kelas = request('kode_kelas');
         $kelas->nama = request('nama');
         $kelas->jenis_kelas = request('jenis_kelas');
-        $kelas->prapasca = request('prapasca');
         $kelas->save();
 
         \Session::flash('flash_message','successfully saved.');

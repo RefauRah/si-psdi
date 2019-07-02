@@ -52,7 +52,7 @@
                     <td>{{ $siswa->alamat_siswa}}</td>
                     <td>
                     <a href="{{url('/siswa/hapus/'.$siswa->nis)}}" class="btn btn-sm btn-danger">Hapus</a>
-                    <a href="{{url('/siswa/edit/'.$siswa->nis)}}" class="btn btn-sm btn-primary">Edit</a> 
+                    <!-- <a href="{{url('/siswa/edit/'.$siswa->nis)}}" class="btn btn-sm btn-primary">Edit</a> --> 
                     <a href="{{url('/siswa/'.$siswa->nis)}}" class="btn btn-sm btn-info">Lihat Profil</a>
                     </td>
 

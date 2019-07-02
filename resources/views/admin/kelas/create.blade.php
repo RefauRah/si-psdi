@@ -28,7 +28,7 @@
               <div class="form-group">
                   <div class="input-group">
                       <label for="inputJenisKelas" class="col-sm-3">Jenis Kelas</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-5">
                       <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Reguler" checked>Reguler<br>
                       <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pramubaligh">Pra Mubaligh<br>
                       <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pascamubaligh">Pasca Mubaligh<br>

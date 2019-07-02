@@ -45,7 +45,7 @@
                 </li>
            
                 <li>
-                    <a href="#" class="text-center">Data Absensi</a>
+                    <a class="text-center">Data Absensi</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">

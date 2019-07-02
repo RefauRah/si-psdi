@@ -6,41 +6,20 @@
 @if(Session::has('flash_message_fail'))
     <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
 @endif
-<section class="content-header">
-      <h1>
-        Tabel
-        <small>Tambah Anggota Kelas</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Tambah Anggota Kelas</li>
-      </ol>
-</section>
-<section class="content">
-    <form class="" method="post" action="/kelas/anggota/tambahAnggota">
-    @csrf
-    <div class="col-xs-12">
-        <div class="box">
-            @foreach ($kelas as $row)
-                <h1>{{$row->kode_kelas}} - {{$row->nama}}</h1>
+<section class="content mt-4">
+<div class="col-md-12 offset-md-0.1">
+  <div class="card">
+      <div class="card-header">
+          @foreach ($kelas as $row)
+                <h3>{{$row->kode_kelas}} - {{$row->nama}}</h3>
                     <input type="hidden" name="id_kelas" value = "{{$row->id}}">
                     <input type="hidden" name="jenis_kelas" value = "{{$row->jenis_kelas}}">
             @endforeach
-            <!-- <div class="box-header">
-                <div class="col col-sm-1">
-                        <label>Tanggal</label>
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type="date" class="form-control" style="width:17%" name="tgl_absen" required>
-                    </div> -->
-                <!-- /.input group -->
-            <!-- </div> -->
-<!-- /.box-header -->
-            <div class="box-body">
-                <table id="example1" class="table table-bordered table-striped">
+      </div>
+      <div class="card-body card-block">
+          <form action="/kelas/anggota/tambahAnggota" method="post" class="">
+          @csrf
+              <table id="example1" class="table table-striped table-responsive table-bordered data">
                 <thead>
                 <tr>
                     <th>NO</th>
@@ -74,14 +53,13 @@
                 </tfoot>
 
                 </table>
-            </div>
-<!-- /.box-body -->
-            <div class="box-footer">
-                <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>
+              <div class="form-actions form-group" style="margin:20px">
+                  <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>
                 <button type="submit" class="btn btn-info pull-right">Submit</button>
               </div>
-        </div>
-    </div>
-</form>
+          </form>
+      </div>
+  </div>
+</div>
 </section>
 @endsection
