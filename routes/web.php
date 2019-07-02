@@ -137,9 +137,9 @@ Route::post('/absenpascamubaligh', 'AbsensiPascaMubalighController@store');
 Route::get('/absenpascamubaligh/getUsers/{id}','AbsensiPascaMubalighController@getUsers');
 Route::get('/absenpascamubaligh/LaporanPascaMubaligh','AbsensiPascaMubalighController@show');
 
-// Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
-// Route::post('/absenpesantren', 'AbsensiPesantrenController@store');
-// Route::get('/absenpesantren/getUsers/{id}','AbsensiPesantrenController@getUsers');
+Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
+Route::post('/absenpesantren', 'AbsensiPesantrenController@store');
+Route::get('/absenpesantren/getUsers/{id}','AbsensiPesantrenController@getUsers');
 
 Route::get('/absenstaf', 'AbsenStafController@index');
 Route::post('/absenstaf', 'AbsenStafController@store');

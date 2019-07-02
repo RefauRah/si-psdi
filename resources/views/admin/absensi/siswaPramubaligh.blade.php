@@ -36,7 +36,7 @@
       </ol>
 </section>
 <section class="content">
- <form class="" method="post" action="/absensiswapramubaligh">
+ <form class="" method="post" action="/absenpramubaligh">
     @csrf
     <div class="col-xs-12">
         <div class="box">

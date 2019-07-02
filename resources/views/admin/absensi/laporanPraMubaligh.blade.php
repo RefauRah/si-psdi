@@ -64,7 +64,7 @@
             </div>
 <!-- /.box-body -->
             <div class="box-footer">
-                <a href="#" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-print"></i> CETAK PDF</a>
+               <!--  <a href="#" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-print"></i> CETAK PDF</a> -->
             </div>
         </div>
     </div>
