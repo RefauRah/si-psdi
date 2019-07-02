@@ -127,6 +127,7 @@ Route::get('/absensiswasekolah/LaporanSiswaSekolah','AbsensiSiswaSekolahControll
 Route::get('/absenbimbel', 'AbsensiBimbelController@index');
 Route::post('/absenbimbel', 'AbsensiBimbelController@store');
 Route::get('/absenbimbel/getUsers/{id}','AbsensiBimbelController@getUsers');
+Route::get('/absenbimbel/LaporanBimbel','AbsensiBimbelController@show');
 
 Route::get('/absenpramubaligh', 'AbsensiPraMubalighController@index');
 Route::post('/absenpramubaligh', 'AbsensiPraMubalighController@store');

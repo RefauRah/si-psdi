@@ -156,9 +156,12 @@
         <li><a href="{{url('/absenguru/laporanAbsensiGuru')}}"><i class="fa fa-circle-o"></i> Guru</a></li>
         <li><a href="{{url('/absenstaf/laporanAbsensiStaf')}}"><i class="fa fa-circle-o"></i> Staff</a></li>
         <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Jam Mengajar</a></li> -->
-        <li><a href="absensiswasekolah/LaporanSiswaSekolah"><i class="fa fa-circle-o"></i> Siswa Sekolah</a></li>
+        <li><a href="/absensiswasekolah/LaporanSiswaSekolah"><i class="fa fa-circle-o"></i> Siswa Sekolah</a></li>
         <li><a href="/absenpascamubaligh/LaporanPascaMubaligh"><i class="fa fa-circle-o"></i> Pasca Mubaligh</a></li>
         <li><a href="/absenpramubaligh/LaporanPraMubaligh"><i class="fa fa-circle-o"></i> Pra Mubaligh</a></li>
+        <li><a href="/absenbimbel/LaporanBimbel"><i class="fa fa-circle-o"></i> Absen Bimbel</a></li>
+        <li><a href="/absenpramubaligh/LaporanPraMubaligh"><i class="fa fa-circle-o"></i> Pra Absen Pesantren</a></li>
+
         </ul>
     </li>
     </ul>

@@ -67,4 +67,14 @@ public function index()
 	        return redirect('/absenbimbel');
 		}
     }
+
+    public function show()
+    {
+     	$absenbimbel = DB::table('absensi_bimbel')
+		->join('siswa', 'absensi_bimbel.nis', '=', 'siswa.nis')
+		->select('absensi_bimbel.*', 'siswa.nama_siswa')
+		->get();
+   
+       return view('admin.absensi.LaporanBimbel',['absenbimbel'=>$absenbimbel]);
+    }
 }
