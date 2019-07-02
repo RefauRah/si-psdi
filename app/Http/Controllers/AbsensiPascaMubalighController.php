@@ -16,7 +16,7 @@ class AbsensiPascaMubalighController extends Controller
     {
         $siswa = SiswaModel::with('kelas')->get();
         // $kelas = DB::select("select * from kelas where jenis_kelas = 'PascaMubaligh'");
-        $kelas = DB::select("select * from kelas where jenis_kelas = 'Pascamubaligh'");
+        $kelas = DB::select("select * from kelas where jenis_kelas = 'Pascamubaligh'");/**/
 
         return view('/admin/absensi/siswaPascaMubaligh', ['siswa' => $siswa], ['kelas' => $kelas]);
     }

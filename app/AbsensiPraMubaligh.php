@@ -13,10 +13,10 @@ class AbsensiPraMubaligh extends Model
   public static function getuserData($id=0){
 
     if($id==0){
-      $value=DB::table('siswa')->orderBy('id_kelas', 'asc')->get(); 
+      $value=DB::table('siswa')->orderBy('id_pramubaligh', 'asc')->get(); 
     }else{
-      // $value=DB::table('siswa')->where('id_kelas', $id)->first();
-      $value=DB::table('siswa')->where('id_kelas', $id)->get();
+      // $value=DB::table('siswa')->where('id_pramubaligh', $id)->first();
+      $value=DB::table('siswa')->where('id_pramubaligh', $id)->get();
     }
     return $value;
   }

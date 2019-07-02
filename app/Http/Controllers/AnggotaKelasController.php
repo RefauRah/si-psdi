@@ -11,10 +11,11 @@ use DB;
 
 class AnggotaKelasController extends Controller
 {
-	public function index()
+	public function show($id)
 	{
 	    $siswa = DB::table('siswa')->get();
-	    $kelas = DB::table('kelas')->get();
+	    $kelas = DB::table('kelas')->where('id',$id)->get();
+	    return $kelas;
 
 	    return view('/admin/kelas/anggota', ['siswa' => $siswa],['kelas'=>$kelas]);
 	}

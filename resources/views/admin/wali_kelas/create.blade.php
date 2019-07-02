@@ -38,7 +38,7 @@
                 <br>
                 <table class="table table-bordered table-striped">
                   <tr>
-                    <label for="user_type" class="col-sm-2">Peran User</label>
+                    <label for="user_type" class="col-sm-2">Guru</label>
                     <div class="col-sm-10">
                     <select name="nip" id="guru" class="form-control">
                     @foreach ($guru as $row)
@@ -48,7 +48,7 @@
                     </div>
                 </tr>
                     <tr>
-                    <label for="user_type" class="col-sm-2">Peran User</label>
+                    <label for="user_type" class="col-sm-2">Kelas</label>
                     <div class="col-sm-10">
                     <select name="id_kelas" id="walikelas" class="form-control">
                     <option name="id_kelas" value="" required> </option>

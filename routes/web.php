@@ -85,10 +85,10 @@ Route::get('/kelas/show/{id}', 'KelasController@show')->middleware('auth')->name
 Route::get('/kelas/create', 'KelasController@create')->middleware('auth')->name('kelas');
 Route::post('/kelas/create', 'KelasController@store');
 Route::get ('/kelas/cetak_pdf', 'KelasController@cetak_pdf')->middleware('auth')->name('kelas/cetak_pdf');
+Route::get ('/kelas/anggota/{id}', 'KelasController@showAnggota')->middleware('auth')->name('showAnggota');
+Route::post ('/kelas/anggota/tambahAnggota', 'KelasController@updateAnggota')->middleware('auth');
 
 
-Route::get('/anggota', 'AnggotaKelasController@index')->middleware('auth')->name('anggota');
-Route::post('/tambahanggota', 'AnggotaKelasController@update')->middleware('auth')->name('tambahanggota');
 
 
 Route::get('/walikelas/tambah','WaliKelasController@tambah')->middleware('auth')->name('walikelas');
@@ -122,10 +122,12 @@ Route::get('/absenguru/laporanAbsensiGuru', 'AbsensiGuruController@show');
 Route::get('/absensiswasekolah', 'AbsensiSiswaSekolahController@index');
 Route::post('/absensiswasekolah', 'AbsensiSiswaSekolahController@store');
 Route::get('/absensiswasekolah/getUsers/{id}','AbsensiSiswaSekolahController@getUsers');
+Route::get('/absensiswasekolah/LaporanSiswaSekolah','AbsensiSiswaSekolahController@show');
 
 Route::get('/absenbimbel', 'AbsensiBimbelController@index');
 Route::post('/absenbimbel', 'AbsensiBimbelController@store');
 Route::get('/absenbimbel/getUsers/{id}','AbsensiBimbelController@getUsers');
+Route::get('/absenbimbel/LaporanBimbel','AbsensiBimbelController@show');
 
 Route::get('/absenpramubaligh', 'AbsensiPraMubalighController@index');
 Route::post('/absenpramubaligh', 'AbsensiPraMubalighController@store');
@@ -137,9 +139,14 @@ Route::post('/absenpascamubaligh', 'AbsensiPascaMubalighController@store');
 Route::get('/absenpascamubaligh/getUsers/{id}','AbsensiPascaMubalighController@getUsers');
 Route::get('/absenpascamubaligh/LaporanPascaMubaligh','AbsensiPascaMubalighController@show');
 
+
 Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
 Route::post('/absenpesantren', 'AbsensiPesantrenController@store');
 Route::get('/absenpesantren/getUsers/{id}','AbsensiPesantrenController@getUsers');
+
+// Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
+// Route::post('/absenpesantren', 'AbsensiPesantrenController@store');
+// Route::get('/absenpesantren/getUsers/{id}','AbsensiPesantrenController@getUsers');
 
 Route::get('/absenstaf', 'AbsenStafController@index');
 Route::post('/absenstaf', 'AbsenStafController@store');

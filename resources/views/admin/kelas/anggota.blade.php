@@ -17,10 +17,15 @@
       </ol>
 </section>
 <section class="content">
-    <form class="" method="post" action="/tambahanggota">
+    <form class="" method="post" action="/kelas/anggota/tambahAnggota">
     @csrf
     <div class="col-xs-12">
         <div class="box">
+            @foreach ($kelas as $row)
+                <h1>{{$row->kode_kelas}} - {{$row->nama}}</h1>
+                    <input type="hidden" name="id_kelas" value = "{{$row->id}}">
+                    <input type="hidden" name="jenis_kelas" value = "{{$row->jenis_kelas}}">
+            @endforeach
             <!-- <div class="box-header">
                 <div class="col col-sm-1">
                         <label>Tanggal</label>
@@ -68,15 +73,6 @@
                 </tr>
                 </tfoot>
 
-                </table>
-                <br>
-                <table class="table table-bordered table-striped">
-                    <tr>
-                    <select name="id_kelas" id="anggotakelas" class="form-control">
-                    @foreach ($kelas as $row)
-                        <option name="id_kelas" value="{{$row->id}}" required>{{$row->kode_kelas}} - {{$row->nama}}</option>
-                    @endforeach
-                    </tr>
                 </table>
             </div>
 <!-- /.box-body -->

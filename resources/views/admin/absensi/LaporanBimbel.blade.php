@@ -44,7 +44,7 @@
                 </thead>
                 <tbody>
                 <?php $nomer = 1; ?>
-                @foreach ($siswaSekolah as $pasca)
+                @foreach ($absenbimbel as $pasca)
                 <tr>
                     <td>{{$nomer}}</td>
                     <td>{{ $pasca->nis}}</td>

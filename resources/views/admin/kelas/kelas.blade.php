@@ -45,6 +45,7 @@
                     @endif
                     <td>
                         <a href="{{route('showKelas', $row->id)}}" class="btn btn-sm btn-primary">Daftar Siswa</a>
+                        <a href="{{route('showAnggota', $row->id)}}" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Tambah Anggota Kelas</a>
                     </td>
                     <?php $nomer++; ?>
                 </tr>
@@ -69,9 +70,6 @@
             <div class="box-footer">
                 <a href="{{url('/kelas/create')}}" class="btn btn-sm btn-success pull-right">
                     <i class="fa fa-plus"></i> Tambah
-                </a>
-                <a href="{{route('anggota')}}" class="btn btn-sm btn-success pull-right">
-                    <i class="fa fa-plus"></i> Tambah Anggota Kelas
                 </a>
                 <a href="/kelas/cetak_pdf" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-print"></i> CETAK PDF</a>
             </div>

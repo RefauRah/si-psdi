@@ -14,7 +14,7 @@ class AbsensiPesantrenController extends Controller
     public function index()
     {
         $siswa = SiswaModel::with('kelas')->get();
-        $kelas = DB::select("select * from kelas where jenis_kelas = 'Pesantren'");
+        $kelas = DB::select("select * from kelas where jenis_kelas = 'Pesantren'");/**/
 
         return view('/admin/absensi/pesantren', ['siswa' => $siswa], ['kelas' => $kelas]);
     }

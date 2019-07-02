@@ -19,7 +19,6 @@ class CreateKelasTable extends Migration
             $table->string('kode_kelas',100);
             $table->string('nama',100);
             $table->string('jenis_kelas', 100);
-            $table->string('prapasca')->nullable();
             $table->timestamps();
         });
     }

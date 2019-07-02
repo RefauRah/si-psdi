@@ -127,4 +127,46 @@ class KelasController extends Controller
         $gpdf = PDF::loadview('admin/kelas/kelasPDF',['kelas'=>$kelas]);
         return $gpdf->download('daftar-kelas-'.date("Y/m/d").':'.date("H/i/s").'.pdf');
     }
+
+        public function showAnggota($id)
+    {
+        $siswa = DB::table('siswa')->get();
+        $kelas = DB::table('kelas')->where('id',$id)->get();
+        // return $kelas;
+
+        return view('/admin/kelas/anggota', ['siswa' => $siswa],['kelas'=>$kelas]);
+    }
+
+        public function updateAnggota(Request $request)
+    {
+
+            // return $request->jenis_kelas;
+        if(request('jenis_kelas')=='Reguler'){
+            DB::table('siswa')->where('nis',$request->nis)->update([
+            'id_kelas' => $request->id_kelas
+            ]);
+        }
+        else if(request('jenis_kelas')=='Pramubaligh'){
+            DB::table('siswa')->where('nis',$request->nis)->update([
+            'id_pramubaligh' => $request->id_kelas
+            ]);
+        }
+        else if(request('jenis_kelas')=='Pascamubaligh'){
+            DB::table('siswa')->where('nis',$request->nis)->update([
+            'id_pascamubaligh' => $request->id_kelas
+            ]);
+        }
+        else if(request('jenis_kelas')=='Pesantren'){
+            DB::table('siswa')->where('nis',$request->nis)->update([
+            'id_pesantren' => $request->id_kelas
+            ]);
+        }
+        else if(request('jenis_kelas')=='Bimbel'){
+            DB::table('siswa')->where('nis',$request->nis)->update([
+            'id_bimbel' => $request->id_kelas
+            ]);
+        }
+
+         return redirect('/kelas');
+    }
 }

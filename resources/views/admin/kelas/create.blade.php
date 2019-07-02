@@ -46,7 +46,7 @@
                     <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pramubaligh">Pra Mubaligh<br>
                     <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pascamubaligh">Pasca Mubaligh<br>
                     <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Bimbel">Bimbel<br>
-                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Ekskul">Ekstrakulikuler
+                    <input name="jenis_kelas" type="radio" id="jenis_kelas" value="Pesantren">Pesantren
                   </div>
                 </div>
               </div>

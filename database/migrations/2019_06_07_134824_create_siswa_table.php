@@ -17,6 +17,10 @@ class CreateSiswaTable extends Migration
             // $table->bigIncrements('id_siswa');
             $table->bigInteger('nis',20);
             $table->bigInteger('id_kelas')->unsigned()->nullable();
+            $table->bigInteger('id_pramubaligh')->unsigned()->nullable();
+            $table->bigInteger('id_pascamubaligh')->unsigned()->nullable();
+            $table->bigInteger('id_bimbel')->unsigned()->nullable();
+            $table->bigInteger('id_pesantren')->unsigned()->nullable();
             $table->string('nama_siswa',100);
             $table->string('email',50);
             $table->date('tgl_lahir');
