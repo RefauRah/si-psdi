@@ -37,8 +37,8 @@
                     <th>Nama</th>
                     <th>Status Absen</th>
                     <th>Pertemuan</th>
-                    <th>Tanggal/date</th>
                     <th>Kelas</th>
+                    <th>Tanggal/date</th>
                     <th>Keterangan</th>
                 </tr>
                 </thead>
@@ -51,8 +51,8 @@
                     <td>{{ $pasca->nama_siswa}}</td>
                     <td>{{ $pasca->absen}}</td>
                     <td>{{ $pasca->pertemuan}}</td>
+                    <td>{{ $pasca->kode_kelas}} - {{ $pasca->nama}} </td>
                     <td>{{ $pasca->tgl_absen}}</td>
-                    <td>{{ $pasca->id_kelas}}</td>
                     <td>{{ $pasca->keterangan}}</td>
             
                 <?php $nomer++; ?>
