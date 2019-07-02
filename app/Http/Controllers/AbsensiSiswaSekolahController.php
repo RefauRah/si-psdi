@@ -66,4 +66,14 @@ class AbsensiSiswaSekolahController extends Controller
 	        return redirect()->back();
 		}
     }
+
+    public function show()
+    {
+     	$siswaSekolah = DB::table('absensi_siswa_sekolah')
+		->join('siswa', 'absensi_siswa_sekolah.nis', '=', 'siswa.nis')
+		->select('absensi_siswa_sekolah.*', 'siswa.nama_siswa')
+		->get();
+   
+       return view('admin.absensi.laporanSiswaSekolah',['siswaSekolah'=>$siswaSekolah]);
+    }
 }

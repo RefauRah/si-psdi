@@ -122,6 +122,7 @@ Route::get('/absenguru/laporanAbsensiGuru', 'AbsensiGuruController@show');
 Route::get('/absensiswasekolah', 'AbsensiSiswaSekolahController@index');
 Route::post('/absensiswasekolah', 'AbsensiSiswaSekolahController@store');
 Route::get('/absensiswasekolah/getUsers/{id}','AbsensiSiswaSekolahController@getUsers');
+Route::get('/absensiswasekolah/LaporanSiswaSekolah','AbsensiSiswaSekolahController@show');
 
 Route::get('/absenbimbel', 'AbsensiBimbelController@index');
 Route::post('/absenbimbel', 'AbsensiBimbelController@store');
@@ -136,6 +137,8 @@ Route::get('/absenpascamubaligh', 'AbsensiPascaMubalighController@index');
 Route::post('/absenpascamubaligh', 'AbsensiPascaMubalighController@store');
 Route::get('/absenpascamubaligh/getUsers/{id}','AbsensiPascaMubalighController@getUsers');
 Route::get('/absenpascamubaligh/LaporanPascaMubaligh','AbsensiPascaMubalighController@show');
+
+
 
 // Route::get('/absenpesantren', 'AbsensiPesantrenController@index');
 // Route::post('/absenpesantren', 'AbsensiPesantrenController@store');
