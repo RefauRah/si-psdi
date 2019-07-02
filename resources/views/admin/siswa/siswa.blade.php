@@ -50,8 +50,8 @@
                     @else
                         <td><img class="img-fluid" style="height: 50px"  src="{{asset('images/file/'.$siswa->image)}}"></td>
                     @endif
-                    <td>{{ $siswa->nama_siswa}}</a></td>
-                    
+                    <td>{{ $siswa->nama_siswa}}</td>
+                    <td>{{ $siswa-> kelas-> kode_kelas}} - {{ $siswa->kelas->nama}}</td>
                     <td>{{ $siswa->tmpt_lahir}}</td>
                     <td>{{ $siswa->tgl_lahir}}</td>
                     <td>{{ $siswa->jk_siswa}}</td>

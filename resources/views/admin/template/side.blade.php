@@ -138,7 +138,7 @@
                 <li><a href="/absenpramubaligh"><i class="fa fa-circle-o"></i>Absen Pra Mubaligh</a></li>
                 <li><a href="/absensiswasekolah"><i class="fa fa-circle-o"></i>Absen Sekolah</a></li>
                 <li><a href="/absenbimbel"><i class="fa fa-circle-o"></i>Absen Bimbel</a></li>
-                <li><a href="/absenpesantren"><i class="fa fa-circle-o"></i>Absen Pesantren</a></li>
+               
 
             </ul>
             </li>
@@ -160,7 +160,6 @@
         <li><a href="/absenpascamubaligh/LaporanPascaMubaligh"><i class="fa fa-circle-o"></i> Pasca Mubaligh</a></li>
         <li><a href="/absenpramubaligh/LaporanPraMubaligh"><i class="fa fa-circle-o"></i> Pra Mubaligh</a></li>
         <li><a href="/absenbimbel/LaporanBimbel"><i class="fa fa-circle-o"></i> Absen Bimbel</a></li>
-        <li><a href="/absenpramubaligh/LaporanPraMubaligh"><i class="fa fa-circle-o"></i> Pra Absen Pesantren</a></li>
 
         </ul>
     </li>

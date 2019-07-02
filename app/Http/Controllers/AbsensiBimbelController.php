@@ -72,9 +72,11 @@ public function index()
     {
      	$absenbimbel = DB::table('absensi_bimbel')
 		->join('siswa', 'absensi_bimbel.nis', '=', 'siswa.nis')
-		->select('absensi_bimbel.*', 'siswa.nama_siswa')
+		->join('kelas', 'kelas.id', '=', 'absensi_bimbel.id_kelas')
+		->select('absensi_bimbel.*', 'siswa.nama_siswa', 'kelas.kode_kelas', 'kelas.nama')
 		->get();
    
+
        return view('admin.absensi.LaporanBimbel',['absenbimbel'=>$absenbimbel]);
     }
 }
