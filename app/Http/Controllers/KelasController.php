@@ -150,30 +150,42 @@ class KelasController extends Controller
     {
 
             // return $request->jenis_kelas;
+        $counter = count(request('nis'));
+        $nis = request('nis');
         if(request('jenis_kelas')=='Reguler'){
-            DB::table('siswa')->where('nis',$request->nis)->update([
-            'id_kelas' => $request->id_kelas
-            ]);
+            for ( $i=0; $i< $counter; $i++) {
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_kelas' => $request->id_kelas
+                ]);
+            }
         }
         else if(request('jenis_kelas')=='Pramubaligh'){
-            DB::table('siswa')->where('nis',$request->nis)->update([
-            'id_pramubaligh' => $request->id_kelas
-            ]);
+            for ( $i=0; $i< $counter; $i++) {
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_pramubaligh' => $request->id_kelas
+                ]);
+            }
         }
         else if(request('jenis_kelas')=='Pascamubaligh'){
-            DB::table('siswa')->where('nis',$request->nis)->update([
-            'id_pascamubaligh' => $request->id_kelas
-            ]);
+            for ( $i=0; $i< $counter; $i++) {
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_pascamubaligh' => $request->id_kelas
+                ]);
+            }
         }
         else if(request('jenis_kelas')=='Pesantren'){
-            DB::table('siswa')->where('nis',$request->nis)->update([
-            'id_pesantren' => $request->id_kelas
-            ]);
+            for ( $i=0; $i< $counter; $i++) {
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_pesantren' => $request->id_kelas
+                ]);
+            }
         }
         else if(request('jenis_kelas')=='Bimbel'){
-            DB::table('siswa')->where('nis',$request->nis)->update([
-            'id_bimbel' => $request->id_kelas
-            ]);
+            for ( $i=0; $i< $counter; $i++) {    
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_bimbel' => $request->id_kelas
+                ]);
+            }
         }
 
          return redirect('/kelas');

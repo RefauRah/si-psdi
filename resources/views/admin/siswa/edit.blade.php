@@ -82,7 +82,7 @@
                 </tr>
 
 
-
+<!-- 
                 <tr>
                     <div class="form-group">
                         <th><label for="id_kelas">Kelas</label></th>
@@ -96,7 +96,7 @@
                         </div>
                      </div>
                 </tr>
-
+ -->
 
 
 
