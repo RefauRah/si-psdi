@@ -10,7 +10,7 @@
               <div class="form-group">
                   <div class="input-group">
                     <label for="inputNIP" class="col-sm-3">NIP</label>
-                    <input name="nip" type="text" class="form-control" id="inputNIP" required>
+                    <input name="nip" type="number" min="1" max="1000000000000000" class="form-control" id="inputNIP" required>
                       <div class="input-group-addon">
                           <i class="fa fa-archive"></i>
                       </div>

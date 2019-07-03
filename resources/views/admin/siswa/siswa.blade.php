@@ -24,42 +24,40 @@
                 </thead>
                 <tbody>
 
-                <?php $nomer = 1; ?>
-                
-                @foreach ($siswa as $siswa)
-                <tr>
-                    <td>{{$nomer}}</td>
+                    <?php $nomer = 1; ?>
+                    
+                    @foreach ($siswa as $siswa)
+                    <tr>
+                        <td>{{$nomer}}</td>
 
-                    <td>{{ $siswa->nis}}</td>
-                    @if(is_null($siswa->image))
+                        <td>{{ $siswa->nis}}</td>
+                        @if(is_null($siswa->image))
+                            <td>
+                                <img src="{{ asset('images/default.png') }}" style="height: 50px" class="img-fluid">
+                            </td>
+                        @else
+                            <td><img class="img-fluid" style="height: 50px"  src="{{asset('images/file/'.$siswa->image)}}"></td>
+                        @endif
+                        <td>{{ $siswa->nama_siswa}}</td>
+                        @if(!is_null($siswa->id_kelas))
+                            <td>{{ $siswa-> kelas-> kode_kelas}} - {{ $siswa->kelas->nama}}</td>
+                        @else
+                            <td> - </td>
+                        @endif
+                        <td>{{ $siswa->tmpt_lahir}}</td>
+                        <td>{{ $siswa->tgl_lahir}}</td>
+                        <td>{{ $siswa->jk_siswa}}</td>
+                        <td>{{ $siswa->alamat_siswa}}</td>
                         <td>
-                            <img src="{{ asset('images/default.png') }}" style="height: 50px" class="img-fluid">
+                        <a href="{{url('/siswa/hapus/'.$siswa->nis)}}" class="btn btn-sm btn-danger">Hapus</a>
+                        
+                        <a href="{{url('/siswa/'.$siswa->nis)}}" class="btn btn-sm btn-info">Lihat Profil</a>
                         </td>
-                    @else
-                        <td><img class="img-fluid" style="height: 50px"  src="{{asset('images/file/'.$siswa->image)}}"></td>
-                    @endif
-                    <td>{{ $siswa->nama_siswa}}</td>
-                    @if(!is_null($siswa->id_kelas)){
-                        <td>{{ $siswa-> kelas-> kode_kelas}} - {{ $siswa->kelas->nama}}</td>
-                    }
-                    @else{
-                        <td> - </td>
-                    }
-                    @endif
-                    <td>{{ $siswa->tmpt_lahir}}</td>
-                    <td>{{ $siswa->tgl_lahir}}</td>
-                    <td>{{ $siswa->jk_siswa}}</td>
-                    <td>{{ $siswa->alamat_siswa}}</td>
-                    <td>
-                    <a href="{{url('/siswa/hapus/'.$siswa->nis)}}" class="btn btn-sm btn-danger">Hapus</a>
-                    <!-- <a href="{{url('/siswa/edit/'.$siswa->nis)}}" class="btn btn-sm btn-primary">Edit</a> --> 
-                    <a href="{{url('/siswa/'.$siswa->nis)}}" class="btn btn-sm btn-info">Lihat Profil</a>
-                    </td>
 
-                    <?php $nomer++; ?>
-                </tr>
-                @endforeach
-              
+                        <?php $nomer++; ?>
+                    </tr>
+                    @endforeach
+                
                 </tbody>
                 <tfoot>
                 <tr>

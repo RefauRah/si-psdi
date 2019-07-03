@@ -19,7 +19,7 @@
       <div class="card-body card-block">
           <form action="/kelas/anggota/tambahAnggota" method="post" class="">
           @csrf
-              <table id="example1" class="table table-striped table-responsive table-bordered data">
+              <table id="example1" class="table table-striped table-bordered data">
                 <thead>
                 <tr>
                     <th>NO</th>

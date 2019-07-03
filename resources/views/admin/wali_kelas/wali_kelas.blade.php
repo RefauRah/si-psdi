@@ -6,7 +6,7 @@
         <h4>Data Guru</h4>
     </div>
     <div class="card-body">
-        <table class="table table-striped table-responsive table-bordered data">
+        <table class="table table-striped table-bordered data">
             <thead>
                 <tr>
                     <th>NO</th>

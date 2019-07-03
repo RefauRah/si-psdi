@@ -44,7 +44,7 @@
               </div>
               <div class="form-group">
                   <div class="input-group">
-                      <label for="inputEmail3" class="col-sm-3">Email Orang Tua</label>
+                      <label for="inputEmail3" class="col-sm-3">Email</label>
                       <input name='email'type="email" class="form-control" id="inputEmail3" required>
                       <div class="input-group-addon">
                           <i class="fa fa-envelope"></i>
@@ -80,7 +80,7 @@
               </div>
               <div class="form-group">
                   <div class="input-group">
-                      <label for="inputTlp" class="col-sm-3">No Tlp Orang Tua</label>
+                      <label for="inputTlp" class="col-sm-3">No Tlp</label>
                       <input name='no_telp'type="text" class="form-control" id="inputTlp" required>
                       <div class="input-group-addon">
                           <i class="fa fa-phone"></i>
@@ -88,15 +88,6 @@
                   </div>
               </div>
 
-              <div class="form-group">
-                  <div class="input-group">
-                      <label for="inputKel" class="col-sm-3">Jumlah Keluarga</label>
-                      <input name="jumlah_kel" type="text" class="form-control" id="inputKel">
-                      <div class="input-group-addon">
-                          <i class="fa fa-users"></i>
-                      </div>
-                  </div>
-              </div>
               <div class="form-actions form-group">
                   <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>
                   <button type="submit" class="btn btn-info pull-right">Submit</button>

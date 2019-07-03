@@ -71,7 +71,7 @@ Route::post('/guru/update','GuruController@update');
 
 
 Route::get('/staf/show/{nip_staf}', 'StafController@show')->middleware('auth')->name('showStaf');
-Route::get('/staf', 'stafController@index')->middleware('auth')->name('staf');
+Route::get('/staf', 'StafController@index')->middleware('auth')->name('staf');
 Route::get('/staf/create', 'StafController@create')->middleware('auth')->name('createStaf');
 Route::post('/staf/create', 'StafController@store');
 Route::get('/staf/edit/{nip_staf}', 'StafController@edit')->middleware('auth')->name('editStaf');
@@ -94,7 +94,7 @@ Route::post ('/kelas/anggota/tambahAnggota', 'KelasController@updateAnggota')->m
 Route::get('/walikelas/tambah','WaliKelasController@tambah')->middleware('auth')->name('walikelas');
 Route::post('/tambahwalikelas', 'WaliKelasController@update')->middleware('auth')->name('tambahkelas');
 Route::get('/walikelas', 'WaliKelasController@index');
-Route::get ('/walikelas/cetak_pdf', 'WalikelasController@cetak_pdf')->middleware('auth')->name('walikelas/cetak_pdf');
+Route::get ('/walikelas/cetak_pdf', 'WaliKelasController@cetak_pdf')->middleware('auth')->name('walikelas/cetak_pdf');
 Route::get('/walikelas/hapus/{guru}','WaliKelasController@hapus');
 
 
