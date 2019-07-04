@@ -7,11 +7,18 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AbsensiSeeder' => $baseDir . '/database/seeds/AbsensiSeeder.php',
+<<<<<<< HEAD
     'App\\AbsenStaf' => $baseDir . '/app/AbsenStaf.php',
     'App\\AbsensiBimbel' => $baseDir . '/app/AbsensiBimbel.php',
     'App\\AbsensiGuru' => $baseDir . '/app/AbsensiGuru.php',
     'App\\AbsensiModel' => $baseDir . '/app/AbsensiModel.php',
     'App\\AbsensiPascaMubaligh' => $baseDir . '/app/AbsensiPascaMubaligh.php',
+=======
+    'App\\AbsensiBimbel' => $baseDir . '/app/AbsensiBimbel.php',
+    'App\\AbsensiGuru' => $baseDir . '/app/AbsensiGuru.php',
+    'App\\AbsensiModel' => $baseDir . '/app/AbsensiModel.php',
+    'App\\AbsensiPengajian' => $baseDir . '/app/AbsensiPengajian.php',
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
     'App\\AbsensiPesantren' => $baseDir . '/app/AbsensiPesantren.php',
     'App\\AbsensiPraMubaligh' => $baseDir . '/app/AbsensiPraMubaligh.php',
     'App\\AbsensiSiswaSekolah' => $baseDir . '/app/AbsensiSiswaSekolah.php',
@@ -19,6 +26,7 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Guru' => $baseDir . '/app/Guru.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\AbsenStafController' => $baseDir . '/app/Http/Controllers/AbsenStafController.php',
     'App\\Http\\Controllers\\AbsensiBimbelController' => $baseDir . '/app/Http/Controllers/AbsensiBimbelController.php',
     'App\\Http\\Controllers\\AbsensiController' => $baseDir . '/app/Http/Controllers/AbsensiController.php',
@@ -28,6 +36,15 @@ return array(
     'App\\Http\\Controllers\\AbsensiPraMubalighController' => $baseDir . '/app/Http/Controllers/AbsensiPraMubalighController.php',
     'App\\Http\\Controllers\\AbsensiSiswaSekolahController' => $baseDir . '/app/Http/Controllers/AbsensiSiswaSekolahController.php',
     'App\\Http\\Controllers\\AnggotaKelasController' => $baseDir . '/app/Http/Controllers/AnggotaKelasController.php',
+=======
+    'App\\Http\\Controllers\\AbsensiBimbelController' => $baseDir . '/app/Http/Controllers/AbsensiBimbelController.php',
+    'App\\Http\\Controllers\\AbsensiController' => $baseDir . '/app/Http/Controllers/AbsensiController.php',
+    'App\\Http\\Controllers\\AbsensiGuruController' => $baseDir . '/app/Http/Controllers/AbsensiGuruController.php',
+    'App\\Http\\Controllers\\AbsensiPengajianController' => $baseDir . '/app/Http/Controllers/AbsensiPengajianController.php',
+    'App\\Http\\Controllers\\AbsensiPesantrenController' => $baseDir . '/app/Http/Controllers/AbsensiPesantrenController.php',
+    'App\\Http\\Controllers\\AbsensiPraMubalighController' => $baseDir . '/app/Http/Controllers/AbsensiPraMubalighController.php',
+    'App\\Http\\Controllers\\AbsensiSiswaSekolahController' => $baseDir . '/app/Http/Controllers/AbsensiSiswaSekolahController.php',
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
     'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -41,7 +58,10 @@ return array(
     'App\\Http\\Controllers\\KelasController' => $baseDir . '/app/Http/Controllers/KelasController.php',
     'App\\Http\\Controllers\\MapelController' => $baseDir . '/app/Http/Controllers/MapelController.php',
     'App\\Http\\Controllers\\SiswaController' => $baseDir . '/app/Http/Controllers/SiswaController.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\StafController' => $baseDir . '/app/Http/Controllers/StafController.php',
+=======
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
     'App\\Http\\Controllers\\WaliKelasController' => $baseDir . '/app/Http/Controllers/WaliKelasController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

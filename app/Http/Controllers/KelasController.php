@@ -107,6 +107,10 @@ class KelasController extends Controller
         $kelas->kode_kelas = request('kode_kelas');
         $kelas->nama = request('nama');
         $kelas->jenis_kelas = request('jenis_kelas');
+<<<<<<< HEAD
+=======
+        $kelas->prapasca = request('prapasca');
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
         $kelas->save();
 
         \Session::flash('flash_message','successfully saved.');
@@ -149,6 +153,7 @@ class KelasController extends Controller
     {
 
             // return $request->jenis_kelas;
+<<<<<<< HEAD
         if(request('jenis_kelas')=='Reguler'){
             DB::table('siswa')->where('nis',$request->nis)->update([
             'id_kelas' => $request->id_kelas
@@ -173,6 +178,44 @@ class KelasController extends Controller
             DB::table('siswa')->where('nis',$request->nis)->update([
             'id_bimbel' => $request->id_kelas
             ]);
+=======
+        $counter = count(request('nis'));
+        $nis = request('nis');
+        if(request('jenis_kelas')=='Reguler'){
+            for ( $i=0; $i< $counter; $i++) {
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_kelas' => $request->id_kelas
+                ]);
+            }
+        }
+        else if(request('jenis_kelas')=='Pramubaligh'){
+            for ( $i=0; $i< $counter; $i++) {
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_pramubaligh' => $request->id_kelas
+                ]);
+            }
+        }
+        else if(request('jenis_kelas')=='Pascamubaligh'){
+            for ( $i=0; $i< $counter; $i++) {
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_pascamubaligh' => $request->id_kelas
+                ]);
+            }
+        }
+        else if(request('jenis_kelas')=='Pesantren'){
+            for ( $i=0; $i< $counter; $i++) {
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_pesantren' => $request->id_kelas
+                ]);
+            }
+        }
+        else if(request('jenis_kelas')=='Bimbel'){
+            for ( $i=0; $i< $counter; $i++) {    
+                DB::table('siswa')->where('nis',$nis[$i])->update([
+                'id_bimbel' => $request->id_kelas
+                ]);
+            }
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
         }
 
          return redirect('/kelas');

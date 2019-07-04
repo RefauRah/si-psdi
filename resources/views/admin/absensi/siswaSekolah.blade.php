@@ -25,7 +25,20 @@
         sessionStorage.setItem("searchSiswa", $('#searchSiswa').val());
     }
 </script>
+<<<<<<< HEAD
 <div class="container" style="padding: 35px;">
+=======
+<section class="content-header">
+      <h1>
+        Tabel
+        <small>Absensi Siswa Sekolah</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Absensi</li>
+      </ol>
+</section>
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
 <section class="content">
  <form class="" method="post" action="/absensiswasekolah">
     @csrf
@@ -208,6 +221,7 @@
                 </tr>
                 </tfoot>
 
+<<<<<<< HEAD
                 </table>
                 <br>
                 <table class="table table-bordered table-striped">
@@ -226,6 +240,26 @@
                         <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
                     </tr>
                 </table><br>
+=======
+                </table>
+                <br>
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th>Hadir</th>
+                        <th>Sakit</th>
+                        <th>Alfa</th>
+                        <th>Izin</th>
+                        <th>Pilih</th>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="absen" value="hadir" required></td>
+                        <td><input type="radio" name="absen" value="sakit"></td>
+                        <td><input type="radio" name="absen" value="alfa"></td>
+                        <td><input type="radio" name="absen" value="izin"></td>
+                        <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
+                    </tr>
+                </table>
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
             <div class="box-footer">
                 <td><button type="submit"class="btn btn-success btn-sm pull-right">Submit</button></td>
             </div>

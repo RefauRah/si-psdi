@@ -6,7 +6,20 @@
 @if(Session::has('flash_message_fail'))
     <div class="alert alert-danger"><span class="glyphicon glyphicon-remove"></span><em> {!! session('flash_message_fail') !!}</em></div>
 @endif
+<<<<<<< HEAD
 <div class="container" style="padding: 35px;">
+=======
+<section class="content-header">
+      <h1>
+        Tabel
+        <small>Absensi Guru</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Absensi</li>
+      </ol>
+</section>
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
 <section class="content">
     <form class="" method="post" action="/absenguru">
     @csrf
@@ -77,7 +90,11 @@
                         <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
                     </tr>
                 </table>
+<<<<<<< HEAD
             </div><br>
+=======
+            </div>
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
 <!-- /.box-body -->
             <div class="box-footer">
                 <button type="button" onclick="history.back();" class="btn btn-danger">Back</button>

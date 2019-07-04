@@ -82,6 +82,7 @@
                 </tr>
 
 
+<<<<<<< HEAD
 
                 <tr>
                     <div class="form-group">
@@ -98,6 +99,24 @@
                 </tr>
 
 
+=======
+<!-- 
+                <tr>
+                    <div class="form-group">
+                        <th><label for="id_kelas">Kelas</label></th>
+                        <div class="col-sm-10">
+                        <td><select class="form-control" name="id_kelas" ">
+                        <option value="{{$key->id_kelas}}">({{$key->kode_kelas}} - {{$key->nama}})</option>
+                        @foreach ($kelas as $row)
+                        <option value="{{$row->id}}">{{$row->kode_kelas}} - {{$row->nama}}</option>
+                        @endforeach
+                        </select></td>
+                        </div>
+                     </div>
+                </tr>
+ -->
+
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
 
 
                 <tr>

@@ -242,7 +242,11 @@ class SiswaController extends Controller
         DB::table('siswa','kelas. *')->where('nis',$request->nis)->update([
         'nis' => $request->nis,
         'nama_siswa' => $request->nama_siswa,
+<<<<<<< HEAD
         'id_kelas' => $request->id_kelas,
+=======
+        // 'id_kelas' => $request->id_kelas,
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
         'jk_siswa' => $request->jk_siswa,
         'alamat_siswa' => $request->alamat_siswa,
         'tmpt_lahir' => $request->tmpt_lahir,

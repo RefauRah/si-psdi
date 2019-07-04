@@ -20,6 +20,11 @@
             <div id="logo">
                 <h1> <a href="index.html">PSDI</a></h1>
             </div>
+<<<<<<< HEAD
+=======
+            <label for="drop" class="toggle">Menu</label>
+            <input type="checkbox" id="drop" />
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
         </nav>
         <!-- //nav -->
     </div>

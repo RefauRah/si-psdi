@@ -401,11 +401,18 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
 
     public static $classMap = array (
         'AbsensiSeeder' => __DIR__ . '/../..' . '/database/seeds/AbsensiSeeder.php',
+<<<<<<< HEAD
         'App\\AbsenStaf' => __DIR__ . '/../..' . '/app/AbsenStaf.php',
         'App\\AbsensiBimbel' => __DIR__ . '/../..' . '/app/AbsensiBimbel.php',
         'App\\AbsensiGuru' => __DIR__ . '/../..' . '/app/AbsensiGuru.php',
         'App\\AbsensiModel' => __DIR__ . '/../..' . '/app/AbsensiModel.php',
         'App\\AbsensiPascaMubaligh' => __DIR__ . '/../..' . '/app/AbsensiPascaMubaligh.php',
+=======
+        'App\\AbsensiBimbel' => __DIR__ . '/../..' . '/app/AbsensiBimbel.php',
+        'App\\AbsensiGuru' => __DIR__ . '/../..' . '/app/AbsensiGuru.php',
+        'App\\AbsensiModel' => __DIR__ . '/../..' . '/app/AbsensiModel.php',
+        'App\\AbsensiPengajian' => __DIR__ . '/../..' . '/app/AbsensiPengajian.php',
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
         'App\\AbsensiPesantren' => __DIR__ . '/../..' . '/app/AbsensiPesantren.php',
         'App\\AbsensiPraMubaligh' => __DIR__ . '/../..' . '/app/AbsensiPraMubaligh.php',
         'App\\AbsensiSiswaSekolah' => __DIR__ . '/../..' . '/app/AbsensiSiswaSekolah.php',
@@ -413,6 +420,7 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Guru' => __DIR__ . '/../..' . '/app/Guru.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\AbsenStafController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsenStafController.php',
         'App\\Http\\Controllers\\AbsensiBimbelController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiBimbelController.php',
         'App\\Http\\Controllers\\AbsensiController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiController.php',
@@ -422,6 +430,15 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'App\\Http\\Controllers\\AbsensiPraMubalighController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiPraMubalighController.php',
         'App\\Http\\Controllers\\AbsensiSiswaSekolahController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiSiswaSekolahController.php',
         'App\\Http\\Controllers\\AnggotaKelasController' => __DIR__ . '/../..' . '/app/Http/Controllers/AnggotaKelasController.php',
+=======
+        'App\\Http\\Controllers\\AbsensiBimbelController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiBimbelController.php',
+        'App\\Http\\Controllers\\AbsensiController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiController.php',
+        'App\\Http\\Controllers\\AbsensiGuruController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiGuruController.php',
+        'App\\Http\\Controllers\\AbsensiPengajianController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiPengajianController.php',
+        'App\\Http\\Controllers\\AbsensiPesantrenController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiPesantrenController.php',
+        'App\\Http\\Controllers\\AbsensiPraMubalighController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiPraMubalighController.php',
+        'App\\Http\\Controllers\\AbsensiSiswaSekolahController' => __DIR__ . '/../..' . '/app/Http/Controllers/AbsensiSiswaSekolahController.php',
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -435,7 +452,10 @@ class ComposerStaticInite54081e8a23715424118482a1a19d17d
         'App\\Http\\Controllers\\KelasController' => __DIR__ . '/../..' . '/app/Http/Controllers/KelasController.php',
         'App\\Http\\Controllers\\MapelController' => __DIR__ . '/../..' . '/app/Http/Controllers/MapelController.php',
         'App\\Http\\Controllers\\SiswaController' => __DIR__ . '/../..' . '/app/Http/Controllers/SiswaController.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\StafController' => __DIR__ . '/../..' . '/app/Http/Controllers/StafController.php',
+=======
+>>>>>>> 7ec241c3f60e0fcd5ed3ef82008c3f0c5ea0e60f
         'App\\Http\\Controllers\\WaliKelasController' => __DIR__ . '/../..' . '/app/Http/Controllers/WaliKelasController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
