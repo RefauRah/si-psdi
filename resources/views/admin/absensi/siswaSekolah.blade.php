@@ -25,16 +25,7 @@
         sessionStorage.setItem("searchSiswa", $('#searchSiswa').val());
     }
 </script>
-<section class="content-header">
-      <h1>
-        Tabel
-        <small>Absensi Siswa Sekolah</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Absensi</li>
-      </ol>
-</section>
+<div class="container" style="padding: 35px;">
 <section class="content">
  <form class="" method="post" action="/absensiswasekolah">
     @csrf
@@ -234,7 +225,7 @@
                         <td><input type="radio" name="absen" value="izin"></td>
                         <td><input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="Keterangan"></td>
                     </tr>
-                </table>
+                </table><br>
             <div class="box-footer">
                 <td><button type="submit"class="btn btn-success btn-sm pull-right">Submit</button></td>
             </div>
@@ -243,4 +234,5 @@
     </div>
 </form>
 </section>
+</div>
 @endsection
